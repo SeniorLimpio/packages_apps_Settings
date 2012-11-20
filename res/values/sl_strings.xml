@@ -33,6 +33,7 @@
     <!-- Category titles -->
 
     <string name="additional_category_title">Additional</string>
+    <string name="themes_settings_title">Themes</string>
     <string name="general_category_title">General</string>
     <string name="ui_category_title">User interface</string>
     <string name="misc_category_title">Miscellaneous</string>
