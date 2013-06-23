@@ -26,6 +26,7 @@ import static com.android.internal.util.ldroid.QSConstants.TILE_BATTERYSAVER;
 import static com.android.internal.util.ldroid.QSConstants.TILE_BLUETOOTH;
 import static com.android.internal.util.ldroid.QSConstants.TILE_BRIGHTNESS;
 import static com.android.internal.util.ldroid.QSConstants.TILE_BUGREPORT;
+import static com.android.internal.util.ldroid.QSConstants.TILE_CAMERA;
 import static com.android.internal.util.ldroid.QSConstants.TILE_COMPASS;
 import static com.android.internal.util.ldroid.QSConstants.TILE_CONTACT;
 import static com.android.internal.util.ldroid.QSConstants.TILE_CUSTOM;
@@ -99,6 +100,9 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_BRIGHTNESS, R.string.title_tile_brightness,
                 "com.android.systemui:drawable/ic_qs_brightness_auto_off"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+        	    TILE_CAMERA, R.string.title_tile_camera,
+        	    "com.android.systemui:drawable/ic_qs_camera"));
         registerTile(new QuickSettingsUtil.TileInfo(
                  TILE_COMPASS, R.string.title_tile_compass,
                 "com.android.systemui:drawable/ic_qs_compass_on"));
@@ -249,6 +253,11 @@ public class QuickSettingsUtil {
         // Don't show the Fast charge tile if not supported by kernel
         if (!DeviceUtils.fchargeEnabled(context)) {
             removeTile(TILE_FCHARGE);
+        }
+
+        // Don't show the Camera tile if the device has no cameras
+        if (!DeviceUtils.deviceSupportsCamera()) {
+        	removeTile(TILE_CAMERA);
         }
     }
 
