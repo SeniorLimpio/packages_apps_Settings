@@ -820,6 +820,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lock_pattern_size_5">5x5</string>
     <string name="lock_pattern_size_6">6x6</string>
 
+    <!-- Lock screen battery ring -->
+    <string name="battery_around_ring_title">Battery around ring</string>
+    <string name="battery_around_ring_summary">Display battery level around unlock ring</string>
+
     <!-- Notification drawer background -->
     <string name="notification_style_title">Background style</string>
     <string name="notification_style_summary">View or change your notification drawer and quicksettings background</string>
