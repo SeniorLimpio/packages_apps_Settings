@@ -1796,6 +1796,10 @@
                 android:value="com.android.settings.slim.BatteryIconStyle" />
         </activity>
 
+        <activity android:name=".chameleonos.labs.gestureanywhere.GestureAnywhereBuilderActivity" />
+
+        <activity android:name=".chameleonos.labs.gestureanywhere.GestureAnywhereCreateGestureActivity" />
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to sound packages settings -->
         <activity android:name="Settings$SoundPackageSettingsActivity"
                 android:label="@string/sound_packages_title"

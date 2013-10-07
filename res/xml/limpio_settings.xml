@@ -30,6 +30,13 @@
         android:icon="@drawable/ic_settings_identicons"
         android:title="@string/identicons_title" />
 
+    <!-- Gesture anywhere -->
+    <PreferenceScreen
+        android:key="gesture_anywhere"
+        android:fragment="com.android.settings.limpio.labs.gestureanywhere.GestureAnywhereSettings"
+        android:icon="@drawable/ic_settings_gesture_anywhere"
+        android:title="@string/gesture_anywhere_title" />
+
     <!-- General settings -->
     <PreferenceScreen
         android:key="general_settings"
