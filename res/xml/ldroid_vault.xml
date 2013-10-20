@@ -100,6 +100,13 @@
         android:title="@string/ldroid_animations_settings_title"
         android:icon="@drawable/ic_ldroid_animations" />
 
+    <!-- Identicons -->
+    <PreferenceScreen
+        android:key="identicons"
+        android:fragment="com.android.settings.ldroid.labs.identicons.IdenticonsSettings"
+        android:icon="@drawable/ic_settings_identicons"
+        android:title="@string/identicons_title" />
+
     <!-- System -->
     <PreferenceCategory 
         android:title="@string/system_category_title" />

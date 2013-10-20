@@ -1763,6 +1763,12 @@
 
         <activity android:name=".ApnEditor" />
 
+        <service android:name=".ldroid.labs.identicons.IdenticonCreationService"
+                 android:exported="false" />
+
+        <service android:name=".ldroid.labs.identicons.IdenticonRemovalService"
+                 android:exported="false" />
+
          <!-- "Blacklist settings" UI, used only on voice-capable phone devices. -->
         <activity android:name="Settings$BlacklistSettingsActivity"
                 android:theme="@android:style/Theme.Holo.DialogWhenLarge"
