@@ -1734,6 +1734,12 @@
 
         <activity android:name=".ApnEditor" />
 
+        <service android:name=".limpio.labs.identicons.IdenticonCreationService"
+                 android:exported="false" />
+
+        <service android:name=".limpio.labs.identicons.IdenticonRemovalService"
+                 android:exported="false" />
+
          <!-- "Blacklist settings" UI, used only on voice-capable phone devices. -->
         <activity android:name="Settings$BlacklistSettingsActivity"
                 android:theme="@android:style/Theme.Holo.DialogWhenLarge"

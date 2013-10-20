@@ -23,6 +23,13 @@
         android:fragment="com.android.settings.limpio.LockscreenSettings"
         android:icon="@drawable/ic_limpio_lockscreen" />
 
+    <!-- Identicons -->
+    <PreferenceScreen
+        android:key="identicons"
+        android:fragment="com.android.settings.limpio.labs.identicons.IdenticonsSettings"
+        android:icon="@drawable/ic_settings_identicons"
+        android:title="@string/identicons_title" />
+
     <!-- General settings -->
     <PreferenceScreen
         android:key="general_settings"
