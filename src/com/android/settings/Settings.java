@@ -95,6 +95,10 @@ import com.android.settings.ldroid.quicksettings.QuickSettingsTiles;
 import com.android.settings.ldroid.ShakeEvents;
 import com.android.settings.ldroid.QuietHours;
 import com.android.settings.ldroid.themes.ThemeEnabler;
+import com.android.settings.profiles.AppGroupConfig;
+import com.android.settings.profiles.ProfileConfig;
+import com.android.settings.profiles.ProfileEnabler;
+import com.android.settings.profiles.ProfilesSettings;
 import com.android.settings.tts.TextToSpeechSettings;
 import com.android.settings.users.UserSettings;
 import com.android.settings.vpn2.VpnSettings;
@@ -552,6 +556,9 @@ public class Settings extends PreferenceActivity
                 BlacklistSettings.class.getName().equals(fragmentName) ||
                 BluetoothSettings.class.getName().equals(fragmentName) ||
                 DreamSettings.class.getName().equals(fragmentName) ||
+                ProfilesSettings.class.getName().equals(fragmentName) ||
+                ProfileConfig.class.getName().equals(fragmentName) ||
+                AppGroupConfig.class.getName().equals(fragmentName) ||
                 LocationSettings.class.getName().equals(fragmentName) ||
                 ToggleAccessibilityServicePreferenceFragment.class.getName().equals(fragmentName) ||
                 PrintSettingsFragment.class.getName().equals(fragmentName) ||
@@ -842,6 +849,7 @@ public class Settings extends PreferenceActivity
         private final BluetoothEnabler mBluetoothEnabler;
         private final MobileDataEnabler mMobileDataEnabler;
         public static ThemeEnabler mThemeEnabler;
+        private final ProfileEnabler mProfileEnabler;
         private AuthenticatorHelper mAuthHelper;
         private DevicePolicyManager mDevicePolicyManager;
 
@@ -865,6 +873,7 @@ public class Settings extends PreferenceActivity
                     || header.id == R.id.mobile_network_settings
                     || header.id == R.id.theme_settings
                     || header.id == R.id.location_settings) {
+                    || header.id == R.id.profiles_settings) {
                 return HEADER_TYPE_SWITCH;
             } else if (header.id == R.id.security_settings) {
                 return HEADER_TYPE_BUTTON;
@@ -912,6 +921,7 @@ public class Settings extends PreferenceActivity
             mBluetoothEnabler = new BluetoothEnabler(context, new Switch(context));
             mMobileDataEnabler = new MobileDataEnabler(context, new Switch(context));
             mThemeEnabler = new ThemeEnabler(context, new Switch(context));
+            mProfileEnabler = new ProfileEnabler(context, new Switch(context));
             mDevicePolicyManager = dpm;
         }
 
@@ -987,6 +997,8 @@ public class Settings extends PreferenceActivity
                         mMobileDataEnabler.setSwitch(holder.switch_);
                     } else if (header.id == R.id.theme_settings) {
                         mThemeEnabler.setSwitch(holder.switch_);
+                    } else if (header.id == R.id.profiles_settings) {
+                        mProfileEnabler.setSwitch(holder.switch_);
                     }
                     updateCommonHeaderView(header, holder);
                     break;
@@ -1062,6 +1074,7 @@ public class Settings extends PreferenceActivity
             mBluetoothEnabler.resume();
             mMobileDataEnabler.resume();
             mThemeEnabler.resume();
+            mProfileEnabler.resume();
         }
 
         public void pause() {
@@ -1069,6 +1082,7 @@ public class Settings extends PreferenceActivity
             mBluetoothEnabler.pause();
             mMobileDataEnabler.pause();
             mThemeEnabler.resume();
+            mProfileEnabler.pause();
         }
     }
 
@@ -1206,6 +1220,7 @@ public class Settings extends PreferenceActivity
     public static class TextToSpeechSettingsActivity extends Settings { /* empty */ }
     public static class AndroidBeamSettingsActivity extends Settings { /* empty */ }
     public static class WifiDisplaySettingsActivity extends Settings { /* empty */ }
+    public static class ProfilesSettingsActivity extends Settings { /* empty */ }
     public static class DreamSettingsActivity extends Settings { /* empty */ }
     public static class NotificationStationActivity extends Settings { /* empty */ }
     public static class UserSettingsActivity extends Settings { /* empty */ }
