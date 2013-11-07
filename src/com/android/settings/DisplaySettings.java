@@ -42,6 +42,8 @@ import android.widget.Toast;
 import com.android.internal.view.RotationPolicy;
 import com.android.settings.DreamSettings;
 import com.android.settings.ldroid.DisplayRotation;
+import com.android.settings.hardware.DisplayColor;
+import com.android.settings.hardware.DisplayGamma;
 
 import java.util.ArrayList;
 
@@ -64,6 +66,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_SCREEN_OFF_GESTURE_SETTINGS = "screen_off_gesture_settings";
+    private static final String KEY_DISPLAY_COLOR = "color_calibration";
+    private static final String KEY_DISPLAY_GAMMA = "gamma_tuning";
 
     private static final String ROTATION_ANGLE_0 = "0";
     private static final String ROTATION_ANGLE_90 = "90";
@@ -171,6 +175,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                         Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
                 mVolumeWake.setOnPreferenceChangeListener(this);
             }
+        }
+
+        if (!DisplayColor.isSupported()) {
+            getPreferenceScreen().removePreference(findPreference(KEY_DISPLAY_COLOR));
+        }
+        if (!DisplayGamma.isSupported()) {
+            getPreferenceScreen().removePreference(findPreference(KEY_DISPLAY_GAMMA));
         }
 
         mWakeUpWhenPluggedOrUnplugged =
