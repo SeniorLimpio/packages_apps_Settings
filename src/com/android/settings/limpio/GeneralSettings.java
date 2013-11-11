@@ -20,8 +20,10 @@ public class GeneralSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String RESTART_SYSTEMUI = "restart_systemui";
+    private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
 
     private Preference mRestartSystemUI;
+    private CheckBoxPreference mShowCpuInfo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class GeneralSettings extends SettingsPreferenceFragment implements
 
         mRestartSystemUI = findPreference(RESTART_SYSTEMUI);
 
+	mShowCpuInfo = (CheckBoxPreference) findPreference(SHOW_CPU_INFO_KEY);
     }
 
     @Override
@@ -38,10 +41,25 @@ public class GeneralSettings extends SettingsPreferenceFragment implements
         super.onResume();
     }
 
+    private void writeCpuInfoOptions() {
+        boolean value = mShowCpuInfo.isChecked();
+        Settings.Global.putInt(getActivity().getContentResolver(),
+                Settings.Global.SHOW_CPU, value ? 1 : 0);
+        Intent service = (new Intent())
+                .setClassName("com.android.systemui", "com.android.systemui.CPUInfoService");
+        if (value) {
+            getActivity().startService(service);
+        } else {
+            getActivity().stopService(service);
+        }
+    }	
+
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mRestartSystemUI) {
             Helpers.restartSystemUI();
+	} else if (preference == mShowCpuInfo) {
+            writeCpuInfoOptions();
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
