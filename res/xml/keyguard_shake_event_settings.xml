@@ -31,6 +31,10 @@
         android:key="shake_event_z"
         android:title="@string/shake_event_z_title" />
 
+    <Preference
+        android:key="lcd_density"
+        android:title="@string/custom_density_title" />
+
     <PreferenceScreen
         android:key="gesture_anywhere"
         android:title="@string/gesture_anywhere_title"

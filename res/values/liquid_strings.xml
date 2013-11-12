@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012-2013 SlimRoms Project
+<!-- Copyright (C) 2014 The LiquidSmooth Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,26 +17,33 @@
 
     <!-- General strings -->
     <string name="ok">OK</string>
-    <string name="reset">Reset</string>
-    <string name="attention">Attention</string>
-    <string name="enabled">Enabled</string>
-    <string name="disabled">Disabled</string>
-    <string name="default_string">Default</string>
-    <string name="additional_options_title">Additional options</string>
-    <string name="reset_message">Reset all entries to default?</string>
-    <string name="style_title">Style</string>
     <string name="add">Add</string>
+    <string name="reset">Reset</string>
+    <string name="enabled">Enabled</string>
+    <string name="style_title">Style</string>
+    <string name="attention">Attention</string>
+    <string name="default_string">Default</string>
+    <string name="reset_message">Reset entries to default?</string>
 
-    <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
-    <string name="header_category_rom_settings">Advanced settings</string>
+    <!-- Mod version -->
+    <string name="mod_version">LiquidSmooth version</string>
+    <string name="mod_version_default">Unknown</string>
 
-    <!-- Slim settings screens -->
+    <!-- Build date -->
+    <string name="build_date">Build date</string>
+    <string name="build_date_default">2012-01-01-0000</string>
+
+    <!-- Advanced titles -->
+    <string name="advanced_category_title">Advanced</string>
+    <string name="advanced_options_title">Advanced options</string>
+
+    <!-- Category titles -->
+    <string name="additional_category_title">Additional</string>
+    <string name="general_category_title">General</string>
+
+    <!-- General settings -->
     <string name="interface_settings_title">Interface</string>
     <string name="navigation_settings_title">Navigation</string>
-<<<<<<< HEAD:res/values/slim_strings.xml
-    <string name="slim_center_title">SlimCenter</string>
-    <!-- Advanced, Device specific (DeviceParts) settings  -->
-=======
     <string name="statusbar_settings_title">Status bar</string>
 
     <!-- Advanced settings -->
@@ -45,11 +52,13 @@
     <string name="theme_settings_title">Theme settings</string>
 
     <!-- Device settings -->
->>>>>>> e8c56c8... [2/2] settings: Change density on the fly:res/values/liquid_strings.xml
     <string name="device_settings_title">Device</string>
 
-    <!-- Slim Shortcuts -->
-    <string name="slim_shortcut_picker">Slim Actions</string>
+    <!-- Action shortcuts -->
+    <string name="shortcut_picker_title">Action shortcuts</string>
+
+    <!-- Superuser title -->
+    <string name="superuser_settings_title">Superuser</string>
 
     <!-- Theme chooser -->
     <string name="theme_chooser_title">Theme chooser</string>
@@ -62,10 +71,6 @@
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
-
-    <!-- About phone screen, slim version -->
-    <string name="slim_version_title">Slim version</string>
-    <string name="slim_version_default">Unknown</string>
 
     <!-- Display settings screen, notification light settings -->
     <string name="display_category_light_options_title">Light options</string>
@@ -185,22 +190,6 @@
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across status bar</string>
     <string name="status_bar_toggle_info">Automatic brightness is enabled</string>
 
-    <!-- Shake Events -->
-    <string name="shake_events_title">Shake events</string>
-    <string name="shake_events_enabled_title">Enable shake listener</string>
-    <string name="shake_events_normal_title">Active shake events</string>
-    <string name="shake_events_disabled_title">Disabled apps</string>
-    <string name="shake_events_disabled_summary">Shake will be disabled while in these apps</string>
-    <string name="shake_event_x_title">Activity to launch when shaken horizontally</string>
-    <string name="shake_event_y_title">Activity to launch when shaken vertically</string>
-    <string name="shake_event_z_title">Activity to launch when shaken back-and-forth</string>
-
-    <!-- Shake sensitivity -->
-    <string name="shake_sensitivity_title">Shake sensitivity</string>
-    <string name="shake_sensitivity_summary">Global sensitivity of all shake preferences</string>
-    <string name="shake_sensitivity_less_sensitive">Less sensitive</string>
-    <string name="shake_sensitivity_more_sensitive">More sensitive</string>
-
     <!-- Wakeup options -->
     <string name="display_category_wakeup_options_title">Wakeup options</string>
     <string name="pref_volume_wake_title">Volume rocker wake</string>
@@ -246,7 +235,7 @@
     <string name="system_power_crt_mode_both">Collapse orientation dependent</string>
     <string name="system_power_crt_mode_scale">Scale down</string>
 
-    <!-- Keyboard and Input ASS methods  -->
+    <!-- Keyboard and Input methods  -->
     <string name="title_keyboard_input">Advanced options</string>
     <string name="disable_fullscreen_keyboard_title">Disable fullscreen keyboard</string>
     <string name="disable_fullscreen_keyboard_summary">Landscape keyboard will never take up entire screen</string>
@@ -385,7 +374,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_stats_title">Statistics</string>
 
     <!-- Button shorcut actions -->
-    <string name="shortcut_action_keyguard_camera">Keyguard camera</string>
     <string name="shortcut_action_navbar">Navigation bar</string>
     <string name="shortcut_action_pie">Pie controls</string>
     <string name="shortcut_action_airplane">Airplane mode</string>
@@ -433,7 +421,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <string name="shortcut_action_help_shortcut">shortcut</string>
     <string name="shortcut_action_help_button">button</string>
-    <string name="shortcut_action_help_app">app</string>
     <string name="shortcut_action_help_icon">, while selecting the icon will bring up customization options</string>
     <string name="shortcut_action_help_main">To add a %1$s, select the Add icon.  Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right.  Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the Reset icon.</string>
     <string name="shortcut_action_help_delete_last_entry">Removing every %1$s in the list will disable the feature entirely.</string>
@@ -532,12 +519,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_status_icon">Icon</string>
     <string name="battery_status_percentage">Percentage</string>
     <string name="battery_status_icon_percentage">Icon with percentage</string>
-    <string name="battery_status_icon_percentage_jb">Icon with percentage (JB style)</string>
     <string name="battery_status_circle">Circle</string>
     <string name="battery_status_circle_percentage">Circle with percentage</string>
     <string name="battery_status_dotted_circle_percentage">Dotted Circle with percentage</string>
     <string name="battery_status_dotted_circle">Dotted Circle</string>
-    <string name="battery_status_gone">No battery</string>
     <string name="battery_color_title">Battery color</string>
     <string name="circle_battery_animation_speed">Circle animation speed</string>
     <string name="circle_battery_animation_speed_none">None</string>
@@ -547,7 +532,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_text_color">Percentage text color</string>
     <string name="battery_bolt_color">Bolt charging color</string>
     <string name="battery_text_charging_color">Percentage text charging color</string>
-    <string name="battery_circle_charging_color">Circle charging color</string>
     <string name="battery_style_reset_message">Reset all battery colors?</string>
 
     <!-- Category title for power sound notification specific Settings.
@@ -704,7 +688,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="display_rotation_180_title">180 degrees</string>
     <string name="display_rotation_270_title">270 degrees</string>
 
-    <!-- Lock Screen ASS -->
+    <!-- Lock Screen -->
     <string name="lock_screen_title">Slider targets and shortcuts</string>
     <string name="lock_screen_summary">View or change the slider targets and shortcuts</string>
 
@@ -756,7 +740,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="icon_picker_search">Search</string>
     <string name="icon_picker_twitter">Twitter</string>
 
-    <!--Quick unlock -->
+    <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
     <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
 
@@ -764,7 +748,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_style_reset_message">Reset all lockscreen colors?</string>
     <string name="lockscreen_icon_title">Lock handle icon</string>
     <string name="lockscreen_lock_icon_custom">Custom icon</string>
-    <string name="lockscreen_lock_icon_slim">Slim icon</string>
+    <string name="lockscreen_lock_icon_liquid">Liquid icon</string>
     <string name="lockscreen_lock_icon_default">Default icon</string>
     <string name="lockscreen_colorize_handle_title">Colorize custom handle</string>
     <string name="lockscreen_colorize_handle_summary">Lock color will be set to the lock handle</string>
@@ -782,9 +766,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Lockscreen widget settings -->
     <string name="lockscreen_widgets_title">Widgets</string>
-    <string name="lockscreen_allow_all_title">Allow all widgets</string>
-    <string name="lockscreen_allow_all_summary">Allow legacy widgets that don\'t natively support lock screen placement</string>
-    <string name="lockscreen_allow_all_warning">Some widgets may not behave as expected when placed on the lock screen.  Other widgets may expose your personal data to anyone who accesses your device.  Please be mindful of these warnings before continuing.</string>
     <string name="lockscreen_camera_widget_title">Enable camera widget</string>
     <string name="lockscreen_camera_widget_summary">Show secure camera widget on the lock screen</string>
     <string name="lockscreen_maximize_widgets_title">Start maximized</string>
@@ -809,10 +790,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shake_to_secure_dlg_title">Warning:</string>
     <string name="shake_to_secure_dlg_message">Your device will be insecure until you explicitly shake to enable a temporary secure lock.  Once secure: if your device is successfully unlocked it will become insecure until you shake again.</string>
     <string name="shake_secure_timeout_title">Automatically resecure</string>
-    <string name="shake_all">Shake any direction</string>
-    <string name="shake_horizontal">Shake horizontally</string>
-    <string name="shake_vertical">Shake vertically</string>
-    <string name="shake_back_forth">Shake back-and-forth</string>
     <string name="shake_secure_timeout_disabled">Never automatically secure</string>
     <string name="shake_secure_timeout_1min">1 minute after screen turned off</string>
     <string name="shake_secure_timeout_5min">5 minutes after screen turned off</string>
@@ -890,7 +867,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_music">Music</string>
     <string name="title_tile_reboot">Reboot</string>
     <string name="title_tile_theme">Theme switcher</string>
-    <string name="title_tile_shake">Shake events</string>
     <string name="dynamic_tile_ime_switcher">IME switcher</string>
     <string name="dynamic_tile_usb_tether">USB tether</string>
     <string name="dynamic_tile_alarm">Alarm</string>
@@ -906,7 +882,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="custom_toggle_extras">Custom tile extras</string>
     <string name="custom_toggle_collapse_check">Collapse notification shade</string>
     <string name="custom_toggle_match_state_check">Click action matches icon</string>
-    <string name="custom_toggle_double_click_check">Double-tap to switch to the previous action</string>
     <string name="custom_tile_long_press">Longpress:</string>
     <string name="custom_tile_null_warning">An action must be set first</string>
     <string name="custom_tile_resolve_name">Unknown</string>
@@ -946,11 +921,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- QuickSettings: Smart Pulldown -->
     <string name="smart_pulldown_title">Smart pulldown</string>
-    <string name="smart_pulldown_summary">Open Quick Settings when there are %1$s notifications present</string>
+    <string name="smart_pulldown_summary">Open Quick Settings when there are no %1$s notifications present</string>
     <string name="smart_pulldown_off">Off</string>
-    <string name="smart_pulldown_dismissable">No dismissable</string>
-    <string name="smart_pulldown_persistent">No persistent</string>
-    <string name="smart_pulldown_all">No dismissable or persistent</string>
+    <string name="smart_pulldown_dismissable">Dismissable</string>
+    <string name="smart_pulldown_persistent">Persistent</string>
 
     <!-- QuickSettings: Quick Collapse -->
     <string name="title_collapse_panel">Quick collapse</string>
@@ -992,7 +966,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="stylus_icon_enabled_summary">Show the pointer icon while using stylus</string>
 
     <!-- Themes -->
-    <string name="theme_settings_title">The real dark slim</string>
     <string name="theme_auto_mode_title">Switch theme</string>
     <string name="theme_auto_mode_off">Manual</string>
     <string name="theme_auto_mode_lightsensor">On light condition change</string>
@@ -1040,22 +1013,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="keys_action_long">Long press</string>
     <string name="keys_action_double">Double tap</string>
     <string name="no_home_key">You have no button assigned any more to the \"Home\" action!\n\nThis can make your device unusable!</string>
-
-    <!-- Hardware keys backlight -->
-    <string name="button_backlight_title">Backlight</string>
-    <string name="button_backlight_enabled">Illuminate buttons</string>
-    <string name="keyboard_backlight_enabled">Illuminate keyboard</string>
-    <string name="button_backlight_seekbar_title">Button brightness</string>
-    <string name="keyboard_backlight_seekbar_title">Keyboard brightness</string>
-    <string name="backlight_timeout_title">Illumination timeout</string>
-    <string name="backlight_timeout_unlimited">Don\'t turn off</string>
-    <plurals name="backlight_timeout_time">
-        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
-        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
-    </plurals>
-    <string name="backlight_summary_disabled">Disabled</string>
-    <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
-    <string name="backlight_summary_enabled">Enabled</string>
 
     <!-- Delete apn confirmation dialog message -->
     <string name="confirm_delete_apn">The APN will be deleted.</string>
@@ -1147,7 +1104,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="usb_mass_storage_summary">Enable USB mass storage</string>
 
     <!-- Pie Control -->
-    <string name="pie_control_title">SlimPIE</string>
     <string name="pie_control_summary">Enable pie controls</string>
     <string name="pie_control_size">Navigation size</string>
     <string name="pie_control_trigger_positions">Trigger options</string>
@@ -1210,21 +1166,82 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="noti_reminder_interval_3dot5s">3.5 second</string>
     <string name="noti_reminder_interval_4s">4 seconds</string>
 
-    <!-- Recent panel -->
-    <string name="recent_panel_category">Recent apps panel</string>
-    <string name="recent_panel_scale_title">Size</string>
-    <string name="recent_panel_scale_summary">Recent apps panel size in percent.</string>
-    <string name="recent_panel_100">100% (default)</string>
-    <string name="recent_panel_85">85%</string>
-    <string name="recent_panel_70">70%</string>
-    <string name="recent_panel_expanded_mode_title">Expanded mode</string>
-    <string name="recent_panel_expanded_mode_summary">Recent tasks expanded preview mode</string>
-    <string name="recent_panel_expanded_mode_auto">Auto (default)</string>
-    <string name="recent_panel_expanded_mode_always">Always</string>
-    <string name="recent_panel_expanded_mode_never">Never</string>
+    <!-- Gesture anywhere -->
+    <string name="gesture_anywhere_title">Gesture anywhere</string>
+    <string name="gesture_anywhere_summary">Custom screen gestures to execute actions</string>
+    <string name="gesture_anywhere_enabled_title">Gesture anywhere</string>
+    <string name="gesture_anywhere_enabled_summary">Enable the Gesture anywhere feature</string>
+    <string name="gesture_anywhere_position_title">Loction</string>
+    <string name="gesture_anywhere_position_left">Left edge</string>
+    <string name="gesture_anywhere_position_right">Right edge</string>
+    <string name="gesture_anywhere_gestures_title">Gestures</string>
+    <string name="gesture_anywhere_gestures_summary">Add, remove, and edit gestures</string>
+    <string name="trigger_category">Trigger region</string>
+    <string name="trigger_width_title">Trigger width</string>
+    <string name="trigger_width_summary">Adjust the width of the trigger area</string>
+    <string name="trigger_top_title">Trigger position</string>
+    <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
+    <string name="trigger_bottom_title">Trigger height</string>
+    <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
+    <!-- Label, button used to add a gesture -->
+    <string name="ga_button_add">Add gesture</string>
+    <!-- Label, button used to reload all gestures -->
+    <string name="ga_button_reload">Reload</string>
+    <!-- Label, button used to cancel the operation of adding a gesture -->
+    <string name="ga_button_discard">Discard</string>
+    <!-- Label, button used to save a gesture newly created -->
+    <string name="ga_button_done">Done</string>
+    <!-- Label, prompt asking the user to enter the name of the gesture -->
+    <string name="ga_prompt_gesture_name">Name</string>
+    <!-- Error message, informs the user he needs to enter a name before saving a gesture -->
+    <string name="ga_error_missing_name">You must enter a name</string>
+    <!-- success message, tells the user where the gesture was saved -->
+    <string name="ga_save_success">Gesture saved in %s</string>
+    <!-- Buttons in Rename gesture dialog box -->
+    <string name="ga_rename_action">OK</string>
+    <!-- Buttons in Rename gesture dialog box -->
+    <string name="ga_cancel_action">Cancel</string>
+    <!-- Message displayed when the user opens the gestures settings screen -->
+    <string name="ga_gestures_loading">Loading gestures...</string>
+    <!-- Message displayed when the user has no gestures -->
+    <string name="ga_gestures_empty">No gestures</string>
+    <!-- Title of the screen used to view/manage gestures -->
+    <string name="ga_gestures_activity">Gestures</string>
+    <!-- Noun, menu item used to edit a gesture -->
+    <string name="ga_gestures_edit">Edit</string>
+    <!-- Noun, menu item used to remove a gesture -->
+    <string name="ga_gestures_delete">Delete</string>
+    <!-- Message displayed when a gesture is successfully deleted -->
+    <string name="ga_gestures_delete_success">Gesture deleted</string>
+    <!-- Title of dialog box -->
+    <string name="ga_gestures_rename_title">Rename gesture</string>
+    <!-- Label of gesture name field in Rename gesture dialog box -->
+    <string name="ga_gestures_rename_label">Gesture name</string>
+    <!-- Message, displayed when the sdcard cannot be found, 1st parameter is the name of the file that stores the gestures.  CHAR LIMIT=80 -->
+    <string name="ga_gestures_error_loading">Could not load %s. Make sure you have storage available.</string>
+    <string name="profile_applist_title">Apps</string>
 
-    <!-- ATTENTION: RTL languages need to replace left with right -->
-    <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
-    <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge.</string>
+	<!-- Wakelock blocker -->
+    <string name="wakelock_blocker">Wakelock blocker</string>
+    <string name="wakelock_blocker_title">Enable</string>
+    <string name="wakelock_blocker_summary">Activate blocking for wakelocks</string>
+    <string name="wakelock_blocker_save">Save</string>
+    <string name="wakelock_list_header">Available wakelocks</string>
+    <string name="wakelock_blocker_reload">Reload</string>
+    <string name="wakelock_blocker_warning_title">Proceed with caution</string>
+    <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss.</string>
+
+    <!-- Sms security limit -->
+    <string name="sms_security_check_limit_title">SMS message limit</string>
+    <string name="sms_security_check_limit_summary">Display an alert dialog to prevent applications from sending SMS messages too frequently. Current limit: %d messages in 15 minutes</string>
+    <string name="sms_security_check_limit_default">30 (Default)</string>
+
+    <!-- Density Changer -->
+    <string name="custom_density_title">Custom lcd density</string>
+    <string name="set_custom_density_title">Set custom density</string>
+    <string name="set_custom_density_set">Set</string>
+    <string name="current_density">"Current density: "</string>
+    <string name="new_density">"New density: "</string>
+    <string name="density_change_warning">Note: Changing density will close all running apps!</string>
 
 </resources>
