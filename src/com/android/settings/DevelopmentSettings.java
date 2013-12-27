@@ -56,6 +56,7 @@ import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
@@ -319,7 +320,8 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         }
 
         if (!isPackageInstalled(getActivity(), QUICKBOOT_PACKAGE_NAME)) {
-            removePreference(mQuickBoot);
+        PreferenceCategory mCategory = (PreferenceCategory) findPreference("debug_debugging_category");
+            mCategory.removePreference(mQuickBoot);
         }
 
         mDebugAppPref = findPreference(DEBUG_APP_KEY);
