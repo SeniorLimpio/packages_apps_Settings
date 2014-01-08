@@ -23,6 +23,9 @@ import android.app.Dialog;
 import android.app.admin.DevicePolicyManager;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.SharedPreferences;
@@ -80,6 +83,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_ADAPTIVE_BACKLIGHT = "adaptive_backlight";
     private static final String KEY_SUNLIGHT_ENHANCEMENT = "sunlight_enhancement";
     private static final String KEY_COLOR_ENHANCEMENT = "color_enhancement";
+    private static final String KEY_SCREEN_COLOR_SETTINGS = "screencolor_settings";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -102,6 +106,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mAdaptiveBacklight;
     private CheckBoxPreference mSunlightEnhancement;
     private CheckBoxPreference mColorEnhancement;
+    private PreferenceScreen mScreenColorSettings;
 
     private final Configuration mCurConfig = new Configuration();
 
@@ -246,6 +251,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         if (mColorEnhancement != null) {
             mColorEnhancement.setChecked(ColorEnhancement.isEnabled());
+        }
+
+
+        if (!isPostProcessingSupported()) {
+            mScreenColorSettings = (PreferenceScreen) findPreference(KEY_SCREEN_COLOR_SETTINGS);
+            PreferenceCategory mCategory = (PreferenceCategory) findPreference("category_screen_options");
+            mCategory.removePreference(mScreenColorSettings);
         }
 
         mWakeUpWhenPluggedOrUnplugged =
@@ -615,5 +627,16 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             // Hardware abstraction framework not installed
             return false;
         }
+    }
+
+    private boolean isPostProcessingSupported() {
+        boolean ret = true;
+        final PackageManager pm = getPackageManager();
+        try {
+            pm.getPackageInfo("com.qualcomm.display", PackageManager.GET_META_DATA);
+        } catch (NameNotFoundException e) {
+            ret = false;
+        }
+        return ret;
     }
 }

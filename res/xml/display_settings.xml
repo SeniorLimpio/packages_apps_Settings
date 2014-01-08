@@ -36,6 +36,23 @@
                 android:summary="@string/gamma_tuning_summary_head"
                 android:persistent="false" />
 
+        <PreferenceScreen
+            android:persistent="false"
+            android:key="screencolor_settings"
+            android:title="@string/display_color_title"
+            android:summary="@string/display_color_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.settings"
+                android:targetClass="com.android.settings.ScreenColorSettings" />
+        </PreferenceScreen>
+
+        <CheckBoxPreference
+                android:key="color_enhancement"
+                android:title="@string/color_enhancement_title"
+                android:summary="@string/color_enhancement_summary"
+                android:defaultValue="true" />
+
         <com.android.settings.WarnedListPreference
                 android:key="font_size"
                 android:title="@string/title_font_size"
@@ -84,12 +101,6 @@
                 android:title="@string/sunlight_enhancement_title"
                 android:summary="@string/sunlight_enhancement_summary"
                 android:dependency="adaptive_backlight"
-                android:defaultValue="true" />
-
-        <CheckBoxPreference
-                android:key="color_enhancement"
-                android:title="@string/color_enhancement_title"
-                android:summary="@string/color_enhancement_summary"
                 android:defaultValue="true" />
 
 
