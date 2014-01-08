@@ -33,6 +33,17 @@
                 android:fragment="com.android.settings.ldroid.DisplayRotation"
                 android:title="@string/display_rotation_title" />
 
+        <PreferenceScreen
+            android:persistent="false"
+            android:key="screencolor_settings"
+            android:title="@string/display_color_title"
+            android:summary="@string/display_color_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.settings"
+                android:targetClass="com.android.settings.ScreenColorSettings" />
+        </PreferenceScreen>
+
         <ListPreference
                 android:key="screen_timeout"
                 android:title="@string/screen_timeout"
