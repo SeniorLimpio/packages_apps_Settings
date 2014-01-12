@@ -15,6 +15,7 @@
  * limitations under the License.
  */
 
+<<<<<<< HEAD:src/com/android/settings/slim/quicksettings/QuickSettingsUtil.java
 package com.android.settings.slim.quicksettings;
 
 import static com.android.internal.util.slim.QSConstants.TILES_DEFAULT;
@@ -56,6 +57,7 @@ import static com.android.internal.util.slim.QSConstants.TILE_VOLUME;
 import static com.android.internal.util.slim.QSConstants.TILE_WIFI;
 import static com.android.internal.util.slim.QSConstants.TILE_WIFIAP;
 import static com.android.internal.util.slim.QSConstants.TILE_REBOOT;
+import static com.android.internal.util.liquid.QSConstants.TILE_FCHARGE;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -174,6 +176,9 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_SHAKE, R.string.title_tile_shake,
                 "com.android.systemui:drawable/ic_qs_shake_events"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_FCHARGE, R.string.title_tile_fcharge,
+                "com.android.systemui:drawable/ic_qs_fcharge_off"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {
@@ -226,6 +231,10 @@ public class QuickSettingsUtil {
             removeTile(TILE_TORCH);
         }
 
+        // Don't show the Fast charge tile if not supported by kernel
+        if (!DeviceUtils.fchargeEnabled(context)) {
+            removeTile(TILE_FCHARGE);
+        }
     }
 
     public static ArrayList<String> getAllDynamicTiles(Context context) {
