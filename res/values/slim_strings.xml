@@ -1136,7 +1136,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="noti_reminder_interval_3dot5s">3.5 second</string>
     <string name="noti_reminder_interval_4s">4 seconds</string>
 
-
     <!-- Recent panel -->
     <string name="recent_panel_category">Recent apps panel</string>
     <string name="recent_panel_scale_title">Size</string>

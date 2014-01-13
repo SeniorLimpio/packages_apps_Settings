@@ -63,6 +63,12 @@
         android:title="@string/xposed_framework_title"
         android:icon="@drawable/ic_launcher_white" />
 
+    <!-- BatterySaver -->
+    <PreferenceScreen
+        android:fragment="com.android.settings.limpio.BatterySaverSettings"
+        android:title="@string/battery_saver_title"
+        android:icon="@drawable/ic_settings_battery" />
+
     <!-- Propmodder -->
     <PreferenceScreen
         android:key="buildprop_modder"
