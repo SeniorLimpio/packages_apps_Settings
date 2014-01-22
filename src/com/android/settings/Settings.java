@@ -297,9 +297,11 @@ public class Settings extends PreferenceActivity
     public void onPause() {
         super.onPause();
 
-        if (mAttached) {
-            mAttached = false;
+        try {
             unregisterReceiver(mBatteryInfoReceiver);
+        } catch (IllegalArgumentException e) {
+            // Ignore (receiver didn't have time to register)
+        }
 
             ListAdapter listAdapter = getListAdapter();
             if (listAdapter instanceof HeaderAdapter) {
