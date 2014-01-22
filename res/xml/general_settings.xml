@@ -20,4 +20,9 @@
 
     </PreferenceCategory>
 
+    <PreferenceScreen
+        android:key="recents_panel"
+        android:fragment="com.android.settings.limpio.RecentsPanelSettings"
+        android:title="@string/recents_panel_settings_title" />
+
 </PreferenceScreen>
