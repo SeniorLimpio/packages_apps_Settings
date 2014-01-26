@@ -90,6 +90,13 @@
         android:title="@string/battery_saver_title"
         android:icon="@drawable/ic_settings_battery" />
 
+    <!-- HALO -->
+    <PreferenceScreen
+        android:id="@+id/halo_settings"
+        android:fragment="com.android.settings.limpio.Halo"
+        android:icon="@drawable/ic_settings_halo"
+        android:title="@string/halo_settings_title" />
+
     <!-- Init.d -->
     <PreferenceScreen
         android:id="@+id/initD"
