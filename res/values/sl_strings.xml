@@ -919,6 +919,8 @@
     <string name="ad_double_tap_summary">Turn screen off with double tap</string>
 
     <!-- Halo -->
+    <string name="halo_enabled_title">Enable HALO</string>
+    <string name="halo_enabled_summary">Completely enable or disable HALO</string>
     <string name="halo_settings_title">Halo</string>
     <string name="halo_behavior_title">Halo Behavior</string>
     <string name="halo_hide_title">Hide Halo after activity</string>
