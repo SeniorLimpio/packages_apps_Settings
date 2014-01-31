@@ -2205,5 +2205,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="philz_touch_title">Philz Touch Recovery</string>
     <string name="philz_touch_summary">Excellent custom recovery by Phil3759 on XDA</string>
 
+    <!-- Performance control -->
+    <string name="performance_settings">Performance control</string>
 
 </resources>
