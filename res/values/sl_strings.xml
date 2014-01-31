@@ -298,4 +298,7 @@
     <string name="default_sound_pack">Default (System)</string>
     <string name="error_pack_install">Error while installing the sound pack</string>
 
+    <!-- Performance control -->
+    <string name="performance_settings">Performance control</string>
+
 </resources>
