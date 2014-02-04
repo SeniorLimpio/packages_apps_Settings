@@ -24,4 +24,19 @@
         <attr name="unitsRight" format="string|reference" />
     </declare-styleable>
 
+    <declare-styleable name="SeekBarPreferenceChOS">
+        <attr name="minAD" format="integer" />
+	<attr name="smin" format="integer" />
+        <attr name="unitsLeft" format="string" />
+        <attr name="unitsRight" format="string" />
+	<attr name="interval" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="IntervalSeekBar">
+        <attr name="min" format="float" />
+        <attr name="max" format="float" />
+        <attr name="defaultValue" format="float" />
+        <attr name="digits" format="integer" />
+    </declare-styleable>
+
 </resources>

@@ -1,19 +1,19 @@
 /*
-* Copyright (C) 2013 The ChameleonOS Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-package com.android.settings.crdroid;
+ * Copyright (C) 2013 The ChameleonOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.android.settings.limpio;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -43,10 +43,10 @@ import java.util.List;
 import java.util.Set;
 
 /**
-* A preference that lists installed applications, with icons, as a multi choice list.
-*
-* @author Clark Scheff
-*/
+ * A preference that lists installed applications, with icons, as a multi choice list.
+ *
+ * @author Clark Scheff
+ */
 public class AppMultiSelectListPreference extends DialogPreference {
     private final List<MyApplicationInfo> mPackageInfoList = new ArrayList<MyApplicationInfo>();
     private CharSequence[] mEntries;
@@ -89,11 +89,11 @@ public class AppMultiSelectListPreference extends DialogPreference {
     }
 
     /**
-* Sets the value of the key. This should contain entries in
-* {@link #getEntryValues()}.
-*
-* @param values The values to set for the key.
-*/
+     * Sets the value of the key. This should contain entries in
+     * {@link #getEntryValues()}.
+     *
+     * @param values The values to set for the key.
+     */
     public void setValues(Set<String> values) {
         mValues.clear();
         mValues.addAll(values);
@@ -106,18 +106,18 @@ public class AppMultiSelectListPreference extends DialogPreference {
     }
 
     /**
-* Retrieves the current value of the key.
-*/
+     * Retrieves the current value of the key.
+     */
     public Set<String> getValues() {
         return mValues;
     }
 
     /**
-* Returns the index of the given value (in the entry values array).
-*
-* @param value The value whose index should be returned.
-* @return The index of the value, or -1 if not found.
-*/
+     * Returns the index of the given value (in the entry values array).
+     *
+     * @param value The value whose index should be returned.
+     * @return The index of the value, or -1 if not found.
+     */
     public int findIndexOfValue(String value) {
         if (value != null && mEntryValues != null) {
             for (int i = mEntryValues.length - 1; i >= 0; i--) {
@@ -235,7 +235,7 @@ public class AppMultiSelectListPreference extends DialogPreference {
 
         public static AppViewHolder createOrRecycle(LayoutInflater inflater, View convertView) {
             if (convertView == null) {
-                convertView = inflater.inflate(R.layout.ln_excluded_app_item, null);
+                convertView = inflater.inflate(R.layout.ad_excluded_app_item, null);
 
                 // Creates a ViewHolder and store references to the two children views
                 // we want to bind data to.
