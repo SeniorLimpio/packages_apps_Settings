@@ -2543,4 +2543,9 @@ selecting the profile in the future.</string>
     <!-- Device specific settings -->
     <string name="screen_off_gesture_settings_title">Screen off gestures</string>
 
+    <!-- Host File Manager -->
+    <string name="misc_tweaks_hfm">Hosts File Manager</string>
+    <string name="hfm_disable_ads_title">Disable Ads</string>
+    <string name="hfm_disable_ads_summary">Change hosts file to disable ads</string>
+
 </resources>
