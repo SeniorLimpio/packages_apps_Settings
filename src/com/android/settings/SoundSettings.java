@@ -42,6 +42,7 @@ import android.os.Vibrator;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
@@ -63,6 +64,8 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     /** If there is no setting in the provider, use this. */
     private static final int FALLBACK_EMERGENCY_TONE_VALUE = 0;
 
+    private static final String KEY_VOLUME_OVERLAY = "volume_overlay";
+    private static final String KEY_RING_MODE = "ring_mode";
     private static final String KEY_VIBRATE = "vibrate_when_ringing";
     private static final String KEY_RING_VOLUME = "ring_volume";
     private static final String KEY_MUSICFX = "musicfx";
@@ -74,7 +77,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_SOUND_SETTINGS = "sound_settings";
     private static final String KEY_LOCK_SOUNDS = "lock_sounds";
     private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
-    private static final String KEY_VOLUME_OVERLAY = "volume_overlay";
     private static final String KEY_RINGTONE = "ringtone";
     private static final String KEY_NOTIFICATION_SOUND = "notification_sound";
     private static final String KEY_CATEGORY_CALLS = "category_calls_and_notification";
@@ -93,6 +95,14 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
     private CheckBoxPreference mVibrateWhenRinging;
     private CheckBoxPreference mDtmfTone;
+    // Request code for power notification ringtone picker
+    private static final int REQUEST_CODE_POWER_NOTIFICATIONS_RINGTONE = 1;
+
+    // Used for power notification uri string if set to silent
+    private static final String POWER_NOTIFICATIONS_SILENT_URI = "silent";
+
+    private ListPreference mVolumeOverlay;
+    private ListPreference mRingMode;
     private CheckBoxPreference mSoundEffects;
     private CheckBoxPreference mHapticFeedback;
     private SeekBarPreference mVibrationDuration;
@@ -111,7 +121,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private Intent mDockIntent;
     private CheckBoxPreference mDockAudioMediaEnabled;
     private CheckBoxPreference mVolumeAdustSound;
-    private ListPreference mVolumeOverlay;
 
     private Vibrator mVib;
 

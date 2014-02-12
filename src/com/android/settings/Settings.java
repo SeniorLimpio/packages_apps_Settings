@@ -305,15 +305,14 @@ public class Settings extends PreferenceActivity
             // Ignore (receiver didn't have time to register)
         }
 
-            ListAdapter listAdapter = getListAdapter();
-            if (listAdapter instanceof HeaderAdapter) {
-                ((HeaderAdapter) listAdapter).pause();
-            }
-
-            mDevelopmentPreferences.unregisterOnSharedPreferenceChangeListener(
-                    mDevelopmentPreferencesListener);
-            mDevelopmentPreferencesListener = null;
+        ListAdapter listAdapter = getListAdapter();
+        if (listAdapter instanceof HeaderAdapter) {
+            ((HeaderAdapter) listAdapter).pause();
         }
+
+        mDevelopmentPreferences.unregisterOnSharedPreferenceChangeListener(
+                mDevelopmentPreferencesListener);
+        mDevelopmentPreferencesListener = null;
     }
 
     @Override
