@@ -60,16 +60,12 @@
     <!-- Additional L-Droid controls -->
     <header android:title="@string/header_category_rom_settings" />
 
-    <!-- Kernel Tweaker -->
+    <!-- Download centre -->
     <header
-        android:id="@+id/kernel_tweaker"
-        android:title="@string/kernel_tweaker_title"
-        android:icon="@drawable/ic_ldroid_performance" >
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetClass="com.dsht.kerneltweaker.MainActivity"
-            android:targetPackage="com.dsht.kerneltweaker" />
-	</header>
+        android:key="download_center"
+        android:fragment="com.android.settings.ldroid.Download"
+        android:title="@string/download_category"
+        android:icon="@drawable/ic_ldroid_download" />
 
     <!-- Theme settings -->
     <header
@@ -243,6 +239,17 @@
         android:fragment="com.android.settings.ldroid.AdvancedSettings"
         android:icon="@drawable/ic_settings_advanced"
         android:title="@string/advanced_options_title" />
+
+    <!-- Kernel Tweaker -->
+    <header
+        android:id="@+id/kernel_tweaker"
+        android:title="@string/kernel_tweaker_title"
+        android:icon="@drawable/ic_ldroid_performance" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.dsht.kerneltweaker.MainActivity"
+            android:targetPackage="com.dsht.kerneltweaker" />
+	</header>
 
     <!-- About Device -->
     <header
