@@ -51,6 +51,13 @@
         android:title="@string/general_settings_title"
         android:icon="@drawable/ic_limpio_general" />
 
+    <Preference
+        android:key="download_center"
+        android:icon="@drawable/ic_crom_download"
+        android:fragment="com.android.settings.limpio.Download"
+        android:layout="@layout/preference_download"
+        android:title="@string/download_category" />
+
     <!-- Advanced settings -->
     <PreferenceCategory 
         android:title="@string/advanced_category_title" />

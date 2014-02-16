@@ -1998,6 +1998,8 @@
                   android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity android:name="com.brewcrewfoo.performance.activities.GovSetActivity"/>
 
+        <activity android:name=".crom.Download" />
+
         <receiver android:name="com.brewcrewfoo.performance.service.BootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
