@@ -69,9 +69,6 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
 	// Need to use AOKP Custom system animation
         mContentRes = getActivity().getContentResolver(); 
 
-	// Need to use AOKP Custom system animation
-        mContentRes = getActivity().getContentResolver(); 
-
         // Prepare help url and enable menu if necessary
         int helpResource = getHelpResource();
         if (helpResource != 0) {
