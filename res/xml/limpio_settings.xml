@@ -8,7 +8,8 @@
     <PreferenceScreen
         android:key="omni_features"
         android:fragment="com.android.settings.limpio.OmniFeatures"
-        android:title="@string/omni_features_title" />
+        android:title="@string/omni_features_title"
+        android:icon="@drawable/ic_limpio_omni" />
 
     <!-- Animations settings -->
     <PreferenceScreen
@@ -20,6 +21,15 @@
     <PreferenceScreen
         android:key="general_settings"
         android:fragment="com.android.settings.limpio.GeneralSettings"
-        android:title="@string/general_settings_title" />
+        android:title="@string/general_settings_title"
+        android:icon="@drawable/ic_limpio_general" />
+
+    <!-- Wakelock Blocker -->
+    <header
+        android:id="@+id/wakelock_blocker"
+        android:fragment="com.android.settings.limpio.WakeLockBlocker"
+        android:icon="@drawable/ic_settings_wakelock_blocker"
+        android:layout="@layout/preference_wakelockblocker"
+        android:title="@string/wakelock_blocker" />
 
 </PreferenceScreen>
