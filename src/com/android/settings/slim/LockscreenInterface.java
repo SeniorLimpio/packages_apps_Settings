@@ -16,14 +16,19 @@
 
 package com.android.settings.slim;
 
+import android.app.ActivityManager;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.admin.DevicePolicyManager;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.ListPreference;
 import android.preference.PreferenceScreen;
 import android.preference.PreferenceCategory;
 import android.provider.Settings;
@@ -33,9 +38,13 @@ import android.widget.Toast;
 import com.android.internal.util.slim.DeviceUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
+import com.android.settings.ChooseLockSettingsHelper;
 
 import java.io.File;
 import java.io.IOException;
+
+import com.android.settings.crdroid.SeekBarPreferenceCHOS;
 
 public class LockscreenInterface extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -46,10 +55,14 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String PREF_LOCKSCREEN_EIGHT_TARGETS = "lockscreen_eight_targets";
     private static final String PREF_LOCKSCREEN_SHORTCUTS = "lockscreen_shortcuts";
     private static final String PREF_LOCKSCREEN_TORCH = "lockscreen_torch";
+    private static final String KEY_SEE_THROUGH = "see_through";
+    private static final String KEY_BLUR_RADIUS = "lockscreen_blur_radius";
 
     private CheckBoxPreference mLockscreenEightTargets;
     private CheckBoxPreference mGlowpadTorch;
     private Preference mShortcuts;
+    private CheckBoxPreference mSeeThrough;
+    private SeekBarPreferenceCHOS mBlurRadius;
 
     private boolean mCheckPreferences;
 
@@ -88,6 +101,17 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                 Settings.System.LOCKSCREEN_GLOWPAD_TORCH, 0) == 1);
         mGlowpadTorch.setOnPreferenceChangeListener(this);
 
+        // Lockscreen Blur
+        mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_THROUGH);
+
+        // Blur radius
+        mBlurRadius = (SeekBarPreferenceCHOS) findPreference(KEY_BLUR_RADIUS);
+        if (mBlurRadius != null) {
+            mBlurRadius.setValue(Settings.System.getInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_BLUR_RADIUS, 12));
+            mBlurRadius.setOnPreferenceChangeListener(this);
+        }
+
         if (!DeviceUtils.deviceSupportsTorch(getActivity().getApplicationContext())) {
             prefs.removePreference(mGlowpadTorch);
         }
@@ -111,6 +135,25 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     }
 
     @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        final String key = preference.getKey();
+
+        if (KEY_ENABLE_WIDGETS.equals(key)) {
+           mLockUtils.setWidgetsEnabled(mEnableKeyguardWidgets.isChecked());
+           return true;
+        } else if (KEY_ENABLE_CAMERA.equals(key)) {
+            mLockUtils.setCameraEnabled(mEnableCameraWidget.isChecked());
+            return true;
+	} else if (preference == mSeeThrough) {
+           Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_SEE_THROUGH,
+                   mSeeThrough.isChecked() ? 1 : 0);
+        }
+ 
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+  
+
+    @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         if (!mCheckPreferences) {
             return false;
@@ -122,6 +165,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LOCKSCREEN_GLOWPAD_TORCH,
                     (Boolean) objValue ? 1 : 0);
+            return true;
+        } else if (preference == mBlurRadius) {
+                    Settings.System.putInt(getContentResolver(),
+            Settings.System.LOCKSCREEN_BLUR_RADIUS, (Integer) objValue);
             return true;
         }
         return false;
