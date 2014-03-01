@@ -60,6 +60,8 @@ public final class BluetoothPairingDialog extends AlertActivity implements
     private String mPairingKey;
     private EditText mPairingView;
     private Button mOkButton;
+    private boolean mIsSecurityHigh;
+    private boolean mIsButtonPressed;
 
     /**
      * Dismiss the dialog if the bond state changes to bonded or none,
@@ -88,6 +90,8 @@ public final class BluetoothPairingDialog extends AlertActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mIsButtonPressed = false;
 
         Intent intent = getIntent();
         if (!intent.getAction().equals(BluetoothDevice.ACTION_PAIRING_REQUEST))
@@ -352,6 +356,11 @@ public final class BluetoothPairingDialog extends AlertActivity implements
     }
 
     public void onClick(DialogInterface dialog, int which) {
+        if(mIsButtonPressed)
+        {
+            Log.e(TAG, "button already pressed");
+            return;
+        }
         switch (which) {
             case BUTTON_POSITIVE:
                 if (mPairingView != null) {
@@ -359,9 +368,11 @@ public final class BluetoothPairingDialog extends AlertActivity implements
                 } else {
                     onPair(null);
                 }
+                mIsButtonPressed = true;
                 break;
 
             case BUTTON_NEGATIVE:
+                mIsButtonPressed = true;
             default:
                 onCancel();
                 break;
