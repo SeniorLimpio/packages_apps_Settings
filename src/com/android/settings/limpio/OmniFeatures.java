@@ -16,7 +16,7 @@
  *
  */
 
-package com.android.settings.temasek;
+package com.android.settings.limpio;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
