@@ -56,4 +56,10 @@
 
     </PreferenceCategory>
 
+    <!-- Network usage stats -->
+    <PreferenceScreen
+        android:key="network_usage_stats"
+        android:fragment="com.android.settings.limpio.NetworkUsageStats"
+        android:title="@string/status_bar_network_cat" />
+
 </PreferenceScreen>
