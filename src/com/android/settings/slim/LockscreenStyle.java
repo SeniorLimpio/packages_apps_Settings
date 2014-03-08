@@ -78,6 +78,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
             "lockscreen_misc_color";
 
     private static final String KEY_SEE_THROUGH = "see_through";
+    private static final String KEY_BLUR_RADIUS = "blur_radius";
 
     private String mDefault;
 
@@ -87,6 +88,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
     private ColorPickerPreference mLockColor;
     private ColorPickerPreference mDotsColor;
     private CheckBoxPreference mSeeThrough;
+    private SeekBarPreference mBlurRadius;
     private ColorPickerPreference mTargetsColor;
     private ColorPickerPreference mMiscColor;
 
@@ -182,12 +184,19 @@ public class LockscreenStyle extends SettingsPreferenceFragment
                 R.string.lockscreen_misc_color_summary), miscColor);
         mMiscColor.setNewPreviewColor(miscColor);
 
-        // lockscreen see through
+        // lock screen see through
         mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_THROUGH);
         if (mSeeThrough != null) {
             mSeeThrough.setChecked(Settings.System.getInt(getContentResolver(),
                     Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
         }
+
+        // lock screen blur radius
+        mBlurRadius = (SeekBarPreference) findPreference(KEY_BLUR_RADIUS);
+        mBlurRadius.setProgress(Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKSCREEN_BLUR_RADIUS, 12));
+        mBlurRadius.setOnPreferenceChangeListener(this);
+        mBlurRadius.setEnabled(mSeeThrough.isChecked() && mSeeThrough.isEnabled());
 
         // No lock-slider is available
         boolean dotsDisabled = new LockPatternUtils(getActivity()).isSecure()
@@ -298,6 +307,11 @@ public class LockscreenStyle extends SettingsPreferenceFragment
             setPreferenceSummary(preference,
                     getResources().getString(R.string.lockscreen_dots_color_summary), val);
             return true;
+        } else if (preference == mBlurRadius) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_BLUR_RADIUS,
+                    (Integer) newValue);
+            return true;
         } else if (preference == mTargetsColor) {
             int val = Integer.valueOf(String.valueOf(newValue));
             Settings.Secure.putInt(getContentResolver(),
@@ -322,6 +336,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LOCKSCREEN_SEE_THROUGH,
                     mSeeThrough.isChecked() ? 1 : 0);
+            mBlurRadius.setEnabled(mSeeThrough.isChecked() && mSeeThrough.isEnabled());
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
