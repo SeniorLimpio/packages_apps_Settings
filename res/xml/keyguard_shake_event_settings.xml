@@ -31,4 +31,10 @@
         android:key="shake_event_z"
         android:title="@string/shake_event_z_title" />
 
+    <PreferenceScreen
+        android:key="gesture_anywhere"
+        android:title="@string/gesture_anywhere_title"
+        android:summary="@string/gesture_anywhere_summary"
+        android:fragment="com.android.settings.liquid.gestureanywhere.GestureAnywhereSettings" />
+
 </PreferenceScreen>
