@@ -583,7 +583,6 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         updateForceRtlOptions();
         updateWifiDisplayCertificationOptions();
         updateRootAccessOptions();
-        updateDevelopmentShortcutOptions();
     }
 
     private void resetDevelopmentShortcutOptions() {
@@ -597,10 +596,6 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
                 mDevelopmentShortcut.isChecked() ? 1 : 0);
     }
 
-    private void updateDevelopmentShortcutOptions() {
-        mAdvancedReboot.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
-                Settings.Secure.DEVELOPMENT_SHORTCUT, 0) != 0);
-    }
 
     private void resetDangerousOptions() {
         mDontPokeProperties = true;
