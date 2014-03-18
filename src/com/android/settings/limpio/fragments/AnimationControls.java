@@ -1,4 +1,4 @@
-package com.android.settings.temasek.fragments;
+package com.android.settings.limpio.fragments;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,10 +10,10 @@ import android.preference.PreferenceScreen;
 import android.preference.CheckBoxPreference;
 import android.provider.Settings;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.temasek.AnimBarPreference;
+import com.android.settings.limpio.AnimBarPreference;
 import com.android.settings.R;
 
-import com.android.internal.util.crdroid.AwesomeAnimationHelper;
+import com.android.internal.util.limpio.AwesomeAnimationHelper;
 
 import java.util.Arrays;
 

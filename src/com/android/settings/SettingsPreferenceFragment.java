@@ -51,8 +51,8 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
 
     private String mHelpUrl;
 
-    // Need to use AOKP Custom system animation
-    protected ContentResolver mContentRes; 
+    //Needed for Lockscreen Notifications
+    protected Context mContext;
 
     // Need to use AOKP Custom system animation
     protected ContentResolver mContentRes; 
@@ -63,6 +63,8 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+
+        mContext = getActivity().getApplicationContext();
 
 	// Need to use AOKP Custom system animation
         mContentRes = getActivity().getContentResolver(); 
@@ -330,11 +332,6 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
                     + ")");
             return false;
         }
-    }
-
-    // Need to AOKP Custom system animation
-    public void setTitle(int resId) {
-        getActivity().setTitle(resId);
     }
 
     // Need to AOKP Custom system animation
