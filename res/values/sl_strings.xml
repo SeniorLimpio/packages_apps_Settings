@@ -18,4 +18,7 @@
     <string name="development_shortcut_title">Development shortcut</string>
     <string name="development_shortcut_summary">Enable \'wipe data\' and \'force close\' options in notification area and recent apps list</string>
 
+    <!-- Lockscreen battery ring -->
+    <string name="battery_around_lockscreen_ring">Battery around unlock ring</string>
+
 </resources>
