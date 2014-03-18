@@ -27,16 +27,16 @@ limitations under the License.
         android:dialogTitle="@string/halo_state_title"
         android:title="@string/halo_state_title"
         android:summary="@string/halo_state_summary"
-        android:entries="@array/entries_halo_state"
         android:dependency="halo_enabled"
+        android:entries="@array/entries_halo_state"
         android:entryValues="@array/values_halo_state" />
 
     <CheckBoxPreference
         android:key="halo_hide"
         android:title="@string/halo_hide_title"
         android:summary="@string/halo_hide_summary"
-        android:defaultValue="false"
-        android:dependency="halo_enabled" />
+        android:dependency="halo_enabled"
+        android:defaultValue="false" />
 
     <CheckBoxPreference
         android:key="halo_ninja"
@@ -52,8 +52,8 @@ limitations under the License.
         android:title="@string/halo_notification_count_title"
         android:summary="@string/halo_notification_count_summary"
         android:entries="@array/entries_halo_notification_count"
-        android:dependency="halo_enabled"
-        android:entryValues="@array/values_halo_notification_count" />
+        android:entryValues="@array/values_halo_notification_count"
+        android:dependency="halo_enabled" />
 
     <CheckBoxPreference
         android:key="halo_msgbox"
@@ -72,8 +72,8 @@ limitations under the License.
         android:key="halo_unlock_ping"
         android:title="@string/halo_unlock_ping_title"
         android:summary="@string/halo_unlock_ping_summary"
-        android:defaultValue="false"
-        android:dependency="halo_enabled" />
+        android:dependency="halo_enabled"
+        android:defaultValue="false" />
 
     <PreferenceCategory
         android:key="category_halo_style_options"
@@ -85,8 +85,8 @@ limitations under the License.
             android:title="@string/halo_size_title"
             android:summary="@string/halo_size_summary"
             android:entries="@array/entries_halo_size"
-            android:dependency="halo_enabled"
-            android:entryValues="@array/values_halo_size" />
+            android:entryValues="@array/values_halo_size"
+            android:dependency="halo_enabled" />
 
         <CheckBoxPreference
             android:key="halo_colors"
