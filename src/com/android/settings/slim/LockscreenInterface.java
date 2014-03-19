@@ -138,13 +138,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         final String key = preference.getKey();
 
-        if (KEY_ENABLE_WIDGETS.equals(key)) {
-           mLockUtils.setWidgetsEnabled(mEnableKeyguardWidgets.isChecked());
-           return true;
-        } else if (KEY_ENABLE_CAMERA.equals(key)) {
-            mLockUtils.setCameraEnabled(mEnableCameraWidget.isChecked());
-            return true;
-	} else if (preference == mSeeThrough) {
+        if (preference == mSeeThrough) {
            Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_SEE_THROUGH,
                    mSeeThrough.isChecked() ? 1 : 0);
         }
