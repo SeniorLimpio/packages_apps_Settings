@@ -14,6 +14,10 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- About phone screen, LimpioDroid version -->
+    <string name="limpiodroid_version_title">Limpio Droid version</string>
+    <string name="limpiodroid_version_default">V1.0.0</string>
+
     <!--  development shortcut -->
     <string name="development_shortcut_title">Development shortcut</string>
     <string name="development_shortcut_summary">Enable \'wipe data\' and \'force close\' options in notification area and recent apps list</string>
@@ -38,5 +42,8 @@
     <string name="summary_animation_no_override">Prevent apps from overriding transitions.</string>  
     <string name="animation_duration_default">Default</string>
     <string name="header_summary_animation">@null</string>
+
+    <!-- QS Power menu -->
+    <string name="title_tile_power">Power Menu</string>  
 
 </resources>
