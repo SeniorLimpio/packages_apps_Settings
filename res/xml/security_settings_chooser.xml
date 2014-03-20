@@ -60,22 +60,6 @@
             android:title="@string/lockscreen_widgets_title"/>
 
         <CheckBoxPreference
-            android:key="see_through"
-            android:title="@string/see_through_title"
-            android:summary="@string/see_through_summary" />
-
-        <com.android.settings.crdroid.SeekBarPreferenceCHOS
-            android:key="lockscreen_blur_radius"
-            android:title="@string/blur_radius_title"
-            android:summary="@string/blur_radius_summary"
-            android:max="25"
-            settings:minimun="0"
-            settings:unitsLeft=""
-            settings:unitsRight=""
-            android:persistent="false"
-            android:dependency="see_through" />
-
-        <CheckBoxPreference
             android:key="menu_unlock"
             android:title="@string/unlock_menu_unlock_title"
             android:summary="@string/unlock_menu_unlock_summary" />
