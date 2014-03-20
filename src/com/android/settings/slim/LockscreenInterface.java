@@ -35,6 +35,7 @@ import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.android.internal.widget.LockPatternUtils;
 import com.android.internal.util.slim.DeviceUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -100,10 +101,8 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                 getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.LOCKSCREEN_GLOWPAD_TORCH, 0) == 1);
         mGlowpadTorch.setOnPreferenceChangeListener(this);
-
         // Lockscreen Blur
         mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_THROUGH);
-
         // Blur radius
         mBlurRadius = (SeekBarPreferenceCHOS) findPreference(KEY_BLUR_RADIUS);
         if (mBlurRadius != null) {
@@ -133,19 +132,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     public void onPause() {
         super.onPause();
     }
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        final String key = preference.getKey();
-
-        if (preference == mSeeThrough) {
-           Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_SEE_THROUGH,
-                   mSeeThrough.isChecked() ? 1 : 0);
-        }
- 
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
-  
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
