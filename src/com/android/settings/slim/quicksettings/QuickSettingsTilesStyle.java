@@ -39,7 +39,10 @@ import com.android.internal.util.slim.DeviceUtils;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
+import com.android.internal.util.fusion.DeviceUtils;
 import com.android.settings.widget.SeekBarPreference;
+import com.dragon.fusionbox.preference.SettingsPreferenceFragment;
+import com.dragon.fusionbox.fragments.main.QuickSettingsUtil;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -165,7 +168,7 @@ public class QuickSettingsTilesStyle extends SettingsPreferenceFragment implemen
             mQsTileAlpha.setOnPreferenceChangeListener(this);
         }
 
-        mTilesPerRow = (ListPreference) prefs.findPreference(PREF_TILES_PER_ROW);
+        mTilesPerRow = (ListPreference) findPreference(PREF_TILES_PER_ROW);
         int tilesPerRow = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.QUICK_TILES_PER_ROW, 3);
         mTilesPerRow.setValue(String.valueOf(tilesPerRow));
@@ -207,6 +210,18 @@ public class QuickSettingsTilesStyle extends SettingsPreferenceFragment implemen
              default:
                 return super.onContextItemSelected(item);
         }
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        // If we didn't handle it, let preferences handle it.
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        QuickSettingsUtil.updateAvailableTiles(getActivity());
     }
 
     @Override
@@ -261,11 +276,6 @@ public class QuickSettingsTilesStyle extends SettingsPreferenceFragment implemen
             return true;
         }
         return false;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
     }
 
     private void showDialogInner(int id) {
