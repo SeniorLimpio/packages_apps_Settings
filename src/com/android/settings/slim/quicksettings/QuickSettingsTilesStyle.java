@@ -22,6 +22,7 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.content.ContentResolver;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -39,10 +40,8 @@ import com.android.internal.util.slim.DeviceUtils;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
-import com.android.internal.util.fusion.DeviceUtils;
 import com.android.settings.widget.SeekBarPreference;
-import com.dragon.fusionbox.preference.SettingsPreferenceFragment;
-import com.dragon.fusionbox.fragments.main.QuickSettingsUtil;
+import com.android.settings.slim.quicksettings.QuickSettingsUtil;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 

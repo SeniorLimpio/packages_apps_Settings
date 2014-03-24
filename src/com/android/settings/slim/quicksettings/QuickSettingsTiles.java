@@ -339,7 +339,7 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
             @Override
             public void onDelete(int index) {
                 ArrayList<String> tiles = QuickSettingsUtil.getTileListFromString(
-                        QuickSettingsUtil.getCurrentTiles(getActivity()));
+                        QuickSettingsUtil.getCurrentTiles(getActivity(), mConfigRibbon));
                 String tileIndex = tiles.get(index);
                 if (tileIndex.contains(TILE_CUSTOM)) {
                     QuickSettingsUtil.deleteCustomTile(
@@ -351,7 +351,7 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
                 tiles.remove(index);
                 QuickSettingsUtil.saveCurrentTiles(getActivity(),
                         mDragView.getChildCount() == 1 ?
-                        QuickSettingsUtil.getCurrentTiles(getActivity(), mConfigRibbon));
+                        "" : QuickSettingsUtil.getTileStringFromList(tiles), mConfigRibbon);
                 if (mDragView.getChildCount() == 1) {
                     showDialogInner(DLG_DISABLED);
                 }
