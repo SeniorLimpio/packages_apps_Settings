@@ -498,4 +498,3 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         return ab.create();
     }
 }
-
