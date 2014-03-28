@@ -958,6 +958,8 @@
     <string name="halo_bubble_color_summary">Requires a systemui restart</string>
     <string name="halo_number_text_color_title">Notificaton number text color</string>
     <string name="halo_number_container_color_title">Notificaton number bubble color</string>
+    <string name="halo_ninja_title">Ninja mode</string>
+    <string name="halo_ninja_summary">Halo will disappear completely when empty</string>
 
     <!-- Label for are-halo-notifications-allowed checkbox in app details [CHAR LIMIT=20] -->
     <string name="app_halo_label_black">Blacklist from HALO</string>
