@@ -39,6 +39,7 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
     private static final String RAM_BAR_COLOR_APP_MEM = "ram_bar_color_app_mem";
     private static final String RAM_BAR_COLOR_CACHE_MEM = "ram_bar_color_cache_mem";
     private static final String RAM_BAR_COLOR_TOTAL_MEM = "ram_bar_color_total_mem";
+    private static final String CIRCLE_MEM_BUTTON = "circle_mem_button";
 
     private static final int MENU_RESET = Menu.FIRST;
     private static final int MENU_HELP = MENU_RESET + 1; 
@@ -54,6 +55,7 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
     private ColorPickerPreference mRamBarAppMemColor;
     private ColorPickerPreference mRamBarCacheMemColor;
     private ColorPickerPreference mRamBarTotalMemColor;
+    private ListPreference mCircleMemButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -82,7 +84,14 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
         if (recentClearAllPosition != null) {
              mRecentClearAllPosition.setValue(recentClearAllPosition);
         }
-        mRecentClearAllPosition.setOnPreferenceChangeListener(this);    
+        mRecentClearAllPosition.setOnPreferenceChangeListener(this);
+
+        mCircleMemButton = (ListPreference) findPreference(CIRCLE_MEM_BUTTON);
+        int circleStatus = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.CIRCLE_MEM_BUTTON, 4);
+        mCircleMemButton.setValue(String.valueOf(clearStatus));
+        mCircleMemButton.setSummary(mCircleMemButton.getEntry());
+        mCircleMemButton.setOnPreferenceChangeListener(this);
 
         mRamBarMode = (ListPreference) prefSet.findPreference(RAM_BAR_MODE);
         int ramBarMode = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
@@ -168,6 +177,13 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
             String value = (String) newValue;
             Settings.System.putString(getActivity().getContentResolver(), 
                  Settings.System.CLEAR_RECENTS_BUTTON_LOCATION, value);
+            return true;
+        } else if (preference == mCircleMemButton) {
+            int value = Integer.valueOf((String) objValue);
+            int index = mCircleMemButton.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.CIRCLE_MEM_BUTTON, value);
+            mCircleMemButton.setSummary(mCircleMemButton.getEntries()[index]);
             return true;
         } else if (preference == mRamBarMode) {
             int ramBarMode = Integer.valueOf((String) newValue);

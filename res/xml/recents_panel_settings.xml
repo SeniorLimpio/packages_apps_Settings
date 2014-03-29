@@ -44,6 +44,15 @@
             android:defaultValue="2"
             android:dependency="recent_menu_clear_all" />
 
+    <ListPreference
+        android:key="circle_mem_button"
+        android:title="@string/circle_memory_indicator_title"
+        android:dialogTitle="@string/circle_memory_indicator_location_title"
+        android:entries="@array/circle_recents_entries"
+        android:entryValues="@array/circle_recents_values"
+        android:summary="@string/circle_memory_indicator_summary"
+        android:defaultValue="0" />
+
     <PreferenceCategory
         android:key="ram_bar_mode_cat"
         android:title="@string/ram_bar_mode_title">

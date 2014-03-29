@@ -281,26 +281,6 @@
     <string name="progressbar_decelerate">Decelerate</string>
     <string name="progressbar_reset_message">Reset progress bar style to default?</string>
 
-    <!-- Recents RAM bar -->
-    <string name="ram_bar_title">Recents RAM bar</string>
-    <string name="ram_bar_summary">Enables and customize recent apps display</string>
-    <string name="ram_bar_note_title">Note</string>
-    <string name="ram_bar_note_summary">This RAM bar shows the actual android memory (RAM) utilization. Please note that having cached apps helps your device open apps much faster. For further explanations on how android memory (RAM) management works.</string>
-    <string name="ram_bar_mode_title">Recents RAM bar mode</string>
-    <string name="ram_bar_mode_dialog_title">Show on recents RAM bar</string>
-    <string name="ram_bar_none">None</string>
-    <string name="ram_bar_apps">Applications</string>
-    <string name="ram_bar_cache">Applications and cache</string>
-    <string name="ram_bar_other">Applications, cache and other</string>
-    <string name="ram_bar_color_app_mem_color">Applications RAM color</string>
-    <string name="ram_bar_color_cache_mem_color">Cache RAM color</string>
-    <string name="ram_bar_color_total_mem_color">Other RAM color</string>
-    <string name="ram_bar_color_enabled">Enabled</string>
-    <string name="ram_bar_color_disabled">Disabled</string>
-    <string name="ram_bar_button_reset">Reset colors</string>
-    <string name="ram_bar_reset">Reset</string>
-    <string name="ram_bar_reset_message">Reset RAM bar style to default?</string>
-
     <!-- Sound themes -->
     <string name="sound_packages_title">Sound packs</string>
     <string name="install_sound_pack_title">Install sound pack</string>
@@ -546,6 +526,12 @@
     <string name="recent_clear_all_button_location_top_right">Top right</string>
     <string name="recent_clear_all_button_location_bottom_left">Bottom left</string>
     <string name="recent_clear_all_button_location_bottom_right">Bottom right</string>
+
+    <!-- Circle Ram Indicator -->
+    <string name="circle_memory_indicator_title">Circle Memory indicator</string>
+    <string name="circle_memory_indicator_summary">Show a memory indicator within the recent applications view</string>
+    <string name="circle_memory_indicator_location_title">Memory indicator position</string>
+
 
     <!-- Network usage stats -->
     <string name="status_bar_network_cat">Network traffic meter</string>
