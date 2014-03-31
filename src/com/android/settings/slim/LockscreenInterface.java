@@ -56,14 +56,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String PREF_LOCKSCREEN_EIGHT_TARGETS = "lockscreen_eight_targets";
     private static final String PREF_LOCKSCREEN_SHORTCUTS = "lockscreen_shortcuts";
     private static final String PREF_LOCKSCREEN_TORCH = "lockscreen_torch";
-    private static final String KEY_SEE_THROUGH = "see_through";
-    private static final String KEY_BLUR_RADIUS = "lockscreen_blur_radius";
 
     private CheckBoxPreference mLockscreenEightTargets;
     private CheckBoxPreference mGlowpadTorch;
     private Preference mShortcuts;
-    private CheckBoxPreference mSeeThrough;
-    private SeekBarPreferenceCHOS mBlurRadius;
 
     private boolean mCheckPreferences;
 
@@ -102,17 +98,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                 Settings.System.LOCKSCREEN_GLOWPAD_TORCH, 0) == 1);
         mGlowpadTorch.setOnPreferenceChangeListener(this);
 
-        // Lockscreen Blur
-        mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_THROUGH);
-     
-        // Blur radius
-        mBlurRadius = (SeekBarPreferenceCHOS) findPreference(KEY_BLUR_RADIUS);
-        if (mBlurRadius != null) {
-            mBlurRadius.setValue(Settings.System.getInt(getContentResolver(),
-                    Settings.System.LOCKSCREEN_BLUR_RADIUS, 12));
-            mBlurRadius.setOnPreferenceChangeListener(this);
-        }
-
         if (!DeviceUtils.deviceSupportsTorch(getActivity().getApplicationContext())) {
             prefs.removePreference(mGlowpadTorch);
         }
@@ -136,18 +121,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        final String key = preference.getKey();
-
-        if (preference == mSeeThrough) {
-            Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_SEE_THROUGH,
-                    mSeeThrough.isChecked() ? 1 : 0);
-        }
-  
-          return super.onPreferenceTreeClick(preferenceScreen, preference);
-      }
-
-    @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         if (!mCheckPreferences) {
             return false;
@@ -159,10 +132,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LOCKSCREEN_GLOWPAD_TORCH,
                     (Boolean) objValue ? 1 : 0);
-            return true;
-        } else if (preference == mBlurRadius) {
-                    Settings.System.putInt(getContentResolver(),
-            Settings.System.LOCKSCREEN_BLUR_RADIUS, (Integer) objValue);
             return true;
 	}
 
