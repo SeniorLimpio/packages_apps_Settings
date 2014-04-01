@@ -17,27 +17,39 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lock_screen_title" >
 
-    <CheckBoxPreference
-        android:key="lockscreen_eight_targets"
-        android:title="@string/lockscreen_eight_targets_title"
-        android:summary="@string/lockscreen_eight_targets_summary" />
+    <PreferenceCategory
+        android:key="general_category"
+        android:title="@string/general_category_title">
 
-    <Preference
-        android:fragment="com.android.settings.slim.LockscreenTargets"
-        android:key="lockscreen_targets"
-        android:summary="@string/lockscreen_target_summary"
-        android:title="@string/lockscreen_target_title" />
+	<CheckBoxPreference
+	        android:key="lockscreen_wallpaper"
+	        android:title="@string/lockscreen_wallpaper" />
 
-    <PreferenceScreen
-             android:key="lockscreen_shortcuts"
-             android:fragment="com.android.settings.slim.dslv.ButtonsListViewSettings"
-             android:summary="@string/lockscreen_shortcuts_summary"
-             android:title="@string/lockscreen_shortcuts_title">
-         <extra android:name="buttonMode" android:value="4" />
-         <extra android:name="maxAllowedButtons" android:value="5" />
-         <extra android:name="disableLongpress" android:value="true" />
-         <extra android:name="useAppPickerOnly" android:value="true" />
-         <extra android:name="fragment" android:value="com.android.settings.slim.fragments.LockscreenShortcutFragment" />
+        <Preference
+	        android:key="select_lockscreen_wallpaper"
+        	android:title="@string/select_wallpaper" />
+
+	<CheckBoxPreference
+		android:key="lockscreen_eight_targets"
+	        android:title="@string/lockscreen_eight_targets_title"
+		android:summary="@string/lockscreen_eight_targets_summary" />
+
+	<Preference
+        	android:fragment="com.android.settings.slim.LockscreenTargets"
+        	android:key="lockscreen_targets"
+        	android:summary="@string/lockscreen_target_summary"
+        	android:title="@string/lockscreen_target_title" />
+
+	<PreferenceScreen
+        	android:key="lockscreen_shortcuts"
+        	android:fragment="com.android.settings.slim.dslv.ButtonsListViewSettings"
+        	android:summary="@string/lockscreen_shortcuts_summary"
+        	android:title="@string/lockscreen_shortcuts_title">
+	         <extra android:name="buttonMode" android:value="4" />
+        	 <extra android:name="maxAllowedButtons" android:value="5" />
+        	 <extra android:name="disableLongpress" android:value="true" />
+        	 <extra android:name="useAppPickerOnly" android:value="true" />
+        	 <extra android:name="fragment" android:value="com.android.settings.slim.fragments.LockscreenShortcutFragment" />
      </PreferenceScreen>
 
     <CheckBoxPreference
@@ -49,5 +61,7 @@
             android:title="@string/lockscreen_notifications"
             android:fragment="com.android.settings.crdroid.LockscreenNotifications"
             android:summary="@string/lockscreen_notifications_summary" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
