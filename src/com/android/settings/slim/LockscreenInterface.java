@@ -69,8 +69,6 @@ import com.android.internal.policy.IKeyguardService;
 import java.io.File;
 import java.io.IOException;
 
-import com.android.settings.crdroid.SeekBarPreferenceCHOS;
-
 public class LockscreenInterface extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 

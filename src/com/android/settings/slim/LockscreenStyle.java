@@ -57,7 +57,6 @@ import com.android.internal.policy.IKeyguardService;
 import com.android.internal.widget.LockPatternUtils;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
-import com.android.settings.crdroid.SeekBarPreferenceCHOS;
 
 import java.io.File;
 import java.io.IOException;
