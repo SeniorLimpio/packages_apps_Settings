@@ -14,7 +14,7 @@
     <PreferenceScreen
         android:key="animations_settings"
         android:fragment="com.android.settings.limpio.LimpioAnimationsSettings"
-        android:title="@string/limpio_animations_settings_title"
+        android:title="@string/screen_and_animations_title"
         android:icon="@drawable/ic_limpio_animations" />
 
     <PreferenceScreen

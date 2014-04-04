@@ -50,7 +50,7 @@
             android:title="@string/ime_duration_title"
             android:summary="@string/animation_duration_summary"
             android:max="100"
-            settings:minimum="0"
+            settings:min="0"
             settings:interval="1"
             settings:unitsLeft=""
             settings:unitsRight=" * 15ms"

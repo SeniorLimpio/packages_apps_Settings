@@ -146,7 +146,6 @@ public class LimpioAnimationsSettings extends SettingsPreferenceFragment impleme
             Toast.makeText(getActivity(), "Toast animation test!!!",
                     Toast.LENGTH_SHORT).show();
         }
-
         return true;
     }
 }

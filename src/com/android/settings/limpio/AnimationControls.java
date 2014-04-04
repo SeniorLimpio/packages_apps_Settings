@@ -39,7 +39,7 @@ import com.android.settings.R;
 
 import com.android.settings.crdroid.SeekBarPreferenceChOS;
 
-import com.android.internal.util.limpio.AwesomeAnimationHelper;
+import com.android.internal.util.limpio.AnimationHelper;
 
 public class AnimationControls extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
