@@ -54,7 +54,7 @@
             settings:interval="1"
             settings:unitsLeft=""
             settings:unitsRight=" * 15ms"
-            android:defaultValue="0" />
+            android:defaultValue="10" />
 
         <com.android.settings.limpio.TestKeyboard
             android:key="anim_ime_test"
