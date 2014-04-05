@@ -25,8 +25,8 @@
 
     <LinearLayout
         android:layout_width="@dimen/header_icon_width"
-        android:layout_marginStart="6dip"
-        android:layout_marginEnd="6dip"
+        android:layout_marginStart="12dip"
+        android:layout_marginEnd="12dip"
         android:layout_height="wrap_content">
         <ImageView
             android:src="@drawable/ic_settings_wakelock_blocker"
@@ -38,9 +38,9 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dip"
-        android:layout_marginEnd="6dip"
-        android:layout_marginTop="6dip"
+        android:layout_marginStart="6dip"
+        android:layout_marginEnd="10dip"
+        android:layout_marginTop="10dip"
         android:layout_marginBottom="6dip"
         android:layout_weight="1">
 

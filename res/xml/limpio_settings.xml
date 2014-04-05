@@ -24,12 +24,12 @@
         android:title="@string/general_settings_title"
         android:icon="@drawable/ic_limpio_general" />
 
-    <!-- Wakelock Blocker -->
-    <header
-        android:id="@+id/wakelock_blocker"
-        android:fragment="com.android.settings.limpio.WakeLockBlocker"
-        android:icon="@drawable/ic_settings_wakelock_blocker"
-        android:layout="@layout/preference_wakelockblocker"
-        android:title="@string/wakelock_blocker" />
+    <!-- Wakelock blocker -->
+    <PreferenceScreen
+            android:id="@+id/wakelock_blocker"
+            android:fragment="com.android.settings.limpio.WakeLockBlocker"
+            android:icon="@drawable/ic_settings_wakelock_blocker"
+            android:layout="@layout/preference_wakelockblocker"
+            android:title="@string/wakelock_blocker" />
 
 </PreferenceScreen>
