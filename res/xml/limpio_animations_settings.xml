@@ -72,6 +72,12 @@
             android:summary="@string/scrolling_summary" />
 
         <PreferenceScreen
+            android:key="progressbar_settings"
+            android:title="@string/progressbar_title"
+            android:summary="@string/progressbar_summary"
+            android:fragment="com.android.settings.limpio.ProgressBar" />
+
+        <PreferenceScreen
             android:key="keyboard_animation_scroll"
             android:fragment="com.android.settings.limpio.KeyboardAnimationInterfaceSettings"
             android:title="@string/ime_animation_title"

@@ -3,7 +3,7 @@
 * Thanks to the original author!
 */
 
-package com.android.settings.crdroid;
+package com.android.settings.limpio;
 
 import android.content.Context;
 import android.content.res.TypedArray;

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2014, The limpio Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    android:title="@string/lockscreen_settings_title"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceCategory
+        android:key="general_category"
+        android:title="@string/general_category_title">
+
+        <PreferenceScreen
+            android:key="lock_screen_settings"
+            android:fragment="com.android.settings.limpio.LockscreenInterface"
+            android:title="@string/lock_screen_title"
+            android:summary="@string/lock_screen_summary" />
+
+        <PreferenceScreen
+            android:key="lock_screen_notifications"
+            android:title="@string/lockscreen_notifications"
+            android:summary="@string/lockscreen_notifications_summary"
+            android:fragment="com.android.settings.limpio.LockscreenNotifications" />
+
+        <PreferenceScreen
+            android:key="lock_screen_style"
+            android:fragment="com.android.settings.limpio.LockscreenStyle"
+            android:title="@string/lockscreen_style_title"/>
+
+        <PreferenceScreen
+            android:key="keyguard_enable_widgets"
+            android:fragment="com.android.settings.limpio.LockscreenWidgets"
+            android:title="@string/lockscreen_widgets_title"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="advanced_category"
+        android:title="@string/advanced_category_title">
+
+        <CheckBoxPreference
+            android:key="battery_around_lockscreen_ring"
+            android:title="@string/battery_around_lockscreen_ring"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="lockscreen_battery_status"
+            android:title="@string/lockscreen_battery_status_title"
+            android:summary="@string/lockscreen_battery_status_summary" />
+
+        <CheckBoxPreference
+            android:key="menu_unlock"
+            android:title="@string/unlock_menu_unlock_title"
+            android:summary="@string/unlock_menu_unlock_summary" />
+
+        <CheckBoxPreference
+            android:key="quick_unlock_control"
+            android:title="@string/unlock_quick_unlock_control_title"
+            android:summary="@string/unlock_quick_unlock_control_summary" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,4 +1,4 @@
-package com.android.settings.crdroid;
+package com.android.settings.limpio;
 
 import android.content.ContentResolver;
 import android.content.Context;

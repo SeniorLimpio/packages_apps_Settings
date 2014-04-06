@@ -18,8 +18,7 @@
     <string name="limpiodroid_version_title">Limpio Droid version</string>
     <string name="limpiodroid_version_default">V1.0.0</string>
 
-    <!-- Limpio's Extras -->
-    <string name="limpio_settings_title">LimpioDroid extras</string>
+
 
     <!-- Advanced titles -->
     <string name="advanced_category_title">Advanced</string>
@@ -27,15 +26,20 @@
     <!-- Category titles -->
     <string name="general_category_title">General</string>
 
-    <!-- Sub Category Animations -->
-    <string name="fb_system_anim_title">System animations</string>
-    <string name="fb_keyboard_anim_title">Keyboard animations</string>
-    <string name="fb_listview_anim_title">Listview animations</string>
-    <string name="fb_scroll_anim_title">Scroll animations</string>
-
-    <!-- Display : Animation options -->
-    <string name="screen_and_animations_title">Screen and animations</string>
-    <string name="display_category_animation_options_title">Screen and animation options</string>
+    <!-- Limpio's Extras -->
+    <string name="limpio_settings_title">LimpioDroid extras</string>
+    <string name="general_settings_title">General</string>
+    <string name="lockscreen_settings_title">Lock screen</string>
+    <string name="navigation_settings_title">Navigation</string>
+    <string name="statusbar_settings_title">Status bar</string>
+    <string name="active_display_title">Active display</string>
+    <string name="notification_drawer_title">Notification drawer</string>
+    <string name="pie_control_title">Pie control</string>
+    <string name="theme_settings_title">Limpio dark</string>
+    <string name="limpio_animations_settings_title">Animation settings</string>
+    <string name="ic_settings_boeffla_config">Kernel configuration</string>
+    <string name="advanced_options_title">Limpio advanced</string>
+    <string name="ime_settings_title">Keyboard</string>
 
     <!-- development shortcut -->
     <string name="development_shortcut_title">Development shortcut</string>
@@ -243,5 +247,46 @@
     <string name="voicemail_breath_title">Breathing Voicemail</string>
     <string name="voicemail_breath_summary">Will give your voicemail notifications a breathing effect in the statusbar</string>
 
+    <!-- Progress bar -->
+    <string name="progressbar_title">Progress bar</string>
+    <string name="progressbar_summary">Customize color and size of progress bar</string>
+    <string name="progressbar_mirror_title">Mirror mode</string>
+    <string name="progressbar_reverse_title">Reversed</string>
+    <string name="progressbar_speed_title">Speed</string>
+    <string name="progressbar_width_title">Stroke width</string>
+    <string name="progressbar_length_title">Separator length</string>
+    <string name="progressbar_count_title">Sections count</string>
+    <string name="progressbar_color_1_title">Color1</string>
+    <string name="progressbar_color_2_title">Color2</string>
+    <string name="progressbar_color_3_title">Color3</string>
+    <string name="progressbar_color_4_title">Color4</string>
+    <string name="sample_progressbar_text">ProgressBar : Preview</string>
+    <string name="progressbar_interpolator">Interpolator</string>
+    <string name="progressbar_none">None</string>
+    <string name="progressbar_acclerate">Accelerate</string>
+    <string name="progressbar_linear">Linear</string>
+    <string name="progressbar_acceleratedecelerate">AccelerateDecelerate</string>
+    <string name="progressbar_decelerate">Decelerate</string>
+    <string name="progressbar_reset_message">Reset progress bar style to default?</string>
+
+    <!-- Recents RAM bar -->
+    <string name="ram_bar_title">Recents RAM bar</string>
+    <string name="ram_bar_summary">Enables and customize recent apps display</string>
+    <string name="ram_bar_note_title">Note</string>
+    <string name="ram_bar_note_summary">This RAM bar shows the actual android memory (RAM) utilization. Please note that having cached apps helps your device open apps much faster. For further explanations on how android memory (RAM) management works.</string>
+    <string name="ram_bar_mode_title">Recents RAM bar mode</string>
+    <string name="ram_bar_mode_dialog_title">Show on recents RAM bar</string>
+    <string name="ram_bar_none">None</string>
+    <string name="ram_bar_apps">Applications</string>
+    <string name="ram_bar_cache">Applications and cache</string>
+    <string name="ram_bar_other">Applications, cache and other</string>
+    <string name="ram_bar_color_app_mem_color">Applications RAM color</string>
+    <string name="ram_bar_color_cache_mem_color">Cache RAM color</string>
+    <string name="ram_bar_color_total_mem_color">Other RAM color</string>
+    <string name="ram_bar_color_enabled">Enabled</string>
+    <string name="ram_bar_color_disabled">Disabled</string>
+    <string name="ram_bar_button_reset">Reset colors</string>
+    <string name="ram_bar_reset">Reset</string>
+    <string name="ram_bar_reset_message">Reset RAM bar style to default?</string>
 
 </resources>
