@@ -25,7 +25,7 @@
 
     <LinearLayout
         android:layout_width="@dimen/header_icon_width"
-        android:layout_marginStart="12dip"
+        android:layout_marginStart="18dip"
         android:layout_marginEnd="12dip"
         android:layout_height="wrap_content">
         <ImageView

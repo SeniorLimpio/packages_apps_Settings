@@ -6,10 +6,17 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceScreen
-        android:key="omni_features"
-        android:fragment="com.android.settings.limpio.OmniFeatures"
-        android:title="@string/omni_features_title"
-        android:icon="@drawable/ic_limpio_omni" />
+        android:key="general_settings"
+        android:fragment="com.android.settings.limpio.GeneralSettings"
+        android:title="@string/general_settings_title"
+        android:icon="@drawable/ic_limpio_general" />
+
+    <!-- Statusbar and notification settings -->
+    <PreferenceScreen
+        android:key="statusbar_features"
+        android:fragment="com.android.settings.limpio.StatusBarFeatures"
+        android:title="@string/statusbar_features_title"
+        android:icon="@drawable/ic_settings_notifications" />
 
     <!-- Animations settings -->
     <PreferenceScreen
@@ -17,12 +24,6 @@
         android:fragment="com.android.settings.limpio.LimpioAnimationsSettings"
         android:title="@string/screen_and_animations_title"
         android:icon="@drawable/ic_limpio_animations" />
-
-    <PreferenceScreen
-        android:key="general_settings"
-        android:fragment="com.android.settings.limpio.GeneralSettings"
-        android:title="@string/general_settings_title"
-        android:icon="@drawable/ic_limpio_general" />
 
     <!-- Wakelock blocker -->
     <PreferenceScreen
