@@ -18,12 +18,12 @@
     <string name="limpiodroid_version_title">Limpio Droid version</string>
     <string name="limpiodroid_version_default">V1.0.0</string>
 
-
-
     <!-- Advanced titles -->
     <string name="advanced_category_title">Advanced</string>
+    <string name="advanced_options_title">Advanced options</string>
 
     <!-- Category titles -->
+    <string name="additional_category_title">Additional</string>
     <string name="general_category_title">General</string>
 
     <!-- Limpio's Extras -->
@@ -299,6 +299,19 @@
     <string name="error_pack_install">Error while installing the sound pack</string>
 
     <!-- Performance control -->
-    <string name="performance_settings">Performance control</string>
+    <string name="performance_settings_title">Performance controls</string>
+    <string name="performance_settings">Adjust rom performance</string>
+
+    <!-- Xposed settings -->
+    <string name="xposed_framework_title">Xposed framework</string>
+    <string name="xposed_category_title">Xposed</string>
+    <string name="xposed_framework_modules_title">Framework &amp; Modules</string>
+    <string name="xposed_framework_modules_summary">Xposed framework installer and module manager. Check here first!</string>
+    <string name="xposed_per_app_title">Per App Settings</string>
+    <string name="xposed_per_app__summary">Customize DPI, UI layout, and more per app settings to your liking here</string>
+    <string name="xposed_netflix_title">Netflix Workaround</string>
+    <string name="xposed_netflix_summary">Netflix workaround for Exynos4 devices on AOSP 4.4.x+ Activate module to use</string>
+    <string name="xposed_warning_title">Warning:</string>
+    <string name="xposed_warning_summary">These mods may adversely affect performance and stability. Use at your own risk!</string>
 
 </resources>

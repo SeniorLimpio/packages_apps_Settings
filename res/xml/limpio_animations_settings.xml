@@ -19,9 +19,8 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <!-- General animations settings -->
-    <PreferenceCategory
-        android:key="category_animation_options"
-        android:title="@string/display_category_animation_options_title" >
+    <PreferenceCategory 
+        android:title="@string/general_category_title" />
 
         <ListPreference
             android:key="system_power_crt_mode"
@@ -52,8 +51,6 @@
             android:entries="@array/toast_animation_entries"
             android:entryValues="@array/toast_animation_values"
             android:persistent="false" />
-
-    </PreferenceCategory>
 
     <!-- Advanced settings -->
     <PreferenceCategory 

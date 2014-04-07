@@ -251,6 +251,13 @@
         android:icon="@drawable/ic_settings_advanced"
         android:title="@string/advanced_options_settings_title" />
 
+    <!-- Performance -->
+    <header
+        android:id="@+id/performance_settings"
+        android:title="@string/performance_settings_title"
+        android:fragment="com.brewcrewfoo.performance.activities.MainActivity"
+        android:icon="@drawable/ic_limpio_performance" />
+
     <!-- About Device -->
     <header
         android:id="@+id/about_settings"

@@ -16,8 +16,8 @@
     <PreferenceScreen
         android:key="statusbar_features"
         android:fragment="com.android.settings.limpio.StatusBarFeatures"
-        android:title="@string/statusbar_features_title"
-        android:icon="@drawable/ic_settings_notifications" />
+        android:title="@string/statusbar_settings_title"
+        android:icon="@drawable/ic_network_signal_4" />
 
     <!-- Lock screen -->
     <PreferenceScreen
@@ -38,7 +38,13 @@
             android:id="@+id/wakelock_blocker"
             android:fragment="com.android.settings.limpio.WakeLockBlocker"
             android:icon="@drawable/ic_settings_wakelock_blocker"
-            android:layout="@layout/preference_wakelockblocker"
             android:title="@string/wakelock_blocker" />
+
+    <!-- Xposed Framework -->
+    <PreferenceScreen
+        android:key="xposed_framework"
+        android:fragment="com.android.settings.limpio.XposedFramework"
+        android:title="@string/xposed_framework_title"
+        android:icon="@drawable/encroid_resignin" />
 
 </PreferenceScreen>
