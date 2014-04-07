@@ -45,6 +45,6 @@
         android:key="xposed_framework"
         android:fragment="com.android.settings.limpio.XposedFramework"
         android:title="@string/xposed_framework_title"
-        android:icon="@drawable/encroid_resignin" />
+        android:icon="@drawable/ic_launcher_white" />
 
 </PreferenceScreen>
