@@ -52,7 +52,7 @@ import android.util.Log;
 import android.view.VolumePanel;
 
 import com.android.settings.widget.SeekBarPreference;
-import com.android.settings.limpio.SeekBarPreferenceChOS;
+import com.android.settings.crdroid.SeekBarPreferenceChOS;
 
 import java.util.List;
 
