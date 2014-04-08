@@ -52,6 +52,7 @@ import android.util.Log;
 import android.view.VolumePanel;
 
 import com.android.settings.widget.SeekBarPreference;
+import com.android.settings.limpio.SeekBarPreferenceChOS;
 
 import java.util.List;
 
@@ -84,6 +85,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_DOCK_AUDIO_SETTINGS = "dock_audio";
     private static final String KEY_DOCK_SOUNDS = "dock_sounds";
     private static final String KEY_DOCK_AUDIO_MEDIA_ENABLED = "dock_audio_media_enabled";
+    private static final String KEY_VOLUME_PANEL_TIMEOUT = "volume_panel_timeout";
 
     private static final String[] NEED_VOICE_CAPABILITY = {
             KEY_RINGTONE, KEY_DTMF_TONE, KEY_CATEGORY_CALLS,
@@ -111,6 +113,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private Preference mRingtonePreference;
     private ListPreference mEmergencyTonePreference;
     private Preference mNotificationPreference;
+    private SeekBarPreferenceChOS mVolumePanelTimeout;
 
     private Runnable mRingtoneLookupRunnable;
 
@@ -272,6 +275,12 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mVolumeOverlay.setValue(Integer.toString(volumeOverlay));
         mVolumeOverlay.setSummary(mVolumeOverlay.getEntry());
 
+        mVolumePanelTimeout = (SeekBarPreferenceChOS) findPreference(KEY_VOLUME_PANEL_TIMEOUT);
+        mVolumePanelTimeout.setOnPreferenceChangeListener(this);
+        int statusVolumePanelTimeout = Settings.System.getInt(resolver,
+                Settings.System.VOLUME_PANEL_TIMEOUT, 3000);
+        mVolumePanelTimeout.setValue(statusVolumePanelTimeout / 1000);
+
         initDockSettings();
     }
 
@@ -408,6 +417,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.MODE_VOLUME_OVERLAY, value);
             mVolumeOverlay.setSummary(mVolumeOverlay.getEntries()[index]);
+        } else if (preference == mVolumePanelTimeout) {
+            int volumePanelTimeout = (Integer) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.VOLUME_PANEL_TIMEOUT, volumePanelTimeout * 1000);
         } else if (preference == mVibrationDuration) {
             int value = Integer.parseInt((String) objValue);
             Settings.System.putInt(getContentResolver(),

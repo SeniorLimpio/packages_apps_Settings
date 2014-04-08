@@ -32,6 +32,22 @@
             android:fragment="com.android.settings.limpio.VolumeSteps"
             android:title="@string/volume_steps_title" />
 
+    <ListPreference
+            android:key="volume_overlay"
+            android:title="@string/volume_overlay_title"
+            android:entries="@array/volume_overlay_entries"
+            android:entryValues="@array/volume_overlay_values" />
+
+    <com.android.settings.fusion.SeekBarPreferenceChOS
+            android:key="volume_panel_timeout"
+            android:title="@string/volume_panel_timeout_title"
+            android:summary="@string/volume_panel_timeout_summary"
+            android:max="10"
+            settings:min="1"
+            settings:unitsLeft=""
+            settings:unitsRight="sec"
+            android:persistent="false" />
+
     <Preference
             android:key="musicfx"
             android:title="@string/musicfx_title">
@@ -114,12 +130,6 @@
             android:title="@string/volume_adjust_sounds_enable_title"
             android:summary="@string/volume_adjust_sounds_enable_summary"
             android:defaultValue="true" />
-
-    <ListPreference
-            android:key="volume_overlay"
-            android:title="@string/volume_overlay_title"
-            android:entries="@array/volume_overlay_entries"
-            android:entryValues="@array/volume_overlay_values" />
 
     <ListPreference
             android:key="emergency_tone"
