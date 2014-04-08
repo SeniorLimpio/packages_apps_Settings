@@ -297,6 +297,8 @@ public class Settings extends PreferenceActivity
     public void onPause() {
         super.onPause();
 
+        if (mAttached) {
+            mAttached = false;
         unregisterReceiver(mBatteryInfoReceiver);
 
         ListAdapter listAdapter = getListAdapter();
@@ -307,6 +309,7 @@ public class Settings extends PreferenceActivity
         mDevelopmentPreferences.unregisterOnSharedPreferenceChangeListener(
                 mDevelopmentPreferencesListener);
         mDevelopmentPreferencesListener = null;
+        }
     }
 
     @Override
