@@ -5,12 +5,9 @@
     android:title="@string/limpio_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <!-- General settings -->
-    <PreferenceScreen
-        android:key="general_settings"
-        android:fragment="com.android.settings.limpio.GeneralSettings"
-        android:title="@string/general_settings_title"
-        android:icon="@drawable/ic_limpio_general" />
+    <!-- General animations settings -->
+    <PreferenceCategory 
+        android:title="@string/general_category_title" />
 
     <!-- Statusbar and notification settings -->
     <PreferenceScreen
@@ -25,6 +22,17 @@
         android:title="@string/lockscreen_settings_title"
         android:fragment="com.android.settings.limpio.LockscreenSettings"
         android:icon="@drawable/ic_limpio_lockscreen" />
+
+    <!-- General settings -->
+    <PreferenceScreen
+        android:key="general_settings"
+        android:fragment="com.android.settings.limpio.GeneralSettings"
+        android:title="@string/general_settings_title"
+        android:icon="@drawable/ic_limpio_general" />
+
+    <!-- Advanced settings -->
+    <PreferenceCategory 
+        android:title="@string/advanced_category_title" />
 
     <!-- Animations settings -->
     <PreferenceScreen

@@ -69,6 +69,7 @@
     <uses-permission android:name="android.permission.MANAGE_DEVICE_ADMINS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
 
     <permission
         android:name="android.permission.REQUEST_SUPERUSER"
@@ -207,6 +208,13 @@
                 <action android:name="android.intent.action.TIME_CHANGED"></action>
                 <action android:name="android.intent.action.DATE_CHANGED"></action>
                 <action android:name="com.android.settings.slim.service.SCHEDULE_SERVICE_COMMAND"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".slim.service.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
 
@@ -1769,30 +1777,6 @@
                 android:value="com.android.settings.slim.quicksettings.QuickSettingsTiles" />
         </activity>
 
-        <!-- PerformanceControl activities -->
-        <activity android:name="com.brewcrewfoo.performance.activities.MainActivity"/>
-        <activity android:name="com.brewcrewfoo.performance.activities.PCSettings"/>
-        <activity android:name="com.brewcrewfoo.performance.activities.PackActivity"/>
-        <activity android:name="com.brewcrewfoo.performance.activities.FlasherActivity"/>
-        <activity android:name="com.brewcrewfoo.performance.activities.FileChooser"
-                  android:configChanges="keyboardHidden|orientation|screenSize"/>
-        <activity android:name="com.brewcrewfoo.performance.activities.ResidualsActivity"
-                  android:configChanges="keyboardHidden|orientation|screenSize"/>
-        <activity android:name="com.brewcrewfoo.performance.activities.iResidualsActivity"
-                  android:configChanges="keyboardHidden|orientation|screenSize"/>
-        <activity android:name="com.brewcrewfoo.performance.activities.KSMActivity"/>
-        <activity android:name="com.brewcrewfoo.performance.activities.FreezerActivity"
-                  android:configChanges="keyboardHidden|orientation|screenSize"/>
-        <activity android:name="com.brewcrewfoo.performance.activities.GovSetActivity"/>
-
-        <receiver android:name="com.brewcrewfoo.performance.service.BootReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-            </intent-filter>
-        </receiver>
-
-        <service android:name="com.brewcrewfoo.performance.service.BootService"/>
-
         <!-- Pseudo-activity used to provide an intent-filter entry point to battery icon settings -->
         <activity android:name="Settings$BatteryIconStyleSettingsActivity"
                 android:label="@string/battery_icon_title"
@@ -1959,6 +1943,30 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <!-- PerformanceControl activities -->
+        <activity android:name="com.brewcrewfoo.performance.activities.MainActivity"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.PCSettings"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.PackActivity"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.FlasherActivity"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.FileChooser"
+                  android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.ResidualsActivity"
+                  android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.iResidualsActivity"
+                  android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.KSMActivity"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.FreezerActivity"
+                  android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.GovSetActivity"/>
+
+        <receiver android:name="com.brewcrewfoo.performance.service.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.brewcrewfoo.performance.service.BootService"/>
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"
                 android:label="@string/gadget_title"
