@@ -111,4 +111,23 @@
         android:fragment="com.android.settings.ldroid.WakeLockBlocker"
         android:icon="@drawable/ic_settings_wakelock_blocker" />
 
+    <!-- System -->
+    <PreferenceCategory 
+        android:title="@string/tweaks_category_title" />
+
+    <!-- Propmodder -->
+    <PreferenceScreen
+        android:key="buildprop_modder"
+        android:title="@string/propmodder_title"
+        android:icon="@drawable/ic_settings_prop_modder"
+        android:fragment="com.android.settings.ldroid.PropModder"/>
+
+    <!-- Init.d -->
+    <PreferenceScreen
+        android:id="@+id/initD"
+        android:fragment="com.android.settings.ldroid.InitD"
+        android:icon="@drawable/ic_settings_init"
+        android:title="@string/init_d_title"
+        android:summary="@string/header_summary_init_d" />  
+
 </PreferenceScreen>
