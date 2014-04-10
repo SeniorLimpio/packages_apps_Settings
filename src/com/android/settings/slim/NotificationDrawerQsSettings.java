@@ -22,6 +22,7 @@ import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.content.ContentResolver;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -33,7 +34,7 @@ import android.provider.Settings;
 import android.os.UserHandle;
 
 import com.android.internal.util.slim.DeviceUtils;
-
+import com.android.settings.limpio.util.Helpers;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.slim.quicksettings.QuickSettingsUtil;
 import com.android.settings.R;
@@ -66,6 +67,8 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             "quicksettings_tiles_style";
     private static final String PREF_TILE_PICKER =
             "tile_picker";
+    private static final String PREF_FLIP_QS_TILES = 
+	    "quick_settings_tiles_flip";
 
     ListPreference mHideLabels;
     SeekBarPreference mNotificationAlpha;
@@ -77,6 +80,8 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
     ListPreference mSmartPulldown;
     CheckBoxPreference mCollapsePanel;
 
+    private CheckBoxPreference mFlipQsTiles;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +89,7 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.notification_drawer_qs_settings);
 
         PreferenceScreen prefs = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
 
         mHideLabels = (ListPreference) findPreference(PREF_NOTIFICATION_HIDE_LABELS);
         int hideCarrier = Settings.System.getInt(getContentResolver(),
@@ -170,6 +176,10 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             updateSmartPulldownSummary(smartPulldown);
         }
 
+        mFlipQsTiles = (CheckBoxPreference) findPreference(PREF_FLIP_QS_TILES);
+        mFlipQsTiles.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.QUICK_SETTINGS_TILES_FLIP, 0) == 1);
+
         mCollapsePanel = (CheckBoxPreference) findPreference(PRE_COLLAPSE_PANEL);
         mCollapsePanel.setChecked(Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.QS_COLLAPSE_PANEL, 0, UserHandle.USER_CURRENT) == 1);
@@ -199,6 +209,18 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
         super.onResume();
         QuickSettingsUtil.updateAvailableTiles(getActivity());
         updateQuickSettingsOptions();
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        ContentResolver resolver = getContentResolver();
+        if (preference == mFlipQsTiles) {
+            Settings.System.putInt(resolver,
+                    Settings.System.QUICK_SETTINGS_TILES_FLIP,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override

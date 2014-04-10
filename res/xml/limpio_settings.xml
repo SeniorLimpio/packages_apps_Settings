@@ -41,10 +41,11 @@
         android:title="@string/limpio_animations_settings_title"
         android:icon="@drawable/ic_limpio_animations" />
 
-    <!-- Screen Recorded -->
+    <!-- Screen Recorder -->
     <PreferenceScreen
         android:key="screen_recorder"
         android:title="@string/screen_recorder_title"
+        android:summary="@string/screen_recorder_summary2"
         android:fragment="com.android.settings.limpio.ScreenRecorderSettings"
         android:icon="@drawable/ic_screenrecorder" />
 
