@@ -85,9 +85,9 @@
     <PreferenceCategory
         android:title="@string/notification_drawer_brightness_slider_title">
 
-        <com.android.settings.fusion.SystemSettingCheckBoxPreference
+        <com.android.settings.slim.SystemSettingCheckBoxPreference
             android:key="notification_brightness_slider"
-            android:title="@string/quick_ribbon_summary"
+            android:title="@string/brightness_slider_summary"
             android:defaultValue="false" />
 
     </PreferenceCategory>

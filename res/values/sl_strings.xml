@@ -374,6 +374,7 @@
 
     <!-- Brightness Slider -->
     <string name="notification_drawer_brightness_slider_title">Brightness Slider</string>
+    <string name="brightness_slider_summary">Adjust brightness from a slider in the statusbar</string>
 
     <!-- On-The-Go -->
     <string name="title_tile_onthego">On-The-Go</string>
