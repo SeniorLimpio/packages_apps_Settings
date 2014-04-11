@@ -106,7 +106,7 @@ public class KeyboardAnimationInterfaceSettings extends SettingsPreferenceFragme
         mAnimationImeInterpolator.setOnPreferenceChangeListener(this);
 
         int imeDuration = Settings.System.getInt(resolver,
-                Settings.System.ANIMATION_IME_DURATION, 0);
+                Settings.System.ANIMATION_IME_DURATION, 5);
         mAnimationImeDuration = (SeekBarPreferenceChOS) prefSet.findPreference(IME_ANIM_DURATION);
         mAnimationImeDuration.setValue(imeDuration);
         mAnimationImeDuration.setOnPreferenceChangeListener(this);

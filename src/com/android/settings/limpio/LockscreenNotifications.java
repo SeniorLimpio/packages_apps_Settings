@@ -90,7 +90,7 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
 
         mHideNonClearable = (CheckBoxPreference) prefs.findPreference(KEY_HIDE_NON_CLEARABLE);
         mHideNonClearable.setChecked(Settings.System.getInt(cr,
-                    Settings.System.LOCKSCREEN_NOTIFICATIONS_HIDE_NON_CLEARABLE, 0) == 1);
+                    Settings.System.LOCKSCREEN_NOTIFICATIONS_HIDE_NON_CLEARABLE, 1) == 1);
         mHideNonClearable.setEnabled(mLockscreenNotifications.isChecked());
 
         mDismissAll = (CheckBoxPreference) prefs.findPreference(KEY_DISMISS_ALL);
@@ -116,7 +116,7 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
 
         mOffsetTop = (SeekBarPreference) prefs.findPreference(KEY_OFFSET_TOP);
         mOffsetTop.setProgress((int)(Settings.System.getFloat(cr,
-                Settings.System.LOCKSCREEN_NOTIFICATIONS_OFFSET_TOP, 0.3f) * 100));
+                Settings.System.LOCKSCREEN_NOTIFICATIONS_OFFSET_TOP, 0.38f) * 100));
         mOffsetTop.setTitle(getResources().getText(R.string.offset_top) + " " + mOffsetTop.getProgress() + "%");
         mOffsetTop.setOnPreferenceChangeListener(this);
         mOffsetTop.setEnabled(mLockscreenNotifications.isChecked());

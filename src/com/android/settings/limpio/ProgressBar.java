@@ -80,8 +80,8 @@ public class ProgressBar extends SettingsPreferenceFragment implements
 		getPreferenceScreen().addPreference(PreviewLayout);
 		addPreferencesFromResource(R.xml.progressbar);
 
-		boolean progressbar_mirror_enabled = Settings.System.getInt(getContentResolver(), Settings.System.PROGRESSBAR_MIRROR, 0) == 1;
-		boolean progressbar_reverse_enabled = Settings.System.getInt(getContentResolver(), Settings.System.PROGRESSBAR_REVERSE, 0) == 1;
+		boolean progressbar_mirror_enabled = Settings.System.getInt(getContentResolver(), Settings.System.PROGRESSBAR_MIRROR, 1) == 1;
+		boolean progressbar_reverse_enabled = Settings.System.getInt(getContentResolver(), Settings.System.PROGRESSBAR_REVERSE, 1) == 1;
 
 		mprogressbar_mirror = (CheckBoxPreference) findPreference(PROGRESSBAR_MIRROR);
 		mprogressbar_mirror.setChecked(progressbar_mirror_enabled);
@@ -101,12 +101,12 @@ public class ProgressBar extends SettingsPreferenceFragment implements
 
 		mprogressbar_length = (NEWSeekBarPreference) findPreference(PROGRESSBAR_LENGTH);
 		mprogressbar_length.setValue(Settings.System.getInt(getContentResolver(),
-		                             Settings.System.PROGRESSBAR_LENGTH, 10));
+		                             Settings.System.PROGRESSBAR_LENGTH, 16));
 		mprogressbar_length.setOnPreferenceChangeListener(this);
 
 		mprogressbar_count = (NEWSeekBarPreference) findPreference(PROGRESSBAR_COUNT);
 		mprogressbar_count.setValue(Settings.System.getInt(getContentResolver(),
-		                            Settings.System.PROGRESSBAR_COUNT, 6));
+		                            Settings.System.PROGRESSBAR_COUNT, 5));
 		mprogressbar_count.setOnPreferenceChangeListener(this);
 
 		mprogressbar_color_1 = (ColorPickerPreference) findPreference(PROGRESSBAR_COLOR_1);

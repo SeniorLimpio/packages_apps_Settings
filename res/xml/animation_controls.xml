@@ -19,9 +19,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <PreferenceCategory
-        android:key="general_category"
-        android:title="@string/general_category_title">
+        <SwitchPreference
+            android:key="animation_no_override"
+            android:persistent="false"
+            android:title="@string/animation_no_override_title"
+            android:summaryOff="@string/animation_no_override_summary_off"
+            android:summaryOn="@string/animation_no_override_summary_on" />
 
         <ListPreference
             android:key="activity_open"
@@ -71,19 +74,6 @@
             android:defaultValue="0"
             android:title="@string/task_move_to_back_title" />
 
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="advanced_category"
-        android:title="@string/advanced_category_title">
-
-        <SwitchPreference
-            android:key="animation_no_override"
-            android:persistent="false"
-            android:title="@string/animation_no_override_title"
-            android:summaryOff="@string/animation_no_override_summary_off"
-            android:summaryOn="@string/animation_no_override_summary_on" />
-
         <ListPreference
             android:key="wallpaper_open"
             android:persistent="false"
@@ -127,7 +117,5 @@
             settings:unitsLeft=""
             settings:unitsRight=" * 15ms"
             android:defaultValue="0" />
-
-    </PreferenceCategory>
 
 </PreferenceScreen>

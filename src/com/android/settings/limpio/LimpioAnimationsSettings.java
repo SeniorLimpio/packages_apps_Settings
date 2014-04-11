@@ -84,14 +84,14 @@ public class LimpioAnimationsSettings extends SettingsPreferenceFragment impleme
 
         mListViewAnimation = (ListPreference) prefSet.findPreference(KEY_LISTVIEW_ANIMATION);
         int listviewanimation = Settings.System.getInt(getContentResolver(),
-                Settings.System.LISTVIEW_ANIMATION, 0);
+                Settings.System.LISTVIEW_ANIMATION, 4);
         mListViewAnimation.setValue(String.valueOf(listviewanimation));
         mListViewAnimation.setSummary(mListViewAnimation.getEntry());
         mListViewAnimation.setOnPreferenceChangeListener(this);
 
         mListViewInterpolator = (ListPreference) prefSet.findPreference(KEY_LISTVIEW_INTERPOLATOR);
         int listviewinterpolator = Settings.System.getInt(getContentResolver(),
-                Settings.System.LISTVIEW_INTERPOLATOR, 0);
+                Settings.System.LISTVIEW_INTERPOLATOR, 1);
         mListViewInterpolator.setValue(String.valueOf(listviewinterpolator));
         mListViewInterpolator.setSummary(mListViewInterpolator.getEntry());
         mListViewInterpolator.setOnPreferenceChangeListener(this);
@@ -100,7 +100,7 @@ public class LimpioAnimationsSettings extends SettingsPreferenceFragment impleme
         mToastAnimation = (ListPreference)findPreference(KEY_TOAST_ANIMATION);
         mToastAnimation.setSummary(mToastAnimation.getEntry());
         int CurrentToastAnimation = Settings.System.getInt(resolver,
-                Settings.System.TOAST_ANIMATION, 1);
+                Settings.System.TOAST_ANIMATION, 6);
         mToastAnimation.setValueIndex(CurrentToastAnimation);
         mToastAnimation.setOnPreferenceChangeListener(this);
     }

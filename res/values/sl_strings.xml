@@ -372,4 +372,10 @@
     <string name="flip_qs_tiles_title">Flip tiles</string>
     <string name="flip_qs_tiles_summary">Animates tile flips upon setting change</string>
 
+    <!-- Brightness Slider -->
+    <string name="notification_drawer_brightness_slider_title">Brightness Slider</string>
+
+    <!-- On-The-Go -->
+    <string name="title_tile_onthego">On-The-Go</string>
+
 </resources>
