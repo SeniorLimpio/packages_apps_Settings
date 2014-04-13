@@ -28,6 +28,7 @@
 
     <!-- Limpio's Extras -->
     <string name="limpio_settings_title">LimpioDroid extras</string>
+    <string name="recents_panel_settings_title" >Recents panel settings</string>
     <string name="general_settings_title">General</string>
     <string name="lockscreen_settings_title">Lock screen</string>
     <string name="navigation_settings_title">Navigation</string>
