@@ -64,12 +64,14 @@ public class GeneralSettings extends SettingsPreferenceFragment
     private static final String KEY_USE_ALT_RESOLVER = "use_alt_resolver";
     private static final String KEY_LCD_DENSITY = "lcd_density";
     private static final String DENSITY_PROP = "persist.sys.lcd_density";
+    private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
 
     private static final int DIALOG_CUSTOM_DENSITY = 101;
 
     private CheckBoxPreference mUseAltResolver;
     private static ListPreference mLcdDensity;
     private static Activity mActivity;
+    private CheckBoxPreference mShowCpuInfo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -78,6 +80,8 @@ public class GeneralSettings extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.ldroid_general_settings);
 
         mActivity = getActivity();
+
+	mShowCpuInfo = (CheckBoxPreference) findPreference(SHOW_CPU_INFO_KEY);
 
         updateSettings();
     }
@@ -106,9 +110,25 @@ public class GeneralSettings extends SettingsPreferenceFragment
     public void onResume() {
         super.onResume();
     }
+
+    private void writeCpuInfoOptions() {
+        boolean value = mShowCpuInfo.isChecked();
+        Settings.Global.putInt(getActivity().getContentResolver(),
+                Settings.Global.SHOW_CPU, value ? 1 : 0);
+        Intent service = (new Intent())
+                .setClassName("com.android.systemui", "com.android.systemui.CPUInfoService");
+        if (value) {
+            getActivity().startService(service);
+        } else {
+            getActivity().stopService(service);
+        }
+    }
 	
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+	if (preference == mShowCpuInfo) {
+            writeCpuInfoOptions();
+	}
         return super.onPreferenceTreeClick(preferenceScreen, preference);
      }
 
