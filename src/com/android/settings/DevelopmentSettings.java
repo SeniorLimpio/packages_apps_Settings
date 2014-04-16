@@ -59,10 +59,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
-import android.text.Html;
 import android.text.TextUtils;
-import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.HardwareRenderer;
@@ -1450,9 +1447,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
                         updateRuntimeValue();
                     }
                 });
-                final AlertDialog dialog = builder.show();
-                ((TextView) dialog.findViewById(android.R.id.message))
-                    .setMovementMethod(LinkMovementMethod.getInstance());
+                builder.show();
             }
             return true;
         } else if (HDCP_CHECKING_KEY.equals(preference.getKey())) {
