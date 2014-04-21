@@ -36,7 +36,7 @@
         android:title="@string/pref_battery_saver_mode_change_delay_title"
         android:summary="@string/pref_battery_saver_mode_change_delay_summary"
         android:max="60"
-        settings:minimum="0"
+        settings:min="0"
         settings:interval="1"
         settings:unitsLeft=""
         settings:unitsRight="sec"
@@ -79,7 +79,7 @@
         android:title="@string/pref_battery_saver_mode_battery_level_title"
         android:summary="@string/pref_battery_saver_mode_battery_level_summary"
         android:max="100"
-        settings:minimum="0"
+        settings:min="0"
         settings:interval="5"
         settings:unitsLeft=""
         settings:unitsRight="%"
@@ -154,15 +154,6 @@
             android:key="category_battery_saver_network"
             android:title="@string/battery_saver_network_title" >
 
-        <ListPreference
-             android:key="pref_battery_saver_mode_network"
-             android:dependency="pref_battery_saver_enable"
-             android:title="@string/pref_battery_saver_network_title"
-             android:summary="@string/pref_battery_saver_network_summary"
-             android:entries="@array/ad_redisplay_entries"
-             android:entryValues="@array/ad_redisplay_values"
-             android:persistent="false" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -174,7 +165,7 @@
         android:dependency="pref_battery_saver_enable"
         android:title="@string/pref_battery_saver_cpu_title"
         android:summary="@string/pref_battery_saver_cpu_summary"
-        android:fragment="com.android.settings.fusion.BatteryCpuSettings" />
+        android:fragment="com.android.settings.limpio.BatteryCpuSettings" />
 
     <CheckBoxPreference
         android:key="pref_battery_saver_mode_bluetooth"

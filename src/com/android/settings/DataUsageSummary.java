@@ -129,7 +129,7 @@ import android.widget.TextView;
 
 import com.android.internal.telephony.PhoneConstants;
 import com.android.settings.drawable.InsetBoundsDrawable;
-import com.android.settings.fusion.batterysaver.BatterySaverHelper;
+import com.android.settings.limpio.batterysaver.BatterySaverHelper;
 import com.android.settings.net.ChartData;
 import com.android.settings.net.ChartDataLoader;
 import com.android.settings.net.DataUsageMeteredSettings;
