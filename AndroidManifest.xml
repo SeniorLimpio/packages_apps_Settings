@@ -1801,7 +1801,7 @@
                 <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.fusion.SoundPackageSettings" />
+                android:value="com.android.settings.limpio.SoundPackageSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/sound_settings" />
             <meta-data android:name="com.android.settings.PARENT_FRAGMENT_CLASS"
@@ -2010,20 +2010,20 @@
         </receiver>
 		
         <receiver
-            android:name="com.android.settings.fusion.batterysaver.BootReceiver">
+            android:name="com.android.settings.limpio.batterysaver.BootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
 
         <receiver
-            android:name="com.android.settings.fusion.batterysaver.BatterySaverReceiver">
+            android:name="com.android.settings.limpio.batterysaver.BatterySaverReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.TIMEZONE_CHANGED"></action>
                 <action android:name="android.intent.action.TIME_CHANGED"></action>
                 <action android:name="android.intent.action.DATE_CHANGED"></action>
                 <action android:name="android.intent.action.BATTERY_SERVICES"></action>
-                <action android:name="com.android.settings.fusion.batterysaver.SCHEDULE_BATTERY_SAVER"/>
+                <action android:name="com.android.settings.limpio.batterysaver.SCHEDULE_BATTERY_SAVER"/>
             </intent-filter>
         </receiver>
 

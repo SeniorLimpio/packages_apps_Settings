@@ -154,6 +154,15 @@
             android:key="category_battery_saver_network"
             android:title="@string/battery_saver_network_title" >
 
+        <ListPreference
+             android:key="pref_battery_saver_mode_network"
+             android:dependency="pref_battery_saver_enable"
+             android:title="@string/pref_battery_saver_network_title"
+             android:summary="@string/pref_battery_saver_network_summary"
+             android:entries="@array/ad_redisplay_entries"
+             android:entryValues="@array/ad_redisplay_values"
+             android:persistent="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

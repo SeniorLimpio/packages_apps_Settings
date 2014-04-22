@@ -36,7 +36,7 @@ public class BatterySaverHelper {
     private final static String TAG = "BatterySaverHelper";
 
     private static final String SCHEDULE_BATTERY_SAVER =
-            "com.android.settings.liquid.batterysaver.SCHEDULE_BATTERY_SAVER";
+            "com.android.settings.limpio.batterysaver.SCHEDULE_BATTERY_SAVER";
 
     private static final int FULL_DAY = 1440; // 1440 minutes in a day
 
