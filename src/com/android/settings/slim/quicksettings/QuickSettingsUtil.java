@@ -182,6 +182,9 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_ONTHEGO, R.string.title_tile_onthego,
                 "com.android.systemui:drawable/ic_qs_onthego"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_BATTERYSAVER, R.string.title_tile_batterysaver,
+                "com.android.systemui:drawable/ic_qs_battery_saver_on"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {
