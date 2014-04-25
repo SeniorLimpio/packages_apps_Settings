@@ -379,8 +379,8 @@ public class Settings extends PreferenceActivity
         BatteryIconStyle.class.getName(),
         DisplayRotation.class.getName(),
         ApnSettings.class.getName(),
-        ShakeEvents.class.getName(),
-        ThemeSettings.class.getName()
+        ThemeSettings.class.getName(),
+        ShakeEvents.class.getName()
     };
 
     @Override
@@ -1210,4 +1210,5 @@ public class Settings extends PreferenceActivity
     public static class DisplayRotationSettingsActivity extends Settings { /* empty */ }
     public static class ShakeEventsSettingsActivity extends Settings { /* empty */ }
     public static class RamBarActivity extends Settings { /* empty */ }
+    public static class ShakeEventsSettingsActivity extends Settings { /* empty */ }
 }

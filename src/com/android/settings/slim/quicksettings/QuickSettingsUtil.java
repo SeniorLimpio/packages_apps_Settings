@@ -15,7 +15,6 @@
  * limitations under the License.
  */
 
-<<<<<<< HEAD:src/com/android/settings/slim/quicksettings/QuickSettingsUtil.java
 package com.android.settings.slim.quicksettings;
 
 import static com.android.internal.util.slim.QSConstants.TILES_DEFAULT;
@@ -57,8 +56,8 @@ import static com.android.internal.util.slim.QSConstants.TILE_VOLUME;
 import static com.android.internal.util.slim.QSConstants.TILE_WIFI;
 import static com.android.internal.util.slim.QSConstants.TILE_WIFIAP;
 import static com.android.internal.util.slim.QSConstants.TILE_REBOOT;
-import static com.android.internal.util.liquid.QSConstants.TILE_FCHARGE;
-import static com.android.internal.util.liquid.QSConstants.TILE_ONTHEGO;
+import static com.android.internal.util.slim.QSConstants.TILE_FCHARGE;
+import static com.android.internal.util.slim.QSConstants.TILE_ONTHEGO;
 
 import android.content.ContentResolver;
 import android.content.Context;
