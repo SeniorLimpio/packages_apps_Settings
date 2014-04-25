@@ -458,12 +458,10 @@ public class SecuritySettings extends RestrictedSettingsFragment
         if (!um.hasUserRestriction(UserManager.DISALLOW_CONFIG_CREDENTIALS)) {
             Preference credentialStorageType = root.findPreference(KEY_CREDENTIAL_STORAGE_TYPE);
 
-
             final int storageSummaryRes =
                 mKeyStore.isHardwareBacked() ? R.string.credential_storage_type_hardware
                         : R.string.credential_storage_type_software;
             credentialStorageType.setSummary(storageSummaryRes);
-
         } else {
             removePreference(KEY_CREDENTIALS_MANAGER);
         }
@@ -891,6 +889,18 @@ public class SecuritySettings extends RestrictedSettingsFragment
                 }
             }
             return;
+        } else if (requestCode == CONFIRM_EXISTING_FOR_TEMPORARY_INSECURE &&
+                resultCode == Activity.RESULT_OK) {
+            // Enable shake to secure
+            if (mShakeTypeChosen != -1) {
+                Settings.Secure.putInt(getContentResolver(),
+                        Settings.Secure.LOCK_SHAKE_TEMP_SECURE, mShakeTypeChosen);
+                if (mShakeToSecure != null && mShakeTimer != null) {
+                    mShakeToSecure.setValue(String.valueOf(mShakeTypeChosen));
+                    mShakeTimer.setEnabled(true);
+                }
+            }
+            return;
         }
         createPreferenceHierarchy();
     }
@@ -923,6 +933,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
                 mShakeToSecure.setValue(String.valueOf(0));
                 mShakeTimer.setEnabled(false);
                 shouldEnableTargets();
+
             }
         } else if (preference == mShakeTimer) {
             int shakeTime = Integer.parseInt((String) value);
