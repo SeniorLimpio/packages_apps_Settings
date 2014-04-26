@@ -37,6 +37,13 @@
         android:icon="@drawable/ic_settings_gesture_anywhere"
         android:title="@string/gesture_anywhere_title" />
 
+    <!-- Driving mode -->
+    <PreferenceScreen
+        android:key="interface_voice_tts"
+        android:fragment="com.android.settings.limpio.DrivingMode"
+        android:icon="@drawable/ic_settings_drivingmode"
+        android:title="@string/voice_tts_title" />
+
     <!-- General settings -->
     <PreferenceScreen
         android:key="general_settings"
