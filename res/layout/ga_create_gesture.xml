@@ -48,7 +48,7 @@
 
     </LinearLayout>
     
-    <com.android.settings.chameleonos.labs.gestureanywhere.GestureAnywhereGestureOverlayView
+    <com.android.settings.limpio.labs.gestureanywhere.GestureAnywhereGestureOverlayView
         android:id="@+id/gestures_overlay"
         android:layout_width="match_parent"
         android:layout_height="0dip"
