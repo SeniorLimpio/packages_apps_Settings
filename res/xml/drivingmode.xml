@@ -29,7 +29,7 @@
         android:title="@string/tts_settings_title"
         android:dependency="voice_tts"/>
 
-    <com.android.settings.fusion.SeekBarPreference
+    <com.android.settings.limpio.SeekBarPreference
         android:key="voice_tts_volume"
         android:dependency="voice_tts"
         android:persistent="false"
@@ -119,7 +119,7 @@
         android:summary="@string/voice_tts_notif_read_summary"
         android:dependency="voice_tts_notif"/>
 
-    <com.android.settings.fusion.AppMultiSelectListPreference
+    <com.android.settings.limpio.AppMultiSelectListPreference
         android:key="voice_tts_whitelist"
         android:persistent="false"
         android:dependency="voice_tts_notif"
