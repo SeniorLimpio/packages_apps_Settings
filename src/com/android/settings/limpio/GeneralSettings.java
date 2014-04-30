@@ -69,8 +69,6 @@ public class GeneralSettings extends SettingsPreferenceFragment implements
 
         mActivity = getActivity();
 
-        mRestartSystemUI = findPreference(RESTART_SYSTEMUI);
-
 	mShowCpuInfo = (CheckBoxPreference) findPreference(SHOW_CPU_INFO_KEY);
 
         mLcdDensity = (ListPreference) findPreference(KEY_LCD_DENSITY);
@@ -85,6 +83,8 @@ public class GeneralSettings extends SettingsPreferenceFragment implements
         }
         mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + current);
         mLcdDensity.setOnPreferenceChangeListener(this);
+
+        mRestartSystemUI = findPreference(RESTART_SYSTEMUI);
     }
 
     @Override
@@ -150,7 +150,7 @@ public class GeneralSettings extends SettingsPreferenceFragment implements
         final IWindowManager windowManagerService = IWindowManager.Stub.asInterface(
                 ServiceManager.getService(Context.WINDOW_SERVICE));
         try {
-            windowManagerService.updateSettings();
+            windowManagerService.updateStatusBarNavBarHeight();
         } catch (RemoteException e) {
             Slog.w(TAG, "Failure communicating with window manager", e);
         }
