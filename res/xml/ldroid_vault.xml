@@ -64,6 +64,13 @@
     <PreferenceCategory 
         android:title="@string/applauncher_category_title" />
 
+    <!-- App sidebar -->
+    <PreferenceScreen
+        android:key="app_sidebar"
+        android:fragment="com.android.settings.limpio.AppSidebar"
+        android:title="@string/app_sidebar_title"
+        android:icon="@drawable/ic_ldroid_app_sidebar" />
+
     <!-- Circle appbar -->
     <PreferenceScreen
         android:key="circle_appbar"

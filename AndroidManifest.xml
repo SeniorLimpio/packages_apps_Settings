@@ -1866,6 +1866,8 @@
                 android:value="com.android.settings.ldroid.DisplayRotation" />
         </activity>
 
+        <activity android:name=".ldroid.AppSidebar" />
+
         <!-- RAM bar -->
         <activity android:name="Settings$RamBarActivity"
                 android:label="@string/ram_bar">
