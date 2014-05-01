@@ -1998,7 +1998,7 @@
                   android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity android:name="com.brewcrewfoo.performance.activities.GovSetActivity"/>
 
-        <activity android:name=".crom.Download" />
+        <activity android:name=".limpio.Download" />
 
         <receiver android:name="com.brewcrewfoo.performance.service.BootReceiver">
             <intent-filter>
