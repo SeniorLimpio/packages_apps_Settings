@@ -62,6 +62,12 @@
         android:title="@string/limpio_animations_settings_title"
         android:icon="@drawable/ic_limpio_animations" />
 
+    <!-- App sidebar -->
+    <PreferenceScreen
+            android:key="app_sidebar"
+            android:fragment="com.android.settings.limpio.AppSidebar"
+            android:title="@string/app_sidebar_title"/>
+
     <!-- Screen Recorder -->
     <PreferenceScreen
         android:key="screen_recorder"

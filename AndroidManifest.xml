@@ -1815,6 +1815,8 @@
 
         <activity android:name=".limpio.labs.gestureanywhere.GestureAnywhereCreateGestureActivity" />
 
+        <activity android:name=".limpio.AppSidebar" />
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to sound packages settings -->
         <activity android:name="Settings$SoundPackageSettingsActivity"
                 android:label="@string/sound_packages_title"
