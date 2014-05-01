@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.crom;
+package com.android.settings.limpio;
 
 import android.app.ActivityManager;
 import android.app.admin.DeviceAdminReceiver;
