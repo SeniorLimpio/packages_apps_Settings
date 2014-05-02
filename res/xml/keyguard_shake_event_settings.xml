@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD:res/xml/keyguard_shake_event_settings.xml
 <!-- Copyright (C) 2013 SlimRoms Project
+=======
+<!-- Copyright (C) 2014 The LiquidSmooth Project
+>>>>>>> cb3f074... Cleanup and organize interface settings:res/xml/liquid_interface_settings.xml
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -33,9 +37,13 @@
 
     <CheckBoxPreference
         android:key="use_alt_resolver"
-        android:title="@string/alt_resolver"
+        android:title="@string/alt_resolver_title"
         android:summary="@string/alt_resolver_summary"
         android:defaultValue="false" />
+
+    <Preference
+        android:key="lcd_density"
+        android:title="@string/custom_density_title" />
 
     <PreferenceScreen
         android:key="lock_clock"
@@ -45,10 +53,6 @@
             android:targetPackage="com.cyanogenmod.lockclock"
             android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
     </PreferenceScreen>
-
-    <Preference
-        android:key="lcd_density"
-        android:title="@string/custom_density_title" />
 
     <PreferenceScreen
         android:key="gesture_anywhere"
