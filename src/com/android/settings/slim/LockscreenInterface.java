@@ -44,7 +44,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final int DLG_ENABLE_EIGHT_TARGETS = 0;
 
     private static final String PREF_LOCKSCREEN_EIGHT_TARGETS = "lockscreen_eight_targets";
-    private static final String PREF_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
     private static final String PREF_LOCKSCREEN_SHORTCUTS = "lockscreen_shortcuts";
     private static final String PREF_LOCKSCREEN_TORCH = "lockscreen_torch";
     private static final String KEY_LOCKSCREEN_WALLPAPER = "lockscreen_wallpaper";
@@ -73,11 +72,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             mKeyguardService = null;
         }
     };
-
-    public boolean hasButtons() {
-        return (getResources().getInteger(
-                com.android.internal.R.integer.config_deviceHardwareKeys) > 0);
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -116,13 +110,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
         mShortcuts = (Preference) findPreference(PREF_LOCKSCREEN_SHORTCUTS);
         mShortcuts.setEnabled(!mLockscreenEightTargets.isChecked());
-
-        PreferenceCategory generalCategory = (PreferenceCategory)
-                findPreference(LOCKSCREEN_GENERAL_CATEGORY);
-
-        if (!hasButtons()) {
-            generalCategory.removePreference(findPreference(PREF_LOCKSCREEN_BUTTONS));
-        }
 
         Intent intent = new Intent();
         intent.setClassName("com.android.keyguard", "com.android.keyguard.KeyguardService");
