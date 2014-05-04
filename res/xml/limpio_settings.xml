@@ -5,37 +5,16 @@
     android:title="@string/limpio_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <!-- General animations settings -->
+    <!-- General settings -->
     <PreferenceCategory 
         android:title="@string/general_category_title" />
 
-    <!-- Statusbar and notification settings -->
-    <PreferenceScreen
-        android:key="statusbar_features"
-        android:fragment="com.android.settings.limpio.StatusBarFeatures"
-        android:title="@string/statusbar_settings_title"
-        android:icon="@drawable/ic_network_signal_4" />
-
-    <!-- Lock screen -->
-    <PreferenceScreen
-        android:id="@+id/lockscreen_settings"
-        android:title="@string/lockscreen_settings_title"
-        android:fragment="com.android.settings.limpio.LockscreenSettings"
-        android:icon="@drawable/ic_limpio_lockscreen" />
-
-    <!-- Identicons -->
-    <PreferenceScreen
-        android:key="identicons"
-        android:fragment="com.android.settings.limpio.labs.identicons.IdenticonsSettings"
-        android:icon="@drawable/ic_settings_identicons"
-        android:title="@string/identicons_title" />
-
-    <!-- Gesture anywhere -->
-    <PreferenceScreen
-        android:key="gesture_anywhere"
-        android:fragment="com.android.settings.limpio.labs.gestureanywhere.GestureAnywhereSettings"
-        android:icon="@drawable/ic_settings_gesture_anywhere"
-        android:title="@string/gesture_anywhere_title" />
+    <!-- Download centre -->
+    <Preference
+        android:key="download_center"
+        android:fragment="com.android.settings.limpio.Download"
+        android:title="@string/download_category"
+        android:icon="@drawable/ic_limpio_download" />
 
     <!-- Driving mode -->
     <PreferenceScreen
@@ -51,16 +30,45 @@
         android:title="@string/general_settings_title"
         android:icon="@drawable/ic_limpio_general" />
 
-    <Preference
-        android:key="download_center"
-        android:icon="@drawable/ic_dt_download"
-        android:fragment="com.android.settings.limpio.Download"
-        android:layout="@layout/preference_download"
-        android:title="@string/download_category" />
+    <!-- Gesture anywhere -->
+    <PreferenceScreen
+        android:key="gesture_anywhere"
+        android:fragment="com.android.settings.limpio.labs.gestureanywhere.GestureAnywhereSettings"
+        android:icon="@drawable/ic_settings_gesture_anywhere"
+        android:title="@string/gesture_anywhere_title" />
+
+    <!-- Identicons -->
+    <PreferenceScreen
+        android:key="identicons"
+        android:fragment="com.android.settings.limpio.labs.identicons.IdenticonsSettings"
+        android:icon="@drawable/ic_settings_identicons"
+        android:title="@string/identicons_title" />
+
+    <!-- Lock screen -->
+    <PreferenceScreen
+        android:id="@+id/lockscreen_settings"
+        android:title="@string/lockscreen_settings_title"
+        android:fragment="com.android.settings.limpio.LockscreenSettings"
+        android:icon="@drawable/ic_limpio_lockscreen" />
+
+    <!-- Statusbar and notification settings -->
+    <PreferenceScreen
+        android:key="statusbar_features"
+        android:fragment="com.android.settings.limpio.StatusBarFeatures"
+        android:title="@string/statusbar_settings_title"
+        android:icon="@drawable/ic_network_signal_4" />
 
     <!-- Advanced settings -->
     <PreferenceCategory 
         android:title="@string/advanced_category_title" />
+
+    <!-- Active display -->
+
+    <PreferenceScreen
+        android:key="active_display"
+        android:fragment="com.android.settings.limpio.ActiveDisplay"
+        android:title="@string/active_display_title"
+        android:icon="@drawable/ic_limpio_active_display" />
 
     <!-- Animations settings -->
     <PreferenceScreen
@@ -71,9 +79,31 @@
 
     <!-- App sidebar -->
     <PreferenceScreen
-            android:key="app_sidebar"
-            android:fragment="com.android.settings.limpio.AppSidebar"
-            android:title="@string/app_sidebar_title"/>
+	android:key="app_sidebar"
+	android:fragment="com.android.settings.limpio.AppSidebar"
+	android:title="@string/app_sidebar_title"
+	android:icon="@drawable/ic_limpio_app_sidebar" />
+
+    <!-- BatterySaver -->
+    <PreferenceScreen
+        android:fragment="com.android.settings.limpio.BatterySaverSettings"
+        android:title="@string/battery_saver_title"
+        android:icon="@drawable/ic_settings_battery" />
+
+    <!-- Init.d -->
+    <PreferenceScreen
+        android:id="@+id/initD"
+        android:fragment="com.android.settings.InitD"
+        android:icon="@drawable/ic_settings_init"
+        android:title="@string/init_d_title"
+        android:summary="@string/header_summary_init_d" />   
+
+    <!-- Propmodder -->
+    <PreferenceScreen
+        android:key="buildprop_modder"
+        android:title="@string/propmodder_title"
+        android:icon="@drawable/ic_settings_prop_modder"
+        android:fragment="com.android.settings.limpio.PropModder"/>
 
     <!-- Screen Recorder -->
     <PreferenceScreen
@@ -96,26 +126,5 @@
         android:fragment="com.android.settings.limpio.XposedFramework"
         android:title="@string/xposed_framework_title"
         android:icon="@drawable/ic_launcher_white" />
-
-    <!-- BatterySaver -->
-    <PreferenceScreen
-        android:fragment="com.android.settings.limpio.BatterySaverSettings"
-        android:title="@string/battery_saver_title"
-        android:icon="@drawable/ic_settings_battery" />
-
-    <!-- Propmodder -->
-    <PreferenceScreen
-        android:key="buildprop_modder"
-        android:title="@string/propmodder_title"
-        android:icon="@drawable/ic_settings_prop_modder"
-        android:fragment="com.android.settings.limpio.PropModder"/>
-
-    <!-- Init.d -->
-    <PreferenceScreen
-        android:id="@+id/initD"
-        android:fragment="com.android.settings.InitD"
-        android:icon="@drawable/ic_settings_init"
-        android:title="@string/init_d_title"
-        android:summary="@string/header_summary_init_d" />   
 
 </PreferenceScreen>
