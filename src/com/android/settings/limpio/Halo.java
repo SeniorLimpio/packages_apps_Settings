@@ -46,6 +46,7 @@ public class Halo extends SettingsPreferenceFragment
     private static final String KEY_HALO_MSGBOX = "halo_msgbox";
     private static final String KEY_HALO_NOTIFY_COUNT = "halo_notify_count";
     private static final String KEY_HALO_UNLOCK_PING = "halo_unlock_ping";
+    private static final String KEY_FLOATING_MODE = "floating_mode";
     private static final String PREF_HALO_COLORS = "halo_colors";
     private static final String PREF_HALO_CIRCLE_COLOR = "halo_circle_color";
     private static final String PREF_HALO_BUBBLE_COLOR = "halo_bubble_color";
@@ -62,6 +63,7 @@ public class Halo extends SettingsPreferenceFragment
     private CheckBoxPreference mHaloNinja;
     private CheckBoxPreference mHaloMsgBox;
     private CheckBoxPreference mHaloUnlockPing;
+    private CheckBoxPreference mFloatingMode;
     private CheckBoxPreference mHaloColors;
     private ColorPickerPreference mHaloCircleColor;
     private ColorPickerPreference mHaloBubbleColor;
@@ -132,6 +134,10 @@ public class Halo extends SettingsPreferenceFragment
         }
         mHaloNotifyCount.setOnPreferenceChangeListener(this);
 
+        mFloatingMode = (CheckBoxPreference) prefSet.findPreference(KEY_FLOATING_MODE);
+        mFloatingMode.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.FLOATING_MODE, 1) == 1);
+
         mHaloColors = (CheckBoxPreference) prefSet.findPreference(PREF_HALO_COLORS);
         mHaloColors.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HALO_PROPERTIES_COLOR, 0) == 1);
@@ -186,6 +192,10 @@ public class Halo extends SettingsPreferenceFragment
         } else if (preference == mHaloUnlockPing) {
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.HALO_UNLOCK_PING, mHaloUnlockPing.isChecked()
+                    ? 1 : 0);
+        } else if (preference == mFloatingMode) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.FLOATING_MODE, mFloatingMode.isChecked()
                     ? 1 : 0);
         } else if (preference == mHaloColors) {
             Settings.System.putInt(mContext.getContentResolver(),

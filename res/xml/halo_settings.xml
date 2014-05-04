@@ -133,4 +133,10 @@ limitations under the License.
 
     </PreferenceCategory>
 
+    <CheckBoxPreference
+        android:key="floating_mode"
+        android:title="@string/floating_mode_title"
+        android:summary="@string/floating_mode_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>
