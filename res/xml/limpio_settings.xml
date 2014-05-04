@@ -53,7 +53,7 @@
 
     <Preference
         android:key="download_center"
-        android:icon="@drawable/ic_crom_download"
+        android:icon="@drawable/ic_dt_download"
         android:fragment="com.android.settings.limpio.Download"
         android:layout="@layout/preference_download"
         android:title="@string/download_category" />
