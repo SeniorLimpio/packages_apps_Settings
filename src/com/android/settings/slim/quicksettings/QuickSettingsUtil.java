@@ -14,7 +14,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.android.settings.slim.quicksettings;
 
 import static com.android.internal.util.slim.QSConstants.TILES_DEFAULT;
@@ -264,6 +263,8 @@ public class QuickSettingsUtil {
             return context.getResources().getString(R.string.dynamic_tile_alarm);
         } else if (tile.equals(TILE_BUGREPORT)) {
             return context.getResources().getString(R.string.dynamic_tile_bugreport);
+        } else if (tile.equals(TILE_EQUALIZER)) {
+            return context.getResources().getString(R.string.dynamic_tile_equalizer);
         }
         return null;
     }
