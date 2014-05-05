@@ -45,6 +45,7 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
     Preference mTBOGapps;
     Preference mXposed;
     Preference mXposedMod;
+    Preference mGoogleCamera;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +60,7 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
         mTBOGapps = findPreference("tbo_gapps");
         mXposed = findPreference("xposed");
         mXposedMod = findPreference("xposed_mod");
+        mGoogleCamera = findPreference("google_camera");
     }
 
     @Override
