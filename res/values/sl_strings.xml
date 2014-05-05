@@ -851,6 +851,8 @@
     <string name="xposed_summary">While Xposed is proven to be a very useful tool, some modules may cause issues/bugs in custom ROMs. Please uninstall all modules before reporting any bugs that you may come across while using Xposed.</string>
     <string name="xposed_mod_title">Module Repository</string>
     <string name="xposed_mod_summary">Browse and install modules to be used with Xposed Framework</string>
+    <string name="google_camera_title">Google Camera</string>
+    <string name="google_camera_summary">Google Camera (flashable) with photosphere and HDR mode google_camera</string>
 
     <!-- Active display -->
     <string name="ad_enable_title">Enable</string>

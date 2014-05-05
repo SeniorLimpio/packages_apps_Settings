@@ -79,7 +79,7 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
             startActivity(intent);
             return true;
         } else if (preference == mTBOGapps) {
-            Uri uri = Uri.parse("http://goo.gl/0UVn4d");
+            Uri uri = Uri.parse("http://goo.gl/EZ1CAM");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
@@ -90,6 +90,11 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
             return true;
         } else if (preference == mXposedMod) {
             Uri uri = Uri.parse("http://goo.gl/5J860t");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+            return true;
+         } else if (preference == mGoogleCamera) {
+            Uri uri = Uri.parse("http://goo.gl/9ADfbH");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;

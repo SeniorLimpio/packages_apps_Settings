@@ -57,6 +57,11 @@
         android:title="@string/xposed_mod_title"
         android:summary="@string/xposed_mod_summary" />
 
+    <Preference
+        android:key="google_camera"
+        android:title="@string/google_camera_title"
+        android:summary="@string/google_camera_summary" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
