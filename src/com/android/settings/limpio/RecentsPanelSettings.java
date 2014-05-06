@@ -6,11 +6,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
+import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
@@ -27,6 +30,7 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import com.android.settings.util.Helpers;
 
 import java.util.Date;
+import java.util.List;
 
 public class RecentsPanelSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
@@ -75,8 +79,10 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
         mRecentsCustom.setOnPreferenceChangeListener(this);
 
         mRecentClearAll = (CheckBoxPreference) prefSet.findPreference(RECENT_MENU_CLEAR_ALL);
-        mRecentClearAll.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-            Settings.System.SHOW_CLEAR_RECENTS_BUTTON, 1) == 1);
+        int clearStatus = Settings.System.getInt(getActivity().getContentResolver(),
+            Settings.System.CLEAR_RECENTS_BUTTON, 4);
+	mRecentClearAll.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+            Settings.System.CLEAR_RECENTS_BUTTON, 4) == 4);
         mRecentClearAll.setOnPreferenceChangeListener(this);
         mRecentClearAllPosition = (ListPreference) prefSet.findPreference(RECENT_MENU_CLEAR_ALL_LOCATION);
         String recentClearAllPosition = Settings.System.getString(getActivity().getContentResolver(), 
@@ -171,7 +177,7 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
         } else if (preference == mRecentClearAll) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(), 
-                 Settings.System.SHOW_CLEAR_RECENTS_BUTTON, value ? 1 : 0);
+                 Settings.System.CLEAR_RECENTS_BUTTON, value ? 1 : 0);
             return true;
         } else if (preference == mRecentClearAllPosition) {
             String value = (String) newValue;
@@ -179,8 +185,8 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
                  Settings.System.CLEAR_RECENTS_BUTTON_LOCATION, value);
             return true;
         } else if (preference == mCircleMemButton) {
-            int value = Integer.valueOf((String) objValue);
-            int index = mCircleMemButton.findIndexOfValue((String) objValue);
+            int value = Integer.valueOf((String) newValue);
+            int index = mCircleMemButton.findIndexOfValue((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.CIRCLE_MEM_BUTTON, value);
             mCircleMemButton.setSummary(mCircleMemButton.getEntries()[index]);

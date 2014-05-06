@@ -51,7 +51,9 @@
         android:entries="@array/circle_recents_entries"
         android:entryValues="@array/circle_recents_values"
         android:summary="@string/circle_memory_indicator_summary"
-        android:defaultValue="0" />
+        android:defaultValue="0"
+        android:dependency="recent_menu_clear_all" />
+
 
     <PreferenceCategory
         android:key="ram_bar_mode_cat"
