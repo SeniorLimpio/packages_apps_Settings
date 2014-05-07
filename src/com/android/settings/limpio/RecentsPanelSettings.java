@@ -166,11 +166,11 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
         alertDialog.create().show();
     } 
 
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
         if (preference == mRecentsCustom) { // Enable||disbale Slim Recent
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.CUSTOM_RECENT_TOGGLE,
-                    ((Boolean) newValue) ? true : false);
+                    ((Boolean) objValue) ? true : false);
             updateRecentsOptions();
             Helpers.restartSystemUI();
             return true;
@@ -182,15 +182,15 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
             mClearAllButton.setSummary(mClearAllButton.getEntries()[index]);
             return true;
         } else if (preference == mCircleMemButton) {
-            int value = Integer.valueOf((String) newValue);
-            int index = mCircleMemButton.findIndexOfValue((String) newValue);
+            int value = Integer.valueOf((String) objValue);
+            int index = mCircleMemButton.findIndexOfValue((String) objValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.CIRCLE_MEM_BUTTON, value);
             mCircleMemButton.setSummary(mCircleMemButton.getEntries()[index]);
             return true;
         } else if (preference == mRamBarMode) {
-            int ramBarMode = Integer.valueOf((String) newValue);
-            int index = mRamBarMode.findIndexOfValue((String) newValue);
+            int ramBarMode = Integer.valueOf((String) objValue);
+            int index = mRamBarMode.findIndexOfValue((String) objValue);
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.RECENTS_RAM_BAR_MODE, ramBarMode);
             mRamBarMode.setSummary(mRamBarMode.getEntries()[index]);
@@ -198,7 +198,7 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
             return true;
         } else if (preference == mRecentsColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer
-                    .valueOf(String.valueOf(newValue)));
+                    .valueOf(String.valueOf(objValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
@@ -207,7 +207,7 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
             return true;
         } else if (preference == mRamBarAppMemColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer
-                    .valueOf(String.valueOf(newValue)));
+                    .valueOf(String.valueOf(objValue)));
             preference.setSummary(hex);
 
             int intHex = ColorPickerPreference.convertToColorInt(hex);
@@ -216,7 +216,7 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
             return true;
         } else if (preference == mRamBarCacheMemColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer
-                    .valueOf(String.valueOf(newValue)));
+                    .valueOf(String.valueOf(objValue)));
             preference.setSummary(hex);
 
             int intHex = ColorPickerPreference.convertToColorInt(hex);
@@ -225,7 +225,7 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
             return true;
         } else if (preference == mRamBarTotalMemColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer
-                    .valueOf(String.valueOf(newValue)));
+                    .valueOf(String.valueOf(objValue)));
             preference.setSummary(hex);
 
             int intHex = ColorPickerPreference.convertToColorInt(hex);
