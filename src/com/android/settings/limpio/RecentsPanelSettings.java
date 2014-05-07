@@ -40,8 +40,7 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
     private static final String TAG = "RecentsPanelSettings";
 
     private static final String CUSTOM_RECENT_MODE = "custom_recent_mode";
-    private static final String RECENT_MENU_CLEAR_ALL = "recent_menu_clear_all";
-    private static final String RECENT_MENU_CLEAR_ALL_LOCATION = "recent_menu_clear_all_location";
+    private static final String CLEAR_RECENTS_BUTTON = "clear_recents_button";
     private static final String RAM_BAR_MODE = "ram_bar_mode";
     private static final String RAM_BAR_COLOR_APP_MEM = "ram_bar_color_app_mem";
     private static final String RAM_BAR_COLOR_CACHE_MEM = "ram_bar_color_cache_mem";
@@ -55,8 +54,7 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
     static final int DEFAULT_ACTIVE_APPS_COLOR = 0xff33b5e5;
 
     private CheckBoxPreference mRecentsCustom;
-    private CheckBoxPreference mRecentClearAll;
-    private ListPreference mRecentClearAllPosition;
+    private ListPreference mClearAllButton;
     private ListPreference mRamBarMode;
     private ColorPickerPreference mRamBarAppMemColor;
     private ColorPickerPreference mRamBarCacheMemColor;
@@ -70,12 +68,11 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        addPreferencesFromResource(R.xml.recents_panel_settings);
+        PreferenceScreen prefSet = getPreferenceScreen();
+
         int intColor;
         String hexColor;
-
-        addPreferencesFromResource(R.xml.recents_panel_settings);
-
-        PreferenceScreen prefSet = getPreferenceScreen();
 
         boolean enableRecentsCustom = Settings.System.getBoolean(getContentResolver(),
                                       Settings.System.CUSTOM_RECENT_TOGGLE, false);
@@ -83,23 +80,17 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
         mRecentsCustom.setChecked(enableRecentsCustom);
         mRecentsCustom.setOnPreferenceChangeListener(this);
 
-        mRecentClearAll = (CheckBoxPreference) prefSet.findPreference(RECENT_MENU_CLEAR_ALL);
+        // clear recents position
+        mClearAllButton = (ListPreference) findPreference(CLEAR_RECENTS_BUTTON);
         int clearStatus = Settings.System.getInt(getActivity().getContentResolver(),
-            Settings.System.CLEAR_RECENTS_BUTTON, 4);
-	mRecentClearAll.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-            Settings.System.CLEAR_RECENTS_BUTTON, 4) == 4);
-        mRecentClearAll.setOnPreferenceChangeListener(this);
-        mRecentClearAllPosition = (ListPreference) prefSet.findPreference(RECENT_MENU_CLEAR_ALL_LOCATION);
-        String recentClearAllPosition = Settings.System.getString(getActivity().getContentResolver(), 
-            Settings.System.CLEAR_RECENTS_BUTTON_LOCATION);
-        if (recentClearAllPosition != null) {
-             mRecentClearAllPosition.setValue(recentClearAllPosition);
-        }
-        mRecentClearAllPosition.setOnPreferenceChangeListener(this);
+                Settings.System.CLEAR_RECENTS_BUTTON, 4);
+        mClearAllButton.setValue(String.valueOf(clearStatus));
+        mClearAllButton.setSummary(mClearAllButton.getEntry());
+        mClearAllButton.setOnPreferenceChangeListener(this);
 
         mCircleMemButton = (ListPreference) findPreference(CIRCLE_MEM_BUTTON);
         int circleStatus = Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.CIRCLE_MEM_BUTTON, 4);
+                Settings.System.CIRCLE_MEM_BUTTON, 1);
         mCircleMemButton.setValue(String.valueOf(clearStatus));
         mCircleMemButton.setSummary(mCircleMemButton.getEntry());
         mCircleMemButton.setOnPreferenceChangeListener(this);
@@ -183,15 +174,12 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
             updateRecentsOptions();
             Helpers.restartSystemUI();
             return true;
-        } else if (preference == mRecentClearAll) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(), 
-                 Settings.System.CLEAR_RECENTS_BUTTON, value ? 1 : 0);
-            return true;
-        } else if (preference == mRecentClearAllPosition) {
-            String value = (String) newValue;
-            Settings.System.putString(getActivity().getContentResolver(), 
-                 Settings.System.CLEAR_RECENTS_BUTTON_LOCATION, value);
+	} else if (preference == mClearAllButton) {
+            int value = Integer.valueOf((String) objValue);
+            int index = mClearAllButton.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.CLEAR_RECENTS_BUTTON, value);
+            mClearAllButton.setSummary(mClearAllButton.getEntries()[index]);
             return true;
         } else if (preference == mCircleMemButton) {
             int value = Integer.valueOf((String) newValue);
@@ -274,13 +262,11 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
         boolean recentsStyle = Settings.System.getBoolean(getActivity().getContentResolver(),
                Settings.System.CUSTOM_RECENT_TOGGLE, false);
         if (recentsStyle) {
-            mRecentClearAll.setEnabled(false);
             mRamBarMode.setEnabled(false);
             mRamBarAppMemColor.setEnabled(false);
             mRamBarCacheMemColor.setEnabled(false);
             mRamBarTotalMemColor.setEnabled(false);
         } else {
-            mRecentClearAll.setEnabled(true);
             mRamBarMode.setEnabled(true);
             if (ramBarMode == 0) {
                 mRamBarAppMemColor.setEnabled(false);
