@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.limpio;
+package com.android.settings.limpio;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -245,7 +245,7 @@ public class AppSelectListPreference extends DialogPreference {
 
         public static AppViewHolder createOrRecycle(LayoutInflater inflater, View convertView) {
             if (convertView == null) {
-                convertView = inflater.inflate(R.layout.app_item, null);
+                convertView = inflater.inflate(R.layout.ln_excluded_app_item, null);
 
                 // Creates a ViewHolder and store references to the two children views
                 // we want to bind data to.

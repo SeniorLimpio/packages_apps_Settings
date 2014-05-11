@@ -55,7 +55,7 @@
     <string name="notification_drawer_title">Notification drawer</string>
     <string name="pie_control_title">Pie control</string>
     <string name="theme_settings_title">Lights out</string>
-    <string name="limpio_animations_settings_title">Animation settings</string>
+    <string name="limpio_animations_settings_title">Animations</string>
     <string name="advanced_options_title">Limpio advanced</string>
     <string name="ime_settings_title">Keyboard</string>
 
@@ -450,7 +450,7 @@
     <string name="performance_settings_warning_title">Proceed with Caution</string>
 
     <!-- PropModder -->
-    <string name="propmodder_title">Build.prop Mods</string>
+    <string name="propmodder_title">Build.prop mods</string>
     <string name="propmodder_switches">Switches</string>
     <string name="buildprop_title">build.prop mods (reboot required)</string>
     <string name="buildprop_settings_warning">These settings are included for experimentation and any changes made to them have the potential to cause instability, crashes, data loss or hardware failures.\n\nWe request you do not file bug reports if any of these settings have been changed from the defaults.</string>
@@ -656,9 +656,9 @@
     <string name="ic_settings_fusionlab_category">Limpio Factory</string>
 
     <!-- Gesture Anywhere -->
-    <string name="gesture_anywhere_title">Gesture Anywhere</string>
-    <string name="gesture_anywhere_enabled_title">Gesture Anywhere</string>
-    <string name="gesture_anywhere_enabled_summary">Enable the Gesture Anywhere feature</string>
+    <string name="gesture_anywhere_title">Gesture anywhere</string>
+    <string name="gesture_anywhere_enabled_title">Gesture anywhere</string>
+    <string name="gesture_anywhere_enabled_summary">Enable the Gesture anywhere feature</string>
     <string name="gesture_anywhere_position_title">Loction</string>
     <string name="gesture_anywhere_position_left">Left edge</string>
     <string name="gesture_anywhere_position_right">Right edge</string>
@@ -709,7 +709,7 @@
     <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
 
     <!-- Driving mode -->
-    <string name="voice_tts_title">Driving Mode</string>
+    <string name="voice_tts_title">Driving mode</string>
     <string name="tts_settings_reset_message">Reset all settings to default?</string>
     <string name="voice_tts_notification_title">Drive mode</string>
     <string name="voice_tts_notification_summary_on">Enable driving mode</string>
@@ -829,8 +829,8 @@
     <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
 
     <!-- Download Center -->
-    <string name="download_category">Download Center</string>
-    <string name="gapps_category">GAPPS Packages</string>
+    <string name="download_category">Downloads</string>
+    <string name="gapps_category">GAPPS packages</string>
     <string name="xposed_category">Xposed Framework</string>
     <string name="multidpigapps_title">Multi-DPI Gapps</string>
     <string name="multidpigapps_summary">Multi DPI Gapps are generally recommended if changing system density to anything other then stock</string>
@@ -841,7 +841,7 @@
     <string name="xposed_warning">WARNING</string>
     <string name="xposed_title">Xposed Installer</string>
     <string name="xposed_summary">While Xposed is proven to be a very useful tool, some modules may cause issues/bugs in custom ROMs. Please uninstall all modules before reporting any bugs that you may come across while using Xposed.</string>
-    <string name="xposed_mod_title">Module Repository</string>
+    <string name="xposed_mod_title">Module repository</string>
     <string name="xposed_mod_summary">Browse and install modules to be used with Xposed Framework</string>
     <string name="google_camera_title">Google Camera</string>
     <string name="google_camera_summary">Google Camera (flashable) with photosphere and HDR mode google_camera</string>
@@ -962,7 +962,7 @@
     <string name="floating_mode_summary">Controls whether open halo notifications on floating window mode</string>
 
     <!-- Circle App Launcher -->
-    <string name="category_app_circle_bar_title">Circle App launcher</string>
+    <string name="category_app_circle_bar_title">Circle app launcher</string>
     <string name="app_circle_bar_title">App circle bar</string>
     <string name="app_circle_bar_summary">Show circle app launcher after touching right side of screen</string>
     <string name="app_circle_bar_included_apps_title">Included apps</string>
