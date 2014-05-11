@@ -92,17 +92,6 @@
         android:icon="@drawable/ic_settings_theme"
         android:title="@string/theme_settings_title" />
 
-    <!-- SlimCenter -->
-    <header
-        android:id="@+id/slim_center"
-        android:title="@string/slim_center_title"
-        android:icon="@drawable/ic_settings_slimcenter">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.slim.ota"
-            android:targetClass="com.slim.center.SlimCenter" />
-    </header>
-
     <!-- Limpio's Extras -->
     <header
         android:id="@+id/interface_settings"

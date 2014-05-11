@@ -29,13 +29,20 @@
     <string name="reset_message">Reset entries to default?</string>
     <string name="applist_title">Apps</string>
 
-    <!-- Advanced titles -->
-    <string name="advanced_category_title">Advanced</string>
-    <string name="advanced_options_title">Advanced options</string>
-
     <!-- Category titles -->
+
     <string name="additional_category_title">Additional</string>
     <string name="general_category_title">General</string>
+    <string name="ui_category_title">User interface</string>
+    <string name="misc_category_title">Miscellaneous</string>
+    <string name="lockscreen_category_title">Lockscreen</string>
+    <string name="av_category_title">Audio/Visual</string>
+    <string name="lookandfeel_category_title">Look and feel</string>
+    <string name="advanced_category_title">Advanced</string>
+    <string name="advanced_options_title">Advanced options</string>
+    <string name="system_category_title">System</string>
+    <string name="tweaks_category_title">Tweaks</string>
+    <string name="applauncher_category_title">App launchers</string>
 
     <!-- Limpio's Extras -->
     <string name="limpio_settings_title">LimpioDroid extras</string>
@@ -47,9 +54,8 @@
     <string name="active_display_title">Active display</string>
     <string name="notification_drawer_title">Notification drawer</string>
     <string name="pie_control_title">Pie control</string>
-    <string name="theme_settings_title">Limpio dark</string>
+    <string name="theme_settings_title">Lights out</string>
     <string name="limpio_animations_settings_title">Animation settings</string>
-    <string name="ic_settings_boeffla_config">Kernel configuration</string>
     <string name="advanced_options_title">Limpio advanced</string>
     <string name="ime_settings_title">Keyboard</string>
 

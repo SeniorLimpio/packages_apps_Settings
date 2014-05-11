@@ -5,7 +5,25 @@
     android:title="@string/limpio_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <!-- General settings -->
+    <!-- App launchers -->
+    <PreferenceCategory 
+        android:title="@string/applauncher_category_title" />
+
+    <!-- App sidebar -->
+    <PreferenceScreen
+	android:key="app_sidebar"
+	android:fragment="com.android.settings.limpio.AppSidebar"
+	android:title="@string/app_sidebar_title"
+	android:icon="@drawable/ic_limpio_app_sidebar" />
+
+    <!-- Circle appbar -->
+    <PreferenceScreen
+        android:key="circle_appbar"
+        android:fragment="com.android.settings.limpio.CircleAppBar"
+        android:title="@string/category_app_circle_bar_title"
+        android:icon="@drawable/ic_limpio_animations" />
+
+    <!-- Genreal settings -->
     <PreferenceCategory 
         android:title="@string/general_category_title" />
 
@@ -30,12 +48,16 @@
         android:title="@string/general_settings_title"
         android:icon="@drawable/ic_limpio_general" />
 
-    <!-- Gesture anywhere -->
+    <!-- Look and feel -->
+    <PreferenceCategory 
+        android:title="@string/lookandfeel_category_title" />
+
+    <!-- Animations settings -->
     <PreferenceScreen
-        android:key="gesture_anywhere"
-        android:fragment="com.android.settings.limpio.labs.gestureanywhere.GestureAnywhereSettings"
-        android:icon="@drawable/ic_settings_gesture_anywhere"
-        android:title="@string/gesture_anywhere_title" />
+        android:key="animations_settings"
+        android:fragment="com.android.settings.limpio.LimpioAnimationsSettings"
+        android:title="@string/limpio_animations_settings_title"
+        android:icon="@drawable/ic_limpio_animations" />
 
     <!-- Identicons -->
     <PreferenceScreen
@@ -43,6 +65,32 @@
         android:fragment="com.android.settings.limpio.labs.identicons.IdenticonsSettings"
         android:icon="@drawable/ic_settings_identicons"
         android:title="@string/identicons_title" />
+
+    <!-- User interface -->
+    <PreferenceCategory 
+        android:title="@string/ui_category_title" />
+
+    <!-- Active display -->
+
+    <PreferenceScreen
+        android:key="active_display"
+        android:fragment="com.android.settings.limpio.ActiveDisplay"
+        android:title="@string/active_display_title"
+        android:icon="@drawable/ic_limpio_active_display" />
+
+    <!-- Gesture anywhere -->
+    <PreferenceScreen
+        android:key="gesture_anywhere"
+        android:fragment="com.android.settings.limpio.labs.gestureanywhere.GestureAnywhereSettings"
+        android:icon="@drawable/ic_settings_gesture_anywhere"
+        android:title="@string/gesture_anywhere_title" />
+
+    <!-- HALO -->
+    <PreferenceScreen
+        android:id="@+id/halo_settings"
+        android:fragment="com.android.settings.limpio.Halo"
+        android:icon="@drawable/ic_settings_halo"
+        android:title="@string/halo_settings_title" />
 
     <!-- Lock screen -->
     <PreferenceScreen
@@ -58,38 +106,9 @@
         android:title="@string/statusbar_settings_title"
         android:icon="@drawable/ic_network_signal_4" />
 
-    <!-- Advanced settings -->
+    <!-- System -->
     <PreferenceCategory 
-        android:title="@string/advanced_category_title" />
-
-    <!-- Active display -->
-
-    <PreferenceScreen
-        android:key="active_display"
-        android:fragment="com.android.settings.limpio.ActiveDisplay"
-        android:title="@string/active_display_title"
-        android:icon="@drawable/ic_limpio_active_display" />
-
-    <!-- Animations settings -->
-    <PreferenceScreen
-        android:key="animations_settings"
-        android:fragment="com.android.settings.limpio.LimpioAnimationsSettings"
-        android:title="@string/limpio_animations_settings_title"
-        android:icon="@drawable/ic_limpio_animations" />
-
-    <!-- Animations settings -->
-    <PreferenceScreen
-        android:key="circle_appbar"
-        android:fragment="com.android.settings.limpio.CircleAppBar"
-        android:title="@string/category_app_circle_bar_title"
-        android:icon="@drawable/ic_limpio_animations" />
-
-    <!-- App sidebar -->
-    <PreferenceScreen
-	android:key="app_sidebar"
-	android:fragment="com.android.settings.limpio.AppSidebar"
-	android:title="@string/app_sidebar_title"
-	android:icon="@drawable/ic_limpio_app_sidebar" />
+        android:title="@string/system_category_title" />
 
     <!-- BatterySaver -->
     <PreferenceScreen
@@ -97,12 +116,23 @@
         android:title="@string/battery_saver_title"
         android:icon="@drawable/ic_settings_battery" />
 
-    <!-- HALO -->
+    <!-- Wakelock blocker -->
     <PreferenceScreen
-        android:id="@+id/halo_settings"
-        android:fragment="com.android.settings.limpio.Halo"
-        android:icon="@drawable/ic_settings_halo"
-        android:title="@string/halo_settings_title" />
+        android:id="@+id/wakelock_blocker"
+        android:fragment="com.android.settings.limpio.WakeLockBlocker"
+        android:icon="@drawable/ic_settings_wakelock_blocker"
+        android:title="@string/wakelock_blocker" />
+
+    <!-- Xposed Framework -->
+    <PreferenceScreen
+        android:key="xposed_framework"
+        android:fragment="com.android.settings.limpio.XposedFramework"
+        android:title="@string/xposed_framework_title"
+        android:icon="@drawable/ic_launcher_white" />
+
+    <!-- Tweaks -->
+    <PreferenceCategory 
+        android:title="@string/tweaks_category_title" />
 
     <!-- Init.d -->
     <PreferenceScreen
@@ -118,27 +148,5 @@
         android:title="@string/propmodder_title"
         android:icon="@drawable/ic_settings_prop_modder"
         android:fragment="com.android.settings.limpio.PropModder"/>
-
-    <!-- Screen Recorder -->
-    <PreferenceScreen
-        android:key="screen_recorder"
-        android:title="@string/screen_recorder_title"
-        android:summary="@string/screen_recorder_summary2"
-        android:fragment="com.android.settings.limpio.ScreenRecorderSettings"
-        android:icon="@drawable/ic_screenrecorder" />
-
-    <!-- Wakelock blocker -->
-    <PreferenceScreen
-            android:id="@+id/wakelock_blocker"
-            android:fragment="com.android.settings.limpio.WakeLockBlocker"
-            android:icon="@drawable/ic_settings_wakelock_blocker"
-            android:title="@string/wakelock_blocker" />
-
-    <!-- Xposed Framework -->
-    <PreferenceScreen
-        android:key="xposed_framework"
-        android:fragment="com.android.settings.limpio.XposedFramework"
-        android:title="@string/xposed_framework_title"
-        android:icon="@drawable/ic_launcher_white" />
 
 </PreferenceScreen>
