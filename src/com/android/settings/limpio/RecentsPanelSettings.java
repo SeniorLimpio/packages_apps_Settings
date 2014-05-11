@@ -90,7 +90,7 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
 
         mCircleMemButton = (ListPreference) findPreference(CIRCLE_MEM_BUTTON);
         int circleStatus = Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.CIRCLE_MEM_BUTTON, 1);
+                Settings.System.CIRCLE_MEM_BUTTON, 0);
         mCircleMemButton.setValue(String.valueOf(clearStatus));
         mCircleMemButton.setSummary(mCircleMemButton.getEntry());
         mCircleMemButton.setOnPreferenceChangeListener(this);

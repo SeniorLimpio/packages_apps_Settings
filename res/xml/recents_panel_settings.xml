@@ -29,20 +29,13 @@
             android:key="category_recent_panel"
             android:title="@string/recents_clear_all_button"/>
 
-    <CheckBoxPreference
-            android:key="recent_menu_clear_all"
-            android:title="@string/show_recent_clear_all_button_title"
-            android:summary="@string/show_recent_clear_all_button_summary"
-            android:defaultValue="true" />
-
     <ListPreference
-            android:key="recent_menu_clear_all_location"
-            android:title="@string/recent_clear_all_button_location_title"
-            android:summary="@string/recent_clear_all_button_location_summary"
-            android:entries="@array/recent_clear_all_button_location_entries"
-            android:entryValues="@array/recent_clear_all_button_location_values"
-            android:defaultValue="2"
-            android:dependency="recent_menu_clear_all" />
+            android:key="clear_recents_button"
+            android:title="@string/clear_button_title"
+            android:summary="@string/clear_button_summary"
+            android:entries="@array/clear_recents_entries"
+            android:entryValues="@array/clear_recents_values"
+            android:defaultValue="4" />
 
     <ListPreference
         android:key="circle_mem_button"
@@ -51,8 +44,7 @@
         android:entries="@array/circle_recents_entries"
         android:entryValues="@array/circle_recents_values"
         android:summary="@string/circle_memory_indicator_summary"
-        android:defaultValue="0"
-        android:dependency="recent_menu_clear_all" />
+        android:defaultValue="0" />
 
 
     <PreferenceCategory
@@ -67,7 +59,7 @@
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="recents_panel_color"
         android:title="@string/recents_panel_color_title"
-        android:defaultValue="0xE0000000"
+        android:defaultValue="0xCC000000"
         alphaSlider="true" />
 
     <PreferenceCategory
