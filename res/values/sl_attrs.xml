@@ -37,4 +37,10 @@
         <attr name="entryImages" format="reference" />
     </declare-styleable>
 
+    <declare-styleable name="AppSelectListPreference">
+        <attr name="neutralButtonText" format="string|reference" />
+        <attr name="neutralButtonValue" format="string|reference" />
+        <attr name="positiveButtonValue" format="string|reference" />
+    </declare-styleable>
+
 </resources>
