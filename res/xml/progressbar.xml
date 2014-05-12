@@ -38,7 +38,7 @@
             settings:min="1"
             settings:unitsLeft="Speed: "
             settings:unitsRight=""
-            android:defaultValue="10" />
+            android:defaultValue="6" />
 
         <com.android.settings.limpio.NEWSeekBarPreference
             android:key="progressbar_width"
@@ -60,7 +60,7 @@
             settings:min="0"
             settings:unitsLeft="Separator length: "
             settings:unitsRight="dp"
-            android:defaultValue="10" />
+            android:defaultValue="16" />
 
         <com.android.settings.limpio.NEWSeekBarPreference
             android:key="progressbar_count"
@@ -76,7 +76,7 @@
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="progressbar_color_1"
         android:title="@string/progressbar_color_1_title"
-        android:defaultValue="#ffffff" />
+        android:defaultValue="#848482" />
 
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="progressbar_color_2"
@@ -86,7 +86,7 @@
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="progressbar_color_3"
         android:title="@string/progressbar_color_3_title"
-        android:defaultValue="#ffffff" />
+        android:defaultValue="#848482" />
 
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="progressbar_color_4"
