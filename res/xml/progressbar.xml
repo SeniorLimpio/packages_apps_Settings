@@ -60,7 +60,7 @@
             settings:min="0"
             settings:unitsLeft="Separator length: "
             settings:unitsRight="dp"
-            android:defaultValue="16" />
+            android:defaultValue="12" />
 
         <com.android.settings.limpio.NEWSeekBarPreference
             android:key="progressbar_count"
