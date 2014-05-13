@@ -66,7 +66,10 @@ public class ProgressBar extends SettingsPreferenceFragment implements
 	private ListPreference mprogressbar_interpolator;
 
 	private static final int MENU_RESET = Menu.FIRST;
-	private static final int defaultColor = 0xffffffff;
+	private static final int defaultColor1 = 0xffffffff;
+	private static final int defaultColor2 = 0xff535151;
+	private static final int defaultColor3 = 0xffffffff;
+	private static final int defaultColor4 = 0xff535151;
 
 
 	@Override
@@ -91,7 +94,7 @@ public class ProgressBar extends SettingsPreferenceFragment implements
 
 		mprogressbar_speed = (NEWSeekBarPreference) findPreference(PROGRESSBAR_SPEED);
 		mprogressbar_speed.setValue(Settings.System.getInt(getContentResolver(),
-		                            Settings.System.PROGRESSBAR_SPEED, 4));
+		                            Settings.System.PROGRESSBAR_SPEED, 6));
 		mprogressbar_speed.setOnPreferenceChangeListener(this);
 
 		mprogressbar_width = (NEWSeekBarPreference) findPreference(PROGRESSBAR_WIDTH);
@@ -101,31 +104,31 @@ public class ProgressBar extends SettingsPreferenceFragment implements
 
 		mprogressbar_length = (NEWSeekBarPreference) findPreference(PROGRESSBAR_LENGTH);
 		mprogressbar_length.setValue(Settings.System.getInt(getContentResolver(),
-		                             Settings.System.PROGRESSBAR_LENGTH, 16));
+		                             Settings.System.PROGRESSBAR_LENGTH, 12));
 		mprogressbar_length.setOnPreferenceChangeListener(this);
 
 		mprogressbar_count = (NEWSeekBarPreference) findPreference(PROGRESSBAR_COUNT);
 		mprogressbar_count.setValue(Settings.System.getInt(getContentResolver(),
-		                            Settings.System.PROGRESSBAR_COUNT, 5));
+		                            Settings.System.PROGRESSBAR_COUNT, 6));
 		mprogressbar_count.setOnPreferenceChangeListener(this);
 
 		mprogressbar_color_1 = (ColorPickerPreference) findPreference(PROGRESSBAR_COLOR_1);
-		int intColor1 = Settings.System.getInt(getContentResolver(), Settings.System.PROGRESSBAR_COLOR_1, defaultColor);
+		int intColor1 = Settings.System.getInt(getContentResolver(), Settings.System.PROGRESSBAR_COLOR_1, defaultColor1);
 		mprogressbar_color_1.setNewPreviewColor(intColor1);
 		mprogressbar_color_1.setOnPreferenceChangeListener(this);
 
 		mprogressbar_color_2 = (ColorPickerPreference) findPreference(PROGRESSBAR_COLOR_2);
-		int intColor2 = Settings.System.getInt(getContentResolver(), Settings.System.PROGRESSBAR_COLOR_2, defaultColor);
+		int intColor2 = Settings.System.getInt(getContentResolver(), Settings.System.PROGRESSBAR_COLOR_2, defaultColor2);
 		mprogressbar_color_2.setNewPreviewColor(intColor2);
 		mprogressbar_color_2.setOnPreferenceChangeListener(this);
 
 		mprogressbar_color_3 = (ColorPickerPreference) findPreference(PROGRESSBAR_COLOR_3);
-		int intColor3 = Settings.System.getInt(getContentResolver(), Settings.System.PROGRESSBAR_COLOR_3, defaultColor);
+		int intColor3 = Settings.System.getInt(getContentResolver(), Settings.System.PROGRESSBAR_COLOR_3, defaultColor3);
 		mprogressbar_color_3.setNewPreviewColor(intColor3);
 		mprogressbar_color_3.setOnPreferenceChangeListener(this);
 
 		mprogressbar_color_4 = (ColorPickerPreference) findPreference(PROGRESSBAR_COLOR_4);
-		int intColor4 = Settings.System.getInt(getContentResolver(), Settings.System.PROGRESSBAR_COLOR_4, defaultColor);
+		int intColor4 = Settings.System.getInt(getContentResolver(), Settings.System.PROGRESSBAR_COLOR_4, defaultColor4);
 		mprogressbar_color_4.setNewPreviewColor(intColor4);
 		mprogressbar_color_4.setOnPreferenceChangeListener(this);
 
@@ -170,27 +173,27 @@ public class ProgressBar extends SettingsPreferenceFragment implements
 	}
 
 	private void ProgressBarColorReset() {
-		Settings.System.putInt(getContentResolver(), Settings.System.PROGRESSBAR_MIRROR, 0);
-		Settings.System.putInt(getContentResolver(), Settings.System.PROGRESSBAR_REVERSE, 0);
-		Settings.System.putInt(getContentResolver(), Settings.System.PROGRESSBAR_SPEED, 4);
+		Settings.System.putInt(getContentResolver(), Settings.System.PROGRESSBAR_MIRROR, 1);
+		Settings.System.putInt(getContentResolver(), Settings.System.PROGRESSBAR_REVERSE, 1);
+		Settings.System.putInt(getContentResolver(), Settings.System.PROGRESSBAR_SPEED, 6);
 		Settings.System.putInt(getContentResolver(), Settings.System.PROGRESSBAR_WIDTH, 4);
-		Settings.System.putInt(getContentResolver(), Settings.System.PROGRESSBAR_LENGTH, 10);
+		Settings.System.putInt(getContentResolver(), Settings.System.PROGRESSBAR_LENGTH, 12);
 		Settings.System.putInt(getContentResolver(), Settings.System.PROGRESSBAR_COUNT, 6);
-		Settings.System.putInt(getContentResolver(), Settings.System.PROGRESSBAR_COLOR_1, defaultColor);
-		Settings.System.putInt(getContentResolver(), Settings.System.PROGRESSBAR_COLOR_2, defaultColor);
-		Settings.System.putInt(getContentResolver(), Settings.System.PROGRESSBAR_COLOR_3, defaultColor);
-		Settings.System.putInt(getContentResolver(), Settings.System.PROGRESSBAR_COLOR_4, defaultColor);
+		Settings.System.putInt(getContentResolver(), Settings.System.PROGRESSBAR_COLOR_1, defaultColor1);
+		Settings.System.putInt(getContentResolver(), Settings.System.PROGRESSBAR_COLOR_2, defaultColor2);
+		Settings.System.putInt(getContentResolver(), Settings.System.PROGRESSBAR_COLOR_3, defaultColor3);
+		Settings.System.putInt(getContentResolver(), Settings.System.PROGRESSBAR_COLOR_4, defaultColor4);
 
-		mprogressbar_mirror.setChecked(false);
-		mprogressbar_reverse.setChecked(false);
-		mprogressbar_speed.setValue(4);
+		mprogressbar_mirror.setChecked(true);
+		mprogressbar_reverse.setChecked(true);
+		mprogressbar_speed.setValue(6);
 		mprogressbar_width.setValue(4);
-		mprogressbar_length.setValue(10);
+		mprogressbar_length.setValue(12);
 		mprogressbar_count.setValue(6);
-		mprogressbar_color_1.setNewPreviewColor(defaultColor);
-		mprogressbar_color_2.setNewPreviewColor(defaultColor);
-		mprogressbar_color_3.setNewPreviewColor(defaultColor);
-		mprogressbar_color_4.setNewPreviewColor(defaultColor);
+		mprogressbar_color_1.setNewPreviewColor(defaultColor1);
+		mprogressbar_color_2.setNewPreviewColor(defaultColor2);
+		mprogressbar_color_3.setNewPreviewColor(defaultColor3);
+		mprogressbar_color_4.setNewPreviewColor(defaultColor4);
 	}
 
 	@Override
