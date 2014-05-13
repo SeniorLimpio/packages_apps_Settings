@@ -20,12 +20,37 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceScreen
-        android:title="@string/superuser"
-        android:fragment="com.koushikdutta.superuser.PolicyNativeFragment" />
+        android:key="devicesettings_app"
+        android:title="@string/device_settings_title">
+        <intent
+            android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
+            android:targetPackage="com.cyanogenmod.settings.device"
+            android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
+    </PreferenceScreen>
 
-    <PreferenceCategory
-        android:key="advanced_settings_options_prefs"
-        android:title="@string/advanced_options_settings_title">
+    <PreferenceScreen
+        android:key="hfm_settings"
+        android:title="@string/hfm_pref_screen_title"
+        android:fragment="com.android.settings.ldroid.hfm.HfmSettings" />
+
+    <!-- BatterySaver -->
+    <PreferenceScreen
+	android:key="battery_saver"
+        android:fragment="com.android.settings.ldroid.BatterySaverSettings"
+        android:title="@string/battery_saver_title" />
+
+    <!-- Propmodder -->
+    <PreferenceScreen
+        android:key="buildprop_modder"
+        android:title="@string/propmodder_title"
+        android:fragment="com.android.settings.ldroid.PropModder"/>
+
+    <!-- Init.d -->
+    <PreferenceScreen
+        android:id="@+id/initD"
+        android:fragment="com.android.settings.ldroid.InitD"
+        android:title="@string/init_d_title"
+        android:summary="@string/header_summary_init_d" />  
 
         <ListPreference
             android:key="media_scanner_on_boot"
@@ -34,26 +59,15 @@
             android:entries="@array/media_scanner_on_boot_entries"
             android:entryValues="@array/media_scanner_on_boot_values" />
 
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="misc_tweaks_hfm"
-        android:title="@string/misc_tweaks_hfm">
-    </PreferenceCategory>
-
-    <CheckBoxPreference
-        android:key="hfm_disable_ads"
-        android:title="@string/hfm_disable_ads_title"
-        android:summary="@string/hfm_disable_ads_summary"
-        android:persistent="false" />
-
     <PreferenceScreen
-        android:key="devicesettings_app"
-        android:title="@string/device_settings_title">
-        <intent
-            android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
-            android:targetPackage="com.cyanogenmod.settings.device"
-            android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
-    </PreferenceScreen>
+        android:title="@string/superuser"
+        android:fragment="com.koushikdutta.superuser.PolicyNativeFragment" />
+
+
+    <!-- Wakelock blocker -->
+    <PreferenceScreen
+        android:key="wakelock_blocker"
+        android:title="@string/wakelock_blocker"
+        android:fragment="com.android.settings.ldroid.WakeLockBlocker" />
 
 </PreferenceScreen>
