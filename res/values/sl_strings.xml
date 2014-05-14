@@ -522,6 +522,8 @@
 
     <!-- Recents Ram Bar -->
     <string name="ram_bar">Recents RAM bar</string>
+    <string name="ram_bar_title">Recents RAM bar</string>
+    <string name="ram_bar_summary">Enables and customize recent apps display</string>
     <string name="ram_bar_note_title">Note</string>
     <string name="ram_bar_note_summary">This RAM bar shows the actual android memory (RAM) utilization. Please note that having cached apps helps your device open apps much faster.</string>
     <string name="ram_bar_mode_title">Recents RAM bar mode</string>
@@ -556,7 +558,6 @@
     <string name="circle_memory_indicator_title">Circle Memory indicator</string>
     <string name="circle_memory_indicator_summary">Show a memory indicator within the recent applications view</string>
     <string name="circle_memory_indicator_location_title">Memory indicator position</string>
-
 
     <!-- Network usage stats -->
     <string name="status_bar_network_cat">Network traffic meter</string>
@@ -997,5 +998,31 @@
     <string name="headset_plug_positive_title">None</string>
     <string name="headset_plug_neutral_title">Default</string>
     <string name="headset_plug_neutral_summary">System default music app</string>
+
+    <!-- Status bar color & signal style -->
+    <string name="custom_status_bar_color_title">Custom status bar color</string>
+    <string name="status_bar_opaque_color">Opaque color</string>
+    <string name="status_bar_opaque_color_summary">Requires restart of system ui</string>
+    <string name="status_bar_transparent_color">Dimmed color</string>
+    <string name="custom_system_icon_color_title">Custom system icon color</string>
+    <string name="system_icon_color">Icon color</string>
+    <string name="custom_color_summary">Override the system color of the systemui</string>
+    <string name="status_bar_color_reset">Reset status bar color</string>
+    <string name="restart_status_bar_menu_title">Restart status bar</string>
+    <string name="restart_status_bar_title">Restart?</string>
+    <string name="restart_status_bar_message">Restarting the System UI will significally change the values you modify.</string>
+    <string name="status_bar_signal_text_title">Signal status style</string>
+    <string name="status_bar_signal_style_icon">Icon</string>
+    <string name="status_bar_signal_style_text">Text</string>
+    <string name="status_bar_style_hidden">Hidden</string>
+    <string name="status_bar_notif_count_title">Show notification count</string>
+    <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
+
+   <!-- Double tap to sleep -->
+    <string name="status_bar_double_tap_to_sleep_title">Double-tap to sleep</string>
+
+    <!-- Performance : Force high-end graphics -->
+    <string name="pref_force_highend_gfx_title">Force high-end graphics</string>
+    <string name="pref_force_highend_gfx_summary">Enables high-end visual effects such as transparent status/navigation bar (requires reboot)</string>
 
 </resources>

@@ -38,13 +38,13 @@
             android:defaultValue="4" />
 
     <ListPreference
-        android:key="circle_mem_button"
+        android:key="circle_memory_button"
         android:title="@string/circle_memory_indicator_title"
         android:dialogTitle="@string/circle_memory_indicator_location_title"
         android:entries="@array/circle_recents_entries"
         android:entryValues="@array/circle_recents_values"
         android:summary="@string/circle_memory_indicator_summary"
-        android:defaultValue="0" />
+	android:defaultValue="0" />
 
 
     <PreferenceCategory
@@ -59,12 +59,12 @@
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="recents_background_color"
         android:title="@string/recents_panel_color_title"
-        android:defaultValue="0xFF000000"
+        android:defaultValue="0xee111111"
         alphaSlider="true" />
 
     <PreferenceCategory
         android:key="ram_bar_mode_cat"
-        android:title="@string/ram_bar_mode_title">
+        android:title="@string/ram_bar_title">
 
     <ListPreference
         android:key="ram_bar_mode"

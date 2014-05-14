@@ -45,15 +45,13 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
     private static final String RAM_BAR_COLOR_APP_MEM = "ram_bar_color_app_mem";
     private static final String RAM_BAR_COLOR_CACHE_MEM = "ram_bar_color_cache_mem";
     private static final String RAM_BAR_COLOR_TOTAL_MEM = "ram_bar_color_total_mem";
-    private static final String CIRCLE_MEM_BUTTON = "circle_mem_button";
-    private static final String RECENTS_BACKGROUND_COLOR = "recents_background_color";
+    private static final String CIRCLE_MEMORY_BUTTON = "circle_mem_button";
 
     private static final int MENU_RESET = Menu.FIRST;
 
     static final int DEFAULT_MEM_COLOR = 0xff8d8d8d;
     static final int DEFAULT_CACHE_COLOR = 0xff00aa00;
     static final int DEFAULT_ACTIVE_APPS_COLOR = 0xff33b5e5;
-    static final int DEFAULT_RECENTS_COLOR = 0xff000000;
 
     private CheckBoxPreference mRecentsCustom;
     private ListPreference mClearAllButton;
@@ -90,7 +88,7 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
         mClearAllButton.setSummary(mClearAllButton.getEntry());
         mClearAllButton.setOnPreferenceChangeListener(this);
 
-        mCircleMemButton = (ListPreference) findPreference(CIRCLE_MEM_BUTTON);
+        mCircleMemButton = (ListPreference) findPreference(CIRCLE_MEMORY_BUTTON);
         int circleStatus = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.CIRCLE_MEM_BUTTON, 0);
         mCircleMemButton.setValue(String.valueOf(clearStatus));
@@ -128,18 +126,11 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
         mRamBarTotalMemColor.setSummary(hexColor);
         mRamBarTotalMemColor.setNewPreviewColor(intColor);
 
-        mRecentsColor = (ColorPickerPreference) findPreference(RECENTS_BACKGROUND_COLOR);
+        mRecentsColor = (ColorPickerPreference) findPreference("recents_panel_color");
         mRecentsColor.setOnPreferenceChangeListener(this);
-        intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.RECENTS_PANEL_COLOR, DEFAULT_RECENTS_COLOR);
-        hexColor = String.format("#%08x", (0xffffffff & intColor));
-        mRecentsColor.setSummary(hexColor);
-        mRecentsColor.setNewPreviewColor(intColor);
-
 
         updateRecentsOptions();
         setHasOptionsMenu(true);
-
     }
 
     @Override
