@@ -68,11 +68,12 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.recents_panel_settings);
-        PreferenceScreen prefSet = getPreferenceScreen();
-
         int intColor;
         String hexColor;
+
+        addPreferencesFromResource(R.xml.recents_panel_settings);
+
+        PreferenceScreen prefSet = getPreferenceScreen();
 
         boolean enableRecentsCustom = Settings.System.getBoolean(getContentResolver(),
                                       Settings.System.CUSTOM_RECENT_TOGGLE, false);
@@ -97,7 +98,7 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
 
         mRamBarMode = (ListPreference) prefSet.findPreference(RAM_BAR_MODE);
         int ramBarMode = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.RECENTS_RAM_BAR_MODE, 3);
+                Settings.System.RECENTS_RAM_BAR_MODE, 0);
         mRamBarMode.setValue(String.valueOf(ramBarMode));
         mRamBarMode.setSummary(mRamBarMode.getEntry());
         mRamBarMode.setOnPreferenceChangeListener(this);
@@ -165,11 +166,22 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
     } 
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        if (preference == mRecentsCustom) { // Enable||disbale Slim Recent
+	boolean result = false;
+
+        	if (preference == mRecentsCustom) { // Enable||disbale Slim Recent
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.CUSTOM_RECENT_TOGGLE,
                     ((Boolean) objValue) ? true : false);
             updateRecentsOptions();
+            Helpers.restartSystemUI();
+            return true;
+        } else if (preference == mRecentsColor) {
+            String hex = ColorPickerPreference.convertToARGB(Integer
+                    .valueOf(String.valueOf(objValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.RECENTS_PANEL_COLOR, intHex);
             Helpers.restartSystemUI();
             return true;
 	} else if (preference == mClearAllButton) {
@@ -193,15 +205,6 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements 
                     Settings.System.RECENTS_RAM_BAR_MODE, ramBarMode);
             mRamBarMode.setSummary(mRamBarMode.getEntries()[index]);
             updateRecentsOptions();
-            return true;
-        } else if (preference == mRecentsColor) {
-            String hex = ColorPickerPreference.convertToARGB(Integer
-                    .valueOf(String.valueOf(objValue)));
-            preference.setSummary(hex);
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.RECENTS_PANEL_COLOR, intHex);
-            Helpers.restartSystemUI();
             return true;
         } else if (preference == mRamBarAppMemColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer
