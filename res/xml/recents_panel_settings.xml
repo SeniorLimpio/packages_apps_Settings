@@ -38,7 +38,7 @@
             android:defaultValue="4" />
 
     <ListPreference
-        android:key="circle_memory_button"
+        android:key="circle_mem_button"
         android:title="@string/circle_memory_indicator_title"
         android:dialogTitle="@string/circle_memory_indicator_location_title"
         android:entries="@array/circle_recents_entries"
@@ -64,7 +64,7 @@
 
     <PreferenceCategory
         android:key="ram_bar_mode_cat"
-        android:title="@string/ram_bar_title">
+        android:title="@string/ram_bar_mode_title">
 
     <ListPreference
         android:key="ram_bar_mode"
@@ -96,11 +96,5 @@
             android:defaultValue="0xffaaaaaa" />
 
     </PreferenceCategory>
-
-    <Preference
-        style="?android:preferenceInformationStyle"
-        android:title="@string/ram_bar_note_title"
-        android:summary="@string/ram_bar_note_summary"
-        android:selectable="false" />
 
 </PreferenceScreen>

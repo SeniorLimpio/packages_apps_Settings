@@ -66,14 +66,14 @@ public class StatusBarFeatures extends SettingsPreferenceFragment implements
 
     private static final String TAG = "StatusBarFeatures";
 
+    private static final String STATUS_BAR_SIGNAL = "status_bar_signal";
     private static final String PREF_CUSTOM_STATUS_BAR_COLOR = "custom_status_bar_color";
     private static final String PREF_STATUS_BAR_OPAQUE_COLOR = "status_bar_opaque_color";
-    private static final String KEY_SMS_BREATH = "sms_breath";
     private static final String PREF_CUSTOM_SYSTEM_ICON_COLOR = "custom_system_icon_color";
     private static final String PREF_SYSTEM_ICON_COLOR = "system_icon_color";
+    private static final String KEY_SMS_BREATH = "sms_breath";
     private static final String KEY_MISSED_CALL_BREATH = "missed_call_breath";
     private static final String KEY_VOICEMAIL_BREATH = "voicemail_breath";
-    private static final String STATUS_BAR_SIGNAL = "status_bar_signal";
     private static final String STATUS_BAR_CUSTOM_HEADER = "custom_status_bar_header";
 
     private CheckBoxPreference mCustomBarColor;
@@ -92,27 +92,7 @@ public class StatusBarFeatures extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.limpio_statusbar_features);
-
-        PreferenceScreen prefSet = getPreferenceScreen();
-        ContentResolver resolver = getActivity().getContentResolver();
-
-        mStatusBarCustomHeader = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_CUSTOM_HEADER);
-        mStatusBarCustomHeader.setChecked(Settings.System.getInt(resolver,
-            Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1);
-        mStatusBarCustomHeader.setOnPreferenceChangeListener(this);
-
-        mSMSBreath = (CheckBoxPreference) prefSet.findPreference(KEY_SMS_BREATH);
-        mSMSBreath.setChecked((Settings.System.getInt(resolver, 
-                      Settings.System.KEY_SMS_BREATH, 0) == 1));
-
-        mMissedCallBreath = (CheckBoxPreference) prefSet.findPreference(KEY_MISSED_CALL_BREATH);
-        mMissedCallBreath.setChecked((Settings.System.getInt(resolver, 
-                      Settings.System.KEY_MISSED_CALL_BREATH, 0) == 1));
-
-        mVoicemailBreath = (CheckBoxPreference) prefSet.findPreference(KEY_VOICEMAIL_BREATH);
-        mVoicemailBreath.setChecked((Settings.System.getInt(resolver, 
-                      Settings.System.KEY_VOICEMAIL_BREATH, 0) == 1));
+        createCustomView();
     }
 
     private PreferenceScreen createCustomView() {
@@ -122,7 +102,8 @@ public class StatusBarFeatures extends SettingsPreferenceFragment implements
             prefSet.removeAll();
         }
 
-        addPreferencesFromResource(R.xml.status_bar_settings);
+        ContentResolver resolver = getActivity().getContentResolver();
+        addPreferencesFromResource(R.xml.limpio_statusbar_features);
         prefSet = getPreferenceScreen();
 
         int intColor;
@@ -180,6 +161,27 @@ public class StatusBarFeatures extends SettingsPreferenceFragment implements
         mSignalStyle.setSummary(mSignalStyle.getEntry());
         mSignalStyle.setOnPreferenceChangeListener(this);
 
+        if (Utils.isWifiOnly(getActivity())) {
+            prefSet.removePreference(mSignalStyle);
+        }
+
+        mSMSBreath = (CheckBoxPreference) findPreference(KEY_SMS_BREATH);
+        mSMSBreath.setChecked((Settings.System.getInt(resolver, 
+                      Settings.System.KEY_SMS_BREATH, 0) == 1));
+
+        mMissedCallBreath = (CheckBoxPreference) findPreference(KEY_MISSED_CALL_BREATH);
+        mMissedCallBreath.setChecked((Settings.System.getInt(resolver, 
+                      Settings.System.KEY_MISSED_CALL_BREATH, 0) == 1));
+
+        mVoicemailBreath = (CheckBoxPreference) findPreference(KEY_VOICEMAIL_BREATH);
+        mVoicemailBreath.setChecked((Settings.System.getInt(resolver, 
+                      Settings.System.KEY_VOICEMAIL_BREATH, 0) == 1));
+
+        mStatusBarCustomHeader = (CheckBoxPreference) findPreference(STATUS_BAR_CUSTOM_HEADER);
+        mStatusBarCustomHeader.setChecked(Settings.System.getInt(resolver,
+            Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1);
+        mStatusBarCustomHeader.setOnPreferenceChangeListener(this);
+
         mCheckPreferences = true;
         return prefSet;
     }
@@ -213,16 +215,14 @@ public class StatusBarFeatures extends SettingsPreferenceFragment implements
                     Settings.System.STATUS_BAR_SIGNAL_TEXT, signalStyle);
             mSignalStyle.setSummary(mSignalStyle.getEntries()[index]);
             return true;
-        }
-        if (preference == mStatusBarCustomHeader) {
+        } else if (preference == mStatusBarCustomHeader) {
             boolean value = (Boolean) objValue;
             Settings.System.putInt(resolver,
                 Settings.System.STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
            Helpers.restartSystemUI();
-        } else {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
