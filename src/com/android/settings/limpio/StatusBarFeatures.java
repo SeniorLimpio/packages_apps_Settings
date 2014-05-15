@@ -74,10 +74,10 @@ public class StatusBarFeatures extends SettingsPreferenceFragment implements
     private static final String KEY_SMS_BREATH = "sms_breath";
     private static final String KEY_MISSED_CALL_BREATH = "missed_call_breath";
     private static final String KEY_VOICEMAIL_BREATH = "voicemail_breath";
-    private static final String STATUS_BAR_CUSTOM_HEADER = "custom_status_bar_header";
+    private static final String KEY_STATUS_BAR_CLOCK = "clock_style_pref";
+    private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
 
     private CheckBoxPreference mCustomBarColor;
-    private CheckBoxPreference mStatusBarCustomHeader;
     private ColorPickerPreference mBarOpaqueColor;
     private CheckBoxPreference mCustomIconColor;
     private ColorPickerPreference mIconColor;
@@ -86,6 +86,8 @@ public class StatusBarFeatures extends SettingsPreferenceFragment implements
     private CheckBoxPreference mVoicemailBreath;
     private CheckBoxPreference mStatusBarNetworkActivity;
     private ListPreference mSignalStyle;
+    private PreferenceScreen mClockStyle;
+    private CheckBoxPreference mStatusBarBrightnessControl;
 
     private boolean mCheckPreferences;
 
@@ -117,6 +119,22 @@ public class StatusBarFeatures extends SettingsPreferenceFragment implements
             Log.e(TAG, "can't access systemui resources",e);
             return null;
         }
+
+        // Start observing for changes on auto brightness
+        StatusBarBrightnessChangedObserver statusBarBrightnessChangedObserver =
+            new StatusBarBrightnessChangedObserver(new Handler());
+        statusBarBrightnessChangedObserver.startObserving();
+
+        mClockStyle = (PreferenceScreen) prefSet.findPreference(KEY_STATUS_BAR_CLOCK);
+        if (mClockStyle != null) {
+            updateClockStyleDescription();
+        }
+
+        mStatusBarBrightnessControl =
+            (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_BRIGHTNESS_CONTROL);
+        mStatusBarBrightnessControl.setChecked((Settings.System.getInt(getContentResolver(),
+                            Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0) == 1));
+        mStatusBarBrightnessControl.setOnPreferenceChangeListener(this);
 
         mCustomBarColor = (CheckBoxPreference) findPreference(PREF_CUSTOM_STATUS_BAR_COLOR);
         mCustomBarColor.setChecked(Settings.System.getInt(getContentResolver(),
@@ -177,11 +195,6 @@ public class StatusBarFeatures extends SettingsPreferenceFragment implements
         mVoicemailBreath.setChecked((Settings.System.getInt(resolver, 
                       Settings.System.KEY_VOICEMAIL_BREATH, 0) == 1));
 
-        mStatusBarCustomHeader = (CheckBoxPreference) findPreference(STATUS_BAR_CUSTOM_HEADER);
-        mStatusBarCustomHeader.setChecked(Settings.System.getInt(resolver,
-            Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1);
-        mStatusBarCustomHeader.setOnPreferenceChangeListener(this);
-
         mCheckPreferences = true;
         return prefSet;
     }
@@ -200,6 +213,11 @@ public class StatusBarFeatures extends SettingsPreferenceFragment implements
                     Settings.System.STATUS_BAR_OPAQUE_COLOR, intHex);
             Helpers.restartSystemUI();
             return true;
+	} else if (preference == mStatusBarBrightnessControl) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
+                    (Boolean) objValue ? 1 : 0);
+            return true;
         } else if (preference == mIconColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer
                     .valueOf(String.valueOf(objValue)));
@@ -215,14 +233,15 @@ public class StatusBarFeatures extends SettingsPreferenceFragment implements
                     Settings.System.STATUS_BAR_SIGNAL_TEXT, signalStyle);
             mSignalStyle.setSummary(mSignalStyle.getEntries()[index]);
             return true;
-        } else if (preference == mStatusBarCustomHeader) {
-            boolean value = (Boolean) objValue;
-            Settings.System.putInt(resolver,
-                Settings.System.STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
-           Helpers.restartSystemUI();
-            return true;
         }
         return false;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateClockStyleDescription();
+        updateStatusBarBrightnessControl();
     }
 
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
@@ -257,5 +276,51 @@ public class StatusBarFeatures extends SettingsPreferenceFragment implements
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+   private void updateStatusBarBrightnessControl() {
+        try {
+            if (mStatusBarBrightnessControl != null) {
+                int mode = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.SCREEN_BRIGHTNESS_MODE,
+                    Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
+
+                if (mode == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC) {
+                    mStatusBarBrightnessControl.setEnabled(false);
+                    mStatusBarBrightnessControl.setSummary(R.string.status_bar_toggle_info);
+                } else {
+                    mStatusBarBrightnessControl.setEnabled(true);
+                    mStatusBarBrightnessControl.setSummary(
+                        R.string.status_bar_toggle_brightness_summary);
+                }
+            }
+        } catch (SettingNotFoundException e) {
+        }
+    }
+
+    private void updateClockStyleDescription() {
+        if (Settings.System.getInt(getContentResolver(),
+               Settings.System.STATUS_BAR_CLOCK, 1) == 1) {
+            mClockStyle.setSummary(getString(R.string.enabled));
+        } else {
+            mClockStyle.setSummary(getString(R.string.disabled));
+         }
+    }
+
+    private class StatusBarBrightnessChangedObserver extends ContentObserver {
+        public StatusBarBrightnessChangedObserver(Handler handler) {
+            super(handler);
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            updateStatusBarBrightnessControl();
+        }
+
+        public void startObserving() {
+            getContentResolver().registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.SCREEN_BRIGHTNESS_MODE),
+                    false, this);
+        }
     }
 }

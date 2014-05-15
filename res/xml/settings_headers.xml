@@ -68,22 +68,15 @@
         android:fragment="com.android.settings.WirelessSettings"
         android:icon="@drawable/empty_icon" />
 
-    <!-- Additional SlimKat controls -->
+    <!-- Additional L-Droid controls -->
     <header android:title="@string/header_category_rom_settings" />
 
-    <!-- Interface -->
-    <header
-        android:id="@+id/interface_settings"
-        android:icon="@drawable/ic_settings_interface"
-        android:fragment="com.android.settings.slim.InterfaceSettings"
-        android:title="@string/interface_settings_title" />
-
-    <!-- Navigation -->
-    <header
-        android:id="@+id/navigation_settings"
-        android:icon="@drawable/ic_settings_navigation"
-        android:fragment="com.android.settings.slim.NavigationSettings"
-        android:title="@string/navigation_settings_title" />
+    <!-- Download centre -->
+    <Preference
+        android:key="download_center"
+        android:fragment="com.android.settings.limpio.Download"
+        android:title="@string/download_category"
+        android:icon="@drawable/ic_limpio_download" />
 
     <!-- Themes -->
     <header

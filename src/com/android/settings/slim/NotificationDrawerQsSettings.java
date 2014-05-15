@@ -45,6 +45,7 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
 
     public static final String TAG = "NotificationDrawerSettings";
 
+    private static final String STATUS_BAR_CUSTOM_HEADER = "custom_status_bar_header";
     private static final String PREF_NOTIFICATION_HIDE_LABELS =
             "notification_hide_labels";
     private static final String PREF_NOTIFICATION_ALPHA =
@@ -70,6 +71,7 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
     private static final String PREF_FLIP_QS_TILES = 
 	    "quick_settings_tiles_flip";
 
+    private CheckBoxPreference mStatusBarCustomHeader;
     ListPreference mHideLabels;
     SeekBarPreference mNotificationAlpha;
     CheckBoxPreference mReminder;
@@ -185,6 +187,11 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
                 Settings.System.QS_COLLAPSE_PANEL, 0, UserHandle.USER_CURRENT) == 1);
         mCollapsePanel.setOnPreferenceChangeListener(this);
 
+        mStatusBarCustomHeader = (CheckBoxPreference) findPreference(STATUS_BAR_CUSTOM_HEADER);
+        mStatusBarCustomHeader.setChecked(Settings.System.getInt(resolver,
+            Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1);
+        mStatusBarCustomHeader.setOnPreferenceChangeListener(this);
+
         updateQuickSettingsOptions();
     }
 
@@ -279,6 +286,12 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             Settings.System.putStringForUser(getContentResolver(),
                     Settings.System.REMINDER_ALERT_RINGER,
                     val.toString(), UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mStatusBarCustomHeader) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
+           Helpers.restartSystemUI();
             return true;
         }
         return false;
