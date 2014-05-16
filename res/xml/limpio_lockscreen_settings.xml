@@ -51,6 +51,12 @@
         android:key="advanced_category"
         android:title="@string/advanced_category_title">
 
+        <PreferenceScreen
+            android:key="lockscreen_buttons"
+            android:title="@string/lockscreen_buttons_title"
+            android:summary="@string/lockscreen_buttons_summary"
+            android:fragment="com.android.settings.limpio.LockscreenButtons" />
+
         <CheckBoxPreference
             android:key="battery_around_lockscreen_ring"
             android:title="@string/battery_around_lockscreen_ring"
