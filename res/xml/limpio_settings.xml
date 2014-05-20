@@ -131,13 +131,6 @@
         android:icon="@drawable/ic_settings_wakelock_blocker"
         android:title="@string/wakelock_blocker" />
 
-    <!-- Xposed Framework -->
-    <PreferenceScreen
-        android:key="xposed_framework"
-        android:fragment="com.android.settings.limpio.XposedFramework"
-        android:title="@string/xposed_framework_title"
-        android:icon="@drawable/ic_launcher_white" />
-
     <!-- Tweaks -->
     <PreferenceCategory 
         android:title="@string/tweaks_category_title" />

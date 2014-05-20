@@ -27,11 +27,6 @@
             android:persistent="false"/>
 
         <PreferenceScreen
-            android:key="keyguard_style"
-            android:fragment="com.android.settings.slim.LockscreenStyle"
-            android:title="@string/lockscreen_style_title"/>
-
-        <PreferenceScreen
             android:fragment="com.android.settings.slim.KeyguardShakeEvents"
             android:key="shake_events"
             android:title="@string/shake_events_title" />
