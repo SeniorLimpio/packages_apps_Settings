@@ -71,13 +71,6 @@
     <!-- Additional L-Droid controls -->
     <header android:title="@string/header_category_rom_settings" />
 
-    <!-- Download centre -->
-    <header
-        android:key="download_center"
-        android:fragment="com.android.settings.limpio.Download"
-        android:title="@string/download_category"
-        android:icon="@drawable/ic_limpio_download" />
-
     <!-- Themes -->
     <header
         android:id="@+id/theme_settings"

@@ -1871,6 +1871,10 @@
 
         <activity android:name=".limpio.LockscreenButtons" />
 
+        <activity android:name=".slim.notificationlight.NotificationLightSettings" />
+
+        <activity android:name=".slim.notificationlight.BatteryLightSettings" />
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
                 android:label="@string/crypt_keeper_encrypt_title">

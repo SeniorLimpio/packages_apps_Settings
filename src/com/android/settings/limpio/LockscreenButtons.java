@@ -67,7 +67,7 @@ public class LockscreenButtons extends SettingsPreferenceFragment
         final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
         final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
 
-        addPreferencesFromResource(R.xml.lockscreen_buttons_settings);
+        addPreferencesFromResource(R.xml.lockscreen_buttons);
 
         PreferenceScreen prefSet = getPreferenceScreen();
 

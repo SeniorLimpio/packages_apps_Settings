@@ -15,8 +15,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- About phone screen, LimpioDroid version -->
-    <string name="limpiodroid_version_title">Limpio Droid version</string>
-    <string name="limpiodroid_version_default">V1.0.0</string>
+    <string name="limpiodroid_version_title">L-Droid version</string>
+    <string name="limpiodroid_version_default">V1.0 Beta 2</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -822,8 +822,8 @@
     <string name="current_lcd_density">"Current LCD Density: "</string>
 
     <!-- App sidebar -->
-    <string name="app_sidebar_title">Appbar</string>
-    <string name="app_sidebar_enable_title">Enable Appbar</string>
+    <string name="app_sidebar_title">App sidebar</string>
+    <string name="app_sidebar_enable_title">Enable app sidebar</string>
     <string name="app_sidebar_enable_summaryOn">\@appbar is enabled</string>
     <string name="app_sidebar_enable_summaryOff">\@appbar is disabled</string>
     <string name="app_sidebar_setup_items_title">Setup Appbar content</string>
@@ -855,15 +855,15 @@
     <string name="download_category">Downloads</string>
     <string name="gapps_category">GAPPS packages</string>
     <string name="xposed_category">Xposed Framework</string>
-    <string name="multidpigapps_title">Multi-DPI Gapps</string>
-    <string name="multidpigapps_summary">Multi DPI Gapps are generally recommended if changing system density to anything other then stock</string>
-    <string name="pagapps_title">PA Gapps</string>
+    <string name="ldroidgapps_title">L-Droid Gapps</string>
+    <string name="ldroidgapps_summary">Gapps based off of PA full-modular Gapps, containing inverted playstore with multi-DPI fix</string>
+    <string name="pagapps_title">PA full-modular Gapps</string>
     <string name="pagapps_summary">Fully packed with the majority of GAPPS, these are commonly used by users that do not want to download/install them later</string>
-    <string name="tbogapps_title">Team BlackOut Gapps</string>
-    <string name="tbogapps_summary">Just as the name implies, these GAPPS are blacked out / inverted to give you that beautiful dark look</string>
+    <string name="tbogapps_title">Banks Minimal Gapps</string>
+    <string name="tbogapps_summary">Popular Gapps packages that contains the minimal apps required for regular use</string>
     <string name="xposed_warning">WARNING</string>
     <string name="xposed_title">Xposed Installer</string>
-    <string name="xposed_summary">While Xposed is proven to be a very useful tool, some modules may cause issues/bugs in custom ROMs. Please uninstall all modules before reporting any bugs that you may come across while using Xposed.</string>
+    <string name="xposed_summary">While Xposed is proven to be a very useful tool, some modules may cause issues/bugs in custom ROMs. Please uninstall all modules before reporting any bugs that you may come across while using Xposed. </string>
     <string name="xposed_mod_title">Module repository</string>
     <string name="xposed_mod_summary">Browse and install modules to be used with Xposed Framework</string>
     <string name="google_camera_title">Google Camera</string>

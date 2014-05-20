@@ -22,9 +22,9 @@
         android:title="@string/gapps_category">
 
     <Preference
-        android:key="multi_dpi_gapps"
-        android:title="@string/multidpigapps_title"
-        android:summary="@string/multidpigapps_summary" />
+        android:key="ldroid_gapps"
+        android:title="@string/ldroidgapps_title"
+        android:summary="@string/ldroidgapps_summary" />
 
     <Preference
         android:key="pa_gapps"
@@ -47,10 +47,6 @@
         android:title="@string/xposed_warning"
         android:summary="@string/xposed_summary"
         android:selectable="false" />
-
-    <Preference
-        android:key="xposed"
-        android:title="@string/xposed_title" />
 
     <Preference
         android:key="xposed_mod"
