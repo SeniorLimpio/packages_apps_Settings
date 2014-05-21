@@ -16,7 +16,7 @@
 
     <!-- About phone screen, LimpioDroid version -->
     <string name="limpiodroid_version_title">L-Droid version</string>
-    <string name="limpiodroid_version_default">V1.0 Beta 2</string>
+    <string name="limpiodroid_version_default">V1.0 Beta 4</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>
