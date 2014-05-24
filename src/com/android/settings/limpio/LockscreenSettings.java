@@ -48,6 +48,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
     private static final String KEY_LOCK_BEFORE_UNLOCK = "lock_before_unlock";
     private static final String KEY_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
+    private static final String KEY_MENU_UNLOCK_PREF = "menu_unlock";
 
     private PackageManager mPM;
     private DevicePolicyManager mDPM;
@@ -57,9 +58,11 @@ public class LockscreenSettings extends SettingsPreferenceFragment
     private CheckBoxPreference mBatteryStatus;
     private CheckBoxPreference mLockBeforeUnlock;
     private CheckBoxPreference mLockQuickUnlock;
+    private CheckBoxPreference mMenuUnlock;
 
     // needed for menu unlock
     private Resources keyguardResource;
+    private boolean mMenuUnlockDefault;
     private static final int KEY_MASK_MENU = 0x04;
 
     @Override
@@ -100,6 +103,10 @@ public class LockscreenSettings extends SettingsPreferenceFragment
             e.printStackTrace();
         }
 
+        mMenuUnlockDefault = keyguardResources != null
+            ? keyguardResources.getBoolean(keyguardResources.getIdentifier(
+            "com.android.keyguard:bool/config_disableMenuKeyInLockScreen", null, null)) : false;
+
         mBatteryStatus = (CheckBoxPreference) prefs
                 .findPreference(KEY_ALWAYS_BATTERY_PREF);
         if (mBatteryStatus != null) {
@@ -139,6 +146,21 @@ public class LockscreenSettings extends SettingsPreferenceFragment
                 mLockscreenWidgets.setEnabled(!disabled);
             }
         }
+
+        mMenuUnlock = (CheckBoxPreference) prefs.findPreference(KEY_MENU_UNLOCK_PREF);
+        if (mMenuUnlock != null) {
+            int deviceKeys = getResources().getInteger(
+                    com.android.internal.R.integer.config_deviceHardwareKeys);
+            boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
+            if (hasMenuKey) {
+                boolean settingsEnabled = Settings.System.getIntForUser(
+                        getContentResolver(),
+                        Settings.System.MENU_UNLOCK_SCREEN, mMenuUnlockDefault ? 0 : 1,
+                        UserHandle.USER_CURRENT) == 1;
+                mMenuUnlock.setChecked(settingsEnabled);
+                mMenuUnlock.setOnPreferenceChangeListener(this);
+            }
+        }
     }
 
     @Override
@@ -151,6 +173,10 @@ public class LockscreenSettings extends SettingsPreferenceFragment
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY,
                     ((Boolean) value) ? 1 : 0);
+        } else if (preference == mMenuUnlock) {
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.MENU_UNLOCK_SCREEN,
+                    ((Boolean) value) ? 1 : 0, UserHandle.USER_CURRENT);
         }
         return true;
     }

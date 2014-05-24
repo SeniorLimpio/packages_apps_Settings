@@ -573,7 +573,7 @@ public class Settings extends PreferenceActivity
         final boolean showDev = mDevelopmentPreferences.getBoolean(
                 DevelopmentSettings.PREF_SHOW,
                 android.os.Build.TYPE.equals("eng"));
-        int i = 0;
+        int i = 1;
 
         final UserManager um = (UserManager) getSystemService(Context.USER_SERVICE);
         mHeaderIndexMap.clear();
