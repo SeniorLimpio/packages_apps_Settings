@@ -283,10 +283,8 @@ public class LockscreenStyle extends SettingsPreferenceFragment
             int indexOf = mLockIcon.findIndexOfValue(newValue.toString());
             if (indexOf == 0) {
                 requestLockImage();
-            } else  if (indexOf == 2) {
-                deleteLockIcon();
             } else {
-                resizeSlimLock();
+                deleteLockIcon();
             }
             return true;
         } else if (preference == mColorizeCustom) {
@@ -367,15 +365,12 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         }
     }
 	
-   private void updateLockSummary() {
+    private void updateLockSummary() {
         int resId;
         String value = Settings.Secure.getString(getContentResolver(),
                 Settings.Secure.LOCKSCREEN_LOCK_ICON);
         if (value == null) {
             resId = R.string.lockscreen_lock_icon_default;
-            mLockIcon.setValueIndex(2);
-        } else if (value.contains("slim_lock")) {
-            resId = R.string.lockscreen_lock_icon_slim;
             mLockIcon.setValueIndex(1);
         } else {
             resId = R.string.lockscreen_lock_icon_custom;
@@ -429,41 +424,9 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         updateLockSummary();
     }
 
-    private void resizeSlimLock() {
-        Bitmap slimLock = BitmapFactory.decodeResource(getResources(), R.drawable.slim_lock);
-        if (slimLock != null) {
-            String path = null;
-            int px = requestImageSize();
-            slimLock = Bitmap.createScaledBitmap(slimLock, px, px, true);
-            try {
-                mLockImage.createNewFile();
-                mLockImage.setWritable(true, false);
-                File image = new File(getActivity().getFilesDir() + File.separator
-                            + "slim_lock" + System.currentTimeMillis() + ".png");
-                path = image.getAbsolutePath();
-                mLockImage.renameTo(image);
-                FileOutputStream outPut = new FileOutputStream(image);
-                slimLock.compress(Bitmap.CompressFormat.PNG, 100, outPut);
-                image.setReadable(true, false);
-                outPut.flush();
-                outPut.close();
-            } catch (Exception e) {
-                // Uh-oh Nothing we can do here.
-                Log.e(TAG, e.getMessage(), e);
-                return;
-            }
-
-            deleteLockIcon();  // Delete current icon if it exists before saving new.
-            Settings.Secure.putString(getContentResolver(),
-                    Settings.Secure.LOCKSCREEN_LOCK_ICON, path);
-            mColorizeCustom.setEnabled(path != null);
-            updateLockSummary();
-        }
-    }
-
     private int requestImageSize() {
         return (int) TypedValue.applyDimension(
-                TypedValue.COMPLEX_UNIT_DIP, 144, getResources().getDisplayMetrics());
+                TypedValue.COMPLEX_UNIT_DIP, 68, getResources().getDisplayMetrics());
     }
 
     private void showDialogInner(int id) {

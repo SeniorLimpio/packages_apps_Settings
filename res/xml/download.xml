@@ -22,19 +22,14 @@
         android:title="@string/gapps_category">
 
     <Preference
-        android:key="ldroid_gapps"
-        android:title="@string/ldroidgapps_title"
-        android:summary="@string/ldroidgapps_summary" />
-
-    <Preference
         android:key="pa_gapps"
         android:title="@string/pagapps_title"
         android:summary="@string/pagapps_summary" />
 
     <Preference
         android:key="banks_gapps"
-        android:title="@string/tbogapps_title"
-        android:summary="@string/tbogapps_summary" />
+        android:title="@string/banksgapps_title"
+        android:summary="@string/banksgapps_summary" />
 
     </PreferenceCategory>
 
@@ -57,6 +52,8 @@
         android:key="xposed_mod"
         android:title="@string/xposed_mod_title"
         android:summary="@string/xposed_mod_summary" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="misc_category_title"

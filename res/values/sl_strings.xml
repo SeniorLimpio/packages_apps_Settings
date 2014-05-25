@@ -868,7 +868,7 @@
     <string name="xposed_mod_title">Module repository</string>
     <string name="xposed_mod_summary">Browse and install modules to be used with Xposed Framework</string>
     <string name="google_camera_title">Google Camera</string>
-    <string name="google_camera_summary">Google Camera (flashable) with photosphere and HDR mode google_camera</string>
+    <string name="google_camera_summary">Google Camera (flashable) with photosphere and HDR mode</string>
     <string name="philz_touch_title">Philz Touch Recovery</string>
     <string name="philz_touch_summary">Excellent custom recovery by Phil3759 on XDA</string>
 

@@ -40,9 +40,8 @@ import com.android.settings.Utils;
 
 public class Download extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
-    Preference mMultiDPIGapps;
     Preference mPAGapps;
-    Preference mTBOGapps;
+    Preference mBanksGapps;
     Preference mXposed;
     Preference mXposedMod;
     Preference mGoogleCamera;
@@ -56,9 +55,8 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
 
         final ContentResolver resolver = getActivity().getContentResolver();
 
-        mMultiDPIGapps = findPreference("ldroid_gapps");
         mPAGapps = findPreference("pa_gapps");
-        mBanks = findPreference("banks_gapps");
+        mBanksGapps = findPreference("banks_gapps");
         mXposed = findPreference("xposed");
         mXposedMod = findPreference("xposed_mod");
         mGoogleCamera = findPreference("google_camera");
@@ -72,17 +70,12 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mMultiDPIGapps) {
-            Uri uri = Uri.parse("http://goo.gl/pSc77D");
-            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-            startActivity(intent);
-            return true;
-        } else if (preference == mPAGapps) {
+        if (preference == mPAGapps) {
             Uri uri = Uri.parse("http://goo.gl/3TR6AN");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
-        } else if (preference == mBanks) {
+        } else if (preference == mBanksGapps) {
             Uri uri = Uri.parse("http://goo.gl/Pt6DoB");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
