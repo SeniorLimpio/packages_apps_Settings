@@ -229,7 +229,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         return prefSet;
     }
 
-    public void onActivityResult(int requestCode, int resultCode, Intent data, Intent imageReturnedIntent) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == REQUEST_PICK_LOCK_ICON) {
 

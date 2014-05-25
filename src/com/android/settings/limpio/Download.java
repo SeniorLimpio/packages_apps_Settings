@@ -46,6 +46,7 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
     Preference mXposed;
     Preference mXposedMod;
     Preference mGoogleCamera;
+    Preference mPhilzTouch;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,12 +56,13 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
 
         final ContentResolver resolver = getActivity().getContentResolver();
 
-        mMultiDPIGapps = findPreference("multi_dpi_gapps");
+        mMultiDPIGapps = findPreference("ldroid_gapps");
         mPAGapps = findPreference("pa_gapps");
-        mTBOGapps = findPreference("tbo_gapps");
+        mBanks = findPreference("banks_gapps");
         mXposed = findPreference("xposed");
         mXposedMod = findPreference("xposed_mod");
         mGoogleCamera = findPreference("google_camera");
+	mPhilzTouch = findPreference ("philz_touch");
     }
 
     @Override
@@ -76,17 +78,17 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
             startActivity(intent);
             return true;
         } else if (preference == mPAGapps) {
-            Uri uri = Uri.parse("http://goo.gl/pt0kZt");
+            Uri uri = Uri.parse("http://goo.gl/3TR6AN");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
-        } else if (preference == mTBOGapps) {
-            Uri uri = Uri.parse("http://goo.gl/EZ1CAM");
+        } else if (preference == mBanks) {
+            Uri uri = Uri.parse("http://goo.gl/Pt6DoB");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
         } else if (preference == mXposed) {
-            Uri uri = Uri.parse("http://goo.gl/Mp0dTP");
+            Uri uri = Uri.parse("http://goo.gl/8VaxVQ");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
@@ -95,12 +97,18 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
-         } else if (preference == mGoogleCamera) {
+        } else if (preference == mGoogleCamera) {
             Uri uri = Uri.parse("http://goo.gl/9ADfbH");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
+        } else if (preference == mPhilzTouch) {
+            Uri uri = Uri.parse("http://goo.gl/hZAzTm");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+            return true;
         }
+
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 

@@ -71,23 +71,19 @@
     <!-- Additional L-Droid controls -->
     <header android:title="@string/header_category_rom_settings" />
 
+    <!-- Download centre -->
+    <header
+        android:key="download_center"
+        android:fragment="com.android.settings.limpio.Download"
+        android:title="@string/download_category"
+        android:icon="@drawable/ic_limpio_download" />
+
     <!-- Themes -->
     <header
         android:id="@+id/theme_settings"
         android:fragment="com.android.settings.slim.themes.ThemeSettings"
         android:icon="@drawable/ic_settings_theme"
         android:title="@string/theme_settings_title" />
-
-    <!-- Themes chooser -->
-    <header
-        android:id="@+id/themes_settings"
-        android:icon="@drawable/ic_settings_themes"
-        android:title="@string/themes_settings_title">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.tmobile.themechooser"
-            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
-    </header>
 
     <!-- Limpio's Extras -->
     <header

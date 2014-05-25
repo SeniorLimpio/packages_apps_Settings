@@ -1825,6 +1825,11 @@
 
         <activity android:name=".limpio.AppSidebar" />
 
+        <activity
+            android:name=".slim.themes.ThemeSettings"
+            android:label="@string/theme_settings_title" >
+        </activity>
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to sound packages settings -->
         <activity android:name="Settings$SoundPackageSettingsActivity"
                 android:label="@string/sound_packages_title"

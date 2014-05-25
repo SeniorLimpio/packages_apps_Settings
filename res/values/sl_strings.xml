@@ -860,8 +860,8 @@
     <string name="ldroidgapps_summary">Gapps based off of PA full-modular Gapps, containing inverted playstore with multi-DPI fix</string>
     <string name="pagapps_title">PA full-modular Gapps</string>
     <string name="pagapps_summary">Fully packed with the majority of GAPPS, these are commonly used by users that do not want to download/install them later</string>
-    <string name="tbogapps_title">Banks Minimal Gapps</string>
-    <string name="tbogapps_summary">Popular Gapps packages that contains the minimal apps required for regular use</string>
+    <string name="banksgapps_title">Banks Minimal Gapps</string>
+    <string name="banksgapps_summary">Popular Gapps packages that contains the minimal apps required for basic use</string>
     <string name="xposed_warning">WARNING</string>
     <string name="xposed_title">Xposed Installer</string>
     <string name="xposed_summary">While Xposed is proven to be a very useful tool, some modules may cause issues/bugs in custom ROMs. Please uninstall all modules before reporting any bugs that you may come across while using Xposed. </string>
@@ -869,6 +869,8 @@
     <string name="xposed_mod_summary">Browse and install modules to be used with Xposed Framework</string>
     <string name="google_camera_title">Google Camera</string>
     <string name="google_camera_summary">Google Camera (flashable) with photosphere and HDR mode google_camera</string>
+    <string name="philz_touch_title">Philz Touch Recovery</string>
+    <string name="philz_touch_summary">Excellent custom recovery by Phil3759 on XDA</string>
 
     <!-- Active display -->
     <string name="ad_enable_title">Enable</string>

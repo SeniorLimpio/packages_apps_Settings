@@ -32,7 +32,7 @@
         android:summary="@string/pagapps_summary" />
 
     <Preference
-        android:key="tbo_gapps"
+        android:key="banks_gapps"
         android:title="@string/tbogapps_title"
         android:summary="@string/tbogapps_summary" />
 
@@ -49,14 +49,28 @@
         android:selectable="false" />
 
     <Preference
+        android:key="xposed"
+        android:title="@string/xposed_title"
+        android:summary="@string/xposed_summary" />
+
+    <Preference
         android:key="xposed_mod"
         android:title="@string/xposed_mod_title"
         android:summary="@string/xposed_mod_summary" />
+
+    <PreferenceCategory
+        android:key="misc_category_title"
+        android:title="@string/misc_category_title">
 
     <Preference
         android:key="google_camera"
         android:title="@string/google_camera_title"
         android:summary="@string/google_camera_summary" />
+
+    <Preference
+        android:key="philz_touch"
+        android:title="@string/philz_touch_title"
+        android:summary="@string/philz_touch_summary" />
 
     </PreferenceCategory>
 
