@@ -263,8 +263,6 @@ public class QuickSettingsUtil {
             return context.getResources().getString(R.string.dynamic_tile_alarm);
         } else if (tile.equals(TILE_BUGREPORT)) {
             return context.getResources().getString(R.string.dynamic_tile_bugreport);
-        } else if (tile.equals(TILE_EQUALIZER)) {
-            return context.getResources().getString(R.string.dynamic_tile_equalizer);
         }
         return null;
     }
