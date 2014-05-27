@@ -44,11 +44,12 @@ public class LockscreenSettings extends SettingsPreferenceFragment
     private static final String KEY_TARGET_SETTINGS = "lock_screen_targets";
     private static final String KEY_WIDGETS_SETTINGS = "lock_screen_widgets";
     private static final String KEY_GENERAL_CATEGORY = "general_category";
-    private static final String KEY_BATTERY_AROUND_RING = "battery_around_ring";
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
     private static final String KEY_LOCK_BEFORE_UNLOCK = "lock_before_unlock";
     private static final String KEY_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
     private static final String KEY_MENU_UNLOCK_PREF = "menu_unlock";
+
+    private static final String BATTERY_AROUND_LOCKSCREEN_RING = "battery_around_lockscreen_ring";
 
     private PackageManager mPM;
     private DevicePolicyManager mDPM;
@@ -68,17 +69,15 @@ public class LockscreenSettings extends SettingsPreferenceFragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mContext = getActivity();
 
         addPreferencesFromResource(R.xml.limpio_lockscreen_settings);
 
         PreferenceScreen prefs = getPreferenceScreen();
 
-        mLockRingBattery = (CheckBoxPreference) prefs
-                .findPreference(KEY_BATTERY_AROUND_RING);
-        if (mLockRingBattery != null) {
-            mLockRingBattery.setChecked(Settings.System.getInt(getContentResolver(),
+        mLockRingBattery = (CheckBoxPreference) findPreference(BATTERY_AROUND_LOCKSCREEN_RING);
+        mLockRingBattery.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                     Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, 0) == 1);
-        }
 
         mLockBeforeUnlock = (CheckBoxPreference) prefs
                 .findPreference(KEY_LOCK_BEFORE_UNLOCK);
@@ -164,6 +163,22 @@ public class LockscreenSettings extends SettingsPreferenceFragment
     }
 
     @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mLockQuickUnlock) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL,
+                    mLockQuickUnlock.isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mLockRingBattery) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, mLockRingBattery.isChecked()
+                    ? 1 : 0);
+            return true;
+	}
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    @Override
     public boolean onPreferenceChange(Preference preference, Object value) {
         if (preference == mLockBeforeUnlock) {
             Settings.Secure.putInt(getContentResolver(),
@@ -179,21 +194,5 @@ public class LockscreenSettings extends SettingsPreferenceFragment
                     ((Boolean) value) ? 1 : 0, UserHandle.USER_CURRENT);
         }
         return true;
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mLockQuickUnlock) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL,
-                    mLockQuickUnlock.isChecked() ? 1 : 0);
-            return true;
-        } else if (preference == mLockRingBattery) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.BATTERY_AROUND_LOCKSCREEN_RING,
-                    mLockRingBattery.isChecked() ? 1 : 0);
-            return true;
-        }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 }
