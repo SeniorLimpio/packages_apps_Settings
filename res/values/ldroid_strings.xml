@@ -2468,4 +2468,11 @@ selecting the profile in the future.</string>
     <string name="collapse_on_dismiss_never_summary">Leave open after removing notifications</string>
     <string name="collapse_on_dismiss_if_empty_summary">Close after removing the last notification</string>
     <string name="collapse_on_dismiss_if_no_clearable_summary">Close after removing the last removable notification</string>
+
+    <!-- Protected Apps -->
+    <string name="menu_hidden_apps_delete">Reset</string>
+    <string name="menu_hidden_apps_reset_lock">Reset pattern lock</string>
+    <string name="protected_apps">Protected apps</string>
+    <string name="saving_protected_components">Saving component state</string>
+
 </resources>
