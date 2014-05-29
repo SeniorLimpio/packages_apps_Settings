@@ -85,8 +85,8 @@ public class PieControl extends SettingsPreferenceFragment
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mPieControl) {
-            /* if (!((Boolean) newValue) && !LiquidActions.isNavBarEnabled(getActivity())
-                    && LiquidActions.isNavBarDefault(getActivity())) {
+            /* if (!((Boolean) newValue) && !SlimActions.isNavBarEnabled(getActivity())
+                    && SlimActions.isNavBarDefault(getActivity())) {
                 showDialogInner(DLG_NAVIGATION_WARNING);
                 return true;
             } */

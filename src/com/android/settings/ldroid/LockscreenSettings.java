@@ -78,7 +78,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.liquid_lockscreen_settings);
+        addPreferencesFromResource(R.xml.ldroid_lockscreen_settings);
 
         PreferenceScreen prefs = getPreferenceScreen();
 

@@ -27,7 +27,7 @@ import android.telephony.PhoneStateListener;
 import android.telephony.SmsMessage;
 import android.telephony.TelephonyManager;
 
-import com.android.internal.util.slim.QuietHoursHelper;
+import com.android.internal.util.ldroid.QuietHoursHelper;
 
 import com.android.settings.R;
 
@@ -290,7 +290,7 @@ public class SmsCallService extends Service {
         alarmDialog.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                 | Intent.FLAG_ACTIVITY_SINGLE_TOP
                 | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        alarmDialog.setClass(this, com.android.settings.slim.service.BypassAlarm.class);
+        alarmDialog.setClass(this, com.android.settings.ldroid.service.BypassAlarm.class);
         alarmDialog.putExtra("number", contactName);
         startActivity(alarmDialog);
     }

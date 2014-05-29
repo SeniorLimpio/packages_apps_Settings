@@ -92,7 +92,7 @@ public class BatteryIconStyle extends SettingsPreferenceFragment
             prefSet.removeAll();
         }
 
-        addPreferencesFromResource(R.xml.slim_battery_style);
+        addPreferencesFromResource(R.xml.ldroid_battery_style);
         prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 

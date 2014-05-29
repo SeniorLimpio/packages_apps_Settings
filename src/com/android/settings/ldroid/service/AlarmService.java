@@ -90,7 +90,7 @@ public class AlarmService extends Service {
         alarmDialog.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                 | Intent.FLAG_ACTIVITY_SINGLE_TOP
                 | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        alarmDialog.setClass(this, com.android.settings.slim.service.BypassAlarm.class);
+        alarmDialog.setClass(this, com.android.settings.ldroid.service.BypassAlarm.class);
         alarmDialog.putExtra("number", names);
         alarmDialog.putExtra("norun", true);
 

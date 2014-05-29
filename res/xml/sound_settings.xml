@@ -28,7 +28,7 @@
             
     <PreferenceScreen
         android:key="volume_steps_settings"
-        android:fragment="com.android.settings.liquid.VolumeSteps"
+        android:fragment="com.android.settings.ldroid.VolumeSteps"
         android:title="@string/volume_steps_title" />
 
     <Preference
@@ -40,7 +40,7 @@
 
     <PreferenceScreen
             android:key="advanced_sound_settings"
-            android:fragment="com.android.settings.slim.SoundSettings"
+            android:fragment="com.android.settings.ldroid.SoundSettings"
             android:title="@string/advanced_sound_title" />
 
     <PreferenceScreen
@@ -60,7 +60,7 @@
             android:persistent="false"
             android:ringtoneType="ringtone" />
 
-    <com.android.settings.slim.IncreasingRingPreference
+    <com.android.settings.ldroid.IncreasingRingPreference
             android:key="increasing_ring"
             android:title="@string/increasing_ring_title"
             android:dialogTitle="@string/increasing_ring_title"
@@ -104,7 +104,7 @@
             android:title="@string/haptic_feedback_enable_title"
             android:defaultValue="true" />
 
-    <SlimSeekBarPreference
+    <ldroidSeekBarPreference
             android:key="vibration_duration"
             android:title="@string/minimum_vibration_duration" />
 

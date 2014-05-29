@@ -43,7 +43,7 @@ import com.android.settings.R;
 import java.io.File;
 
 public class IconPicker {
-    private static final String ICON_ACTION = "com.slim.ACTION_PICK_ICON";
+    private static final String ICON_ACTION = "com.util.ACTION_PICK_ICON";
     public static final String RESOURCE_NAME = "resource_name";
     public static final String PACKAGE_NAME = "package_name";
 

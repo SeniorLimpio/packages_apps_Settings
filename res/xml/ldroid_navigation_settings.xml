@@ -30,17 +30,17 @@
 
         <PreferenceScreen
                 android:key="navbar_button_settings"
-                android:fragment="com.android.settings.liquid.dslv.ButtonsListViewSettings"
+                android:fragment="com.android.settings.ldroid.dslv.ButtonsListViewSettings"
                 android:title="@string/navbar_button_title">
             <extra android:name="buttonMode" android:value="0" />
             <extra android:name="maxAllowedButtons" android:value="5" />
             <extra android:name="disableDeleteLastEntry" android:value="true" />
-            <extra android:name="fragment" android:value="com.android.settings.liquid.fragments.NavbarButtonFragment" />
+            <extra android:name="fragment" android:value="com.android.settings.ldroid.fragments.NavbarButtonFragment" />
         </PreferenceScreen>
 
         <PreferenceScreen
                 android:key="navbar_targets_settings"
-                android:fragment="com.android.settings.liquid.dslv.ButtonsListViewSettings"
+                android:fragment="com.android.settings.ldroid.dslv.ButtonsListViewSettings"
                 android:title="@string/navbar_targets_title">
             <extra android:name="buttonMode" android:value="3" />
             <extra android:name="maxAllowedButtons" android:value="5" />
@@ -50,7 +50,7 @@
 
         <PreferenceScreen
             android:key="navbar_style_dimen_settings"
-            android:fragment="com.android.settings.liquid.NavbarStyleDimenSettings"
+            android:fragment="com.android.settings.ldroid.NavbarStyleDimenSettings"
             android:title="@string/navbar_style_dimen_title" />
 
     </PreferenceCategory>

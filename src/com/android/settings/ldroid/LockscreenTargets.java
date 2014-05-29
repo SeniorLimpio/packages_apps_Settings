@@ -52,9 +52,9 @@ import com.android.internal.util.ldroid.LockscreenTargetUtils;
 import com.android.internal.widget.multiwaveview.GlowPadView;
 import com.android.internal.widget.multiwaveview.TargetDrawable;
 import com.android.settings.R;
-import com.android.settings.slim.ldroid.IconPicker;
-import com.android.settings.slim.ldroid.IconPicker.OnIconPickListener;
-import com.android.settings.slim.ldroid.ShortcutPickerHelper;
+import com.android.settings.ldroid.util.IconPicker;
+import com.android.settings.ldroid.util.IconPicker.OnIconPickListener;
+import com.android.settings.ldroid.util.ShortcutPickerHelper;
 
 import java.io.File;
 import java.io.FileOutputStream;

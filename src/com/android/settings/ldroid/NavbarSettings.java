@@ -162,8 +162,8 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
             mMenuDisplayLocation.setEnabled(mNavBarMenuDisplayValue != 1);
             return true;
         } else if (preference == mEnableNavigationBar) {
-            /* if (!((Boolean) newValue) && !LiquidActions.isPieEnabled(getActivity())
-                    && LiquidActions.isNavBarDefault(getActivity())) {
+            /* if (!((Boolean) newValue) && !SlimActions.isPieEnabled(getActivity())
+                    && SlimActions.isNavBarDefault(getActivity())) {
                 showDialogInner(DLG_NAVIGATION_WARNING);
                 return true;
             } */

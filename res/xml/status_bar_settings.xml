@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright (C) 2013 SlimRoms Project
+<!-- Copyright (C) 2013 ldroidRoms Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -26,11 +26,11 @@
 
         <PreferenceScreen
             android:key="battery_style_pref"
-            android:fragment="com.android.settings.liquid.BatteryIconStyle"
+            android:fragment="com.android.settings.ldroid.BatteryIconStyle"
             android:title="@string/battery_icon_title" />
 
         <PreferenceScreen
-            android:fragment="com.android.settings.slim.StatusBarClockStyle"
+            android:fragment="com.android.settings.ldroid.StatusBarClockStyle"
             android:key="clock_style_pref"
             android:title="@string/status_bar_clock" />
 
@@ -46,7 +46,7 @@
             android:summary="@string/status_bar_toggle_brightness_summary"
             android:defaultValue="false" />
 
-        <com.android.settings.liquid.SystemCheckBoxPreference
+        <com.android.settings.ldroid.SystemCheckBoxPreference
             android:key="double_tap_sleep_gesture"
             android:title="@string/status_bar_double_tap_to_sleep_title"
             android:summary="@string/status_bar_double_tap_to_sleep_summary"

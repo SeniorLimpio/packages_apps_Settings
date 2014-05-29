@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2014 The LiquidSmooth Project
+<!-- Copyright (C) 2014 The L-Droid Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@
     <string name="reset_message">Reset entries to default?</string>
 
     <!-- Mod version -->
-    <string name="mod_version">LiquidSmooth version</string>
+    <string name="mod_version">L-Droid version</string>
     <string name="mod_version_default">Unknown</string>
 
     <!-- Build date -->
@@ -423,7 +423,7 @@
     <string name="lockscreen_style_reset_message">Reset all lock screen colors?</string>
     <string name="lockscreen_icon_title">Lock handle icon</string>
     <string name="lockscreen_lock_icon_custom">Custom icon</string>
-    <string name="lockscreen_lock_icon_liquid">Liquid icon</string>
+    <string name="lockscreen_lock_icon_ldroid">L-Droid icon</string>
     <string name="lockscreen_lock_icon_default">Default icon</string>
     <string name="lockscreen_colorize_handle_title">Colorize custom handle</string>
     <string name="lockscreen_colorize_handle_summary">Lock color will be set to the lock handle</string>
@@ -1367,8 +1367,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="device_hostname">Device hostname</string>
 
     <!-- Chamber of Secrets -->
-    <string name="chamber_title">Liquid Dungeon</string>
-    <string name="chamber_toast">The Dungeon has opened</string>
+    <string name="chamber_title">L-Droid Crypt</string>
+    <string name="chamber_toast">User beware</string>
 
     <!-- Volume Keys Media Control -->
     <string name="volume_keys_control_media_stream">Media control</string>
@@ -1650,10 +1650,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Message of dialog confirming that user wants to restart their device with a new runtime -->
     <string name="custom_runtime_warning_title">Warning</string>
-    <string name="custom_runtime_warning_message">ART is not supported by LiquidSmooth. This setting is included for experimentation only and has the potential to cause instability, crashes, data loss or prevent the proper boot of your device. Visit &lt;a href=\"http://source.android.com/devices/tech/dalvik/art.html\"&gt;Introducing ART&lt;/a&gt; for more information.&lt;br/&gt;&lt;br/&gt;We request you do not file bug reports if you have enabled ART as your runtime.&lt;br/&gt;&lt;br/&gt;Are you sure you want to reboot to change runtime from <xliff:g id="old" example="libdvm.so">%1$s</xliff:g> to <xliff:g id="new" example="libart.so">%2$s</xliff:g>?</string>
+    <string name="custom_runtime_warning_message">ART is not supported by L-Droid. This setting is included for experimentation only and has the potential to cause instability, crashes, data loss or prevent the proper boot of your device. Visit &lt;a href=\"http://source.android.com/devices/tech/dalvik/art.html\"&gt;Introducing ART&lt;/a&gt; for more information.&lt;br/&gt;&lt;br/&gt;We request you do not file bug reports if you have enabled ART as your runtime.&lt;br/&gt;&lt;br/&gt;Are you sure you want to reboot to change runtime from <xliff:g id="old" example="libdvm.so">%1$s</xliff:g> to <xliff:g id="new" example="libart.so">%2$s</xliff:g>?</string>
 
     <!-- OTA App -->
-    <string name="ota_app">LiquidSmooth Updates</string>
+    <string name="ota_app">L-Droid Updates</string>
     <string name="ota_app_summary">Check for ROM updates</string>
 
     <!-- Vibration multiplier -->
@@ -1733,13 +1733,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ad_pocket_mode_notifications">Notifications only</string>
     <string name="ad_pocket_mode_always">Always</string>
 
-	<!-- LiquidSmooth Anonymous Stats -->
-    <string name="rominfo_settings_list_item_title">LiquidSmooth Statistics</string>
-    <string name="rominfo_settings_list_item_summary">Help make LiquidSmooth better by opting into anonymous statistics reporting</string>
+	<!-- L-Droid Anonymous Stats -->
+    <string name="rominfo_settings_list_item_title">L-Droid Statistics</string>
+    <string name="rominfo_settings_list_item_summary">Help make L-Droid better by opting into anonymous statistics reporting</string>
 
     <!-- Changelog -->
-    <string name="changelog_title">Liquid Changelog</string>
-    <string name="changelog_title_summary">View recent changes to LiquidSmooth</string>
+    <string name="changelog_title">L-Droid Changelog</string>
+    <string name="changelog_title_summary">View recent changes to L-Droid</string>
     <string name="changelog_loading">Loading changelog\u2026</string>
     <string name="changelog_error">Unable to load changelog</string>
     <string name="changelog_unknown">Unknown</string>

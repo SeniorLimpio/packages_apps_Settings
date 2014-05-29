@@ -66,17 +66,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.internal.util.slim.AppHelper;
-import com.android.internal.util.slim.Converter;
-import com.android.internal.util.slim.DeviceUtils;
-import com.android.internal.util.slim.ImageHelper;
-import com.android.internal.util.slim.LockscreenTargetUtils;
-import com.android.internal.util.slim.QSConstants;
+import com.android.internal.util.ldroid.AppHelper;
+import com.android.internal.util.ldroid.Converter;
+import com.android.internal.util.ldroid.DeviceUtils;
+import com.android.internal.util.ldroid.ImageHelper;
+import com.android.internal.util.ldroid.LockscreenTargetUtils;
+import com.android.internal.util.ldroid.QSConstants;
 import com.android.settings.R;
-import com.android.settings.slim.quicksettings.QuickSettingsUtil.TileInfo;
-import com.android.settings.slim.util.IconPicker;
-import com.android.settings.slim.util.IconPicker.OnIconPickListener;
-import com.android.settings.slim.util.ShortcutPickerHelper;
+import com.android.settings.ldroid.quicksettings.QuickSettingsUtil.TileInfo;
+import com.android.settings.ldroid.util.IconPicker;
+import com.android.settings.ldroid.util.IconPicker.OnIconPickListener;
+import com.android.settings.ldroid.util.ShortcutPickerHelper;
 
 import android.util.Log;
 

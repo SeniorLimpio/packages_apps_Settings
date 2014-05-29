@@ -80,7 +80,7 @@ public class InterfaceSettings extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.liquid_interface_settings);
+        addPreferencesFromResource(R.xml.ldroid_interface_settings);
 
         mActivity = getActivity();
 

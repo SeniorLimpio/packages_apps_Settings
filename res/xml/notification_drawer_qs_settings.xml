@@ -26,9 +26,9 @@
             android:key="notification_style"
             android:title="@string/notification_style_title"
             android:summary="@string/notification_style_summary"
-            android:fragment="com.android.settings.liquid.NotificationDrawerStyle" />
+            android:fragment="com.android.settings.ldroid.NotificationDrawerStyle" />
 
-         <com.android.settings.liquid.CustomCarrier
+         <com.android.settings.ldroid.CustomCarrier
              android:key="notification_custom_carrier_label"
              android:title="@string/notification_custom_carrier_label_title"
              android:dialogTitle="@string/notification_custom_carrier_label_title"
@@ -51,15 +51,15 @@
              android:title="@string/notif_alpha_title" />
 
          <PreferenceScreen
-                 android:key="liquid_notification_shortcuts"
-                 android:fragment="com.android.settings.liquid.dslv.ButtonsListViewSettings"
+                 android:key="ldroid_notification_shortcuts"
+                 android:fragment="com.android.settings.ldroid.dslv.ButtonsListViewSettings"
                  android:summary="@string/notification_shortcuts_settings_summary"
                  android:title="@string/notification_shortcuts_settings_title">
              <extra android:name="buttonMode" android:value="5" />
              <extra android:name="maxAllowedButtons" android:value="16" />
              <extra android:name="disableLongpress" android:value="true" />
              <extra android:name="useAppPickerOnly" android:value="true" />
-             <extra android:name="fragment" android:value="com.android.settings.liquid.fragments.NotificationsShortcutFragment" />
+             <extra android:name="fragment" android:value="com.android.settings.ldroid.fragments.NotificationsShortcutFragment" />
          </PreferenceScreen>
 
     </PreferenceCategory>
@@ -102,12 +102,12 @@
     <PreferenceCategory
         android:title="@string/category_quick_access" >
 
-        <com.android.settings.liquid.SystemCheckBoxPreference
+        <com.android.settings.ldroid.SystemCheckBoxPreference
             android:key="qs_quick_access"
             android:title="@string/title_quick_access"
             android:defaultValue="false" />
 
-        <com.android.settings.liquid.SystemCheckBoxPreference
+        <com.android.settings.ldroid.SystemCheckBoxPreference
             android:key="qs_quick_access_linked"
             android:title="@string/title_quick_access_linked"
             android:summary="@string/summary_quick_access_linked"
@@ -120,7 +120,7 @@
             android:title="@string/ribbon_picker_title"
             android:summary="@string/ribbon_picker_summary"
             android:dependency="qs_quick_access_linked"
-            android:fragment="com.android.settings.liquid.quicksettings.QuickSettingsTiles" >
+            android:fragment="com.android.settings.ldroid.quicksettings.QuickSettingsTiles" >
             <extra android:name="config_ribbon" android:value="true" />
         </PreferenceScreen>
 
@@ -133,15 +133,15 @@
             android:key="tile_picker"
             android:title="@string/tile_picker_title"
             android:summary="@string/tile_picker_summary"
-            android:fragment="com.android.settings.liquid.quicksettings.QuickSettingsTiles" />
+            android:fragment="com.android.settings.ldroid.quicksettings.QuickSettingsTiles" />
 
         <PreferenceScreen
             android:key="quicksettings_tiles_style"
-            android:fragment="com.android.settings.liquid.quicksettings.QuickSettingsTilesStyle"
+            android:fragment="com.android.settings.ldroid.quicksettings.QuickSettingsTilesStyle"
             android:title="@string/quicksettings_tiles_style"
             android:summary="@string/summary_quicksettings_tiles_style" />
 
-        <com.android.settings.liquid.SystemCheckBoxPreference
+        <com.android.settings.ldroid.SystemCheckBoxPreference
             android:key="quick_settings_tiles_vibrate"
             android:title="@string/haptic_qs_tiles_title"
             android:summary="@string/haptic_qs_tiles_summary"

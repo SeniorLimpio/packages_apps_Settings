@@ -172,11 +172,11 @@
             </intent-filter>
         </activity>
 
-        <!-- Slim Shortcuts -->
+        <!-- ldroid Shortcuts -->
         <activity
-            android:name="CreateSlimShortcut"
-            android:label="@string/slim_shortcut_picker"
-            android:icon="@drawable/slim_lock"
+            android:name="CreateldroidShortcut"
+            android:label="@string/ldroid_shortcut_picker"
+            android:icon="@drawable/ldroid_lock"
             android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"
             android:excludeFromRecents="true"
             android:configChanges="orientation|keyboardHidden|screenSize" >
@@ -187,9 +187,9 @@
         </activity>
 
         <activity
-            android:name=".slim.SlimActionShortcut"
+            android:name=".ldroid.ldroidActionShortcut"
             android:theme="@android:style/Theme.NoDisplay"
-            android:icon="@drawable/slim_lock"
+            android:icon="@drawable/ldroid_lock"
             android:excludeFromRecents="true"
             android:launchMode="singleInstance" >
             <intent-filter>
@@ -199,33 +199,33 @@
 
         <!-- QuietHours SmsCall Service -->
 
-        <service android:name=".slim.service.SmsCallService"/>
-        <service android:name=".slim.service.AlarmService"/>
+        <service android:name=".ldroid.service.SmsCallService"/>
+        <service android:name=".ldroid.service.AlarmService"/>
 
         <receiver
-            android:name=".slim.service.AlarmReceiver">
+            android:name=".ldroid.service.AlarmReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.TIMEZONE_CHANGED"></action>
                 <action android:name="android.intent.action.TIME_CHANGED"></action>
                 <action android:name="android.intent.action.DATE_CHANGED"></action>
-                <action android:name="com.android.settings.slim.service.SCHEDULE_SERVICE_COMMAND"/>
+                <action android:name="com.android.settings.ldroid.service.SCHEDULE_SERVICE_COMMAND"/>
             </intent-filter>
         </receiver>
 
         <receiver
-            android:name=".slim.service.BootReceiver">
+            android:name=".ldroid.service.BootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
 
         <activity
-            android:name=".slim.service.BypassAlarm"
+            android:name=".ldroid.service.BypassAlarm"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:excludeFromRecents="true"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait"
-            android:taskAffinity="com.android.settings.slim.service.BypassAlarm"
+            android:taskAffinity="com.android.settings.ldroid.service.BypassAlarm"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
         <!-- Wireless Controls -->
@@ -1738,13 +1738,13 @@
             android:theme="@style/CryptKeeperBlankTheme"
         />
 
-        <activity android:name=".slim.AutoBrightnessSetup"
+        <activity android:name=".ldroid.AutoBrightnessSetup"
                 android:excludeFromRecents="true"
                 android:theme="@*android:style/Theme.Holo.Dialog.Alert" />
 
-        <activity android:name=".liquid.gestureanywhere.GestureAnywhereBuilderActivity" />
+        <activity android:name=".ldroid.gestureanywhere.GestureAnywhereBuilderActivity" />
 
-        <activity android:name=".liquid.gestureanywhere.GestureAnywhereCreateGestureActivity" />
+        <activity android:name=".ldroid.gestureanywhere.GestureAnywhereCreateGestureActivity" />
 
         <activity android:name=".ApnEditor" />
 
@@ -1760,7 +1760,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.blacklist.BlacklistSettings" />
+                android:value="com.android.settings.ldroid.blacklist.BlacklistSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/security_settings" />
         </activity>
@@ -1775,7 +1775,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.QuietHours" />
+                android:value="com.android.settings.ldroid.QuietHours" />
         </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to quick tiles settings -->
@@ -1788,7 +1788,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.quicksettings.QuickSettingsTiles" />
+                android:value="com.android.settings.ldroid.quicksettings.QuickSettingsTiles" />
         </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to battery icon settings -->
@@ -1801,12 +1801,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.BatteryIconStyle" />
+                android:value="com.android.settings.ldroid.BatteryIconStyle" />
         </activity>
 
-        <activity android:name=".liquid.LockscreenButtons" />
+        <activity android:name=".ldroid.LockscreenButtons" />
 
-        <activity android:name=".liquid.WakeLockBlocker" />
+        <activity android:name=".ldroid.WakeLockBlocker" />
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to rotation settings -->
         <activity android:name="Settings$DisplayRotationSettingsActivity"
@@ -1818,7 +1818,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.DisplayRotation" />
+                android:value="com.android.settings.ldroid.DisplayRotation" />
         </activity>
 
         <!-- RAM bar -->
@@ -1829,7 +1829,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.liquid.RamBar" />
+                android:value="com.android.settings.ldroid.RamBar" />
         </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to sound packages settings -->
@@ -1874,7 +1874,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.ShakeEvents" />
+                android:value="com.android.settings.ldroid.ShakeEvents" />
         </activity>
 
         <activity android:name="Settings$DataUsageSummaryActivity"
@@ -2017,20 +2017,20 @@
         </receiver>
 		
         <receiver
-            android:name="com.android.settings.liquid.batterysaver.BootReceiver">
+            android:name="com.android.settings.ldroid.batterysaver.BootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
 
         <receiver
-            android:name="com.android.settings.liquid.batterysaver.BatterySaverReceiver">
+            android:name="com.android.settings.ldroid.batterysaver.BatterySaverReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.TIMEZONE_CHANGED"></action>
                 <action android:name="android.intent.action.TIME_CHANGED"></action>
                 <action android:name="android.intent.action.DATE_CHANGED"></action>
                 <action android:name="android.intent.action.BATTERY_SERVICES"></action>
-                <action android:name="com.android.settings.liquid.batterysaver.SCHEDULE_BATTERY_SAVER"/>
+                <action android:name="com.android.settings.ldroid.batterysaver.SCHEDULE_BATTERY_SAVER"/>
             </intent-filter>
         </receiver>
 
