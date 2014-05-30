@@ -17,11 +17,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lockscreen_widgets_title" >
 
-<PreferenceScreen
-    android:title="@string/lockscreen_widgets_title"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-
     <PreferenceCategory
         android:key="general_category"
         android:title="@string/general_category_title">
@@ -60,5 +55,7 @@
             android:key="lockscreen_maximize_widgets"
             android:title="@string/lockscreen_maximize_widgets_title"
             android:summary="@string/lockscreen_maximize_widgets_summary" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

@@ -57,23 +57,8 @@
         android:fragment="com.android.settings.WirelessSettings"
         android:icon="@drawable/empty_icon" />
 
-    <!-- GENERAL -->
-    <header android:id="@+id/general_section"
-        android:title="@string/general_category_title" />
-
-    <!-- Interface -->
-    <header
-        android:id="@+id/interface_settings"
-        android:title="@string/interface_settings_title"
-        android:fragment="com.android.settings.ldroid.InterfaceSettings"
-        android:icon="@drawable/ic_ldroid_interface" />
-
-    <!-- Navigation -->
-    <header
-        android:id="@+id/navigation_settings"
-        android:title="@string/navigation_settings_title"
-        android:fragment="com.android.settings.ldroid.NavigationSettings"
-        android:icon="@drawable/ic_ldroid_navigation" />
+    <!-- Additional L-Droid controls -->
+    <header android:title="@string/header_category_rom_settings" />
 
     <!-- Kernel Tweaker -->
     <header
@@ -86,59 +71,27 @@
             android:targetPackage="com.dsht.kerneltweaker" />
 	</header>
 
-    <!-- Status bar -->
-    <header
-        android:id="@+id/statusbar_settings"
-        android:title="@string/statusbar_settings_title"
-        android:fragment="com.android.settings.ldroid.StatusBarSettings"
-        android:icon="@drawable/ic_ldroid_statusbar" />
-
-    <!-- ADVANCED -->
-    <header android:id="@+id/advanced_section"
-        android:title="@string/advanced_category_title" />
-
-    <!-- Active display -->
-    <header
-        android:id="@+id/active_display"
-        android:title="@string/active_display_title"
-        android:fragment="com.android.settings.ldroid.ActiveDisplaySettings"
-        android:icon="@drawable/ic_ldroid_active_display" />
-
-    <!-- Halo options -->
-    <header
-        android:id="@+id/halo_options"
-		android:title="@string/halo_options_title"
-        android:fragment="com.android.settings.ldroid.HaloOptions"
-        android:icon="@drawable/ic_ldroid_halo_options" />
-
-    <!-- Notification drawer -->
-    <header
-        android:id="@+id/notification_drawer"
-		android:title="@string/notification_drawer_title"
-        android:fragment="com.android.settings.ldroid.NotificationDrawer"
-        android:icon="@drawable/ic_ldroid_notification_drawer" />
-
-    <!-- Pie control -->
-    <header
-        android:id="@+id/pie_control"
-		android:title="@string/pie_control_title"
-        android:fragment="com.android.settings.ldroid.PieControl"
-        android:icon="@drawable/ic_ldroid_pie_control" />
-
-    <!-- Wakelock blocker -->
-    <header
-        android:id="@+id/wakelock_blocker"
-        android:title="@string/wakelock_blocker"
-        android:fragment="com.android.settings.ldroid.WakeLockBlocker"
-        android:icon="@drawable/ic_menu_save"
-        android:layout="@layout/preference_wakelockblocker" />
-
     <!-- Theme settings -->
     <header
         android:id="@+id/theme_settings"
-		android:title="@string/theme_settings_title"
+	android:title="@string/theme_settings_title"
         android:fragment="com.android.settings.ldroid.themes.ThemeSettings"
         android:icon="@drawable/ic_ldroid_theme_settings" />
+
+    <!-- Theme chooser -->
+    <header
+        android:id="@+id/theme_chooser"
+        android:title="@string/theme_chooser_title"
+        android:breadCrumbTitle="@string/theme_chooser_title"
+        android:fragment="com.android.settings.ThemeSettings"
+        android:icon="@drawable/prd_ic_themepacks" />
+
+    <!-- L-Droid Vault -->
+    <header
+        android:key="@+id/interface_settings"
+        android:fragment="com.android.settings.ldroid.LDroidVault"
+        android:title="@string/ldroid_settings_title" 
+	android:icon="@drawable/ic_settings_applications" />
 
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
@@ -238,14 +191,6 @@
         android:icon="@drawable/ic_settings_backup"
         android:title="@string/privacy_settings"
         android:id="@+id/privacy_settings" />
-
-    <!-- Theme chooser -->
-    <header
-        android:id="@+id/theme_chooser"
-        android:title="@string/theme_chooser_title"
-        android:breadCrumbTitle="@string/theme_chooser_title"
-        android:fragment="com.android.settings.ThemeSettings"
-        android:icon="@drawable/prd_ic_themepacks" />
 
     <!--  ACCOUNTS section -->
     <header

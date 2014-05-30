@@ -100,6 +100,29 @@
     </PreferenceCategory>
     
     <PreferenceCategory
+        android:title="@string/quick_settings_title" >
+
+        <PreferenceScreen
+            android:key="tile_picker"
+            android:title="@string/tile_picker_title"
+            android:summary="@string/tile_picker_summary"
+            android:fragment="com.android.settings.ldroid.quicksettings.QuickSettingsTiles" />
+
+        <PreferenceScreen
+            android:key="quicksettings_tiles_style"
+            android:fragment="com.android.settings.ldroid.quicksettings.QuickSettingsTilesStyle"
+            android:title="@string/quicksettings_tiles_style"
+            android:summary="@string/summary_quicksettings_tiles_style" />
+
+        <com.android.settings.ldroid.SystemCheckBoxPreference
+            android:key="quick_settings_tiles_vibrate"
+            android:title="@string/haptic_qs_tiles_title"
+            android:summary="@string/haptic_qs_tiles_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/category_quick_access" >
 
         <com.android.settings.ldroid.SystemCheckBoxPreference
@@ -123,29 +146,6 @@
             android:fragment="com.android.settings.ldroid.quicksettings.QuickSettingsTiles" >
             <extra android:name="config_ribbon" android:value="true" />
         </PreferenceScreen>
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/quick_settings_title" >
-
-        <PreferenceScreen
-            android:key="tile_picker"
-            android:title="@string/tile_picker_title"
-            android:summary="@string/tile_picker_summary"
-            android:fragment="com.android.settings.ldroid.quicksettings.QuickSettingsTiles" />
-
-        <PreferenceScreen
-            android:key="quicksettings_tiles_style"
-            android:fragment="com.android.settings.ldroid.quicksettings.QuickSettingsTilesStyle"
-            android:title="@string/quicksettings_tiles_style"
-            android:summary="@string/summary_quicksettings_tiles_style" />
-
-        <com.android.settings.ldroid.SystemCheckBoxPreference
-            android:key="quick_settings_tiles_vibrate"
-            android:title="@string/haptic_qs_tiles_title"
-            android:summary="@string/haptic_qs_tiles_summary"
-            android:defaultValue="false" />
 
     </PreferenceCategory>
 

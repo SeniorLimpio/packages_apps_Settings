@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/general_settings_title">
+
+    <PreferenceCategory
+        android:title="@string/general_settings_title">
+
+        <ListPreference
+            android:key="lcd_density"
+            android:title="@string/custom_density_title"
+            android:entries="@array/lcd_density_entries"
+            android:entryValues="@array/lcd_density_entries" />
+
+    <PreferenceScreen
+        android:key="recent_panel"
+        android:title="@string/recent_panel_title"
+        android:summary="@string/recent_panel_summary"
+        android:fragment="com.android.settings.ldroid.RecentPanelSettings" />
+
+    <CheckBoxPreference
+        android:key="use_alt_resolver"
+        android:title="@string/alt_resolver_title"
+        android:summary="@string/alt_resolver_summary"
+        android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

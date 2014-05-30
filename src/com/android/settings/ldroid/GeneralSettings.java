@@ -50,7 +50,6 @@ import android.widget.EditText;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.android.settings.ldroid.AppMultiSelectListPreference;
 import com.android.internal.util.ldroid.DeviceUtils;
 
 import java.util.Arrays;
@@ -61,12 +60,10 @@ import java.util.Set;
 public class InterfaceSettings extends SettingsPreferenceFragment
     implements OnPreferenceChangeListener {
 
-    private static final String TAG = "InterfaceSettings";
+    private static final String TAG = "GenerelSettings";
     private static final String KEY_USE_ALT_RESOLVER = "use_alt_resolver";
     private static final String KEY_LCD_DENSITY = "lcd_density";
     private static final String DENSITY_PROP = "persist.sys.lcd_density";
-    private static final String KEY_HARDWARE_KEYS = "hardwarekeys_settings";
-    private static final String PREF_INCLUDE_APP_CIRCLE_BAR_KEY = "app_circle_bar_included_apps";
 
     private static final int DIALOG_CUSTOM_DENSITY = 101;
 
@@ -74,13 +71,11 @@ public class InterfaceSettings extends SettingsPreferenceFragment
     private static ListPreference mLcdDensity;
     private static Activity mActivity;
 
-    private AppMultiSelectListPreference mIncludedAppCircleBar;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.ldroid_interface_settings);
+        addPreferencesFromResource(R.xml.ldroid_general_settings);
 
         mActivity = getActivity();
 
@@ -105,18 +100,6 @@ public class InterfaceSettings extends SettingsPreferenceFragment
         }
         mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + current);
         mLcdDensity.setOnPreferenceChangeListener(this);
-
-        PreferenceScreen hardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
-        int deviceKeys = getResources().getInteger(
-                com.android.internal.R.integer.config_deviceHardwareKeys);
-        if (deviceKeys == 0 && hardwareKeys != null) {
-            getPreferenceScreen().removePreference(hardwareKeys);
-        }
-
-        mIncludedAppCircleBar = (AppMultiSelectListPreference) findPreference(PREF_INCLUDE_APP_CIRCLE_BAR_KEY);
-        Set<String> includedApps = getIncludedApps();
-        if (includedApps != null) mIncludedAppCircleBar.setValues(includedApps);
-        mIncludedAppCircleBar.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -145,32 +128,8 @@ public class InterfaceSettings extends SettingsPreferenceFragment
                 }
             }
             return true;
-        } else if (preference == mIncludedAppCircleBar) {
-            storeIncludedApps((Set<String>) newValue);
-            return true;
         }
         return false;
-    }
-
-    private Set<String> getIncludedApps() {
-        String included = Settings.System.getString(getContentResolver(),
-                Settings.System.WHITELIST_APP_CIRCLE_BAR);
-        if (TextUtils.isEmpty(included)) {
-            return null;
-        }
-        return new HashSet<String>(Arrays.asList(included.split("\\|")));
-    }
-
-    private void storeIncludedApps(Set<String> values) {
-        StringBuilder builder = new StringBuilder();
-        String delimiter = "";
-        for (String value : values) {
-            builder.append(delimiter);
-            builder.append(value);
-            delimiter = "|";
-        }
-        Settings.System.putString(getContentResolver(),
-                Settings.System.WHITELIST_APP_CIRCLE_BAR, builder.toString());
     }
 
     private static void setDensity(int density) {
@@ -214,8 +173,8 @@ public class InterfaceSettings extends SettingsPreferenceFragment
             return frag;
         }
 
-        InterfaceSettings getOwner() {
-            return (InterfaceSettings) getTargetFragment();
+        GeneralSettings getOwner() {
+            return (GeneralSettings) getTargetFragment();
         }
 
         @Override

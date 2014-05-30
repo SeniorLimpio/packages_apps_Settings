@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/ldroid_settings_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <!-- User interface -->
+    <PreferenceCategory 
+        android:title="@string/ui_category_title" />
+
+    <!-- Active display -->
+
+    <PreferenceScreen
+        android:key="active_display"
+        android:title="@string/active_display_title"
+        android:fragment="com.android.settings.ldroid.ActiveDisplaySettings"
+        android:icon="@drawable/ic_ldroid_active_display" />
+
+    <!-- Gesture anywhere -->
+    <PreferenceScreen
+        android:key="gesture_anywhere"
+        android:fragment="com.android.settings.ldroid.gestureanywhere.GestureAnywhereSettings"
+        android:icon="@drawable/ic_settings_gesture_anywhere"
+        android:summary="@string/gesture_anywhere_summary"
+        android:title="@string/gesture_anywhere_title" />
+
+    <!-- HALO -->
+    <PreferenceScreen
+        android:key="halo_options"
+	android:title="@string/halo_options_title"
+        android:fragment="com.android.settings.ldroid.HaloOptions"
+        android:icon="@drawable/ic_ldroid_halo_options" />
+
+    <!-- Lock screen -->
+    <PreferenceScreen
+        android:key="lockscreen_settings"
+        android:title="@string/lockscreen_settings_title"
+        android:fragment="com.android.settings.ldroid.LockscreenSettings"
+        android:icon="@drawable/ic_ldroid_lockscreen" />
+
+    <!-- Navigation -->
+    <PreferenceScreen
+        android:key="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings_navigation"
+        android:fragment="com.android.settings.slim.NavigationSettings"
+        android:title="@string/navigation_settings_title" />
+
+    <!-- Notification panel -->
+    <PreferenceScreen
+        android:key="notification_drawer_qs"
+        android:fragment="com.android.settings.ldroid.NotificationDrawerQsSettings"
+        android:title="@string/notification_drawer_qs_title" 
+        android:icon="@drawable/ic_settings_notifications" />
+
+    <!-- Statusbar and notification settings -->
+    <PreferenceScreen
+        android:key="status_bar"
+        android:fragment="com.android.settings.ldroid.StatusBar"
+        android:title="@string/status_bar_title"
+        android:icon="@drawable/ic_network_signal_4" />
+
+    <!-- App launchers -->
+    <PreferenceCategory 
+        android:title="@string/applauncher_category_title" />
+
+    <!-- Circle appbar -->
+    <PreferenceScreen
+        android:key="circle_appbar"
+        android:fragment="com.android.settings.ldroid.CircleAppBar"
+        android:title="@string/category_app_circle_bar_title"
+        android:icon="@drawable/ic_wps_dark" />
+
+    <!-- Genreal settings -->
+    <PreferenceCategory 
+        android:title="@string/general_category_title" />
+
+    <!-- General settings -->
+    <PreferenceScreen
+        android:key="general_settings"
+        android:fragment="com.android.settings.ldroid.GeneralSettings"
+        android:title="@string/general_settings_title"
+        android:icon="@drawable/ic_ldroid_general" />
+
+    <!-- Look and feel -->
+    <PreferenceCategory 
+        android:title="@string/lookandfeel_category_title" />
+
+    <!-- Animations settings -->
+    <PreferenceScreen
+        android:key="animations_settings"
+        android:fragment="com.android.settings.ldroid.AnimationsSettings"
+        android:title="@string/ldroid_animations_settings_title"
+        android:icon="@drawable/ic_ldroid_animations" />
+
+    <!-- System -->
+    <PreferenceCategory 
+        android:title="@string/system_category_title" />
+
+    <!-- BatterySaver -->
+    <PreferenceScreen
+	android:key="battery_saver"
+        android:fragment="com.android.settings.ldroid.BatterySaverSettings"
+        android:title="@string/battery_saver_title"
+        android:icon="@drawable/ic_settings_battery" />
+
+    <!-- Wakelock blocker -->
+    <PreferenceScreen
+        android:key="wakelock_blocker"
+        android:title="@string/wakelock_blocker"
+        android:fragment="com.android.settings.ldroid.WakeLockBlocker"
+        android:icon="@drawable/ic_settings_wakelock_blocker" />
+
+</PreferenceScreen>
