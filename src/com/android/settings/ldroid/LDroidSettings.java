@@ -15,7 +15,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class LimpioSettings extends SettingsPreferenceFragment implements
+public class LDroidSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     @Override

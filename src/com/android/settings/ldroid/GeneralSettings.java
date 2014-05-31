@@ -57,7 +57,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-public class InterfaceSettings extends SettingsPreferenceFragment
+public class GeneralSettings extends SettingsPreferenceFragment
     implements OnPreferenceChangeListener {
 
     private static final String TAG = "GenerelSettings";

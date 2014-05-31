@@ -57,6 +57,7 @@ import com.android.settings.DialogCreatable;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.widget.SeekBarPreference;
 
 import java.util.HashSet;
 import java.util.List;
@@ -103,6 +104,9 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
             "captioning_preference_screen";
     private static final String DISPLAY_MAGNIFICATION_PREFERENCE_SCREEN =
             "screen_magnification_preference_screen";
+
+    private static final String SHAKE_SENSITIVITY =
+            "shake_sensitivity";
 
     // Extras passed to sub-fragments.
     static final String EXTRA_PREFERENCE_KEY = "preference_key";
@@ -240,6 +244,11 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
             String stringValue = (String) newValue;
             Settings.Secure.putInt(getContentResolver(),
                     Settings.Secure.LONG_PRESS_TIMEOUT, Integer.parseInt(stringValue));
+            return true;
+        } else if (preference == mShakeSensitivity) {
+            int value = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.SHAKE_SENSITIVITY, value);
             return true;
         }
         return false;

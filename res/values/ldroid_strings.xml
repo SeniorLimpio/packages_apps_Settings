@@ -75,6 +75,12 @@
     <string name="halo_options_title">Halo options</string>
     <string name="kernel_tweaker_title">Performance</string>
 
+    <!-- Sub Category Animations -->
+    <string name="fb_system_anim_title">System animations</string>
+    <string name="fb_keyboard_anim_title">Keyboard animations</string>
+    <string name="fb_listview_anim_title">Listview animations</string>
+    <string name="fb_scroll_anim_title">Scroll animations</string>
+
     <!-- Action shortcuts -->
     <string name="shortcut_picker_title">Action shortcuts</string>
 
@@ -642,6 +648,15 @@
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across status bar</string>
     <string name="status_bar_toggle_info">Automatic brightness is enabled</string>
+
+    <!-- Breathing Notifications -->
+    <string name="breathing_notifications_title">Breathing Notifications</string>
+    <string name="sms_breath_title">Breathing SMS</string>
+    <string name="sms_breath_summary">Will give your sms notifications a breathing effect in the statusbar</string>
+    <string name="missed_call_breath_title">Breathing Missed Call</string>
+    <string name="missed_call_breath_summary">Will give your missed call notifications a breathing effect in the statusbar</string>
+    <string name="voicemail_breath_title">Breathing Voicemail</string>
+    <string name="voicemail_breath_summary">Will give your voicemail notifications a breathing effect in the statusbar</string>
 
     <!-- Shake events -->
     <string name="shake_events_title">Shake events</string>
