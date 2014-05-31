@@ -2378,7 +2378,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="hover_long_fadeout_10seconds">10 seconds</string>
     <string name="hover_long_fadeout_15seconds">15 seconds</string>
 	
-    <!-- Liquid Extra Info -->
+    <!-- L-Droid Extra Info -->
     <string name="lsextrainfo">Extra information</string>
     <string name="lsextrainfo_summary">Display extra info for cpu, display, etc</string>
 
@@ -2588,5 +2588,11 @@ selecting the profile in the future.</string>
     <string name="sizer_message_filesuccess">Created profile.</string>
     <string name="sizer_message_filefail">Failed to create profile.</string>
     <string name="sizer_message_noselect">Nothing selected.</string>
+	
+    <!-- Sizes for pattern lockscreen -->
+    <string name="lock_pattern_size_7">7x7</string>
+    <string name="lock_pattern_size_8">8x8</string>
+    <string name="lock_pattern_size_9">9x9</string>
+    <string name="lock_pattern_size_10">10x10</string>
 
 </resources>
