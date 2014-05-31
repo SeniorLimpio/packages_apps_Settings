@@ -22,6 +22,7 @@ import static com.android.internal.util.ldroid.QSConstants.TILE_AIRPLANE;
 import static com.android.internal.util.ldroid.QSConstants.TILE_ALARM;
 import static com.android.internal.util.ldroid.QSConstants.TILE_AUTOROTATE;
 import static com.android.internal.util.ldroid.QSConstants.TILE_BATTERY;
+import static com.android.internal.util.ldroid.QSConstants.TILE_BATTERYSAVER;
 import static com.android.internal.util.ldroid.QSConstants.TILE_BLUETOOTH;
 import static com.android.internal.util.ldroid.QSConstants.TILE_BRIGHTNESS;
 import static com.android.internal.util.ldroid.QSConstants.TILE_BUGREPORT;

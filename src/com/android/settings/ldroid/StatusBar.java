@@ -159,15 +159,15 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarSignal.setOnPreferenceChangeListener(this);
 
         mSMSBreath = (CheckBoxPreference) prefSet.findPreference(KEY_SMS_BREATH);
-        mSMSBreath.setChecked((Settings.System.getInt(resolver, 
+        mSMSBreath.setChecked((Settings.System.getInt(getContentResolver(), 
                       Settings.System.KEY_SMS_BREATH, 0) == 1));
 
         mMissedCallBreath = (CheckBoxPreference) prefSet.findPreference(KEY_MISSED_CALL_BREATH);
-        mMissedCallBreath.setChecked((Settings.System.getInt(resolver, 
+        mMissedCallBreath.setChecked((Settings.System.getInt(getContentResolver(), 
                       Settings.System.KEY_MISSED_CALL_BREATH, 0) == 1));
 
         mVoicemailBreath = (CheckBoxPreference) prefSet.findPreference(KEY_VOICEMAIL_BREATH);
-        mVoicemailBreath.setChecked((Settings.System.getInt(resolver, 
+        mVoicemailBreath.setChecked((Settings.System.getInt(getContentResolver(), 
                       Settings.System.KEY_VOICEMAIL_BREATH, 0) == 1));
     }
 
@@ -242,17 +242,17 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         boolean value;
         if (preference == mSMSBreath) {
             value = mSMSBreath.isChecked();
-            Settings.System.putInt(resolver, 
+            Settings.System.putInt(getContentResolver(), 
                     Settings.System.KEY_SMS_BREATH, value ? 1 : 0);
             return true;
         } else if (preference == mMissedCallBreath) {
             value = mMissedCallBreath.isChecked();
-            Settings.System.putInt(resolver,
+            Settings.System.putInt(getContentResolver(),
                     Settings.System.KEY_MISSED_CALL_BREATH, value ? 1 : 0);
             return true;
         } else if (preference == mVoicemailBreath) {
             value = mVoicemailBreath.isChecked();
-            Settings.System.putInt(resolver,
+            Settings.System.putInt(getContentResolver(),
                     Settings.System.KEY_VOICEMAIL_BREATH, value ? 1 : 0);
             return true;
         } else if (preference == mStatusBarNotifCount) {

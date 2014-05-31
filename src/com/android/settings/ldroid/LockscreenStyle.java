@@ -36,6 +36,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
+import android.preference.SeekBarPreference;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Log;
@@ -46,11 +47,10 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.android.internal.util.ldroid.DeviceUtils;
+import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.android.settings.Utils;
-
-import com.android.internal.widget.LockPatternUtils;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
