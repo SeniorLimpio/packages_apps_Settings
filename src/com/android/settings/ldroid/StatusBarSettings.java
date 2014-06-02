@@ -16,7 +16,6 @@
 
 package com.android.settings.ldroid;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.BroadcastReceiver;
@@ -59,8 +58,6 @@ import com.android.settings.Utils;
 import com.android.settings.ldroid.util.Helpers;
 import com.android.internal.util.ldroid.DeviceUtils;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
-
 public class StatusBarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String TAG = "StatusBarSettings";
@@ -72,8 +69,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
     private static final String NETWORK_TRAFFIC_PERIOD = "network_traffic_period";
     private static final String STATUS_BAR_NOTIFICATION_COUNT = "status_bar_notification_count";
     private static final String STATUS_BAR_SIGNAL = "status_bar_signal";
-    private static final String PREF_CUSTOM_SYSTEM_ICON_COLOR = "custom_system_icon_color";
-    private static final String PREF_SYSTEM_ICON_COLOR = "system_icon_color";
     private static final String KEY_SMS_BREATH = "sms_breath";
     private static final String KEY_MISSED_CALL_BREATH = "missed_call_breath";
     private static final String KEY_VOICEMAIL_BREATH = "voicemail_breath";
@@ -85,13 +80,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
     private ListPreference mNetTrafficPeriod;
     private CheckBoxPreference mStatusBarNotifCount;
     private ListPreference mStatusBarSignal;
-    private CheckBoxPreference mCustomIconColor;
-    private ColorPickerPreference mIconColor;
     private CheckBoxPreference mSMSBreath;
     private CheckBoxPreference mMissedCallBreath;
     private CheckBoxPreference mVoicemailBreath;
-
-    private boolean mCheckPreferences;
 
     private int mNetTrafficVal;
     private int MASK_UP;
@@ -102,31 +93,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        createCustomView();
-    }
 
-    private PreferenceScreen createCustomView() {
-        mCheckPreferences = false;
-        PreferenceScreen prefSet = getPreferenceScreen();
-        if (prefSet != null) {
-            prefSet.removeAll();
-        }
-
-        ContentResolver resolver = getActivity().getContentResolver();
         addPreferencesFromResource(R.xml.statusbar_settings);
-        prefSet = getPreferenceScreen();
 
-        int intColor;
-        String hexColor;
+        loadResources();
 
-        PackageManager pm = getPackageManager();
-        Resources systemUiResources;
-        try {
-            systemUiResources = pm.getResourcesForApplication("com.android.systemui");
-        } catch (Exception e) {
-            Log.e(TAG, "can't access systemui resources",e);
-            return null;
-        }
+        PreferenceScreen prefSet = getPreferenceScreen();
 
         // Start observing for changes on auto brightness
         StatusBarBrightnessChangedObserver statusBarBrightnessChangedObserver =
@@ -189,24 +161,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
         mStatusBarSignal.setSummary(mStatusBarSignal.getEntry());
         mStatusBarSignal.setOnPreferenceChangeListener(this);
 
-        mCustomIconColor = (CheckBoxPreference) findPreference(PREF_CUSTOM_SYSTEM_ICON_COLOR);
-        mCustomIconColor.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.CUSTOM_SYSTEM_ICON_COLOR, 0) == 1);
-
-        mIconColor = (ColorPickerPreference) findPreference(PREF_SYSTEM_ICON_COLOR);
-        mIconColor.setOnPreferenceChangeListener(this);
-        intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.SYSTEM_ICON_COLOR, -1);
-        mIconColor.setSummary(getResources().getString(R.string.default_string));
-        if (intColor == 0xffffffff) {
-            intColor = systemUiResources.getColor(systemUiResources.getIdentifier(
-                    "com.android.systemui:color/status_bar_clock_color", null, null));
-        } else {
-            hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mIconColor.setSummary(hexColor);
-        }
-        mIconColor.setNewPreviewColor(intColor);
-
         mSMSBreath = (CheckBoxPreference) prefSet.findPreference(KEY_SMS_BREATH);
         mSMSBreath.setChecked((Settings.System.getInt(getContentResolver(), 
                       Settings.System.KEY_SMS_BREATH, 0) == 1));
@@ -218,16 +172,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
         mVoicemailBreath = (CheckBoxPreference) prefSet.findPreference(KEY_VOICEMAIL_BREATH);
         mVoicemailBreath.setChecked((Settings.System.getInt(getContentResolver(), 
                       Settings.System.KEY_VOICEMAIL_BREATH, 0) == 1));
-
-        mCheckPreferences = true;
-        return prefSet;
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (!mCheckPreferences) {
-            return false;
-	}
         if (preference == mStatusBarBrightnessControl) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
@@ -261,14 +208,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
             Settings.System.putInt(getContentResolver(), Settings.System.NETWORK_TRAFFIC_STATE, mNetTrafficVal);
             int index = mNetTrafficPeriod.findIndexOfValue((String) newValue);
             mNetTrafficPeriod.setSummary(mNetTrafficPeriod.getEntries()[index]);
-            return true;
-        } else if (preference == mIconColor) {
-            String hex = ColorPickerPreference.convertToARGB(Integer
-                    .valueOf(String.valueOf(newValue)));
-            preference.setSummary(hex);
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.SYSTEM_ICON_COLOR, intHex);
             return true;
         } else if (preference == mStatusBarSignal) {
             int signalStyle = Integer.valueOf((String) newValue);
@@ -324,12 +263,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
             Settings.System.putInt(getContentResolver(),
                     Settings.System.KEY_VOICEMAIL_BREATH, value ? 1 : 0);
             return true;
-        } else if (preference == mCustomIconColor) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.CUSTOM_SYSTEM_ICON_COLOR,
-            mCustomIconColor.isChecked() ? 1 : 0);
-            return true;
-        }
+	}
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
