@@ -278,7 +278,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
             } else  if (indexOf == 2) {
                 deleteLockIcon();
             } else {
-                resizeSlimLock();
+                resizeLDroidLock();
             }
             return true;
         } else if (preference == mColorizeCustom) {
@@ -359,8 +359,8 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         if (value == null) {
             resId = R.string.lockscreen_lock_icon_default;
             mLockIcon.setValueIndex(2);
-        } else if (value.contains("slim_lock")) {
-            resId = R.string.lockscreen_lock_icon_slim;
+        } else if (value.contains("ldroid_lock")) {
+            resId = R.string.lockscreen_lock_icon_ldroid;
             mLockIcon.setValueIndex(1);
         } else {
             resId = R.string.lockscreen_lock_icon_custom;
@@ -413,8 +413,8 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         updateLockSummary();
     }
 
-    private void resizeSlimLock() {
-        Bitmap slimLock = BitmapFactory.decodeResource(getResources(), R.drawable.slim_lock);
+    private void resizeLDroidLock() {
+        Bitmap slimLock = BitmapFactory.decodeResource(getResources(), R.drawable.ldroid_lock);
         if (slimLock != null) {
             String path = null;
             int px = requestImageSize();
@@ -423,7 +423,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
                 mLockImage.createNewFile();
                 mLockImage.setWritable(true, false);
                 File image = new File(getActivity().getFilesDir() + File.separator
-                            + "slim_lock" + System.currentTimeMillis() + ".png");
+                            + "ldroid_lock" + System.currentTimeMillis() + ".png");
                 path = image.getAbsolutePath();
                 mLockImage.renameTo(image);
                 FileOutputStream outPut = new FileOutputStream(image);

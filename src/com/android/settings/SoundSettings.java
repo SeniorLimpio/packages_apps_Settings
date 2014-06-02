@@ -44,12 +44,13 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
-import android.preference.SlimSeekBarPreference;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.VolumePanel;
+
+import com.android.settings.widget.SeekBarPreference;
 
 import java.util.List;
 
@@ -95,7 +96,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mDtmfTone;
     private CheckBoxPreference mSoundEffects;
     private CheckBoxPreference mHapticFeedback;
-    private SlimSeekBarPreference mVibrationDuration;
+    private SeekBarPreference mVibrationDuration;
     private ListPreference mVibrationMultiplier;
     private Preference mMusicFx;
     private CheckBoxPreference mLockSounds;
@@ -186,7 +187,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                 Settings.System.HAPTIC_FEEDBACK_ENABLED, 1) != 0);
         int userMillis = Settings.System.getInt(resolver,
                 Settings.System.MINIMUM_VIBRATION_DURATION, 0);
-        mVibrationDuration = (SlimSeekBarPreference) findPreference(KEY_VIBRATION_DURATION);
+        mVibrationDuration = (SeekBarPreference) findPreference(KEY_VIBRATION_DURATION);
         mVibrationDuration.setInterval(1);
         mVibrationDuration.setDefault(0);
         mVibrationDuration.isMilliseconds(true);

@@ -94,4 +94,44 @@
                 android:dependency="enable_hardware_rebind" />
         </PreferenceCategory>
 
+        <PreferenceCategory
+            android:key="button_keys_assist"
+            android:title="@string/keys_assist_press_title">
+
+            <Preference
+                android:key="keys_assist_press"
+                android:title="@string/keys_action_normal"
+                android:dependency="enable_hardware_rebind" />
+
+            <Preference
+                android:key="keys_assist_long_press"
+                android:title="@string/keys_action_long"
+                android:dependency="enable_hardware_rebind" />
+
+            <Preference
+                android:key="keys_assist_double_tap"
+                android:title="@string/keys_action_double"
+                android:dependency="enable_hardware_rebind" />
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:key="button_keys_appSwitch"
+            android:title="@string/keys_app_switch_press_title">
+
+            <Preference
+                android:key="keys_app_switch_press"
+                android:title="@string/keys_action_normal"
+                android:dependency="enable_hardware_rebind" />
+
+            <Preference
+                android:key="keys_app_switch_long_press"
+                android:title="@string/keys_action_long"
+                android:dependency="enable_hardware_rebind" />
+
+            <Preference
+                android:key="keys_app_switch_double_tap"
+                android:title="@string/keys_action_double"
+                android:dependency="enable_hardware_rebind" />
+        </PreferenceCategory>
+
 </PreferenceScreen>

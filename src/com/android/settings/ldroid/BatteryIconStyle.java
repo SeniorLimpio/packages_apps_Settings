@@ -61,7 +61,6 @@ public class BatteryIconStyle extends SettingsPreferenceFragment
     private static final String PREF_BATT_BAR_WIDTH = "battery_bar_thickness";
     private static final String PREF_BATT_ANIMATE = "battery_bar_animate";
 
-
     private static final int MENU_RESET = Menu.FIRST;
 
     private static final int DLG_RESET = 0;
@@ -92,7 +91,7 @@ public class BatteryIconStyle extends SettingsPreferenceFragment
             prefSet.removeAll();
         }
 
-        addPreferencesFromResource(R.xml.ldroid_battery_style);
+        addPreferencesFromResource(R.xml.status_bar_battery_style);
         prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
@@ -416,5 +415,4 @@ public class BatteryIconStyle extends SettingsPreferenceFragment
             mBatteryBarColor.setEnabled(true);
         }
     }
-
 }

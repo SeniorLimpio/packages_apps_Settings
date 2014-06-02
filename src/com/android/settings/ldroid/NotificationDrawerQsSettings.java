@@ -29,7 +29,6 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.RingtonePreference;
-import android.preference.SlimSeekBarPreference;
 import android.provider.Settings;
 import android.os.UserHandle;
 
@@ -38,6 +37,7 @@ import com.android.internal.util.ldroid.DeviceUtils;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.ldroid.quicksettings.QuickSettingsUtil;
 import com.android.settings.R;
+import com.android.settings.widget.SeekBarPreference;
 
 public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             implements OnPreferenceChangeListener  {
@@ -68,7 +68,7 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             "tile_picker";
 
     ListPreference mHideLabels;
-    SlimSeekBarPreference mNotificationAlpha;
+    SeekBarPreference mNotificationAlpha;
     CheckBoxPreference mReminder;
     ListPreference mReminderInterval;
     ListPreference mReminderMode;
@@ -110,7 +110,7 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             Settings.System.putFloat(getContentResolver(),
                     Settings.System.NOTIFICATION_ALPHA, 0.0f);
         }
-        mNotificationAlpha = (SlimSeekBarPreference) findPreference(PREF_NOTIFICATION_ALPHA);
+        mNotificationAlpha = (SeekBarPreference) findPreference(PREF_NOTIFICATION_ALPHA);
         mNotificationAlpha.setInitValue((int) (transparency * 100));
         mNotificationAlpha.setOnPreferenceChangeListener(this);
 

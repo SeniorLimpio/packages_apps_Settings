@@ -15,7 +15,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- About phone screen, LimpioDroid version -->
+    <!-- About phone screen, L-Droid version -->
     <string name="ldroid_version_title">L-Droid version</string>
     <string name="ldroid_version_default">v1.1.0</string>
 
@@ -32,7 +32,7 @@
     <string name="note">NOTE</string>
 
     <!-- Mod version -->
-    <string name="mod_version">L-Droid version</string>
+    <string name="ldroid_version">L-Droid version</string>
     <string name="mod_version_default">Unknown</string>
 
     <!-- Build date -->
@@ -58,8 +58,8 @@
     <string name="icons_category_title">Signal icons</string>
     <string name="battery_category_title">Battery</string>
 
-    <!-- Limpio's Extras -->
-    <string name="ldroid_settings_title">L-Droid vault</string>
+    <!-- L-Droid's Extras -->
+    <string name="ldroid_vault_title">L-Droid vault</string>
     <string name="recents_panel_settings_title" >Recents panel settings</string>
     <string name="general_settings_title">General</string>
     <string name="lockscreen_settings_title">Lock screen</string>
@@ -70,10 +70,11 @@
     <string name="pie_control_title">Pie control</string>
     <string name="theme_settings_title">Lights out</string>
     <string name="ldroid_animations_settings_title">Animations</string>
-    <string name="advanced_options_title">Limpio advanced</string>
+    <string name="advanced_options_title">L-Droid advanced</string>
     <string name="ime_settings_title">Keyboard</string>
     <string name="halo_options_title">Halo options</string>
     <string name="kernel_tweaker_title">Performance</string>
+    <string name="ldroid_sound_settings">Sounds</string>
 
     <!-- Sub Category Animations -->
     <string name="fb_system_anim_title">System animations</string>
@@ -605,9 +606,9 @@
     <string name="wifi_menu_forget_all">Forget all networks</string>
 
     <!-- Status bar -->
-    <string name="status_bar_title">Status bar</string>
-    <string name="status_bar_style_title">Style</string>
-    <string name="status_bar_general_title">General</string>
+    <string name="statusbar_title">Status bar</string>
+    <string name="statusbar_style_title">Style</string>
+    <string name="statusbar_general_title">General</string>
 
     <!-- Status bar | Clock -->
     <string name="status_bar_clock">Clock and date</string>
@@ -1883,8 +1884,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="status_bar_double_tap_to_sleep_summary">Double-tap the status bar to goto sleep</string>                            
 
     <!-- Status bar notification count -->
-    <string name="status_bar_notif_count_title">Notification count</string>
-    <string name="status_bar_notif_count_summary">Display number of similar notifications</string>
+    <string name="status_bar_notification_count_title">Notification count</string>
+    <string name="status_bar_notification_count_summary">Display number of similar notifications</string>
 
     <!-- Status bar signal text style -->
     <string name="status_bar_style_hidden">Hidden</string>

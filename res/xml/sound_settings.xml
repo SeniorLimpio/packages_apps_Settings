@@ -39,7 +39,7 @@
     </Preference>
 
     <PreferenceScreen
-            android:key="advanced_sound_settings"
+            android:key="ldroid_sound_settings"
             android:fragment="com.android.settings.ldroid.SoundSettings"
             android:title="@string/advanced_sound_title" />
 
@@ -104,7 +104,7 @@
             android:title="@string/haptic_feedback_enable_title"
             android:defaultValue="true" />
 
-    <ldroidSeekBarPreference
+    <com.android.settings.widget.SeekBarPreference
             android:key="vibration_duration"
             android:title="@string/minimum_vibration_duration" />
 

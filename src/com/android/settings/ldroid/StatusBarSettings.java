@@ -24,10 +24,12 @@ import android.content.res.Resources;
 import android.net.TrafficStats;
 import android.database.ContentObserver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -44,6 +46,9 @@ import android.provider.MediaStore;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import java.util.List;
 
@@ -51,12 +56,11 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import com.android.settings.ldroid.util.Helpers;
-
 import com.android.internal.util.ldroid.DeviceUtils;
 
-public class StatusBar extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+public class StatusBarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
-    private static final String TAG = "StatusBar";
+    private static final String TAG = "StatusBarSettings";
 
     private static final String KEY_STATUS_BAR_CLOCK = "clock_style_pref";
     private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
@@ -79,7 +83,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private CheckBoxPreference mSMSBreath;
     private CheckBoxPreference mMissedCallBreath;
     private CheckBoxPreference mVoicemailBreath;
-    private CheckBoxPreference mStatusBarNetworkActivity;
 
     private int mNetTrafficVal;
     private int MASK_UP;
@@ -91,7 +94,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.status_bar_settings);
+        addPreferencesFromResource(R.xml.statusbar_settings);
 
         loadResources();
 
@@ -240,7 +243,12 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         ContentResolver resolver = getActivity().getContentResolver();
         boolean value;
-        if (preference == mSMSBreath) {
+	if (preference == mStatusBarNotifCount) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_NOTIFICATION_COUNT,
+                    mStatusBarNotifCount.isChecked() ? 1 : 0);
+            return true;
+	} else if (preference == mSMSBreath) {
             value = mSMSBreath.isChecked();
             Settings.System.putInt(getContentResolver(), 
                     Settings.System.KEY_SMS_BREATH, value ? 1 : 0);
@@ -255,12 +263,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             Settings.System.putInt(getContentResolver(),
                     Settings.System.KEY_VOICEMAIL_BREATH, value ? 1 : 0);
             return true;
-        } else if (preference == mStatusBarNotifCount) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.STATUS_BAR_NOTIFICATION_COUNT,
-                    mStatusBarNotifCount.isChecked() ? 1 : 0);
-            return true;
-        }
+	}
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 

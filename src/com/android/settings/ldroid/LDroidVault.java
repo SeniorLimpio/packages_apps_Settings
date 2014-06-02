@@ -15,14 +15,14 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class LDroidSettings extends SettingsPreferenceFragment implements
+public class LDroidVault extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.ldroid_settings);
+        addPreferencesFromResource(R.xml.ldroid_vault);
 
     }
 
