@@ -264,7 +264,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
             return true;
         } else if (preference == mIconColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer
-                    .valueOf(String.valueOf(objValue)));
+                    .valueOf(String.valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
