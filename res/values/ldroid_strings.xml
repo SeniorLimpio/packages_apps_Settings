@@ -1978,6 +1978,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="app_moving_reboot_now_button">Reboot now</string>
     <string name="app_moving_reboot_later_button">Reboot later</string>
 
+    <!-- Init.d Settings : Warning dialog -->
+    <string name="init_warning_title">Please Read First</string>
+    <string name="init_warning">Init.d scripts have been added to this build for experimental purposes only.  While some people may see improved performance on certain phones, there is always the possibility that some phones may not benefit from the scripts and you may actually see a negative impact.  The ideal situation is to find the right combination of scripts that provides the best bang for your buck while keeping a certain level of stability.</string>
+
     <!-- Init.d -->
     <string name="header_summary_init_d">@null</string>
     <string name="init_d_title">Init.d</string>
@@ -2044,6 +2048,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Performance Settings | Warning dialog -->
     <string name="performance_settings_warning_header">Warning</string>
+    <string name="performance_settings_warning_title">Proceed with Caution</string>
 
     <!-- PropModder -->
     <string name="propmodder_title">Build.prop Mods</string>
