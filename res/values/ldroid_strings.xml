@@ -1345,6 +1345,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="music_tile_mode_background">Show album artwork</string>
     <string name="music_tile_mode_tracktitle">Show track title</string>
 
+    <!-- Brightness Slider -->
+    <string name="notification_drawer_brightness_slider_title">Brightness Slider</string>
+    <string name="brightness_slider_summary">Adjust brightness from a slider in the statusbar</string>
+
     <!-- QuickSettings: Quick Pulldown -->
     <string name="title_quick_pulldown">Quick pulldown</string>
     <string name="summary_quick_pulldown">%1$s edge of the status bar pulls down Quick Settings</string>

@@ -71,7 +71,7 @@ public class ScrollAnimationInterfaceSettings extends SettingsPreferenceFragment
 
         mAnimNoScroll = (SwitchPreference) prefSet.findPreference(ANIMATION_NO_SCROLL);
         mAnimNoScroll.setChecked(Settings.System.getInt(resolver,
-                Settings.System.ANIMATION_CONTROLS_NO_SCROLL, 0) == 1);
+                Settings.System.ANIMATION_CONTROLS_NO_SCROLL, 1) == 1);
         mAnimNoScroll.setOnPreferenceChangeListener(this);
 
         float defaultScroll = Settings.System.getFloat(resolver,
