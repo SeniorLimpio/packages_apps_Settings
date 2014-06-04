@@ -81,9 +81,9 @@ public class ProgressBar extends SettingsPreferenceFragment implements
 		addPreferencesFromResource(R.xml.progressbar);
 
 		boolean progressbar_mirror_enabled = Settings.System.getInt(
-                getContentResolver(), Settings.System.PROGRESSBAR_MIRROR, 0) == 1;
+                getContentResolver(), Settings.System.PROGRESSBAR_MIRROR, 1) == 1;
 		boolean progressbar_reverse_enabled = Settings.System.getInt(
-                getContentResolver(), Settings.System.PROGRESSBAR_REVERSE, 0) == 1;
+                getContentResolver(), Settings.System.PROGRESSBAR_REVERSE, 1) == 1;
 
 		mprogressbar_mirror = (CheckBoxPreference) findPreference(PROGRESSBAR_MIRROR);
 		mprogressbar_mirror.setChecked(progressbar_mirror_enabled);
@@ -93,7 +93,7 @@ public class ProgressBar extends SettingsPreferenceFragment implements
 
 		mprogressbar_speed = (SeekBarPreference) findPreference(PROGRESSBAR_SPEED);
 		mprogressbar_speed.setValue(Settings.System.getInt(getContentResolver(),
-		                            Settings.System.PROGRESSBAR_SPEED, 4));
+		                            Settings.System.PROGRESSBAR_SPEED, 6));
 		mprogressbar_speed.setOnPreferenceChangeListener(this);
 
 		mprogressbar_width = (SeekBarPreference) findPreference(PROGRESSBAR_WIDTH);
@@ -103,7 +103,7 @@ public class ProgressBar extends SettingsPreferenceFragment implements
 
 		mprogressbar_length = (SeekBarPreference) findPreference(PROGRESSBAR_LENGTH);
 		mprogressbar_length.setValue(Settings.System.getInt(getContentResolver(),
-		                             Settings.System.PROGRESSBAR_LENGTH, 10));
+		                             Settings.System.PROGRESSBAR_LENGTH, 12));
 		mprogressbar_length.setOnPreferenceChangeListener(this);
 
 		mprogressbar_count = (SeekBarPreference) findPreference(PROGRESSBAR_COUNT);
