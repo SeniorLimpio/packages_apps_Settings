@@ -1667,6 +1667,7 @@
         <item>11</item>
         <item>12</item>
         <item>13</item>
+    </string-array>
 
     <!-- Battery bar -->
     <string-array name="battery_bar_entries">
