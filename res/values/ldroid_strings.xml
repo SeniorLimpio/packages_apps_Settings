@@ -2207,5 +2207,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Performance control -->
     <string name="performance_settings">Performance control</string>
+    <string name="performance_settings">Adjust rom performance</string>
 
 </resources>
