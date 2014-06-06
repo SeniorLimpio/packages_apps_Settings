@@ -437,6 +437,7 @@
         <item>@string/shortcuts_icon_picker_file_browser2</item>
         <item>@string/shortcuts_icon_picker_fitness</item>
         <item>@string/shortcuts_icon_picker_gallery</item>
+        <item>@string/shortcuts_icon_picker_gmail</item>
         <item>@string/shortcuts_icon_picker_gears</item>
         <item>@string/shortcuts_icon_picker_google_small</item>
         <item>@string/shortcuts_icon_picker_gplus</item>
@@ -462,6 +463,7 @@
         <item>@string/shortcuts_icon_picker_sdcard</item>
         <item>@string/shortcuts_icon_picker_search</item>
         <item>@string/shortcuts_icon_picker_sms</item>
+        <item>@string/shortcuts_icon_picker_snapchat</item>
         <item>@string/shortcuts_icon_picker_tasks</item>
         <item>@string/shortcuts_icon_picker_terminal</item>
         <item>@string/shortcuts_icon_picker_transit</item>
@@ -845,6 +847,7 @@
         <item>ic_lockscreen_email2_normal</item>
         <item>ic_lockscreen_facebook_normal</item>
         <item>ic_lockscreen_gallery_normal</item>
+        <item>ic_lockscreen_gmail_normal</item>
         <item>ic_lockscreen_google_small_normal</item>
         <item>ic_lockscreen_gplus_normal</item>
         <item>ic_lockscreen_gtalk_normal</item>
@@ -857,6 +860,7 @@
         <item>ic_lockscreen_podcast_normal</item>
         <item>ic_lockscreen_rss_normal</item>
         <item>ic_lockscreen_google_normal</item>
+        <item>ic_lockscreen_snapchat_normal</item>
         <item>ic_lockscreen_twitter_normal</item>
     </string-array>
 
