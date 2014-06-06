@@ -118,7 +118,7 @@
         android:fragment="com.android.settings.ldroid.WakeLockBlocker"
         android:icon="@drawable/ic_settings_wakelock_blocker" />
 
-    <!-- System -->
+    <!-- Tweaks -->
     <PreferenceCategory 
         android:title="@string/tweaks_category_title" />
 

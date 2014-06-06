@@ -24,6 +24,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.DialogInterface;
 import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
