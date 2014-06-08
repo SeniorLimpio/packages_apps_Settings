@@ -71,12 +71,12 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mPAGapps) {
-            Uri uri = Uri.parse("http://goo.gl/3TR6AN");
+            Uri uri = Uri.parse("http://goo.gl/OWcIhB");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
         } else if (preference == mBanksGapps) {
-            Uri uri = Uri.parse("http://goo.gl/Pt6DoB");
+            Uri uri = Uri.parse("http://goo.gl/Shk8o5");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
