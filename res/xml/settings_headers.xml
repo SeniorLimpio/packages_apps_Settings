@@ -260,6 +260,13 @@
         android:icon="@drawable/ic_settings_advanced"
         android:title="@string/advanced_options_title" />
 
+    <!-- Performance -->
+    <header
+        android:id="@+id/performance_settings"
+        android:title="@string/performance_settings_title"
+        android:fragment="com.brewcrewfoo.performance.activities.MainActivity"
+        android:icon="@drawable/ic_ldroid_performance" />
+
     <!-- Kernel Tweaker -->
     <header
         android:id="@+id/kernel_tweaker"
@@ -270,13 +277,6 @@
             android:targetClass="com.dsht.kerneltweaker.MainActivity"
             android:targetPackage="com.dsht.kerneltweaker" />
 	</header>
-
-    <!-- Performance -->
-    <header
-        android:id="@+id/performance_settings"
-        android:title="@string/performance_settings_title"
-        android:fragment="com.brewcrewfoo.performance.activities.MainActivity"
-        android:icon="@drawable/ic_ldroid_performance" />
 
     <!-- About Device -->
     <header
