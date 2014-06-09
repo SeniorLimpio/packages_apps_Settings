@@ -68,7 +68,7 @@
         android:icon="@drawable/empty_icon" />
 
     <!-- Additional L-Droid controls -->
-    <header android:title="@string/header_category_rom_settings" />
+    <header android:title="@string/advanced_category_title" />
 
     <!-- Download centre -->
     <header
