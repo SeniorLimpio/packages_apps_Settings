@@ -46,6 +46,13 @@
                 <extra android:name="fragment" android:value="com.android.settings.ldroid.fragments.LockscreenShortcutFragment" />
         </PreferenceScreen>
 
+        <Preference
+            android:id="@+id/lockscreen_wallpaper_settings"
+            android:title="@string/lockscreen_wallpaper_settings_title">
+            <intent android:targetPackage="com.android.wallpapercropper"
+                    android:targetClass="com.android.wallpapercropper.LockWallpaperPickerActivity" />
+        </Preference>
+
         <CheckBoxPreference
             android:key="lockscreen_torch"
             android:title="@string/lockscreen_glowpad_torch_title"
