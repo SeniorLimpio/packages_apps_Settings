@@ -42,6 +42,7 @@ import static com.android.internal.util.ldroid.QSConstants.TILE_MOBILEDATA;
 import static com.android.internal.util.ldroid.QSConstants.TILE_MUSIC;
 import static com.android.internal.util.ldroid.QSConstants.TILE_NETWORKMODE;
 import static com.android.internal.util.ldroid.QSConstants.TILE_NFC;
+import static com.android.internal.util.ldroid.QSConstants.TILE_PROFILE;
 import static com.android.internal.util.ldroid.QSConstants.TILE_QUICKRECORD;
 import static com.android.internal.util.ldroid.QSConstants.TILE_QUIETHOURS;
 import static com.android.internal.util.ldroid.QSConstants.TILE_RINGER;
@@ -190,6 +191,9 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_ONTHEGO, R.string.title_tile_onthego,
                 "com.android.systemui:drawable/ic_qs_onthego"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_PROFILE, R.string.title_tile_profile,
+                "com.android.systemui:drawable/ic_qs_profiles"));
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_BATTERYSAVER, R.string.title_tile_batterysaver,
                 "com.android.systemui:drawable/ic_qs_battery_saver_on"));
