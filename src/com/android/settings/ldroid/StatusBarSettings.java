@@ -72,6 +72,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
     private static final String KEY_SMS_BREATH = "sms_breath";
     private static final String KEY_MISSED_CALL_BREATH = "missed_call_breath";
     private static final String KEY_VOICEMAIL_BREATH = "voicemail_breath";
+    private static final String STATUS_BAR_CUSTOM_HEADER = "custom_status_bar_header";
 
     private PreferenceScreen mClockStyle;
     private CheckBoxPreference mStatusBarBrightnessControl;
@@ -83,6 +84,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
     private CheckBoxPreference mSMSBreath;
     private CheckBoxPreference mMissedCallBreath;
     private CheckBoxPreference mVoicemailBreath;
+    private CheckBoxPreference mStatusBarCustomHeader;
 
     private int mNetTrafficVal;
     private int MASK_UP;
@@ -99,6 +101,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
         loadResources();
 
         PreferenceScreen prefSet = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
 
         // Start observing for changes on auto brightness
         StatusBarBrightnessChangedObserver statusBarBrightnessChangedObserver =
@@ -172,6 +175,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
         mVoicemailBreath = (CheckBoxPreference) prefSet.findPreference(KEY_VOICEMAIL_BREATH);
         mVoicemailBreath.setChecked((Settings.System.getInt(getContentResolver(), 
                       Settings.System.KEY_VOICEMAIL_BREATH, 0) == 1));
+
+        mStatusBarCustomHeader = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_CUSTOM_HEADER);
+        mStatusBarCustomHeader.setChecked(Settings.System.getInt(resolver,
+            Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1);
+        mStatusBarCustomHeader.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -215,6 +223,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_SIGNAL_TEXT, signalStyle);
             mStatusBarSignal.setSummary(mStatusBarSignal.getEntries()[index]);
+            return true;
+        } else if (preference == mStatusBarCustomHeader) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
+           Helpers.restartSystemUI();
             return true;
         }
         return false;
