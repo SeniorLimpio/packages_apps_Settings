@@ -58,6 +58,13 @@
                 android:summary="@string/custom_statusbar_header_summary"
                 android:defaultValue="false" />
 
+    <ListPreference
+            android:key="expanded_desktop"
+            android:title="@string/expanded_desktop_style"
+            android:entries="@array/expanded_desktop_entries"
+            android:entryValues="@array/expanded_desktop_values"
+            android:persistent="false" />
+
     <!-- Signal icons -->
     <PreferenceCategory
             android:key="icons_category_title"

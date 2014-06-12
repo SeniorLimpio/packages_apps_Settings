@@ -34,6 +34,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.RemoteException;
 import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
 import android.preference.ListPreference;
@@ -51,6 +52,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import java.util.List;
+import android.view.WindowManagerGlobal;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -73,6 +75,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
     private static final String KEY_MISSED_CALL_BREATH = "missed_call_breath";
     private static final String KEY_VOICEMAIL_BREATH = "voicemail_breath";
     private static final String STATUS_BAR_CUSTOM_HEADER = "custom_status_bar_header";
+    private static final String KEY_EXPANDED_DESKTOP = "expanded_desktop";
 
     private PreferenceScreen mClockStyle;
     private CheckBoxPreference mStatusBarBrightnessControl;
@@ -85,6 +88,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
     private CheckBoxPreference mMissedCallBreath;
     private CheckBoxPreference mVoicemailBreath;
     private CheckBoxPreference mStatusBarCustomHeader;
+    private ListPreference mExpandedDesktopPref;
 
     private int mNetTrafficVal;
     private int MASK_UP;
@@ -102,6 +106,26 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+
+
+        // Expanded desktop
+        mExpandedDesktopPref = (ListPreference) findPreference(KEY_EXPANDED_DESKTOP);
+        int expandedDesktopValue = Settings.System.getInt(getContentResolver(),
+                Settings.System.EXPANDED_DESKTOP_STYLE, 2);
+
+        try {
+            boolean hasNavBar = WindowManagerGlobal.getWindowManagerService().hasNavigationBar();
+
+            if (hasNavBar) {
+                mExpandedDesktopPref.setOnPreferenceChangeListener(this);
+                mExpandedDesktopPref.setValue(String.valueOf(expandedDesktopValue));
+                updateExpandedDesktop(expandedDesktopValue);
+            } else {
+                prefSet.removePreference(mExpandedDesktopPref);
+            }
+        } catch (RemoteException e) {
+            Log.e(TAG, "Error getting navigation bar status");
+        }
 
         // Start observing for changes on auto brightness
         StatusBarBrightnessChangedObserver statusBarBrightnessChangedObserver =
@@ -187,6 +211,10 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
                     (Boolean) newValue ? 1 : 0);
+            return true;
+        } else if (preference == mExpandedDesktopPref) {
+            int expandedDesktopValue = Integer.valueOf((String) newValue);
+            updateExpandedDesktop(expandedDesktopValue);
             return true;
         } else if (preference == mNetTrafficState) {
             int intState = Integer.valueOf((String)newValue);
@@ -305,6 +333,24 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
                 }
             }
         } catch (SettingNotFoundException e) {
+        }
+    }
+
+    private void updateExpandedDesktop(int value) {
+        ContentResolver cr = getContentResolver();
+        Resources res = getResources();
+        int summary = -2;
+
+        Settings.System.putInt(cr, Settings.System.EXPANDED_DESKTOP_STYLE, value);
+
+        if (value == 1) {
+            summary = R.string.expanded_desktop_status_bar;
+        } else if (value == 2) {
+            summary = R.string.expanded_desktop_no_status_bar;
+        }
+
+        if (mExpandedDesktopPref != null && summary != -2) {
+            mExpandedDesktopPref.setSummary(res.getString(summary));
         }
     }
 
