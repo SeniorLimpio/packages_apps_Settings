@@ -2052,12 +2052,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="dt_init_d_error">Init.d error</string>
     <string name="dm_init_d_error">It looks like init.d isn\'t setup properly. Please contact your ROM developer.</string>
     <string name="db_exit">Exit</string>
-	
-    <!--User preferences settings-->
-    <string name="personalization">Personalization</string>
-    <string name="reset_user_preferences_title">Reset Swipe left to float</string>
-    <string name="reset_user_preferences_summary">Restores user interface preferences to default values</string>
-    <string name="reset_user_preferences_dialog">Are you sure you want to reset your preference?</string>
 
     <!--Blacklist-->
     <string name="blacklist_button_title">Blacklist</string>
