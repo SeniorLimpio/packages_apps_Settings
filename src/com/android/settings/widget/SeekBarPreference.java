@@ -136,6 +136,4 @@ public class SeekBarPreference extends Preference
     public void onStopTrackingTouch(SeekBar seekBar) {
 
     }
-
 }
-

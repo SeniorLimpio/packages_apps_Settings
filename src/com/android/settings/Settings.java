@@ -872,7 +872,7 @@ public class Settings extends PreferenceActivity
                     || header.id == R.id.bluetooth_settings
                     || header.id == R.id.mobile_network_settings
                     || header.id == R.id.theme_settings
-                    || header.id == R.id.location_settings) {
+                    || header.id == R.id.location_settings
                     || header.id == R.id.profiles_settings) {
                 return HEADER_TYPE_SWITCH;
             } else if (header.id == R.id.security_settings) {
