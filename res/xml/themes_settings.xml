@@ -69,7 +69,7 @@
                 android:targetClass="com.android.wallpapercropper.WallpaperPickerActivity" />
     </Preference>
 
-    <!-- Lockscreen Wallpaper -->
+    <!-- Lockscreen Wallpaper 
     <Preference
         android:id="@+id/lockscreen_wallpaper_settings"
         android:title="@string/lockscreen_wallpaper_settings_title"
