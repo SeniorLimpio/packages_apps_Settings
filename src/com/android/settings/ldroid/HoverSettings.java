@@ -40,7 +40,7 @@ import com.android.internal.util.ldroid.DeviceUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
-import com.android.settings.liquid.util.Helpers;
+import com.android.settings.ldroid.util.Helpers;
 
 public class HoverSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {

@@ -32,8 +32,11 @@
         android:fragment="com.android.settings.ldroid.HaloOptions"
         android:icon="@drawable/ic_ldroid_halo_options" />
 
-     <PreferenceScreen
+    <!-- Hover -->
+    <PreferenceScreen
+        android:key="hover_settings"
         android:title="@string/hover_enabled_title"
+        android:icon="@drawable/ic_notify_hover_pressed"
         android:fragment="com.android.settings.ldroid.HoverSettings" />
 
     <!-- Lock screen -->
