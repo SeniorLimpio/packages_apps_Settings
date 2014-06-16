@@ -1358,6 +1358,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="music_tile_mode_background">Show album artwork</string>
     <string name="music_tile_mode_tracktitle">Show track title</string>
 
+    <!-- QuickSettings fliptiles -->
+    <string name="flip_qs_tiles_title">Flip tiles</string>
+    <string name="flip_qs_tiles_summary">Flips the tiles on touch</string>
+
     <!-- Brightness Slider -->
     <string name="notification_drawer_brightness_slider_title">Brightness Slider</string>
     <string name="brightness_slider_summary">Adjust brightness from a slider in the statusbar</string>

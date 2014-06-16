@@ -66,6 +66,8 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             "quicksettings_tiles_style";
     private static final String PREF_TILE_PICKER =
             "tile_picker";
+    private static final String PREF_FLIP_QS_TILES = 
+	    "flip_qs_tiles";
 
     ListPreference mHideLabels;
     SeekBarPreference mNotificationAlpha;
@@ -76,6 +78,7 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
     ListPreference mQuickPulldown;
     ListPreference mSmartPulldown;
     CheckBoxPreference mCollapsePanel;
+    CheckBoxPreference mFlipQsTiles;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -176,6 +179,10 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
         mCollapsePanel.setOnPreferenceChangeListener(this);
 
         updateQuickSettingsOptions();
+
+        mFlipQsTiles = (CheckBoxPreference) findPreference(PREF_FLIP_QS_TILES);
+        mFlipQsTiles.setChecked(Settings.System.getInt(resolver,
+                Settings.System.QUICK_SETTINGS_TILES_FLIP, 0) == 1);
     }
 
     private void updateQuickSettingsOptions() {
@@ -257,6 +264,11 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             Settings.System.putStringForUser(getContentResolver(),
                     Settings.System.REMINDER_ALERT_RINGER,
                     val.toString(), UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mFlipQsTiles) {
+            Settings.System.putInt(resolver,
+                    Settings.System.QUICK_SETTINGS_TILES_FLIP,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
         }
         return false;
