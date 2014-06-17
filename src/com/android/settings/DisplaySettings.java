@@ -51,6 +51,7 @@ import com.android.settings.hardware.DisplayGamma;
 
 import org.cyanogenmod.hardware.AdaptiveBacklight;
 import org.cyanogenmod.hardware.SunlightEnhancement;
+import org.cyanogenmod.hardware.ColorEnhancement;
 
 import java.util.ArrayList;
 
@@ -78,6 +79,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_DISPLAY_GAMMA = "gamma_tuning";
     private static final String KEY_ADAPTIVE_BACKLIGHT = "adaptive_backlight";
     private static final String KEY_SUNLIGHT_ENHANCEMENT = "sunlight_enhancement";
+    private static final String KEY_COLOR_ENHANCEMENT = "color_enhancement";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -99,6 +101,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private Preference mDisplayGamma;
     private CheckBoxPreference mAdaptiveBacklight;
     private CheckBoxPreference mSunlightEnhancement;
+    private CheckBoxPreference mColorEnhancement;
 
     private final Configuration mCurConfig = new Configuration();
 
@@ -233,6 +236,16 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } else {
                 mSunlightEnhancement.setChecked(SunlightEnhancement.isEnabled());
             }
+        }
+
+        if (!isColorEnhancementSupported()) {
+            mColorEnhancement = (CheckBoxPreference) findPreference(KEY_COLOR_ENHANCEMENT);
+            mCategory.removePreference(mColorEnhancement);
+            mColorEnhancement = null;
+        }
+
+        if (mColorEnhancement != null) {
+            mColorEnhancement.setChecked(ColorEnhancement.isEnabled());
         }
 
         mWakeUpWhenPluggedOrUnplugged =
@@ -490,9 +503,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             return AdaptiveBacklight.setEnabled(mAdaptiveBacklight.isChecked());
         } else if (preference == mSunlightEnhancement) {
             return SunlightEnhancement.setEnabled(mSunlightEnhancement.isChecked());
+        } else if (preference == mColorEnhancement) {
+            return ColorEnhancement.setEnabled(mColorEnhancement.isChecked());
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
-
     }
 
     @Override
@@ -565,6 +579,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 }
             }
         }
+
+        if (isColorEnhancementSupported()) {
+            final boolean enabled = prefs.getBoolean(KEY_COLOR_ENHANCEMENT, true);
+            if (!ColorEnhancement.setEnabled(enabled)) {
+                Log.e(TAG, "Failed to restore color enhancement settings.");
+            } else {
+                Log.d(TAG, "Color enhancement settings restored.");
+            }
+        }
     }
 
     private static boolean isAdaptiveBacklightSupported() {
@@ -579,6 +602,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
    private static boolean isSunlightEnhancementSupported() {
         try {
             return SunlightEnhancement.isSupported();
+        } catch (NoClassDefFoundError e) {
+            // Hardware abstraction framework not installed
+            return false;
+        }
+    }
+
+    private static boolean isColorEnhancementSupported() {
+        try {
+            return ColorEnhancement.isSupported();
         } catch (NoClassDefFoundError e) {
             // Hardware abstraction framework not installed
             return false;
