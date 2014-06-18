@@ -32,6 +32,13 @@
         android:dependency="hover_active"
         android:defaultValue="false" />
 
+    <ListPreference
+        android:key="hover_long_fade_out_delay"
+        android:title="@string/hover_long_fadeout_title"
+        android:persistent="false"
+        android:entries="@array/hover_long_fadeout_entries"
+        android:entryValues="@array/hover_long_fadeout_values" />
+
     <com.android.settings.ldroid.SystemCheckBoxPreference
         android:key="hover_require_fullscreen_mode"
         android:title="@string/hover_require_fullscreen_mode_title"
