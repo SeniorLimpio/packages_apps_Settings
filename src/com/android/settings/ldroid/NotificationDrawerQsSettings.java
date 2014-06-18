@@ -69,6 +69,8 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             "tile_picker";
     private static final String PREF_FLIP_QS_TILES = 
 	    "flip_qs_tiles";
+    private static final String UI_COLLAPSE_BEHAVIOUR = 
+	    "notification_drawer_collapse_on_dismiss";
 
     ListPreference mHideLabels;
     SeekBarPreference mNotificationAlpha;
@@ -80,6 +82,7 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
     ListPreference mSmartPulldown;
     CheckBoxPreference mCollapsePanel;
 
+    private ListPreference mCollapseOnDismiss;
     private CheckBoxPreference mFlipQsTiles;
 
     @Override
@@ -97,6 +100,15 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
         mHideLabels.setValue(String.valueOf(hideCarrier));
         mHideLabels.setOnPreferenceChangeListener(this);
         updateHideNotificationLabelsSummary(hideCarrier);
+
+        // Notification drawer
+        int collapseBehaviour = Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_COLLAPSE_ON_DISMISS,
+                Settings.System.STATUS_BAR_COLLAPSE_IF_NO_CLEARABLE);
+        mCollapseOnDismiss = (ListPreference) findPreference(UI_COLLAPSE_BEHAVIOUR);
+        mCollapseOnDismiss.setValue(String.valueOf(collapseBehaviour));
+        mCollapseOnDismiss.setOnPreferenceChangeListener(this);
+        updateCollapseBehaviourSummary(collapseBehaviour);
 
         PackageManager pm = getPackageManager();
         boolean isMobileData = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
@@ -232,6 +244,12 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
                     hideLabels);
             updateHideNotificationLabelsSummary(hideLabels);
             return true;
+	} else if (preference == mCollapseOnDismiss) {
+            int value = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_COLLAPSE_ON_DISMISS, value);
+            updateCollapseBehaviourSummary(value);
+            return true;
         } else if (preference == mNotificationAlpha) {
             float valNav = Float.parseFloat((String) newValue);
             Settings.System.putFloat(getContentResolver(),
@@ -283,6 +301,12 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             return true;
         }
         return false;
+    }
+
+    private void updateCollapseBehaviourSummary(int setting) {
+        String[] summaries = getResources().getStringArray(
+                R.array.notification_drawer_collapse_on_dismiss_summaries);
+        mCollapseOnDismiss.setSummary(summaries[setting]);
     }
 
     private void updateQuickPulldownSummary(int value) {

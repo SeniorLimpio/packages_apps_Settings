@@ -22,7 +22,6 @@
         android:key="gesture_anywhere"
         android:fragment="com.android.settings.ldroid.gestureanywhere.GestureAnywhereSettings"
         android:icon="@drawable/ic_settings_gesture_anywhere"
-        android:summary="@string/gesture_anywhere_summary"
         android:title="@string/gesture_anywhere_title" />
 
     <!-- HALO -->
