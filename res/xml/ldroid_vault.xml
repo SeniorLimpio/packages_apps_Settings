@@ -9,14 +9,13 @@
     <PreferenceCategory 
         android:title="@string/ui_category_title" />
 
-    <!-- Active display -->
-
+    <!-- Driving mode -->
     <PreferenceScreen
-        settings:includeXmlForSearch="@xml/active_display_settings"
-        android:key="active_display"
-        android:title="@string/active_display_title"
-        android:fragment="com.android.settings.ldroid.ActiveDisplaySettings"
-        android:icon="@drawable/ic_ldroid_active_display" />
+        settings:includeXmlForSearch="@xml/drivingmode"
+        android:key="interface_voice_tts"
+        android:fragment="com.android.settings.ldroid.DrivingMode"
+        android:icon="@drawable/ic_settings_drivingmode"
+        android:title="@string/voice_tts_title" />
 
     <!-- Gesture anywhere -->
     <PreferenceScreen
@@ -25,22 +24,6 @@
         android:fragment="com.android.settings.ldroid.gestureanywhere.GestureAnywhereSettings"
         android:icon="@drawable/ic_settings_gesture_anywhere"
         android:title="@string/gesture_anywhere_title" />
-
-    <!-- HALO -->
-    <PreferenceScreen
-        settings:includeXmlForSearch="@xml/halo_options"
-        android:key="halo_options"
-	android:title="@string/halo_options_title"
-        android:fragment="com.android.settings.ldroid.HaloOptions"
-        android:icon="@drawable/ic_ldroid_halo_options" />
-
-    <!-- Hover -->
-    <PreferenceScreen
-        settings:includeXmlForSearch="@xml/hover_settings"
-        android:key="hover_settings"
-        android:title="@string/hover_enabled_title"
-        android:icon="@drawable/ic_notify_hover_pressed"
-        android:fragment="com.android.settings.ldroid.HoverSettings" />
 
     <!-- Lock screen -->
     <PreferenceScreen
@@ -66,13 +49,58 @@
         android:title="@string/notification_drawer_qs_title" 
         android:icon="@drawable/ic_settings_notifications" />
 
-    <!-- Statusbar and notification settings -->
+    <!-- Statusbar -->
     <PreferenceScreen
         settings:includeXmlForSearch="@xml/statusbar_settings"
         android:key="statusbar_settings"
         android:fragment="com.android.settings.ldroid.StatusBarSettings"
         android:title="@string/statusbar_title"
         android:icon="@drawable/ic_network_signal_4" />
+
+    <!-- Notifications -->
+    <PreferenceCategory 
+        android:title="@string/notification_category_title" />
+
+    <!-- Active display -->
+
+    <PreferenceScreen
+        settings:includeXmlForSearch="@xml/active_display_settings"
+        android:key="active_display"
+        android:title="@string/active_display_title"
+        android:fragment="com.android.settings.ldroid.ActiveDisplaySettings"
+        android:icon="@drawable/ic_ldroid_active_display" />
+
+    <!-- HALO -->
+    <PreferenceScreen
+        settings:includeXmlForSearch="@xml/halo_options"
+        android:key="halo_options"
+	android:title="@string/halo_options_title"
+        android:fragment="com.android.settings.ldroid.HaloOptions"
+        android:icon="@drawable/ic_ldroid_halo_options" />
+
+    <!-- Headsup -->
+    <PreferenceScreen
+        settings:includeXmlForSearch="@xml/headsup_settings"
+        android:key="headsup_settings"
+        android:title="@string/heads_up_title"
+        android:icon="@drawable/ic_notify_hover_pressed"
+        android:fragment="com.android.settings.ldroid.HeadsUp" />
+
+    <!-- Hover -->
+    <PreferenceScreen
+        settings:includeXmlForSearch="@xml/hover_settings"
+        android:key="hover_settings"
+        android:title="@string/hover_enabled_title"
+        android:icon="@drawable/ic_notify_hover_pressed"
+        android:fragment="com.android.settings.ldroid.HoverSettings" />
+
+    <!-- Lockscreen Notifications & Peek -->
+    <PreferenceScreen
+        settings:includeXmlForSearch="@xml/lockscreen_notifications"
+        android:key="lockscreen_notifications"
+        android:title="@string/lockscreen_notifications_title"
+        android:icon="@drawable/ic_notify_hover_pressed"
+        android:fragment="com.android.settings.ldroid.LockscreenNotifications" />
 
     <!-- App launchers -->
     <PreferenceCategory 
@@ -93,14 +121,6 @@
         android:fragment="com.android.settings.ldroid.CircleAppBar"
         android:title="@string/category_app_circle_bar_title"
         android:icon="@drawable/ic_wps_dark" />
-
-    <!-- Driving mode -->
-    <PreferenceScreen
-        settings:includeXmlForSearch="@xml/drivingmode"
-        android:key="interface_voice_tts"
-        android:fragment="com.android.settings.ldroid.DrivingMode"
-        android:icon="@drawable/ic_settings_drivingmode"
-        android:title="@string/voice_tts_title" />
 
     <!-- Look and feel -->
     <PreferenceCategory 
