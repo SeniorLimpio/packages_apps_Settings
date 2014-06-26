@@ -100,11 +100,15 @@ import com.android.settings.ldroid.AdvancedSettings;
 import com.android.settings.ldroid.BatteryIconStyle;
 import com.android.settings.ldroid.blacklist.BlacklistSettings;
 import com.android.settings.ldroid.DisplayRotation;
-import com.android.settings.ldroid.InterfaceSettings;
+import com.android.settings.ldroid.HeadsUp;
+import com.android.settings.ldroid.HoverSettings;
+import com.android.settings.ldroid.LDroidVault;
 import com.android.settings.ldroid.NavigationSettings;
+import com.android.settings.profiles.ProfilesList;
 import com.android.settings.ldroid.quicksettings.QuickSettingsTiles;
 import com.android.settings.ldroid.QuietHours;
 import com.android.settings.ldroid.ShakeEvents;
+import com.android.settings.ldroid.StatusBarSettings;
 import com.android.settings.ldroid.themes.ThemeEnabler;
 import com.android.settings.ldroid.themes.ThemeSettings;
 import com.android.settings.profiles.AppGroupConfig;
@@ -474,10 +478,13 @@ public class Settings extends PreferenceActivity
         ApnSettings.class.getName(),
         ShakeEvents.class.getName(),
         HomeSettings.class.getName(),
-        InterfaceSettings.class.getName(),
+        LDroidVault.class.getName(),
         NavigationSettings.class.getName(),
         ThemeSettings.class.getName(),
-        AdvancedSettings.class.getName()
+        AdvancedSettings.class.getName(),
+        HoverSettings.class.getName(),
+        ProfilesList.class.getName(),
+        HeadsUp.class.getName()
     };
 
     @Override
@@ -1385,7 +1392,10 @@ public class Settings extends PreferenceActivity
     public static class ThemeSettingsActivity extends Settings { /* empty */ }
     public static class PerformanceSettingsActivity extends Settings { /* empty */ }
     public static class HomeSettingsActivity extends Settings { /* empty */ }
-    public static class InterfaceSettingsActivity extends Settings { /* empty */ }
+    public static class LDroidVaultActivity extends Settings { /* empty */ }
     public static class NavigationSettingsActivity extends Settings { /* empty */ }
     public static class AdvancedSettingsActivity extends Settings { /* empty */ }
+    public static class HoverSettingsActivity extends Settings { /* empty */ }
+    public static class ProfilesListActivity extends Settings { /* empty */ }
+    public static class HeadsUpActivity extends Settings { /* empty */ }
 }

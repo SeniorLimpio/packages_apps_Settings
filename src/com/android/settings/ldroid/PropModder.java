@@ -281,9 +281,6 @@ public class PropModder extends PreferenceFragment implements
                     && doMod(null, TCP_STACK_PROP_2, String.valueOf(value ? TCP_STACK_BUFFER : DISABLE))
                     && doMod(null, TCP_STACK_PROP_3, String.valueOf(value ? TCP_STACK_BUFFER : DISABLE))
                     && doMod(TCP_STACK_PERSIST_PROP, TCP_STACK_PROP_4, String.valueOf(value ? TCP_STACK_BUFFER : DISABLE));
-        } else if (preference == mDisableBootanimPref) {
-            value = mDisableBootanimPref.isChecked();
-            return doMod(DISABLE_BOOTANIMATION_PREF, DISABLE_BOOTANIMATION_PERSIST_PROP, String.valueOf(value ? 1 : DISABLE));
         } else if (preference == m3gSpeedPref) {
             value = m3gSpeedPref.isChecked();
             return doMod(THREE_G_PERSIST_PROP, THREE_G_PROP_0, String.valueOf(value ? 1 : DISABLE))

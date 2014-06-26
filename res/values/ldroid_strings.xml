@@ -57,6 +57,7 @@
     <string name="clock_and_icons_title">Clock and icons</string>
     <string name="icons_category_title">Signal icons</string>
     <string name="battery_category_title">Battery</string>
+    <string name="notification_category_title">Motifications</string>
 
     <!-- L-Droid's Extras -->
     <string name="ldroid_vault_title">L-Droid vault</string>
