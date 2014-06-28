@@ -161,6 +161,7 @@
         <activity android:name="Settings"
                 android:label="@string/settings_label_launcher"
                 android:taskAffinity="com.android.settings"
+                android:configChanges="orientation|screenSize"
                 android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -2205,13 +2206,13 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.android.settings.liquid.hfm.IntentReceiver" >
+        <receiver android:name="com.android.settings.ldroid.hfm.IntentReceiver" >
             <intent-filter>
                  <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
-        <service android:name="com.android.settings.liquid.hfm.CheckHosts" />
+        <service android:name="com.android.settings.ldroid.hfm.CheckHosts" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -2222,6 +2223,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+
         <activity android:name="Settings$ThemeSettingsActivity"
                   android:label="@string/themes_settings_title"
                   android:taskAffinity=""
@@ -2233,5 +2235,8 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                        android:value="com.android.settings.ThemeSettings" />
         </activity>
+
+        <service android:name=".search.SearchPopulator"/>
+
     </application>
 </manifest>
