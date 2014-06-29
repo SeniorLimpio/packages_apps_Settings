@@ -91,7 +91,6 @@
         android:icon="@drawable/ic_settings_drivingmode"
         android:title="@string/voice_tts_title" />
 
-
     <!-- Look and feel -->
     <PreferenceCategory 
         android:title="@string/lookandfeel_category_title" />
