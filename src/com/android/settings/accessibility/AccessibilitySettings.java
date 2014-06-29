@@ -104,6 +104,8 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
             "captioning_preference_screen";
     private static final String DISPLAY_MAGNIFICATION_PREFERENCE_SCREEN =
             "screen_magnification_preference_screen";
+    private static final String RECENT_PANEL_SHOW_TOPMOST =
+            "recent_panel_show_topmost";
     private static final String SHAKE_SENSITIVITY =
             "shake_sensitivity";
 

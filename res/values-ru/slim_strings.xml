@@ -134,17 +134,17 @@
     <string name="status_bar_toggle_info">Включена автоматическая регулировка яркости</string>
 
     <!-- Shake Events -->
-    <string name="shake_events_title">События тряски</string>
-    <string name="shake_events_enabled_title">Включить проверку тряски</string>
-    <string name="shake_events_normal_title">Активные события тряски</string>
+    <string name="shake_events_title">Действия встряхивания</string>
+    <string name="shake_events_enabled_title">Включить встряхивание</string>
+    <string name="shake_events_normal_title">Активные действия встряхивания</string>
     <string name="shake_events_disabled_title">Приложения-исключения</string>
-    <string name="shake_events_disabled_summary">Отключить тряску в следующих приложениях</string>
-    <string name="shake_event_x_title">Запускать при горизонтальной тряске</string>
-    <string name="shake_event_y_title">Запускать при вертикальной тряске</string>
-    <string name="shake_event_z_title">Запускать при тряске туда-сюда</string>
+    <string name="shake_events_disabled_summary">Отключить встряхивание в следующих приложениях</string>
+    <string name="shake_event_x_title">Запускать при горизонтальном встряхивании</string>
+    <string name="shake_event_y_title">Запускать при вертикальном встряхивании</string>
+    <string name="shake_event_z_title">Запускать при встряхивании туда-сюда</string>
     <!-- Shake sensitivity -->
-    <string name="shake_sensitivity_title">Чувствительность обнаружения тряски</string>
-    <string name="shake_sensitivity_summary">Общая чувствительность всех настроек тряски</string>
+    <string name="shake_sensitivity_title">Чувствительность встряхивания</string>
+    <string name="shake_sensitivity_summary">Общая чувствительность всех настроек встряхивания</string>
     <string name="shake_sensitivity_even_less_sensitive">Минимальная чувствительность</string>
     <string name="shake_sensitivity_less_sensitive">Меньшая чувствительность</string>
     <string name="shake_sensitivity_more_sensitive">Большая чувствительность</string>
@@ -344,7 +344,7 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Задать</string>
     <string name="battery_text_color">Цвет процентов</string>
-    <string name="battery_text_charging_color">Цвет текста при зарядке</string>
+    <string name="battery_text_charging_color">Цвет текста при зарядке (15-89%)</string>
     <string name="battery_circle_charging_color">Цвет круга при зарядке</string>
     <string name="circle_battery_animation_speed">Скорость анимации круга</string>
     <string name="circle_battery_animation_speed_none">Нет</string>
@@ -435,28 +435,28 @@
     <string name="unlock_quick_unlock_control_summary">Не требуется нажимать \&quot;ОК\&quot; после ввода пароля или PIN. Стирание засчитывается как неудачная попытка</string>
     <string name="lock_before_unlock_title">Показывать ползунок перед безопасной разблокировкой</string>
     <string name="lock_before_unlock_summary">Показывать стандартный ползунок разблокировки до безопасной разблокировки</string>
-    <string name="lock_numpad_random_title">Изменять порядок кнопока при вводе PIN</string>
-    <string name="lock_numpad_random_dialog_title">Поризвольный порядок цифр PIN</string>
+    <string name="lock_numpad_random_title">Изменять порядок кнопок при вводе PIN</string>
+    <string name="lock_numpad_random_dialog_title">Произвольный порядок цифр PIN</string>
     <string name="lock_numpad_random_off">Отключено</string>
     <string name="lock_numpad_random_always">Всегда</string>
     <string name="lock_numpad_random_on_request">По запросу</string>
-    <string name="shake_to_secure_title">Потрясите устройством на экране блокировки для включения защиты</string>
+    <string name="shake_to_secure_title">Встряхните устройство на экране блокировки для включения защиты</string>
     <string name="shake_to_secure_summary">Защита будет отключаться после каждой успешной разблокировки</string>
     <string name="shake_to_secure_dlg_title">Внимание:</string>
-    <string name="shake_to_secure_dlg_message">Ваше устройство не будет защищено до тех пор, пока вы не потрясете его, чтобы включить временную защиту. Защита однократна: после успешной разблокировки защита отключается до следующей тряски.</string>
+    <string name="shake_to_secure_dlg_message">Ваше устройство не будет защищено до тех пор, пока вы не встряхнете его, чтобы включить временную защиту. Защита однократна: после успешной разблокировки защита отключается до следующего встряхивания.</string>
     <string name="shake_secure_timeout_title">Включать защиту автоматически</string>
-    <string name="shake_all">Трясти в любую сторону</string>
-    <string name="shake_horizontal">Трясти горизонтально</string>
-    <string name="shake_vertical">Трясти вертикально</string>
-    <string name="shake_back_forth">Трясти туда-сюда</string>
+    <string name="shake_all">Встряхивать в любую сторону</string>
+    <string name="shake_horizontal">Встряхивать горизонтально</string>
+    <string name="shake_vertical">Встряхивать вертикально</string>
+    <string name="shake_back_forth">Встряхивать туда-сюда</string>
     <string name="shake_secure_timeout_disabled">Никогда не включать автоматически</string>
     <string name="shake_secure_timeout_1min">1 минута после отключения экрана</string>
     <string name="shake_secure_timeout_5min">5 минут после отключения экрана</string>
     <string name="shake_secure_timeout_10min">10 минут после отключения экрана</string>
     <string name="shake_secure_timeout_30min">30 минут после отключения экрана</string>
     <string name="app_security_title">БЕЗОПАСНОСТЬ ПРИЛОЖЕНИЙ</string>
-    <string name="navigation_bar">Строка навигации</string>
-    <string name="navbar_button_cat">Кнопки строки навигации</string>
+    <string name="navigation_bar">Панель навигации</string>
+    <string name="navbar_button_cat">Кнопки панели навигации</string>
     <string name="title_pref_menu_location">Положение меню</string>
     <string name="summary_pref_menu_location">Где появляться кнопкам меню</string>
     <string name="title_pref_menu_display">Видимость меню</string>
@@ -478,7 +478,7 @@
     <string name="navbar_style_dimen_title">Стиль и размеры</string>
     <string name="navbar_button_title">Кнопки</string>
     <string name="navbar_targets_title">Ярлыки кольца</string>
-    <string name="navbar_cat">Строка навигации</string>
+    <string name="navbar_cat">Панель навигации</string>
     <string name="wifi_setting_countrycode_title">Код региона Wi-Fi</string>
     <string name="wifi_setting_countrycode_summary">Укажите код региона Wi-Fi</string>
     <string name="wifi_setting_countrycode_error">При настройке кода региона Wi-Fi возникла неполадка.</string>
@@ -564,6 +564,7 @@
     <string name="shortcut_duplicate_entry">Выбранное приложение не может быть добавлено дважды</string>
     <string name="shortcut_action_help_shortcut">ярлык</string>
     <string name="shortcut_action_help_button">кнопка</string>
+    <string name="shortcut_action_help_app">приложение</string>
     <string name="shortcut_action_help_icon">, в процессе выбора значка покажет настройки модификации</string>
     <string name="shortcut_action_help_main">Чтобы добавить %1$s, нажмите значок \&quot;Добавить\&quot;.  Когда %1$s добавлено, выбором ряда, можно изменить цель%2$s\n\nЧтобы удалить %1$s, сдвиньте ряд горизонтально.  Переопределить %1$s в списке можно вертикальным перетаскиванием привязки слева.\n\nЧтобы сбросить все к значениям по умолчанию, нажмите значок сброса.</string>
     <string name="shortcut_action_help_delete_last_entry">Удаление последнего %1$s в списке отключит эту возможность.</string>
@@ -813,6 +814,7 @@
     <string name="device_hostname">Имя хоста</string>
     <string name="device_settings_title">Устройство</string>
     <string name="title_tile_theme">Управление TRDS</string>
+    <string name="title_tile_shake">Действия встряхивания</string>
     <string name="theme_settings_title">The Real Dark Slim</string>
     <string name="theme_auto_mode_title">Переключить тему</string>
     <string name="theme_auto_mode_off">Вручную</string>
@@ -965,7 +967,7 @@
     <string name="pie_icon_color_mode_dialog_title">Установить цвет</string>
     <string name="pie_icon_color_mode_summary">Изменить цветовой режим значков кнопок</string>
     <string name="pie_trigger_note_title">Примечание</string>
-    <string name="pie_trigger_note_summary">Во избежание конфликтов со строкой состояния или строкой навигации области срабатывания сверху и снизу выключаются автоматически, если какая-либо из панелей видима</string>
+    <string name="pie_trigger_note_summary">Во избежание конфликтов со строкой состояния или панелью навигации области срабатывания сверху и снизу выключаются автоматически, если какая-либо из панелей видима</string>
     <string name="pie_background_color_title">Цвет фона</string>
     <string name="pie_snap_color_title">Цвет точек привязки</string>
     <string name="pie_text_color_title">Цвет текста</string>
@@ -988,12 +990,12 @@
     <string name="pie_style_reset_message">Сбросить стили к значениям по умолчанию?</string>
 
     <string name="slim_shortcut_picker">Действия Slim</string>
-    <string name="shortcut_action_navbar">Строка навигации</string>
+    <string name="shortcut_action_navbar">Панель навигации</string>
     <string name="shortcut_action_pie">Управление pie</string>
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Удаление последнего %1$s отключит весь второй уровень pie.</string>
-    <string name="navigation_bar_warning_no_navigation_present">Не включено никакой навигации. Отключение строки навигации может сделать использование аппарата невозможным. Стоит ли включить управление pie?</string>
+    <string name="navigation_bar_warning_no_navigation_present">Не включено никакой навигации. Отключение панели навигации может сделать использование аппарата невозможным. Стоит ли включить управление pie?</string>
     <string name="pie_control_summary">Включить управление pie</string>
-    <string name="pie_warning_no_navigation_present">Не включено никакой навигации. Отключение pie может сделать использование аппарата невозможным. Стоит ли включить строку навигации?</string>
+    <string name="pie_warning_no_navigation_present">Не включено никакой навигации. Отключение pie может сделать использование аппарата невозможным. Стоит ли включить панель навигации?</string>
     <string name="pie_trigger_warning">Должна быть включена как минимум одна основная точка привязки (внизу, слева или справа).</string>
     <string name="pie_disable_ime_triggers_title">Отключить срабатывание на клавиатуре</string>
     <string name="pie_disable_ime_triggers_summary">Отключает или уменьшает размер области срабатывания в зоне клавиатуры, когда клавиатура открыта</string>
@@ -1023,6 +1025,8 @@
     <string name="recent_panel_expanded_mode_auto">Авто (по умолчанию)</string>
     <string name="recent_panel_expanded_mode_always">Всегда</string>
     <string name="recent_panel_expanded_mode_never">Никогда</string>
+    <string name="recent_panel_show_topmost_title">Показывать последнее приложение</string>
+    <string name="recent_panel_show_topmost_summary">Показывать последнее приложение в списке недавних</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Показывать у левого края</string>
