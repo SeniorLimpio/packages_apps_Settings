@@ -414,8 +414,14 @@ public class Settings extends PreferenceActivity
     @Override
     public void onPause() {
         super.onPause();
-        mSearchBar.clearFocus();
-        mSearchItem.collapseActionView();
+
+        if (mSearchBar != null) {
+            mSearchBar.clearFocus();
+        }
+
+        if (mSearchItem != null) {
+            mSearchItem.collapseActionView();
+        }
 
         if (mAttached) {
             mAttached = false;
@@ -430,12 +436,6 @@ public class Settings extends PreferenceActivity
                     mDevelopmentPreferencesListener);
             mDevelopmentPreferencesListener = null;
         }
-    }
-
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        mSearchBar.clearFocus();
-        mSearchItem.collapseActionView();
     }
 
     @Override
@@ -1305,6 +1305,8 @@ public class Settings extends PreferenceActivity
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+        mSearchBar.clearFocus();
+        mSearchItem.collapseActionView();
 
         if (newConfig.uiThemeMode != mCurrentState && HeaderAdapter.mThemeEnabler != null) {
             mCurrentState = newConfig.uiThemeMode;
