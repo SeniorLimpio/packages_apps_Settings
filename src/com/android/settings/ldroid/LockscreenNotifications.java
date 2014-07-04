@@ -100,6 +100,7 @@ public class LockscreenNotifications extends SettingsPreferenceFragment
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_SHOW_ALWAYS, 0) == 1);
         mShowAlways.setEnabled(mPocketMode.isChecked() && mPocketMode.isEnabled());
         }
+
         mWakeOnNotification = (CheckBoxPreference) prefs.findPreference(KEY_WAKE_ON_NOTIFICATION);
         mWakeOnNotification.setChecked(Settings.System.getInt(cr,
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_WAKE_ON_NOTIFICATION, 0) == 1);
