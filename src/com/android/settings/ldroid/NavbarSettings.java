@@ -33,14 +33,24 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 
+<<<<<<< HEAD:src/com/android/settings/ldroid/NavbarSettings.java
 import com.android.internal.util.ldroid.DeviceUtils;
 import com.android.internal.util.ldroid.SlimActions;
+=======
+import com.android.internal.util.liquid.DeviceUtils;
+import com.android.internal.util.liquid.LiquidActions;
+>>>>>>> eb07b50... Settings: create app circle sidebar settings:src/com/android/settings/liquid/NavigationSettings.java
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 
+<<<<<<< HEAD:src/com/android/settings/ldroid/NavbarSettings.java
 public class NavbarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
+=======
+import java.util.Arrays;
+import java.util.ArrayList;
+>>>>>>> eb07b50... Settings: create app circle sidebar settings:src/com/android/settings/liquid/NavigationSettings.java
 
     private static final String TAG = "NavBar";
     private static final String PREF_MENU_LOCATION = "pref_navbar_menu_location";
@@ -50,6 +60,10 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     private static final String PREF_RING = "navbar_targets_settings";
     private static final String PREF_STYLE_DIMEN = "navbar_style_dimen_settings";
     private static final String PREF_NAVIGATION_BAR_CAN_MOVE = "navbar_can_move";
+<<<<<<< HEAD:src/com/android/settings/ldroid/NavbarSettings.java
+=======
+    private static final String KEY_HARDWARE_KEYS = "hardwarekeys_settings";
+>>>>>>> eb07b50... Settings: create app circle sidebar settings:src/com/android/settings/liquid/NavigationSettings.java
 
     private static final int DLG_NAVIGATION_WARNING = 0;
 
@@ -134,6 +148,16 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
                     Settings.System.NAVIGATION_BAR_CAN_MOVE, 1) == 0);
         }
         updateNavbarPreferences(enableNavigationBar);
+<<<<<<< HEAD:src/com/android/settings/ldroid/NavbarSettings.java
+=======
+
+        PreferenceScreen hardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
+        int deviceKeys = getResources().getInteger(
+                com.android.internal.R.integer.config_deviceHardwareKeys);
+        if (deviceKeys == 0 && hardwareKeys != null) {
+            getPreferenceScreen().removePreference(hardwareKeys);
+        }
+>>>>>>> eb07b50... Settings: create app circle sidebar settings:src/com/android/settings/liquid/NavigationSettings.java
     }
 
 
