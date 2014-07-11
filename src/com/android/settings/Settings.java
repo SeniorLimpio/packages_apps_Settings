@@ -88,17 +88,22 @@ import com.android.settings.nfc.PaymentSettings;
 import com.android.settings.print.PrintJobSettingsFragment;
 import com.android.settings.print.PrintServiceSettingsFragment;
 import com.android.settings.print.PrintSettingsFragment;
+import com.android.settings.ldroid.AdvancedSettings;
 import com.android.settings.ldroid.BatteryIconStyle;
 import com.android.settings.ldroid.blacklist.BlacklistSettings;
 import com.android.settings.ldroid.DisplayRotation;
+import com.android.settings.ldroid.InterfaceSettings;
+import com.android.settings.ldroid.NavigationSettings;
 import com.android.settings.ldroid.quicksettings.QuickSettingsTiles;
-import com.android.settings.ldroid.ShakeEvents;
 import com.android.settings.ldroid.QuietHours;
+import com.android.settings.ldroid.ShakeEvents;
 import com.android.settings.ldroid.themes.ThemeEnabler;
+import com.android.settings.ldroid.themes.ThemeSettings;
 import com.android.settings.profiles.AppGroupConfig;
 import com.android.settings.profiles.ProfileConfig;
 import com.android.settings.profiles.ProfileEnabler;
 import com.android.settings.profiles.ProfilesSettings;
+
 import com.android.settings.tts.TextToSpeechSettings;
 import com.android.settings.users.UserSettings;
 import com.android.settings.vpn2.VpnSettings;
@@ -384,8 +389,12 @@ public class Settings extends PreferenceActivity
         BatteryIconStyle.class.getName(),
         DisplayRotation.class.getName(),
         ApnSettings.class.getName(),
+        ShakeEvents.class.getName(),
+        HomeSettings.class.getName(),
+        InterfaceSettings.class.getName(),
+        NavigationSettings.class.getName(),
         ThemeSettings.class.getName(),
-        ShakeEvents.class.getName()
+        AdvancedSettings.class.getName()
     };
 
     @Override
@@ -1241,4 +1250,8 @@ public class Settings extends PreferenceActivity
     public static class RamBarActivity extends Settings { /* empty */ }
     public static class ThemeSettingsActivity extends Settings { /* empty */ }
     public static class PerformanceSettingsActivity extends Settings { /* empty */ }
+    public static class HomeSettingsActivity extends Settings { /* empty */ }
+    public static class InterfaceSettingsActivity extends Settings { /* empty */ }
+    public static class NavigationSettingsActivity extends Settings { /* empty */ }
+    public static class AdvancedSettingsActivity extends Settings { /* empty */ }
 }
