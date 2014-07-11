@@ -91,6 +91,10 @@
     <string name="fb_listview_anim_title">Listview animations</string>
     <string name="fb_scroll_anim_title">Scroll animations</string>
 
+    <!-- Device settings -->
+    <string name="device_settings_title">Device</string>
+    <string name="device_legal_summary">Open source and Google licenses</string>
+
     <!-- Action shortcuts -->
     <string name="shortcut_picker_title">Action shortcuts</string>
 
