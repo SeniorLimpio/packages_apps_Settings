@@ -23,9 +23,6 @@ import android.app.Dialog;
 import android.app.admin.DevicePolicyManager;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.ContentObserver;
@@ -67,7 +64,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_SCREEN_OFF_GESTURE_SETTINGS = "screen_off_gesture_settings";
-    private static final String KEY_SCREEN_COLOR_SETTINGS = "screencolor_settings";
 
     private static final String ROTATION_ANGLE_0 = "0";
     private static final String ROTATION_ANGLE_90 = "90";
@@ -82,7 +78,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mVolumeWake;
     private CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
     private PreferenceCategory mWakeUpOptions;
-    private PreferenceScreen mScreenColorSettings;
 
     private final Configuration mCurConfig = new Configuration();
 
@@ -176,11 +171,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                         Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
                 mVolumeWake.setOnPreferenceChangeListener(this);
             }
-        }
-		
-        mScreenColorSettings = (PreferenceScreen) findPreference(KEY_SCREEN_COLOR_SETTINGS);
-        if (!isPostProcessingSupported()) {
-            getPreferenceScreen().removePreference(mScreenColorSettings);
         }
 
         mWakeUpWhenPluggedOrUnplugged =
@@ -402,16 +392,5 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     (Boolean) objValue ? 1 : 0);
         }
         return true;
-    }
-
-    private boolean isPostProcessingSupported() {
-        boolean ret = true;
-        final PackageManager pm = getPackageManager();
-        try {
-            pm.getPackageInfo("com.qualcomm.display", PackageManager.GET_META_DATA);
-        } catch (NameNotFoundException e) {
-            ret = false;
-        }
-        return ret;
     }
 }
