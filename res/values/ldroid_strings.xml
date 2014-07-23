@@ -65,6 +65,8 @@
     <string name="lockscreen_settings_title">Lock screen</string>
     <string name="navigation_settings_title">Navigation</string>
     <string name="statusbar_settings_title">Status bar</string>
+    <string name="notification_settings_title">Notifications</string>
+    <string name="viper_settings_title">Audio engine</string>
     <string name="active_display_title">Active display</string>
     <string name="notification_drawer_title">Notification drawer</string>
     <string name="pie_control_title">Pie control</string>
