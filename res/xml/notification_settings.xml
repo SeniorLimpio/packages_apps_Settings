@@ -25,14 +25,14 @@
         android:id="@+id/active_display"
         android:title="@string/active_display_title"
         android:summary="@string/ad_summary"
-        android:fragment="com.android.settings.liquid.ActiveDisplaySettings" />
+        android:fragment="com.android.settings.ldroid.ActiveDisplaySettings" />
 
     <!-- Driving mode -->
     <PreferenceScreen
         android:key="interface_voice_tts"
         android:title="@string/voice_tts_title"
         android:summary="@string/voice_tts_summary"
-        android:fragment="com.android.settings.liquid.TtsNotification" />
+        android:fragment="com.android.settings.ldroid.TtsNotification" />
 
     <!-- Halo -->
     <PreferenceScreen
@@ -40,7 +40,7 @@
         android:id="@+id/halo_options"
         android:title="@string/halo_options_title"
         android:summary="@string/halo_summary"
-        android:fragment="com.android.settings.liquid.HaloOptions" />
+        android:fragment="com.android.settings.ldroid.HaloOptions" />
 
     <!-- Heads Up -->
     <PreferenceScreen
@@ -48,33 +48,33 @@
         android:id="@+id/headsup_settings"
         android:title="@string/heads_up_title"
         android:summary="@string/heads_up_summary"
-        android:fragment="com.android.settings.liquid.HeadsUp" />
+        android:fragment="com.android.settings.ldroid.HeadsUp" />
 
     <!-- Hover -->
     <PreferenceScreen
         android:key="hover_settings"
         android:title="@string/hover_title"
         android:summary="@string/hover_summary"
-        android:fragment="com.android.settings.liquid.HoverSettings" />
+        android:fragment="com.android.settings.ldroid.HoverSettings" />
 
     <!-- LockScreen Notifications -->
     <PreferenceScreen
         android:key="lockscreen_notifications"
         android:title="@string/lockscreen_notifications_title"
         android:summary="@string/lockscreen_notifications_summary"
-        android:fragment="com.android.settings.liquid.LockscreenNotifications" />
+        android:fragment="com.android.settings.ldroid.LockscreenNotifications" />
 
     <!-- Notification drawer -->
     <PreferenceScreen
         android:id="@+id/notification_drawer"
         android:title="@string/notification_drawer_title"
         android:summary="@string/notification_drawer_summary"
-        android:fragment="com.android.settings.liquid.NotificationDrawer" />
+        android:fragment="com.android.settings.ldroid.NotificationDrawer" />
 
     <!-- Peek -->
     <PreferenceScreen
         android:key="notification_peek"
-        android:fragment="com.android.settings.liquid.PeekSettings"
+        android:fragment="com.android.settings.ldroid.PeekSettings"
         android:title="@string/notification_peek_title"
         android:summary="@string/notification_peek_summary" />
 

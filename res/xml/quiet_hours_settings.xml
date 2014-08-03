@@ -34,7 +34,7 @@
         android:title="@string/quiet_hours_auto_title" />
 
     <PreferenceScreen
-        android:fragment="com.android.settings.liquid.QuietHoursTimes"
+        android:fragment="com.android.settings.ldroid.QuietHoursTimes"
         android:key="time_prefs"
         android:title="@string/quiet_time_prefs_title" />
 

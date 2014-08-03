@@ -36,7 +36,7 @@
 
     <PreferenceScreen
         android:key="navbar_targets_settings"
-        android:fragment="com.android.settings.liquid.dslv.ButtonsListViewSettings"
+        android:fragment="com.android.settings.ldroid.dslv.ButtonsListViewSettings"
         android:title="@string/power_menu_title"
         android:summary="@string/power_menu_summary">
             <extra android:name="buttonMode" android:value="6" />
@@ -45,19 +45,19 @@
             <extra android:name="disableDeleteLastEntry" android:value="true" />
             <extra android:name="actionValues" android:value="shortcut_action_power_menu_values" />
             <extra android:name="actionEntries" android:value="shortcut_action_power_menu_entries" />
-            <extra android:name="fragment" android:value="com.android.settings.liquid.fragments.PowerMenuFragment" />
+            <extra android:name="fragment" android:value="com.android.settings.ldroid.fragments.PowerMenuFragment" />
     </PreferenceScreen>
 
     <PreferenceScreen
         android:key="recent_panel"
         android:title="@string/recent_panel_title"
         android:summary="@string/recent_panel_summary"
-        android:fragment="com.android.settings.liquid.RecentPanelSettings" />
+        android:fragment="com.android.settings.ldroid.RecentPanelSettings" />
 
     <PreferenceScreen
         android:key="shake_events"
         android:title="@string/shake_events_title"
         android:summary="@string/shake_events_summary"
-        android:fragment="com.android.settings.liquid.ShakeEvents" />
+        android:fragment="com.android.settings.ldroid.ShakeEvents" />
 
 </PreferenceScreen>

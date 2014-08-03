@@ -46,7 +46,7 @@
             android:dialogTitle="@string/lock_numpad_random_dialog_title" />
 
         <PreferenceScreen
-            android:fragment="com.android.settings.liquid.KeyguardShakeEvents"
+            android:fragment="com.android.settings.ldroid.KeyguardShakeEvents"
             android:key="shake_events"
             android:title="@string/shake_events_title" />
 

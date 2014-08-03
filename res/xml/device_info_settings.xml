@@ -17,21 +17,21 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/about_settings">
 
-        <PreferenceScreen android:key="liquid_logo"
+        <PreferenceScreen android:key="ldroid_logo"
                           android:enabled="false"
-                          android:layout="@layout/liquid_logo_row" />
+                          android:layout="@layout/ldroid_logo_row" />
 						  
         <!-- LiquidSmooth Change Log -->
         <PreferenceScreen android:key="changelog"
             android:title="@string/changelog_title"
             android:summary="@string/changelog_title_summary"
-            android:fragment="com.android.settings.liquid.ChangeLog" >
+            android:fragment="com.android.settings.ldroid.ChangeLog" >
         </PreferenceScreen>
 		
         <!-- LiquidSmooth Downloads  -->						
         <Preference
             android:key="download_center"
-            android:fragment="com.android.settings.liquid.Download"
+            android:fragment="com.android.settings.ldroid.Download"
             android:title="@string/download_category"
             android:summary="@string/download_category_summary" />
 
@@ -45,12 +45,12 @@
         </PreferenceScreen>
 
         <!-- LiquidSmooth Updates -->
-        <PreferenceScreen android:key="liquidsmooth_updates"
-                android:title="@string/liquidsmoothupdate_settings_title"
-                android:summary="@string/liquidsmoothupdate_settings_summary">
+        <PreferenceScreen android:key="ldroidsmooth_updates"
+                android:title="@string/ldroidsmoothupdate_settings_title"
+                android:summary="@string/ldroidsmoothupdate_settings_summary">
             <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.liquid.updater"
-                    android:targetClass="com.liquid.updater.UpdatesSettings" />
+                    android:targetPackage="com.ldroid.updater"
+                    android:targetClass="com.ldroid.updater.UpdatesSettings" />
         </PreferenceScreen>
 		
         <!-- Liquid Extra Info -->
@@ -59,7 +59,7 @@
                 android:summary="@string/lsextrainfo_summary">
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="com.android.settings"
-                    android:targetClass="com.android.settings.liquid.extrainfo.MainActivity" />
+                    android:targetClass="com.android.settings.ldroid.extrainfo.MainActivity" />
         </PreferenceScreen>
 
         <!-- Device status - launches activity -->

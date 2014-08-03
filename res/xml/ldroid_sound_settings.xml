@@ -39,7 +39,7 @@
 		
     <PreferenceScreen
         android:key="volume_steps_settings"
-        android:fragment="com.android.settings.liquid.VolumeSteps"
+        android:fragment="com.android.settings.ldroid.VolumeSteps"
         android:title="@string/volume_steps_title" />
 		
     <PreferenceScreen

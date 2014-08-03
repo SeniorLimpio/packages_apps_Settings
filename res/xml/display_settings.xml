@@ -25,7 +25,7 @@
             <PreferenceScreen
                 android:key="battery_light"
                 android:title="@string/battery_light_title"
-                android:fragment="com.android.settings.liquid.notificationlight.BatteryLightSettings" />
+                android:fragment="com.android.settings.ldroid.notificationlight.BatteryLightSettings" />
 
             <com.android.settings.BrightnessPreference
                 android:title="@string/brightness"
@@ -40,7 +40,7 @@
             <PreferenceScreen
                 android:key="notification_light"
                 android:title="@string/notification_light_title"
-                android:fragment="com.android.settings.liquid.notificationlight.NotificationLightSettings" />
+                android:fragment="com.android.settings.ldroid.notificationlight.NotificationLightSettings" />
 
         </PreferenceCategory>
 		
@@ -69,18 +69,18 @@
                 android:id="@+id/identicons"
                 android:title="@string/identicons_title"
                 android:summary="@string/identicons_summary"
-                android:fragment="com.android.settings.liquid.identicons.IdenticonsSettings" />
+                android:fragment="com.android.settings.ldroid.identicons.IdenticonsSettings" />
 
         <PreferenceScreen
                 android:key="display_rotation"
-                android:fragment="com.android.settings.liquid.DisplayRotation"
+                android:fragment="com.android.settings.ldroid.DisplayRotation"
                 android:title="@string/display_rotation_title" />
 
         <PreferenceScreen
                 android:key="screen_recorder"
                 android:title="@string/screen_recorder_title"
                 android:summary="@string/screen_recorder_summary2"
-                android:fragment="com.android.settings.liquid.ScreenRecorderSettings" />
+                android:fragment="com.android.settings.ldroid.ScreenRecorderSettings" />
 
         <ListPreference
                 android:key="screen_timeout"
@@ -110,7 +110,7 @@
             android:key="animation_controls"
             android:title="@string/animation_controls_title"
             android:summary="@string/animation_controls_summary"
-            android:fragment="com.android.settings.liquid.AnimationControls" />
+            android:fragment="com.android.settings.ldroid.AnimationControls" />
 
         <ListPreference
             android:key="system_power_crt_mode"
@@ -121,7 +121,7 @@
 
         <PreferenceScreen
             android:key="interface_animation_scroll"
-            android:fragment="com.android.settings.liquid.KeyboardAnimationInterfaceSettings"
+            android:fragment="com.android.settings.ldroid.KeyboardAnimationInterfaceSettings"
             android:title="@string/ime_animation_title"
             android:summary="@string/ime_animation_summary" />
 
@@ -145,11 +145,11 @@
             android:key="progressbar_settings"
             android:title="@string/progressbar_title"
             android:summary="@string/progressbar_summary"
-            android:fragment="com.android.settings.liquid.ProgressBar" />
+            android:fragment="com.android.settings.ldroid.ProgressBar" />
 
         <PreferenceScreen
             android:key="interface_animation_scroll"
-            android:fragment="com.android.settings.liquid.ScrollAnimationInterfaceSettings"
+            android:fragment="com.android.settings.ldroid.ScrollAnimationInterfaceSettings"
             android:title="@string/scrolling_title"
             android:summary="@string/scrolling_summary" />
 
@@ -178,7 +178,7 @@
                 android:summary="@string/wakeup_when_plugged_unplugged_summary"
                 android:defaultValue="true" />
 
-            <com.android.settings.liquid.SystemCheckBoxPreference
+            <com.android.settings.ldroid.SystemCheckBoxPreference
                 android:key="proximity_on_wake"
                 android:title="@string/proximity_wake_title"
                 android:summary="@string/proximity_wake_summary"

@@ -28,25 +28,25 @@
             android:key="lockscreen_buttons"
             android:title="@string/lockscreen_buttons_title"
             android:summary="@string/lockscreen_buttons_summary"
-            android:fragment="com.android.settings.liquid.LockscreenButtons" />
+            android:fragment="com.android.settings.ldroid.LockscreenButtons" />
 
         <PreferenceScreen
             android:key="lockscreen_interface"
             android:title="@string/lockscreen_interface_title"
             android:summary="@string/lockscreen_interface_summary"
-            android:fragment="com.android.settings.liquid.LockscreenInterface" />
+            android:fragment="com.android.settings.ldroid.LockscreenInterface" />
 
         <PreferenceScreen
             android:key="lockscreen_style"
             android:title="@string/lockscreen_style_title"
             android:summary="@string/lockscreen_style_summary"
-            android:fragment="com.android.settings.liquid.LockscreenStyle" />
+            android:fragment="com.android.settings.ldroid.LockscreenStyle" />
 
         <PreferenceScreen
             android:key="lockscreen_widgets"
             android:title="@string/lockscreen_widgets_title"
             android:summary="@string/lockscreen_widgets_summary"
-            android:fragment="com.android.settings.liquid.LockscreenWidgets" />
+            android:fragment="com.android.settings.ldroid.LockscreenWidgets" />
 
     </PreferenceCategory>
 
