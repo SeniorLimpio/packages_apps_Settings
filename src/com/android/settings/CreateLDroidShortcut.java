@@ -23,14 +23,14 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
-import com.android.internal.util.liquid.ButtonsHelper;
-import com.android.internal.util.liquid.DeviceUtils;
-import com.android.internal.util.liquid.DeviceUtils.FilteredDeviceFeaturesArray;
-import com.android.settings.liquid.LiquidActionShortcut;
+import com.android.internal.util.ldroid.ButtonsHelper;
+import com.android.internal.util.ldroid.DeviceUtils;
+import com.android.internal.util.ldroid.DeviceUtils.FilteredDeviceFeaturesArray;
+import com.android.settings.ldroid.LDroiActionShortcut;
 
 import com.android.settings.R;
 
-public class CreateLiquidShortcut extends Activity {
+public class CreateLDroidShortcut extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,25 +55,25 @@ public class CreateLiquidShortcut extends Activity {
         .setNegativeButton(R.string.cancel,
             new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                CreateLiquidShortcut.this.finish();
+                CreateLDroidShortcut.this.finish();
             }
         })
         .setItems(dialogEntries,
             new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
                 Intent shortcutIntent = new Intent(
-                        CreateLiquidShortcut.this, LiquidActionShortcut.class);
+                        CreateLDroidShortcut.this, LDroidActionShortcut.class);
                 shortcutIntent.putExtra("value", dialogValues[item]);
 
                 Drawable icon = ButtonsHelper.getButtonIconImage(
-                        CreateLiquidShortcut.this, dialogValues[item], null);
+                        CreateLDroidShortcut.this, dialogValues[item], null);
                 BitmapDrawable bitmap = (BitmapDrawable) icon;
                 Intent intent = new Intent();
                 intent.putExtra(Intent.EXTRA_SHORTCUT_ICON, bitmap.getBitmap());
                 intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, dialogEntries[item]);
                 intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent);
                 setResult(RESULT_OK, intent);
-                CreateLiquidShortcut.this.finish();
+                CreateLDroidShortcut.this.finish();
             }
         });
         action.show();

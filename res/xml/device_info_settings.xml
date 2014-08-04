@@ -21,21 +21,21 @@
                           android:enabled="false"
                           android:layout="@layout/ldroid_logo_row" />
 						  
-        <!-- LiquidSmooth Change Log -->
+        <!-- L-Droid Change Log -->
         <PreferenceScreen android:key="changelog"
             android:title="@string/changelog_title"
             android:summary="@string/changelog_title_summary"
             android:fragment="com.android.settings.ldroid.ChangeLog" >
         </PreferenceScreen>
 		
-        <!-- LiquidSmooth Downloads  -->						
+        <!-- L-Droid Downloads  -->						
         <Preference
             android:key="download_center"
             android:fragment="com.android.settings.ldroid.Download"
             android:title="@string/download_category"
             android:summary="@string/download_category_summary" />
 
-        <!-- Liquid Anonymous Stats -->
+        <!-- L-Droid Anonymous Stats -->
        <PreferenceScreen android:key="rominfo_settings"
             android:title="@string/rominfo_settings_list_item_title"
             android:summary="@string/rominfo_settings_list_item_summary">
@@ -44,19 +44,19 @@
                     android:targetClass="android.romstats.AnonymousStats" />
         </PreferenceScreen>
 
-        <!-- LiquidSmooth Updates -->
-        <PreferenceScreen android:key="ldroidsmooth_updates"
-                android:title="@string/ldroidsmoothupdate_settings_title"
-                android:summary="@string/ldroidsmoothupdate_settings_summary">
+        <!-- L-Droid Updates
+        <PreferenceScreen android:key="ldroid_updates"
+                android:title="@string/ldroidupdate_settings_title"
+                android:summary="@string/ldroidupdate_settings_summary">
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="com.ldroid.updater"
                     android:targetClass="com.ldroid.updater.UpdatesSettings" />
-        </PreferenceScreen>
+        </PreferenceScreen> -->
 		
-        <!-- Liquid Extra Info -->
+        <!-- L-Droid Extra Info -->
         <PreferenceScreen android:key="extrainfo"
-                android:title="@string/lsextrainfo"
-                android:summary="@string/lsextrainfo_summary">
+                android:title="@string/ldroidextrainfo"
+                android:summary="@string/ldroidextrainfo_summary">
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="com.android.settings"
                     android:targetClass="com.android.settings.ldroid.extrainfo.MainActivity" />

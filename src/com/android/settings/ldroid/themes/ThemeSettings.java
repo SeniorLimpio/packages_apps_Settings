@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.liquid.themes;
+package com.android.settings.ldroid.themes;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -52,7 +52,7 @@ public class ThemeSettings extends SettingsPreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.liquid_theme_settings);
+        addPreferencesFromResource(R.xml.ldroid_theme_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
 

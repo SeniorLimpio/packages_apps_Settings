@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2014 The LiquidSmooth Project
+<!-- Copyright (C) 2014 The L-Droid Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -24,6 +24,8 @@
     <string name="attention">Attention</string>
     <string name="default_string">Default</string>
     <string name="reset_message">Reset entries to default?</string>
+    <string name="applist_title">Apps</string>
+    <string name="note">NOTE</string>
 
     <!-- Days of the Week -->
     <string name="sunday">Sunday</string>
@@ -35,7 +37,7 @@
     <string name="saturday">Saturday</string>
 
     <!-- Mod version -->
-    <string name="mod_version">LiquidSmooth version</string>
+    <string name="mod_version">L-Droid version</string>
     <string name="mod_version_default">Unknown</string>
 
     <!-- Build date -->
@@ -52,6 +54,41 @@
     <string name="advanced_superuser_summary">Configure or view current superuser settings</string>
     <string name="advanced_systemapp_summary">Search for and remove system apps</string>
     <string name="advanced_wakelock_summary">Configure or view current wakelock blocker settings</string>
+
+    <string name="additional_category_title">Additional</string>
+    <string name="themes_settings_title">Themes</string>
+    <string name="general_category_title">General</string>
+    <string name="ui_category_title">User interface</string>
+    <string name="misc_category_title">Miscellaneous</string>
+    <string name="lockscreen_category_title">Lockscreen</string>
+    <string name="av_category_title">Audio/Visual</string>
+    <string name="lookandfeel_category_title">Look and feel</string>
+    <string name="advanced_category_title">Advanced</string>
+    <string name="advanced_options_title">Advanced options</string>
+    <string name="system_category_title">System</string>
+    <string name="tweaks_category_title">Tweaks</string>
+    <string name="applauncher_category_title">App launchers</string>
+    <string name="clock_and_icons_title">Clock and icons</string>
+    <string name="icons_category_title">Signal icons</string>
+    <string name="battery_category_title">Battery</string>
+
+    <!-- L-Droid's Extras -->
+    <string name="ldroid_vault_title">L-Droid vault</string>
+    <string name="recents_panel_settings_title" >Recents panel settings</string>
+    <string name="general_settings_title">General</string>
+    <string name="lockscreen_settings_title">Lock screen</string>
+    <string name="navigation_settings_title">Navigation</string>
+    <string name="statusbar_settings_title">Status bar</string>
+    <string name="active_display_title">Active display</string>
+    <string name="notification_drawer_title">Notification drawer</string>
+    <string name="pie_control_title">Pie control</string>
+    <string name="theme_settings_title">Lights out</string>
+    <string name="ldroid_animations_settings_title">Animations</string>
+    <string name="advanced_options_title">L-Droid advanced settings</string>
+    <string name="ime_settings_title">Keyboard</string>
+    <string name="halo_options_title">Halo options</string>
+    <string name="kernel_tweaker_title">Kernel tweaker</string>
+    <string name="ldroid_sound_settings">Sounds</string>
 
     <!-- Category titles -->
     <string name="additional_category_title">Additional</string>
@@ -871,7 +908,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_style_reset_message">Reset all lock screen colors?</string>
     <string name="lockscreen_icon_title">Lock handle icon</string>
     <string name="lockscreen_lock_icon_custom">Custom icon</string>
-    <string name="lockscreen_lock_icon_liquid">Liquid icon</string>
+    <string name="lockscreen_lock_icon_ldroid">L-Droid icon</string>
     <string name="lockscreen_lock_icon_default">Default icon</string>
     <string name="lockscreen_colorize_handle_title">Colorize custom handle</string>
     <string name="lockscreen_colorize_handle_summary">Lock color will be set to the lock handle</string>
@@ -1133,8 +1170,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="device_hostname">Device hostname</string>
 
     <!-- Chamber of Secrets -->
-    <string name="chamber_title">Liquid Dungeon</string>
-    <string name="chamber_toast">The Dungeon has opened</string>
+    <string name="chamber_title">L-Droid Crypt</string>
+    <string name="chamber_toast">The Crypt has opened</string>
 
     <!-- Volume Keys Media Control -->
     <string name="volume_keys_control_media_stream">Media control</string>
@@ -1556,23 +1593,23 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Message of dialog confirming that user wants to restart their device with a new runtime -->
     <string name="custom_runtime_warning_title">Warning</string>
-    <string name="custom_runtime_warning_message">ART is not supported by LiquidSmooth. This setting is included for experimentation only and has the potential to cause instability, crashes, data loss or prevent the proper boot of your device. Visit &lt;a href=\"http://source.android.com/devices/tech/dalvik/art.html\"&gt;Introducing ART&lt;/a&gt; for more information.&lt;br/&gt;&lt;br/&gt;We request you do not file bug reports if you have enabled ART as your runtime.&lt;br/&gt;&lt;br/&gt;Are you sure you want to reboot to change runtime from <xliff:g id="old" example="libdvm.so">%1$s</xliff:g> to <xliff:g id="new" example="libart.so">%2$s</xliff:g>?</string>
+    <string name="custom_runtime_warning_message">ART is not supported by L-Droid. This setting is included for experimentation only and has the potential to cause instability, crashes, data loss or prevent the proper boot of your device. Visit &lt;a href=\"http://source.android.com/devices/tech/dalvik/art.html\"&gt;Introducing ART&lt;/a&gt; for more information.&lt;br/&gt;&lt;br/&gt;We request you do not file bug reports if you have enabled ART as your runtime.&lt;br/&gt;&lt;br/&gt;Are you sure you want to reboot to change runtime from <xliff:g id="old" example="libdvm.so">%1$s</xliff:g> to <xliff:g id="new" example="libart.so">%2$s</xliff:g>?</string>
 
-    <!-- LiquidSmooth Anonymous Stats -->
-    <string name="rominfo_settings_list_item_title">LiquidSmooth Statistics</string>
-    <string name="rominfo_settings_list_item_summary">Help make LiquidSmooth better by opting into anonymous statistics reporting</string>
+    <!-- L-Droid Anonymous Stats -->
+    <string name="rominfo_settings_list_item_title">L-Droid Statistics</string>
+    <string name="rominfo_settings_list_item_summary">Help make L-Droid better by opting into anonymous statistics reporting</string>
 
     <!-- Changelog -->
-    <string name="changelog_title">LiquidSmooth Changelog</string>
-    <string name="changelog_title_summary">View recent changes to LiquidSmooth</string>
+    <string name="changelog_title">L-Droid Changelog</string>
+    <string name="changelog_title_summary">View recent changes to L-Droid</string>
     <string name="changelog_loading">Loading changelog\u2026</string>
     <string name="changelog_error">Unable to load changelog</string>
     <string name="changelog_unknown">Unknown</string>
     <string name="changelog_version">Version</string>
 
-    <!-- LiquidSmooth Updater -->
-    <string name="liquidsmoothupdate_settings_title">LiquidSmooth Updates</string>
-    <string name="liquidsmoothupdate_settings_summary">Check for, view or install updates</string>
+    <!-- L-Droid Updater -->
+    <string name="ldroidupdate_settings_title">L-Droid Updates</string>
+    <string name="ldroidupdate_settings_summary">Check for, view or install updates</string>
 
     <!-- Vibration multiplier -->
     <string name="vibrator_multiplier_title">Vibration multiplier</string>
@@ -2050,8 +2087,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pref_gpu_title">GPU Acceleration</string>
     <string name="pref_gpu_summary">Enable hardware acceleration where the GPU controls the UI instead of the CPU</string>
 
-    <!-- Startup tweaks -->
-    <string name="startup_tweaks_title">Startup tweaks</string>
+    <!-- Init.D tweaks -->
+    <string name="header_summary_init_d">@null</string>
+    <string name="init_d_title">Init.d tweaks</string>
+    <string name="app_name">Init.d Conf</string>
+    <string name="pt_general">General</string>
     <string name="pt_zipalign_apks">Zipalign apps</string>
     <string name="ps_zipalign_apks">Zipalign any unaligned apps on each boot</string>
     <string name="pt_fix_permissions">Fix permissions</string>
@@ -2152,7 +2192,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="hover_long_fadeout_10seconds">10 seconds</string>
     <string name="hover_long_fadeout_15seconds">15 seconds</string>
 
-    <!-- Liquid Extra Info -->
+    <!-- LDroid Extra Info -->
     <string name="lsextrainfo">Extra information</string>
     <string name="lsextrainfo_summary">Display extra info for cpu, display, etc</string>
 
@@ -2506,16 +2546,16 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lock_pattern_size_10">10x10</string>
 	
     <!-- Download Center -->
-    <string name="download_category">LiquidSmooth Downloads</string>
+    <string name="download_category">L-Droid Downloads</string>
     <string name="download_category_summary">Find all of your support needs inside</string>
     <string name="rom_category">Rom Download</string>
     <string name="gapps_category">GAPPS Packages</string>
     <string name="xposed_category">Xposed Framework</string>
-    <string name="lsgapps_title">LiquidSmooth Gapps</string>
-    <string name="lsgapps_summary">LiquidSmooth Gapps are generally recommended gapps for use on LiquidSmooth</string>
-    <string name="ls_official_title">LiquidSmooth Release Builds</string>
-    <string name="ls_official_summary">Link for stable release builds of LiquidSmooth</string>
-    <string name="ls_nightly_title">LiquidSmooth Nightly Builds</string>
+    <string name="lsgapps_title">L-Droid Gapps</string>
+    <string name="lsgapps_summary">L-Droid Gapps are generally recommended gapps for use on L-Droid</string>
+    <string name="ls_official_title">L-Droid Release Builds</string>
+    <string name="ls_official_summary">Link for stable release builds of L-Droid</string>
+    <string name="ls_nightly_title">L-Droid Nightly Builds</string>
     <string name="ls_nightly_summary">Link for possibly unstable builds</string>
     <string name="pagapps_title">PA Gapps</string>
     <string name="pagapps_summary">Fully packed with the majority of GAPPS, these are commonly used by users that do not want to download/install them later</string>
