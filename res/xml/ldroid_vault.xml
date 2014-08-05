@@ -33,7 +33,7 @@
     <!-- Hover -->
     <PreferenceScreen
         android:key="hover_settings"
-        android:title="@string/hover_enabled_title"
+        android:title="@string/hover_settings"
         android:icon="@drawable/ic_notify_hover_pressed"
         android:fragment="com.android.settings.ldroid.HoverSettings" />
 
@@ -54,7 +54,7 @@
     <!-- Notification panel -->
     <PreferenceScreen
         android:key="notification_drawer_qs"
-        android:fragment="com.android.settings.ldroid.NotificationDrawerQsSettings"
+        android:fragment="com.android.settings.ldroid.NotificationDrawer"
         android:title="@string/notification_drawer_qs_title" 
         android:icon="@drawable/ic_settings_notifications" />
 
@@ -115,7 +115,7 @@
     <!-- Identicons -->
     <PreferenceScreen
         android:key="identicons"
-        android:fragment="com.android.settings.ldroid.labs.identicons.IdenticonsSettings"
+        android:fragment="com.android.settings.ldroid.identicons.IdenticonsSettings"
         android:icon="@drawable/ic_settings_identicons"
         android:title="@string/identicons_title" />
 
@@ -144,7 +144,7 @@
     <!-- Propmodder -->
     <PreferenceScreen
         android:key="buildprop_modder"
-        android:title="@string/prop_modder_title"
+        android:title="@string/propmodder_title"
         android:icon="@drawable/ic_settings_prop_modder"
         android:fragment="com.android.settings.ldroid.PropModder"/>
 

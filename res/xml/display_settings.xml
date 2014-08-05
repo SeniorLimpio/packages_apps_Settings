@@ -17,32 +17,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/display_settings"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-
-        <PreferenceCategory
-            android:key="category_light_options"
-            android:title="@string/display_category_light_options_title" >
-
-            <PreferenceScreen
-                android:key="battery_light"
-                android:title="@string/battery_light_title"
-                android:fragment="com.android.settings.ldroid.notificationlight.BatteryLightSettings" />
-
-            <com.android.settings.BrightnessPreference
-                android:title="@string/brightness"
-                android:summary="@string/brightness_control_summary"
-                android:persistent="false"/>
-
-            <CheckBoxPreference
-                android:key="notification_pulse"
-                android:title="@string/notification_pulse_title"
-                android:persistent="false" />
-
-            <PreferenceScreen
-                android:key="notification_light"
-                android:title="@string/notification_light_title"
-                android:fragment="com.android.settings.ldroid.notificationlight.NotificationLightSettings" />
-
-        </PreferenceCategory>
 		
         <PreferenceCategory
             android:key="category_screen_options"
@@ -64,12 +38,6 @@
                 android:title="@string/disable_immersive_message_title"
                 android:summary="@string/disable_immersive_message_summary"
                 android:persistent="false" />
-
-        <PreferenceScreen
-                android:id="@+id/identicons"
-                android:title="@string/identicons_title"
-                android:summary="@string/identicons_summary"
-                android:fragment="com.android.settings.ldroid.identicons.IdenticonsSettings" />
 
         <PreferenceScreen
                 android:key="display_rotation"
@@ -102,66 +70,31 @@
                 android:targetClass="com.slim.device.settings.ScreenOffGestureSettings" />
         </Preference>
 
-    <PreferenceCategory
-        android:key="category_animation_options"
-        android:title="@string/display_category_animation_options_title" >
+        <PreferenceCategory
+            android:key="category_light_options"
+            android:title="@string/display_category_light_options_title" >
 
-        <PreferenceScreen
-            android:key="animation_controls"
-            android:title="@string/animation_controls_title"
-            android:summary="@string/animation_controls_summary"
-            android:fragment="com.android.settings.ldroid.AnimationControls" />
+            <PreferenceScreen
+                android:key="battery_light"
+                android:title="@string/battery_light_title"
+                android:fragment="com.android.settings.ldroid.notificationlight.BatteryLightSettings" />
 
-        <ListPreference
-            android:key="system_power_crt_mode"
-            android:dialogTitle="@string/system_power_crt_mode_dialog_title"
-            android:title="@string/system_power_crt_mode_title"
-            android:entries="@array/entries_system_power_crt_mode"
-            android:entryValues="@array/values_system_power_crt_mode" />
+            <com.android.settings.BrightnessPreference
+                android:title="@string/brightness"
+                android:summary="@string/brightness_control_summary"
+                android:persistent="false"/>
 
-        <PreferenceScreen
-            android:key="interface_animation_scroll"
-            android:fragment="com.android.settings.ldroid.KeyboardAnimationInterfaceSettings"
-            android:title="@string/ime_animation_title"
-            android:summary="@string/ime_animation_summary" />
+            <CheckBoxPreference
+                android:key="notification_pulse"
+                android:title="@string/notification_pulse_title"
+                android:persistent="false" />
 
-        <ListPreference
-            android:key="listview_animation"
-            android:dialogTitle="@string/listview_animation_title"
-            android:title="@string/listview_animation_title"
-            android:entries="@array/listview_animation_entries"
-            android:entryValues="@array/listview_animation_values"
-            android:defaultValue="0" />
+            <PreferenceScreen
+                android:key="notification_light"
+                android:title="@string/notification_light_title"
+                android:fragment="com.android.settings.ldroid.notificationlight.NotificationLightSettings" />
 
-        <ListPreference
-            android:key="listview_interpolator"
-            android:dialogTitle="@string/listview_interpolator_title"
-            android:title="@string/listview_interpolator_title"
-            android:entries="@array/listview_interpolator_entries"
-            android:entryValues="@array/listview_interpolator_values"
-            android:defaultValue="0" />
-
-        <PreferenceScreen
-            android:key="progressbar_settings"
-            android:title="@string/progressbar_title"
-            android:summary="@string/progressbar_summary"
-            android:fragment="com.android.settings.ldroid.ProgressBar" />
-
-        <PreferenceScreen
-            android:key="interface_animation_scroll"
-            android:fragment="com.android.settings.ldroid.ScrollAnimationInterfaceSettings"
-            android:title="@string/scrolling_title"
-            android:summary="@string/scrolling_summary" />
-
-        <ListPreference
-            android:key="toast_animation"
-            android:title="@string/toast_animation_title"
-            android:entries="@array/toast_animation_entries"
-            android:entryValues="@array/toast_animation_values"
-            android:persistent="false"
-            android:summary="@string/toast_animation_summary" />
-
-    </PreferenceCategory>
+        </PreferenceCategory>
 
         <PreferenceCategory
             android:key="category_wakeup_options"

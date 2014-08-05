@@ -108,7 +108,6 @@
     <string name="halo_options_title">Halo options</string>
     <string name="notification_drawer_title">Notification drawer</string>
     <string name="pie_control_title">Pie control</string>
-    <string name="theme_settings_title">Total blackout</string>
 
     <!-- Device settings -->
     <string name="device_settings_title">Device</string>
@@ -2181,6 +2180,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Hover settings -->
     <string name="hover_title">Hover settings</string>
+    <string name="hover_settings">Hover</string>
     <string name="hover_summary">Enables and customize hover notifications</string>
     <string name="hover_hide_button_title">Hide button</string>
     <string name="hover_hide_button_summary">Hide the hover button in status bar</string>
