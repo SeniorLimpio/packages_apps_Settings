@@ -20,12 +20,6 @@
         android:summary="@string/recent_panel_summary"
         android:fragment="com.android.settings.ldroid.RecentPanelSettings" />
 
-    <CheckBoxPreference
-        android:key="use_alt_resolver"
-        android:title="@string/alt_resolver_title"
-        android:summary="@string/alt_resolver_summary"
-        android:defaultValue="false" />
-
  	<!-- CPU info overlay -->
     <CheckBoxPreference
         android:key="show_cpu_info"

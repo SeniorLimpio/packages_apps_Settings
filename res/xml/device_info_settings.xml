@@ -17,9 +17,9 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/about_settings">
 
-        <PreferenceScreen android:key="ldroid_logo"
+<!--        <PreferenceScreen android:key="ldroid_logo"
                           android:enabled="false"
-                          android:layout="@layout/ldroid_logo_row" />
+                          android:layout="@layout/ldroid_logo_row" /> -->
 						  
         <!-- L-Droid Change Log -->
         <PreferenceScreen android:key="changelog"
@@ -55,8 +55,8 @@
 		
         <!-- L-Droid Extra Info -->
         <PreferenceScreen android:key="extrainfo"
-                android:title="@string/ldroidextrainfo"
-                android:summary="@string/ldroidextrainfo_summary">
+                android:title="@string/ldroid_extrainfo"
+                android:summary="@string/ldroid_extrainfo_summary">
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="com.android.settings"
                     android:targetClass="com.android.settings.ldroid.extrainfo.MainActivity" />

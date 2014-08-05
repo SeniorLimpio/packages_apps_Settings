@@ -16,12 +16,24 @@
 
 package com.android.settings.ldroid;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.net.TrafficStats;
 import android.database.ContentObserver;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.os.RemoteException;
 import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
@@ -29,15 +41,23 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
+import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+
+import java.util.List;
 import android.view.WindowManagerGlobal;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-
+import com.android.settings.Utils;
+import com.android.settings.ldroid.util.Helpers;
 import com.android.internal.util.ldroid.DeviceUtils;
 
 public class StatusBarSettings extends SettingsPreferenceFragment
@@ -263,15 +283,29 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     }
 
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        ContentResolver resolver = getActivity().getContentResolver();
         boolean value;
-
         if (preference == mStatusBarNotifCount) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_NOTIFICATION_COUNT,
                     mStatusBarNotifCount.isChecked() ? 1 : 0);
             return true;
+	} else if (preference == mSMSBreath) {
+            value = mSMSBreath.isChecked();
+            Settings.System.putInt(getContentResolver(), 
+                    Settings.System.KEY_SMS_BREATH, value ? 1 : 0);
+            return true;
+        } else if (preference == mMissedCallBreath) {
+            value = mMissedCallBreath.isChecked();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.KEY_MISSED_CALL_BREATH, value ? 1 : 0);
+            return true;
+        } else if (preference == mVoicemailBreath) {
+            value = mVoicemailBreath.isChecked();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.KEY_VOICEMAIL_BREATH, value ? 1 : 0);
+            return true;
         }
-
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 

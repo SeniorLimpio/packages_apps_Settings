@@ -62,7 +62,7 @@
     <PreferenceScreen
         android:key="statusbar_settings"
         android:fragment="com.android.settings.ldroid.StatusBarSettings"
-        android:title="@string/statusbar_title"
+        android:title="@string/statusbar_settings_title"
         android:icon="@drawable/ic_network_signal_4" />
 
     <!-- App launchers -->
@@ -79,8 +79,8 @@
     <!-- Circle appbar -->
     <PreferenceScreen
         android:key="circle_appbar"
-        android:fragment="com.android.settings.ldroid.AppCircleSidebar"
-        android:title="@string/category_app_circle_bar_title"
+        android:fragment="com.android.settings.ldroid.CircleAppBar"
+        android:title="@string/app_circle_bar_title"
         android:icon="@drawable/ic_wps_dark" />
 
     <!-- Genreal settings -->
@@ -144,7 +144,7 @@
     <!-- Propmodder -->
     <PreferenceScreen
         android:key="buildprop_modder"
-        android:title="@string/propmodder_title"
+        android:title="@string/prop_modder_title"
         android:icon="@drawable/ic_settings_prop_modder"
         android:fragment="com.android.settings.ldroid.PropModder"/>
 

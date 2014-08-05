@@ -2028,7 +2028,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="haptic_qs_tiles_summary">Vibrate when touching tiles</string>
 
     <!-- App circle sidebar -->
-    <string name="app_circle_bar_title">App circle sidebar</string>
+    <string name="app_circle_bar_title">Circle app bar</string>
     <string name="app_circle_bar_summary">Display circular app sidebar launcher</string>
     <string name="app_circle_bar_enable_summary">Enable circular app sidebar launcher</string>
     <string name="app_circle_bar_included_apps_title">Included apps</string>
@@ -2197,8 +2197,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="hover_long_fadeout_15seconds">15 seconds</string>
 
     <!-- LDroid Extra Info -->
-    <string name="lsextrainfo">Extra information</string>
-    <string name="lsextrainfo_summary">Display extra info for cpu, display, etc</string>
+    <string name="ldroid_extrainfo">Extra information</string>
+    <string name="ldroid_extrainfo_summary">Display extra info for cpu, display, etc</string>
 
     <!-- Sound settings screen -->
     <string name="ring_mode_title">Ring mode</string>
@@ -2615,4 +2615,19 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="collapse_on_dismiss_never_summary">Leave open after removing notifications</string>
     <string name="collapse_on_dismiss_if_empty_summary">Close after removing the last notification</string>
     <string name="collapse_on_dismiss_if_no_clearable_summary">Close after removing the last removable notification</string>
+
+    <!-- Breathing Notifications -->
+    <string name="breathing_notifications_title">Breathing Notifications</string>
+    <string name="sms_breath_title">Breathing SMS</string>
+    <string name="sms_breath_summary">Will give your sms notifications a breathing effect in the statusbar</string>
+    <string name="missed_call_breath_title">Breathing Missed Call</string>
+    <string name="missed_call_breath_summary">Will give your missed call notifications a breathing effect in the statusbar</string>
+    <string name="voicemail_breath_title">Breathing Voicemail</string>
+    <string name="voicemail_breath_summary">Will give your voicemail notifications a breathing effect in the statusbar</string>
+
+    <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
+    <string name="show_cpu_info">Show CPU info</string>
+    <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
+    <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>
+
 </resources>
