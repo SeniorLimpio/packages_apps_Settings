@@ -2352,7 +2352,7 @@
         <item>@drawable/ic_identicons_style_dotmatrix</item>
     </array>
 
-    <!-- Drive mod -->
+    <!-- Drive mode -->
     <string-array name="voice_tts_annoy_notif_entries">
         <item>@string/voice_tts_annoy_notif_default</item>
         <item>@string/voice_tts_annoy_notif_3s</item>

@@ -84,7 +84,7 @@
     <string name="pie_control_title">Pie control</string>
     <string name="theme_settings_title">Lights out</string>
     <string name="ldroid_animations_settings_title">Animations</string>
-    <string name="advanced_options_title">L-Droid advanced settings</string>
+    <string name="ldroid_advanced_title">L-Droid advanced settings</string>
     <string name="ime_settings_title">Keyboard</string>
     <string name="halo_options_title">Halo options</string>
     <string name="kernel_tweaker_title">Kernel tweaker</string>

@@ -92,7 +92,7 @@ public class NavigationSettings extends SettingsPreferenceFragment
         super.onCreate(savedInstanceState);
 
         // Load the preferences from an XML resource
-        addPreferencesFromResource(R.xml.ldroid_navigation_settings);
+        addPreferencesFromResource(R.xml.navbar_settings);
 
         PreferenceScreen prefs = getPreferenceScreen();
 

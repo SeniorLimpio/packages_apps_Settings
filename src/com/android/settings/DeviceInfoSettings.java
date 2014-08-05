@@ -145,11 +145,11 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
         }
 
         // Only the owner should see the Updater settings, if it exists
-        if (UserHandle.myUserId() == UserHandle.USER_OWNER) {
-            removePreferenceIfPackageNotInstalled(findPreference(KEY_LDROID_UPDATES));
-        } else {
-            getPreferenceScreen().removePreference(findPreference(KEY_LDROID_UPDATES));
-        }
+//        if (UserHandle.myUserId() == UserHandle.USER_OWNER) {
+//            removePreferenceIfPackageNotInstalled(findPreference(KEY_LDROID_UPDATES));
+//        } else {
+//            getPreferenceScreen().removePreference(findPreference(KEY_LDROID_UPDATES));
+//        }
 
         /*
          * Settings is a generic app and should not contain any device-specific

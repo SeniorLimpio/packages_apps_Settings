@@ -40,17 +40,20 @@
             android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
     </PreferenceScreen>
 
+    <!-- Propmodder -->
     <PreferenceScreen
-        android:key="prop_modder"
-        android:title="@string/prop_modder_title"
-        android:fragment="com.android.settings.ldroid.PropModder"
-        android:summary="@string/advanced_propmodder_summary" />
+        android:key="buildprop_modder"
+        android:title="@string/propmodder_title"
+        android:icon="@drawable/ic_settings_prop_modder"
+        android:fragment="com.android.settings.ldroid.PropModder"/>
 
+    <!-- Init.d -->
     <PreferenceScreen
-        android:key="startup_tweaks"
-        android:title="@string/startup_tweaks_title"
-        android:fragment="com.android.settings.ldroid.StartupTweaks"
-        android:summary="@string/advanced_startup_summary" />
+        android:key="init_d"
+        android:fragment="com.android.settings.ldroid.InitD"
+        android:icon="@drawable/ic_settings_init"
+        android:title="@string/init_d_title"
+        android:summary="@string/header_summary_init_d" />  
 
     <PreferenceScreen
         android:title="@string/superuser_settings_title"
