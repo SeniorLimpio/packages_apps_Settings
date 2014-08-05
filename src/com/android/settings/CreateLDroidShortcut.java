@@ -26,7 +26,7 @@ import android.os.Bundle;
 import com.android.internal.util.ldroid.ButtonsHelper;
 import com.android.internal.util.ldroid.DeviceUtils;
 import com.android.internal.util.ldroid.DeviceUtils.FilteredDeviceFeaturesArray;
-import com.android.settings.ldroid.LDroiActionShortcut;
+import com.android.settings.ldroid.LDroidActionShortcut;
 
 import com.android.settings.R;
 

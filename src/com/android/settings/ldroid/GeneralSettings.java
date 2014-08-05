@@ -62,14 +62,12 @@ public class GeneralSettings extends SettingsPreferenceFragment
     implements OnPreferenceChangeListener {
 
     private static final String TAG = "GenerelSettings";
-    private static final String KEY_USE_ALT_RESOLVER = "use_alt_resolver";
     private static final String KEY_LCD_DENSITY = "lcd_density";
     private static final String DENSITY_PROP = "persist.sys.lcd_density";
     private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
 
     private static final int DIALOG_CUSTOM_DENSITY = 101;
 
-    private CheckBoxPreference mUseAltResolver;
     private static ListPreference mLcdDensity;
     private static Activity mActivity;
     private CheckBoxPreference mShowCpuInfo;
@@ -88,10 +86,6 @@ public class GeneralSettings extends SettingsPreferenceFragment
     }
 
     private void updateSettings() {
-        mUseAltResolver = (CheckBoxPreference) findPreference(KEY_USE_ALT_RESOLVER);
-        mUseAltResolver.setChecked(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.ACTIVITY_RESOLVER_USE_ALT, 0) == 1);
-        mUseAltResolver.setOnPreferenceChangeListener(this);
 
         mLcdDensity = (ListPreference) findPreference(KEY_LCD_DENSITY);
         String current = SystemProperties.get(DENSITY_PROP,
@@ -134,12 +128,7 @@ public class GeneralSettings extends SettingsPreferenceFragment
      }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mUseAltResolver) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.ACTIVITY_RESOLVER_USE_ALT,
-                    (Boolean) newValue ? 1 : 0);
-            return true;
-        } else if (preference == mLcdDensity) {
+        if (preference == mLcdDensity) {
             String density = (String) newValue;
             if (SystemProperties.get(DENSITY_PROP) != density) {
                 if ((density).equals(getResources().getString(R.string.custom_density))) {

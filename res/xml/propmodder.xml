@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright (C) 2014 The LiquidSmooth Project
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,14 +14,22 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
-        android:key="general_category"
-        android:title="@string/general_category_title">
+        android:title="@string/performance_settings_warning_header">
 
-        <ListPreference
-            android:key="pref_wifi_scan_interval"
+        <PreferenceScreen
+            android:title="@string/performance_settings_warning_title"
+            android:summary="@string/buildprop_settings_warning" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:key="general_category"
+        android:title="@string/buildprop_title">
+
+        <ListPreference android:key="pref_wifi_scan_interval"
             android:dialogTitle="@string/pref_wifi_scan_interval_title"
             android:title="@string/pref_wifi_scan_interval_title"
             android:summary="@string/pref_wifi_scan_interval_summary"
@@ -29,8 +37,7 @@
             android:entryValues="@array/entries_wifi_scan"
             android:persistent="true" />
 
-        <ListPreference
-            android:key="pref_sleep"
+        <ListPreference android:key="pref_sleep"
             android:dialogTitle="@string/pref_sleep_title"
             android:title="@string/pref_sleep_title"
             android:summary="@string/pref_sleep_summary"
@@ -38,8 +45,7 @@
             android:entryValues="@array/entries_sleep"
             android:persistent="true" />
 
-        <ListPreference
-            android:key="pref_vm_heapsize"
+        <ListPreference android:key="pref_vm_heapsize"
             android:dialogTitle="@string/pref_vm_heapsize_title"
             android:title="@string/pref_vm_heapsize_title"
             android:summary="@string/pref_vm_heapsize_summary"
@@ -47,12 +53,7 @@
             android:entryValues="@array/entries_vm_heapsize"
             android:persistent="true" />
 
-        <CheckBoxPreference
-            android:key="pref_disable_bootanimation"
-            android:title="@string/pref_disable_bootanimation_title" />
-
-        <ListPreference
-            android:key="pref_max_events"
+        <ListPreference android:key="pref_max_events"
             android:dialogTitle="@string/pref_max_events_title"
             android:title="@string/pref_max_events_title"
             android:summary="@string/pref_max_events_summary"
@@ -60,8 +61,7 @@
             android:entryValues="@array/entries_max_events"
             android:persistent="true" />
 
-        <ListPreference
-            android:key="pref_ring_delay"
+        <ListPreference android:key="pref_ring_delay"
             android:dialogTitle="@string/pref_ring_delay_title"
             android:title="@string/pref_ring_delay_title"
             android:summary="@string/pref_ring_delay_summary"
@@ -69,8 +69,7 @@
             android:entryValues="@array/entries_ring_delay"
             android:persistent="true" />
 
-        <ListPreference
-            android:key="pref_fast_up"
+        <ListPreference android:key="pref_fast_up"
             android:dialogTitle="@string/pref_fast_up_title"
             android:title="@string/pref_fast_up_title"
             android:summary="@string/pref_fast_up_summary"
@@ -78,8 +77,7 @@
             android:entryValues="@array/entries_fast_up"
             android:persistent="true" />
 
-        <ListPreference
-            android:key="pref_prox_delay"
+        <ListPreference android:key="pref_prox_delay"
             android:dialogTitle="@string/pref_prox_delay_title"
             android:title="@string/pref_prox_delay_title"
             android:summary="@string/pref_prox_delay_summary"
@@ -87,8 +85,7 @@
             android:entryValues="@array/entries_prox_delay"
             android:persistent="true" />
 
-        <EditTextPreference
-            android:key="pref_mod_version"
+        <EditTextPreference android:key="pref_mod_version"
             android:dialogTitle="@string/pref_mod_version_title"
             android:title="@string/pref_mod_version_title"
             android:summary="@string/pref_mod_version_summary"
@@ -98,24 +95,25 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="advanced_category"
-        android:title="@string/advanced_category_title">
+    <PreferenceCategory android:key="switches_category"
+        android:title="@string/propmodder_switches">
 
-        <CheckBoxPreference
-            android:key="pref_g_speed"
+        <CheckBoxPreference android:key="pref_g_speed"
             android:title="@string/pref_g_speed_title"
             android:summary="@string/pref_g_speed_summary"
             android:persistent="true" />
 
-        <CheckBoxPreference
-            android:key="pref_tcp_stack"
+        <CheckBoxPreference android:key="pref_tcp_stack"
             android:title="@string/pref_tcp_stack_title"
             android:summary="@string/pref_tcp_stack_summary"
             android:persistent="true" />
 
-        <CheckBoxPreference
-            android:key="pref_gpu"
+        <CheckBoxPreference android:key="pref_jit"
+            android:title="@string/pref_jit_title"
+            android:summary="@string/pref_jit_summary"
+            android:persistent="true" />
+
+        <CheckBoxPreference android:key="pref_gpu"
             android:title="@string/pref_gpu_title"
             android:summary="@string/pref_gpu_summary"
             android:persistent="true" />

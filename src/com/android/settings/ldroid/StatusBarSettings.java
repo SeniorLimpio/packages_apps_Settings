@@ -22,6 +22,7 @@ import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.net.TrafficStats;
+import android.content.ContentResolver;
 import android.database.ContentObserver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -101,7 +102,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.ldroid_statusbar_settings);
+        addPreferencesFromResource(R.xml.statusbar_settings);
 
         loadResources();
 

@@ -108,7 +108,7 @@
     <!-- Animations settings -->
     <PreferenceScreen
         android:key="animations_settings"
-        android:fragment="com.android.settings.ldroid.AnimationsSettings"
+        android:fragment="com.android.settings.ldroid.AnimationSettings"
         android:title="@string/ldroid_animations_settings_title"
         android:icon="@drawable/ic_ldroid_animations" />
 

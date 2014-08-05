@@ -1,18 +1,3 @@
-/*
- * Copyright (C) 2014 The LiquidSmooth Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
 package com.android.settings.ldroid;
 
@@ -48,9 +33,11 @@ import com.android.settings.ldroid.util.Helpers;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class StartupTweaks extends SettingsPreferenceFragment {
+public class InitD extends SettingsPreferenceFragment {
 
-    private static final String TAG = "StartupTweaks";
+    private static final String TAG = "InitD";
+
+    private AlertDialog alertDialog;
 
     private static final int MSG_LOAD_PREFS = 0;
     private static final int DIALOG_INIT_D_ERROR = 0;
@@ -84,19 +71,19 @@ public class StartupTweaks extends SettingsPreferenceFragment {
     private static final String[] KEYS = {
         KEY_ZIPALIGN_APKS, KEY_FIX_PERMISSIONS, KEY_ENABLE_SYSCTL,
         KEY_CLEAR_DATA_CACHE, KEY_ENABLE_CRON, KEY_SD_BOOST,
-                KEY_FILE_SYSTEM_SPEEDUPS, KEY_READ_AHEAD_KB, KEY_BATTERY,
-        KEY_TOUCH, KEY_MINFREE, KEY_GPURENDER, KEY_SLEEPERS, KEY_JOURNALISM,
-        KEY_SQLITE3, KEY_WIFISLEEP, KEY_IOSTATS, KEY_SENTRENICE, KEY_TWEAKS,
-        KEY_SPEEDY_MODIFIED, KEY_LOOPY_SMOOTHNESS_TWEAK
+                KEY_FILE_SYSTEM_SPEEDUPS, KEY_READ_AHEAD_KB, KEY_BATTERY, 
+	KEY_TOUCH, KEY_MINFREE, KEY_GPURENDER, KEY_SLEEPERS, KEY_JOURNALISM,
+	KEY_SQLITE3, KEY_WIFISLEEP, KEY_IOSTATS, KEY_SENTRENICE, KEY_TWEAKS,
+	KEY_SPEEDY_MODIFIED, KEY_LOOPY_SMOOTHNESS_TWEAK
     };
 
     private HashMap<String, String> mShellVariables;
     protected SharedPreferences mPrefs;
     private ProgressDialog mPbarDialog;
 
-    private static StartupTweaks sActivity;
+    private static InitD sActivity;
 
-    public static StartupTweaks whatActivity() {
+    public static InitD whatActivity() {
         return sActivity;
     }
 
@@ -106,10 +93,27 @@ public class StartupTweaks extends SettingsPreferenceFragment {
         sActivity = this;
         mPrefs    = PreferenceManager.getDefaultSharedPreferences(this.getActivity());
         loadValues();
+
+        alertDialog = new AlertDialog.Builder(getActivity()).create();
+        alertDialog.setTitle(R.string.init_warning_title);
+        alertDialog.setMessage(getResources().getString(R.string.init_warning));
+        alertDialog.setButton(DialogInterface.BUTTON_POSITIVE,
+                getResources().getString(com.android.internal.R.string.ok),
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        return;
+                    }
+                });
+        alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            public void onCancel(DialogInterface dialog) {
+                InitD.this.finish();
+            }
+        });
+        alertDialog.show();
     }
 
     private void loadValues() {
-        mPbarDialog = new ProgressDialog(StartupTweaks.this.getActivity());
+        mPbarDialog = new ProgressDialog(InitD.this.getActivity());
         mPbarDialog.setMessage("Loading values ...");
         mPbarDialog.show();
         new Thread() {
@@ -134,7 +138,7 @@ public class StartupTweaks extends SettingsPreferenceFragment {
                 }
 
                 saveAllPrefs();
-                addPreferencesFromResource(R.xml.startup_tweaks);
+                addPreferencesFromResource(R.xml.init_d);
                 mPrefs.registerOnSharedPreferenceChangeListener(
                         mOnSharedPreferenceChangeListener);
                 break;
@@ -182,11 +186,11 @@ public class StartupTweaks extends SettingsPreferenceFragment {
     @Override
     public Dialog onCreateDialog(final int id) {
         if (id == DIALOG_INIT_D_ERROR) {
-            return new AlertDialog.Builder(StartupTweaks.this.getActivity())
+            return new AlertDialog.Builder(InitD.this.getActivity())
             .setIcon(android.R.drawable.ic_dialog_alert)
-            .setTitle(getString(R.string.dt_tweaks_error))
+            .setTitle(getString(R.string.dt_init_d_error))
             .setCancelable(false)
-            .setMessage(getString(R.string.dm_tweaks_error))
+            .setMessage(getString(R.string.dm_init_d_error))
             .setPositiveButton(getString(R.string.db_exit),
                     new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {

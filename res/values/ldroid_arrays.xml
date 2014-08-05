@@ -2117,14 +2117,6 @@
         <item>192m</item>
         <item>224m</item>
         <item>256m</item>
-	    <item>320m</item>
-        <item>384m</item>
-        <item>448m</item>
-        <item>512m</item>
-        <item>576m</item>
-        <item>640m</item>
-        <item>704m</item>
-        <item>768m</item>
     </string-array>
 
     <string-array name="entries_fast_up_explain">

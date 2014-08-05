@@ -40,7 +40,7 @@ import android.widget.Toast;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class AnimationsSettings extends SettingsPreferenceFragment implements
+public class AnimationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String KEY_ANIMATION_OPTIONS = "category_animation_options";
