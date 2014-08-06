@@ -42,10 +42,10 @@ import com.android.settings.R;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-public class NavigationSettings extends SettingsPreferenceFragment
+public class NavbarSettings extends SettingsPreferenceFragment
     implements OnPreferenceChangeListener {
 
-    private static final String TAG = "NavigationSettings";
+    private static final String TAG = "NavbarSettings";
     private static final String PREF_MENU_LOCATION = "pref_navbar_menu_location";
     private static final String PREF_NAVBAR_MENU_DISPLAY = "pref_navbar_menu_display";
     private static final String ENABLE_NAVIGATION_BAR = "enable_nav_bar";
@@ -220,8 +220,8 @@ public class NavigationSettings extends SettingsPreferenceFragment
             return frag;
         }
 
-        NavigationSettings getOwner() {
-            return (NavigationSettings) getTargetFragment();
+        NavbarSettings getOwner() {
+            return (NavbarSettings) getTargetFragment();
         }
 
         @Override

@@ -89,6 +89,7 @@
     <string name="halo_options_title">Halo options</string>
     <string name="kernel_tweaker_title">Kernel tweaker</string>
     <string name="ldroid_sound_settings">Sounds</string>
+    <string name="notification_category_title">Notifications</string>
 
     <!-- Category titles -->
     <string name="additional_category_title">Additional</string>
@@ -1618,6 +1619,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="vibrator_multiplier_title">Vibration multiplier</string>
 
     <!-- Lock screen notifications -->
+    <string name="lockscreen_notifications">Lockscreen notifications</string>
     <string name="lockscreen_notification_title">Enable notifications</string>
     <string name="lockscreen_notification_summary">Show current pending notifications</string>
     <string name="pocket_mode">Pocket mode</string>
@@ -2493,7 +2495,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="time_five_to">Five till</string>
 
     <!-- Heads up -->
-    <string name="heads_up_title">Heads up settings</string>
+    <string name="heads_up_title">Heads up</string>
+    <string name="heads_up_settings">Heads up settings</string>
     <string name="heads_up_summary">Configure or view current headsup settings</string>
     <string name="heads_up_expanded_title">Always expanded</string>
     <string name="heads_up_expanded_summary">Show notification always expanded</string>

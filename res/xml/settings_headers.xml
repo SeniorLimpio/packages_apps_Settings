@@ -92,7 +92,7 @@
         android:id="@+id/theme_settings"
 		android:title="@string/theme_settings_title"
         android:fragment="com.android.settings.ldroid.themes.ThemeSettings"
-        android:icon="@drawable/ic_ldroid_theme_settings" />
+        android:icon="@drawable/ic_lights_out" />
 
     <!-- Themes -->
     <header

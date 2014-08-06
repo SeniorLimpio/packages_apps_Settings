@@ -28,15 +28,15 @@
             android:fragment="com.android.settings.ldroid.ChangeLog" >
         </PreferenceScreen>
 		
-        <!-- L-Droid Downloads  -->						
+        <!-- L-Droid Downloads  						
         <Preference
             android:key="download_center"
             android:fragment="com.android.settings.ldroid.Download"
             android:title="@string/download_category"
             android:summary="@string/download_category_summary" />
 
-        <!-- L-Droid Anonymous Stats -->
-       <PreferenceScreen android:key="rominfo_settings"
+	L-Droid Anonymous Stats 
+        <PreferenceScreen android:key="rominfo_settings"
             android:title="@string/rominfo_settings_list_item_title"
             android:summary="@string/rominfo_settings_list_item_summary">
             <intent android:action="android.intent.action.MAIN"
@@ -44,7 +44,7 @@
                     android:targetClass="android.romstats.AnonymousStats" />
         </PreferenceScreen>
 
-        <!-- L-Droid Updates
+        L-Droid Updates
         <PreferenceScreen android:key="ldroid_updates"
                 android:title="@string/ldroidupdate_settings_title"
                 android:summary="@string/ldroidupdate_settings_summary">
