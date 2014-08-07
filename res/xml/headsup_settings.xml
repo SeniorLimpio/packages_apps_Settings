@@ -31,7 +31,7 @@
         android:title="@string/heads_up_floating_window_title"
         android:summary="@string/heads_up_floating_window_summary"
         android:persistent="false"
-        android:defaultValue="true" />
+        android:defaultValue="false" />
 
     <CheckBoxPreference
         android:key="heads_up_show_update"

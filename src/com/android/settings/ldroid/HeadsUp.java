@@ -79,7 +79,7 @@ public class HeadsUp extends SettingsPreferenceFragment implements
 
         mHeadsUpFloatingWindow = (CheckBoxPreference) findPreference(PREF_HEADS_UP_FLOATING_WINDOW);
         mHeadsUpFloatingWindow.setChecked(Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.HEADS_UP_FLOATING_WINDOW, 1, UserHandle.USER_CURRENT) == 1);
+                Settings.System.HEADS_UP_FLOATING_WINDOW, 0, UserHandle.USER_CURRENT) == 1);
         mHeadsUpFloatingWindow.setOnPreferenceChangeListener(this);
 
         mHeadsUpShowUpdates = (CheckBoxPreference) findPreference(PREF_HEADS_UP_SHOW_UPDATE);
