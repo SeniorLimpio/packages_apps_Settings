@@ -2003,13 +2003,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="haptic_qs_tiles_title">Vibrate on touch</string>
     <string name="haptic_qs_tiles_summary">Vibrate when touching tiles</string>
 
-    <!-- App circle sidebar -->
-    <string name="category_app_circle_bar_title">App circle sidebar</string>
-    <string name="app_circle_bar_title">App circle sidebar</string>
-    <string name="app_circle_bar_summary">Show circle app launcher after touching</string>
-    <string name="app_circle_bar_included_apps_title">Included apps</string>
-    <string name="app_circle_bar_included_apps_summary">Apps will show in app circle sidebar</string>
-
     <!-- Quick ribbon -->
     <string name="category_quick_access">Quick ribbon</string>
     <string name="title_quick_access">Show in drawer</string>
@@ -2021,7 +2014,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Bluetooth accept all Filestypes -->
     <string name="bluetooth_accept_all_files">Accept all file types</string>
 
-<<<<<<< HEAD:res/values/ldroid_strings.xml
     <!-- App moving -->
     <string name="app_moving_enable">Enable app moving</string>
     <string name="app_moving_disable">Disable app moving</string>
@@ -2111,8 +2103,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="halo_blacklist_label">Blacklist from Halo</string>
     <string name="hover_blacklist_label">Blacklist from Hover</string>
     <string name="peek_blacklist_label">Blacklist from Peek</string>
-=======
+
     <!-- App circle sidebar -->
+    <string name="category_app_circle_bar_title">App circle sidebar</string>
     <string name="app_circle_bar_title">App circle sidebar</string>
     <string name="app_circle_bar_summary">Display circular app sidebar launcher</string>
     <string name="app_circle_bar_enable_summary">Enable circular app sidebar launcher</string>
@@ -2124,7 +2117,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="trigger_top_summary">Adjust the position of trigger area</string>
     <string name="trigger_bottom_title">Trigger height</string>
     <string name="trigger_bottom_summary">Adjust the height of trigger area</string>
->>>>>>> eb07b50... Settings: create app circle sidebar settings:res/values/liquid_strings.xml
 
     <!-- Performance Settings | Warning dialog -->
     <string name="performance_settings_warning_header">Warning</string>
