@@ -203,7 +203,6 @@ public class ScreenColorSettings extends Activity {
             }
             mPPService = null;
         }
-
     }
 
     private void setScreenColorMode(int mode) {

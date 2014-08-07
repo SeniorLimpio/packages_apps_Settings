@@ -1370,7 +1370,6 @@ public class Settings extends PreferenceActivity
     public static class TextToSpeechSettingsActivity extends Settings { /* empty */ }
     public static class AndroidBeamSettingsActivity extends Settings { /* empty */ }
     public static class WifiDisplaySettingsActivity extends Settings { /* empty */ }
-    public static class ProfilesSettingsActivity extends Settings { /* empty */ }
     public static class DreamSettingsActivity extends Settings { /* empty */ }
     public static class NotificationStationActivity extends Settings { /* empty */ }
     public static class UserSettingsActivity extends Settings { /* empty */ }
@@ -1396,6 +1395,6 @@ public class Settings extends PreferenceActivity
     public static class NavigationSettingsActivity extends Settings { /* empty */ }
     public static class AdvancedSettingsActivity extends Settings { /* empty */ }
     public static class HoverSettingsActivity extends Settings { /* empty */ }
-    public static class ProfilesListActivity extends Settings { /* empty */ }
+    public static class ProfilesSettingsActivity extends Settings { /* empty */ }
     public static class HeadsUpActivity extends Settings { /* empty */ }
 }

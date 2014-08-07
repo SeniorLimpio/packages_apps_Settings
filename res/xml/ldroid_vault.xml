@@ -74,7 +74,7 @@
     <PreferenceScreen
         android:key="headsup_settings"
         android:title="@string/heads_up_title"
-        android:icon="@drawable/ic_notify_hover_pressed"
+        android:icon="@drawable/ic_heads_up"
         android:fragment="com.android.settings.ldroid.HeadsUp" />
 
     <!-- Hover -->
@@ -88,7 +88,7 @@
     <PreferenceScreen
         android:key="lockscreen_notifications"
         android:title="@string/lockscreen_notifications_title"
-        android:icon="@drawable/ic_notify_hover_pressed"
+        android:icon="@drawable/ic_settings_interface"
         android:fragment="com.android.settings.ldroid.LockscreenNotifications" />
 
     <!-- App launchers -->
@@ -142,7 +142,7 @@
     <PreferenceScreen
         android:key="advanced_settings"
         android:fragment="com.android.settings.ldroid.AdvancedSettings"
-        android:icon="@drawable/ic_settings_advanced"
+        android:icon="@drawable/ic_settings_init"
         android:title="@string/advanced_options_title" />
 
 
