@@ -58,7 +58,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_DISPLAY_ROTATION = "display_rotation";
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_LIGHT_OPTIONS = "category_light_options";
-    private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
     private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
@@ -127,7 +126,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         disableUnusableTimeouts(mScreenTimeoutPreference);
         updateTimeoutPreferenceDescription(currentTimeout);
 
-<<<<<<< HEAD
         mLightOptions = (PreferenceCategory) prefSet.findPreference(KEY_LIGHT_OPTIONS);
         mNotificationPulse = (CheckBoxPreference) findPreference(KEY_NOTIFICATION_PULSE);
         mNotificationLight = (PreferenceScreen) findPreference(KEY_NOTIFICATION_LIGHT);
@@ -152,17 +150,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                  mLightOptions.removePreference(mNotificationPulse);
                  mLightOptions.removePreference(mNotificationLight);
             }
-
-
-            mTapToWake = (CheckBoxPreference) findPreference(KEY_TAP_TO_WAKE);
-            if (!isTapToWakeSupported()) {
-                advancedPrefs.removePreference(mTapToWake);
-                mTapToWake = null;
-            } else {
-                advancedPrefs.removePreference(findPreference(KEY_PROXIMITY_WAKE));
-                Settings.System.putInt(getContentResolver(), Settings.System.PROXIMITY_ON_WAKE, 1);
-            }
-
 
             if (!getResources().getBoolean(
                     com.android.internal.R.bool.config_intrusiveBatteryLed)) {

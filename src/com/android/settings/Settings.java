@@ -104,7 +104,6 @@ import com.android.settings.ldroid.HeadsUp;
 import com.android.settings.ldroid.HoverSettings;
 import com.android.settings.ldroid.LDroidVault;
 import com.android.settings.ldroid.NavigationSettings;
-import com.android.settings.profiles.ProfilesList;
 import com.android.settings.ldroid.quicksettings.QuickSettingsTiles;
 import com.android.settings.ldroid.QuietHours;
 import com.android.settings.ldroid.ShakeEvents;
@@ -114,6 +113,7 @@ import com.android.settings.ldroid.themes.ThemeSettings;
 import com.android.settings.profiles.AppGroupConfig;
 import com.android.settings.profiles.ProfileConfig;
 import com.android.settings.profiles.ProfileEnabler;
+import com.android.settings.profiles.ProfilesList;
 import com.android.settings.profiles.ProfilesSettings;
 import com.android.settings.search.SettingsAutoCompleteTextView;
 import com.android.settings.search.SearchPopulator;
@@ -483,7 +483,7 @@ public class Settings extends PreferenceActivity
         ThemeSettings.class.getName(),
         AdvancedSettings.class.getName(),
         HoverSettings.class.getName(),
-        ProfilesList.class.getName(),
+        ProfilesSettings.class.getName(),
         HeadsUp.class.getName()
     };
 

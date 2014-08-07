@@ -108,7 +108,7 @@
     <!-- L-Droid Vault -->
     <header
         settings:includeXmlForSearch="@xml/ldroid_vault"
-        android:key="@+id/interface_settings"
+        android:key="ldroid_vault"
         android:fragment="com.android.settings.ldroid.LDroidVault"
         android:title="@string/ldroid_vault_title" 
 	android:icon="@drawable/ic_settings_applications" />

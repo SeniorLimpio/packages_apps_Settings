@@ -67,7 +67,7 @@
         android:dependency="hover_active"
         android:defaultValue="true" />
 
-    <com.android.settings.liquid.SystemListPreference
+    <com.android.settings.ldroid.SystemListPreference
         android:key="hover_long_fade_out_delay"
         android:title="@string/hover_long_fadeout_title"
         android:dialogTitle="@string/hover_long_fadeout_title"
