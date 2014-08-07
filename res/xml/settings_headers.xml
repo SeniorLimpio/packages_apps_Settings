@@ -105,17 +105,6 @@
         android:fragment="com.android.settings.ThemeSettings"
         android:icon="@drawable/prd_ic_themepacks" />
 
-    <!-- Viper4Android -->
-    <header
-        android:id="@+id/viper_audio"
-        android:title="@string/viper_settings_title"
-        android:icon="@drawable/ic_settings_viper" >
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetClass="com.vipercn.viper4android_v2.MAIN"
-            android:targetPackage="com.vipercn.viper4android_v2" />
-    </header>
-
     <!-- L-Droid Vault -->
     <header
         settings:includeXmlForSearch="@xml/ldroid_vault"

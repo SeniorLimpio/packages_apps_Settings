@@ -31,12 +31,24 @@
         android:fragment="com.android.settings.ldroid.VolumeSteps"
         android:title="@string/volume_steps_title" />
 
+    <!-- Viper4Android -->
+    <PreferenceScreen
+        android:key="viper_audio"
+        android:title="@string/viper_settings_title" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android"
+            android:targetPackage="com.vipercn.viper4android_v2" />
+    </Preference>
+
     <Preference
             android:key="musicfx"
             android:title="@string/musicfx_title">
         <intent android:targetPackage="com.android.musicfx"
                 android:targetClass="com.android.musicfx.ControlPanelPicker" />
     </Preference>
+
+
 
     <PreferenceScreen
             android:key="ldroid_sound_settings"
