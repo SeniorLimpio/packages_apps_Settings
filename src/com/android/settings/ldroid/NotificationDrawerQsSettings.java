@@ -18,6 +18,7 @@ package com.android.settings.ldroid;
 
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -32,11 +33,14 @@ import android.preference.PreferenceScreen;
 import android.preference.RingtonePreference;
 import android.provider.Settings;
 import android.os.UserHandle;
-
+import android.text.TextUtils;
 import com.android.internal.util.ldroid.DeviceUtils;
 import com.android.settings.ldroid.util.Helpers;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.ldroid.quicksettings.QuickSettingsUtil;
+
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 import com.android.settings.R;
 import com.android.settings.widget.SeekBarPreference;
 
@@ -71,6 +75,12 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
 	    "flip_qs_tiles";
     private static final String UI_COLLAPSE_BEHAVIOUR = 
 	    "notification_drawer_collapse_on_dismiss";
+    private static final String STATUS_BAR_CARRIER =
+            "status_bar_carrier";
+    private static final String STATUS_BAR_CARRIER_COLOR =
+            "status_bar_carrier_color";
+
+    static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
 
     ListPreference mHideLabels;
     SeekBarPreference mNotificationAlpha;
@@ -81,6 +91,8 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
     ListPreference mQuickPulldown;
     ListPreference mSmartPulldown;
     CheckBoxPreference mCollapsePanel;
+    CheckBoxPreference mStatusBarCarrier;
+    ColorPickerPreference mCarrierColorPicker;
 
     private ListPreference mCollapseOnDismiss;
     private CheckBoxPreference mFlipQsTiles;
@@ -93,6 +105,9 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
 
         PreferenceScreen prefs = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+
+        int intColor;
+        String hexColor;
 
         mHideLabels = (ListPreference) findPreference(PREF_NOTIFICATION_HIDE_LABELS);
         int hideCarrier = Settings.System.getInt(getContentResolver(),
@@ -109,6 +124,20 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
         mCollapseOnDismiss.setValue(String.valueOf(collapseBehaviour));
         mCollapseOnDismiss.setOnPreferenceChangeListener(this);
         updateCollapseBehaviourSummary(collapseBehaviour);
+
+        // MIUI-like carrier Label
+        mStatusBarCarrier = (CheckBoxPreference) findPreference(STATUS_BAR_CARRIER);
+        mStatusBarCarrier.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CARRIER, 0) == 1));
+
+        // MIUI-like carrier Label color
+        mCarrierColorPicker = (ColorPickerPreference) findPreference(STATUS_BAR_CARRIER_COLOR);
+        mCarrierColorPicker.setOnPreferenceChangeListener(this);
+        intColor = Settings.System.getInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_CARRIER_COLOR, DEFAULT_STATUS_CARRIER_COLOR);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mCarrierColorPicker.setSummary(hexColor);
+        mCarrierColorPicker.setNewPreviewColor(intColor);
 
         PackageManager pm = getPackageManager();
         boolean isMobileData = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
@@ -238,6 +267,10 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
                     Settings.System.QUICK_SETTINGS_TILES_FLIP,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
+	} else if (preference == mStatusBarCarrier) {
+           Settings.System.putInt(getContentResolver(),
+                   Settings.System.STATUS_BAR_CARRIER, mStatusBarCarrier.isChecked() ? 1 : 0);
+           return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -304,6 +337,13 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             Settings.System.putStringForUser(getContentResolver(),
                     Settings.System.REMINDER_ALERT_RINGER,
                     val.toString(), UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mCarrierColorPicker) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.STATUS_BAR_CARRIER_COLOR, intHex);
             return true;
         }
         return false;
