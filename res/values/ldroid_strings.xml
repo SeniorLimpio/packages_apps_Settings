@@ -76,7 +76,7 @@
     <string name="ldroid_animations_settings_title">Animations</string>
     <string name="advanced_options_title">Advanced</string>
     <string name="ime_settings_title">Keyboard</string>
-    <string name="halo_options_title">Halo options</string>
+    <string name="halo_options_title">Halo</string>
     <string name="kernel_tweaker_title">Kernel tweaker</string>
     <string name="ldroid_sound_settings">Sounds</string>
 
@@ -2184,7 +2184,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>
 
     <!-- Driving mode -->
-    <string name="voice_tts_title">Driving Mode</string>
+    <string name="voice_tts_title">Driving mode</string>
     <string name="tts_settings_reset_message">Reset all settings to default?</string>
     <string name="voice_tts_notification_title">Drive mode</string>
     <string name="voice_tts_notification_summary_on">Enable driving mode</string>
