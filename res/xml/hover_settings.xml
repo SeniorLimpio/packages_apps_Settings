@@ -69,7 +69,7 @@
         android:dependency="hover_active"
         android:defaultValue="5000" />
 
-    <com.android.settings.liquid.SystemListPreference
+    <com.android.settings.ldroid.SystemListPreference
         android:key="hover_micro_fade_out_delay"
         android:title="@string/hover_micro_fadeout_title"
         android:persistent="false"
