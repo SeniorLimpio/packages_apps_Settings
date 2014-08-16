@@ -87,6 +87,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mVolumeWake;
     private CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
     private PreferenceCategory mWakeUpOptions;
+    private Preference mDisplayColor;
+    private Preference mDisplayGamma;
 
     private final Configuration mCurConfig = new Configuration();
 
@@ -186,11 +188,16 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             }
         }
 
+        PreferenceCategory mCategory = (PreferenceCategory) findPreference("category_screen_options");
+
         if (!DisplayColor.isSupported()) {
-            getPreferenceScreen().removePreference(findPreference(KEY_DISPLAY_COLOR));
+            mDisplayColor = (Preference) findPreference(KEY_DISPLAY_COLOR);
+            mCategory.removePreference(mDisplayColor);
         }
+
         if (!DisplayGamma.isSupported()) {
-            getPreferenceScreen().removePreference(findPreference(KEY_DISPLAY_GAMMA));
+            mDisplayGamma = (Preference) findPreference(KEY_DISPLAY_GAMMA);
+            mCategory.removePreference(mDisplayGamma);
         }
 
         mWakeUpWhenPluggedOrUnplugged =
