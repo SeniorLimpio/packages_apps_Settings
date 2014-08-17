@@ -97,24 +97,12 @@
 
     <!-- Theme chooser -->
     <header
-
         settings:includeXmlForSearch="@xml/themes_settings"
         android:id="@+id/theme_chooser"
         android:title="@string/theme_chooser_title"
         android:breadCrumbTitle="@string/theme_chooser_title"
         android:fragment="com.android.settings.ThemeSettings"
         android:icon="@drawable/prd_ic_themepacks" />
-
-    <!-- Viper4Android -->
-    <header
-        android:id="@+id/viper_audio"
-        android:title="@string/viper_settings_title"
-        android:icon="@drawable/ic_settings_viper" >
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetClass="com.vipercn.viper4android_v2.MAIN"
-            android:targetPackage="com.vipercn.viper4android_v2" />
-    </header>
 
     <!-- L-Droid Vault -->
     <header
@@ -123,7 +111,6 @@
         android:fragment="com.android.settings.ldroid.LDroidVault"
         android:title="@string/ldroid_vault_title" 
 	android:icon="@drawable/ic_settings_applications" />
-
 
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
