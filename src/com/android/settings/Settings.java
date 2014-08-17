@@ -765,7 +765,7 @@ public class Settings extends PreferenceActivity
                 if (!supported) {
                     target.remove(i);
                 }
-            } else if (id == R.id.equalizer_settings) {
+            } else if (id == R.id.viper_audio) {
                 // Embedding into Settings only if app exists (user could manually remove it)
                 boolean supported = false;
                 try {
