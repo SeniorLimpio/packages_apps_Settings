@@ -16,8 +16,10 @@
 
 package com.android.settings.ldroid;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.res.Resources;
@@ -61,6 +63,8 @@ import com.android.settings.ldroid.util.Helpers;
 import com.android.internal.util.ldroid.DeviceUtils;
 import com.android.settings.ldroid.SeekBarPreference;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 public class StatusBarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String TAG = "StatusBarSettings";
@@ -79,6 +83,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
     private static final String KEY_VOICEMAIL_BREATH = "voicemail_breath";
     private static final String STATUS_BAR_CUSTOM_HEADER = "custom_status_bar_header";
     private static final String KEY_EXPANDED_DESKTOP = "expanded_desktop";
+    private static final String NETWORK_TRAFFIC_COLOR = "network_traffic_color";
 
     private PreferenceScreen mClockStyle;
     private CheckBoxPreference mStatusBarBrightnessControl;
@@ -94,6 +99,10 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
     private CheckBoxPreference mVoicemailBreath;
     private CheckBoxPreference mStatusBarCustomHeader;
     private ListPreference mExpandedDesktopPref;
+    private ColorPickerPreference mNetTrafficColor;
+
+    private static final int MENU_RESET = Menu.FIRST;
+    private static final int DEFAULT_TRAFFIC_COLOR = 0xffffffff;
 
     private int mNetTrafficVal;
     private int MASK_UP;
@@ -156,6 +165,15 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
         mNetTrafficAutohide.setChecked((Settings.System.getInt(getContentResolver(),
                             Settings.System.NETWORK_TRAFFIC_AUTOHIDE, 0) == 1));
         mNetTrafficAutohide.setOnPreferenceChangeListener(this);
+
+        mNetTrafficColor =
+            (ColorPickerPreference) prefSet.findPreference(NETWORK_TRAFFIC_COLOR);
+        mNetTrafficColor.setOnPreferenceChangeListener(this);
+        int intColor = Settings.System.getInt(getContentResolver(),
+                Settings.System.NETWORK_TRAFFIC_COLOR, 0xff000000);
+        String hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mNetTrafficColor.setSummary(hexColor);
+            mNetTrafficColor.setNewPreviewColor(intColor);
 
         mNetTrafficAutohideThreshold = (SeekBarPreference) prefSet.findPreference(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
         int netTrafficAutohideThreshold = Settings.System.getInt(resolver,
@@ -226,6 +244,46 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
         mStatusBarCustomHeader.setOnPreferenceChangeListener(this);
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        menu.add(0, MENU_RESET, 0, R.string.network_traffic_color_reset)
+                .setIcon(R.drawable.ic_settings_backup)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case MENU_RESET:
+                resetToDefault();
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    private void resetToDefault() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+        alertDialog.setTitle(R.string.network_traffic_color_reset);
+        alertDialog.setMessage(R.string.network_traffic_color_reset_message);
+        alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                NetworkTrafficColorReset();
+            }
+        });
+        alertDialog.setNegativeButton(R.string.cancel, null);
+        alertDialog.create().show();
+    }
+
+    private void NetworkTrafficColorReset() {
+        Settings.System.putInt(getContentResolver(),
+                Settings.System.NETWORK_TRAFFIC_COLOR, DEFAULT_TRAFFIC_COLOR);
+
+        mNetTrafficColor.setNewPreviewColor(DEFAULT_TRAFFIC_COLOR);
+        String hexColor = String.format("#%08x", (0xffffffff & DEFAULT_TRAFFIC_COLOR));
+        mNetTrafficColor.setSummary(hexColor);
+    }
+
     public boolean onPreferenceChange(Preference preference, Object newValue) {
 
         ContentResolver resolver = getActivity().getContentResolver();
@@ -239,6 +297,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
             int expandedDesktopValue = Integer.valueOf((String) newValue);
             updateExpandedDesktop(expandedDesktopValue);
             return true;
+        } else if (preference == mNetTrafficColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_COLOR, intHex);
+            return true; 
         } else if (preference == mNetTrafficState) {
             int intState = Integer.valueOf((String)newValue);
             mNetTrafficVal = setBit(mNetTrafficVal, MASK_UP, getBit(intState, MASK_UP));
