@@ -116,6 +116,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
 
         addPreferencesFromResource(R.xml.statusbar_settings);
 
+        int intColor;
+        String hexColor;
+
         loadResources();
 
         PreferenceScreen prefSet = getPreferenceScreen();
@@ -159,6 +162,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
         mNetTrafficState = (ListPreference) prefSet.findPreference(NETWORK_TRAFFIC_STATE);
         mNetTrafficUnit = (ListPreference) prefSet.findPreference(NETWORK_TRAFFIC_UNIT);
         mNetTrafficPeriod = (ListPreference) prefSet.findPreference(NETWORK_TRAFFIC_PERIOD);
+        mNetTrafficColor = (ColorPickerPreference) prefSet.findPreference(NETWORK_TRAFFIC_COLOR);
 
         mNetTrafficAutohide =
             (CheckBoxPreference) prefSet.findPreference(NETWORK_TRAFFIC_AUTOHIDE);
@@ -166,20 +170,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
                             Settings.System.NETWORK_TRAFFIC_AUTOHIDE, 0) == 1));
         mNetTrafficAutohide.setOnPreferenceChangeListener(this);
 
-        mNetTrafficColor =
-            (ColorPickerPreference) prefSet.findPreference(NETWORK_TRAFFIC_COLOR);
-        mNetTrafficColor.setOnPreferenceChangeListener(this);
-        int intColor = Settings.System.getInt(getContentResolver(),
-                Settings.System.NETWORK_TRAFFIC_COLOR, 0xff000000);
-        String hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mNetTrafficColor.setSummary(hexColor);
-            mNetTrafficColor.setNewPreviewColor(intColor);
-
         mNetTrafficAutohideThreshold = (SeekBarPreference) prefSet.findPreference(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
         int netTrafficAutohideThreshold = Settings.System.getInt(resolver,
                     Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 10);
-            mNetTrafficAutohideThreshold.setValue(netTrafficAutohideThreshold / 1);
-            mNetTrafficAutohideThreshold.setOnPreferenceChangeListener(this);
+        mNetTrafficAutohideThreshold.setValue(netTrafficAutohideThreshold / 1);
+        mNetTrafficAutohideThreshold.setOnPreferenceChangeListener(this);
 
         // TrafficStats will return UNSUPPORTED if the device does not support it.
         if (TrafficStats.getTotalTxBytes() != TrafficStats.UNSUPPORTED &&
@@ -188,12 +183,8 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
                     Settings.System.NETWORK_TRAFFIC_STATE, 0);
             int intIndex = mNetTrafficVal & (MASK_UP + MASK_DOWN);
             intIndex = mNetTrafficState.findIndexOfValue(String.valueOf(intIndex));
-            if (intIndex <= 0) {
-                mNetTrafficUnit.setEnabled(false);
-                mNetTrafficPeriod.setEnabled(false);
-                mNetTrafficAutohide.setEnabled(false);
-                mNetTrafficAutohideThreshold.setEnabled(false);
-            }
+            updateNetworkTrafficState(intIndex);
+
             mNetTrafficState.setValueIndex(intIndex >= 0 ? intIndex : 0);
             mNetTrafficState.setSummary(mNetTrafficState.getEntry());
             mNetTrafficState.setOnPreferenceChangeListener(this);
@@ -207,13 +198,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
             mNetTrafficPeriod.setValueIndex(intIndex >= 0 ? intIndex : 1);
             mNetTrafficPeriod.setSummary(mNetTrafficPeriod.getEntry());
             mNetTrafficPeriod.setOnPreferenceChangeListener(this);
-        } else {
-            prefSet.removePreference(findPreference(NETWORK_TRAFFIC_STATE));
-            prefSet.removePreference(findPreference(NETWORK_TRAFFIC_UNIT));
-            prefSet.removePreference(findPreference(NETWORK_TRAFFIC_PERIOD));
-            prefSet.removePreference(findPreference(NETWORK_TRAFFIC_AUTOHIDE));
-            prefSet.removePreference(findPreference(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD));
-        }
+
+            mNetTrafficColor.setOnPreferenceChangeListener(this);
+            intColor = Settings.System.getInt(getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_COLOR, 0xffffffff);
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mNetTrafficColor.setSummary(hexColor);
+            mNetTrafficColor.setNewPreviewColor(intColor);
+	}
 
         mStatusBarNotifCount = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_NOTIFICATION_COUNT);
         mStatusBarNotifCount.setChecked((Settings.System.getInt(getContentResolver(),
@@ -256,6 +248,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
         switch (item.getItemId()) {
             case MENU_RESET:
                 resetToDefault();
+                resetValues();
                 return true;
             default:
                 return super.onContextItemSelected(item);
@@ -268,20 +261,17 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
         alertDialog.setMessage(R.string.network_traffic_color_reset_message);
         alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                NetworkTrafficColorReset();
+                resetValues();
             }
         });
         alertDialog.setNegativeButton(R.string.cancel, null);
         alertDialog.create().show();
     }
 
-    private void NetworkTrafficColorReset() {
+    private void resetValues() {
         Settings.System.putInt(getContentResolver(),
                 Settings.System.NETWORK_TRAFFIC_COLOR, DEFAULT_TRAFFIC_COLOR);
-
         mNetTrafficColor.setNewPreviewColor(DEFAULT_TRAFFIC_COLOR);
-        String hexColor = String.format("#%08x", (0xffffffff & DEFAULT_TRAFFIC_COLOR));
-        mNetTrafficColor.setSummary(hexColor);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
