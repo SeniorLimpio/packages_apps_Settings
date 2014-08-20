@@ -14,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+<<<<<<< HEAD:src/com/android/settings/ldroid/quicksettings/QuickSettingsUtil.java
 package com.android.settings.ldroid.quicksettings;
 
 import static com.android.internal.util.ldroid.QSConstants.TILES_DEFAULT;
@@ -41,6 +42,7 @@ import static com.android.internal.util.ldroid.QSConstants.TILE_LOCKSCREEN;
 import static com.android.internal.util.ldroid.QSConstants.TILE_LTE;
 import static com.android.internal.util.ldroid.QSConstants.TILE_MOBILEDATA;
 import static com.android.internal.util.ldroid.QSConstants.TILE_MUSIC;
+import static com.android.internal.util.ldroid.QSConstants.TILE_NETWORKADB;
 import static com.android.internal.util.ldroid.QSConstants.TILE_NETWORKMODE;
 import static com.android.internal.util.ldroid.QSConstants.TILE_NFC;
 import static com.android.internal.util.ldroid.QSConstants.TILE_PROFILE;
@@ -202,6 +204,9 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_HOVER, R.string.title_tile_hover,
                 "com.android.systemui:drawable/ic_qs_hover_on"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_NETWORKADB, R.string.title_tile_network_adb,
+                "com.android.systemui:drawable/ic_qs_network_adb_off"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {
@@ -335,6 +340,14 @@ public class QuickSettingsUtil {
                 disableTile(TILE_NETWORKMODE);
                 break;
         }
+
+        // Don't show the Network ADB tile if adb debugging is disabled
+        if (DeviceUtils.adbEnabled(resolver)) {
+            enableTile(TILE_NETWORKADB);
+        } else {
+            disableTile(TILE_NETWORKADB);
+        }
+
     }
 
     public static synchronized void updateAvailableTiles(Context context) {
