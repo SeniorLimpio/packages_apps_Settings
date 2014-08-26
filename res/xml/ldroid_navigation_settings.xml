@@ -42,11 +42,20 @@
         android:fragment="com.android.settings.ldroid.NavbarSettings"
         android:title="@string/navigation_bar" />
 
+    <!-- Slim Pie control -->
     <PreferenceScreen
         settings:includeXmlForSearch="@xml/pie_control"
-        android:key="pie_settings"
-        android:fragment="com.android.settings.ldroid.PieControl"
-        android:title="@string/pie_control_title" />
+        android:id="@+id/pie_control"
+        android:title="@string/pie_control_title"
+        android:summary="@string/pie_summary"
+        android:fragment="com.android.settings.ldroid.PieControl" />
+
+    <!-- PA Pie control -->
+    <PreferenceScreen
+        android:key="pa_pie_control"
+        android:fragment="com.android.settings.ldroid.Pie"
+        android:summary="@string/pa_pie_controls_summary"
+        android:title="@string/pa_pie_controls_title" />
 
     <PreferenceScreen
         android:key="shake_events"
