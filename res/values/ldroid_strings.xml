@@ -473,6 +473,10 @@
     <string name="lockscreen_wallpaper">Custom wallpaper</string>
     <string name="select_wallpaper">Select wallpaper</string>
 
+    <!-- High touch sensitivity -->
+    <string name="high_touch_sensitivity_title">High touch sensitivity</string>
+    <string name="high_touch_sensitivity_summary">Increase the screen\'s sensitivity so you can touch it while wearing gloves</string>
+
     <!-- Lock screen style -->
     <string name="lockscreen_style_title">Style</string>
     <string name="lockscreen_style_reset_message">Reset all lock screen colors?</string>
