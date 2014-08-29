@@ -84,6 +84,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
     private static final String KEY_VOICEMAIL_BREATH = "voicemail_breath";
     private static final String STATUS_BAR_CUSTOM_HEADER = "custom_status_bar_header";
     private static final String KEY_EXPANDED_DESKTOP = "expanded_desktop";
+    private static final String STATUSBAR_6BAR_SIGNAL = "statusbar_6bar_signal";
 
 
     private PreferenceScreen mClockStyle;
@@ -101,6 +102,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
     private CheckBoxPreference mVoicemailBreath;
     private CheckBoxPreference mStatusBarCustomHeader;
     private ListPreference mExpandedDesktopPref;
+    private CheckBoxPreference mStatusBarSixBarSignal;
 
 
     private static final int MENU_RESET = Menu.FIRST;
@@ -236,6 +238,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
         mStatusBarCustomHeader.setChecked(Settings.System.getInt(resolver,
             Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1);
         mStatusBarCustomHeader.setOnPreferenceChangeListener(this);
+
+        // 6 bar signal
+        mStatusBarSixBarSignal = (CheckBoxPreference) findPreference(STATUSBAR_6BAR_SIGNAL);
+        mStatusBarSixBarSignal.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUSBAR_6BAR_SIGNAL, 0) == 1));
     }
 
     private void updateNetworkTrafficState(int mIndex) {
@@ -408,7 +415,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
             Settings.System.putInt(getContentResolver(),
                     Settings.System.KEY_VOICEMAIL_BREATH, value ? 1 : 0);
             return true;
+        } else if (preference == mStatusBarSixBarSignal) {
+            Settings.System.putInt(getContentResolver(),
+                   Settings.System.STATUSBAR_6BAR_SIGNAL,
+                   mStatusBarSixBarSignal.isChecked() ? 1 : 0);
+           return true;
 	}
+
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 

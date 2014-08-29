@@ -1973,6 +1973,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="status_bar_signal_text_title">Signal display</string>
     <string name="status_bar_signal_text_show_text">Signal text</string>
 
+    <!-- 6 bar signal -->
+    <string name="status_bar_six_bar_signal_title">Enable six bar signal</string>
+    <string name="status_bar_six_bar_signal_summary">Enable to show six bar signal in statusbar/qs</string>
+
     <!-- Disable FC Notifications -->
     <string name="disable_fc_notifications_title">Disable FC Notifications</string>
     <string name="disable_fc_notifications_summary">This will hide all force close notifications</string>
