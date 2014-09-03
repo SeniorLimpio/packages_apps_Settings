@@ -157,7 +157,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment
             }
         }
 
-        mLockscreenWidgets = prefs.findPreference(KEY_WIDGETS_SETTINGS);
+        mLockscreenWidgets = (Preference) findPreference(KEY_WIDGETS_SETTINGS);
         mDPM = (DevicePolicyManager)getSystemService(Context.DEVICE_POLICY_SERVICE);
 
         if (mLockscreenWidgets != null) {
@@ -189,8 +189,8 @@ public class LockscreenSettings extends SettingsPreferenceFragment
             }
         }
 
-        PreferenceScreen lockButtons = (PreferenceScreen) prefs
-                .findPreference(KEY_LOCKSCREEN_BUTTONS);
+        PreferenceScreen lockButtons = (PreferenceScreen)
+                 findPreference(KEY_LOCKSCREEN_BUTTONS);
         boolean hasButtons = (getResources().getInteger(
                 com.android.internal.R.integer.config_deviceHardwareKeys) > 0);
         if (!hasButtons) {
