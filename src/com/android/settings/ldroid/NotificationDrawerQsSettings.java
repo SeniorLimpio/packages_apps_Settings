@@ -79,6 +79,7 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             "status_bar_carrier";
     private static final String STATUS_BAR_CARRIER_COLOR =
             "status_bar_carrier_color";
+    private static final String TOGGLE_CARRIER_LOGO = "toggle_carrier_logo";
 
     static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
 
@@ -96,6 +97,7 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
 
     private ListPreference mCollapseOnDismiss;
     private CheckBoxPreference mFlipQsTiles;
+    private CheckBoxPreference mToggleCarrierLogo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -124,6 +126,10 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
         mCollapseOnDismiss.setValue(String.valueOf(collapseBehaviour));
         mCollapseOnDismiss.setOnPreferenceChangeListener(this);
         updateCollapseBehaviourSummary(collapseBehaviour);
+
+        mToggleCarrierLogo = (CheckBoxPreference) findPreference(TOGGLE_CARRIER_LOGO);
+        mToggleCarrierLogo.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.TOGGLE_CARRIER_LOGO, 0) == 1));
 
         // MIUI-like carrier Label
         mStatusBarCarrier = (CheckBoxPreference) findPreference(STATUS_BAR_CARRIER);
@@ -271,7 +277,12 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
            Settings.System.putInt(getContentResolver(),
                    Settings.System.STATUS_BAR_CARRIER, mStatusBarCarrier.isChecked() ? 1 : 0);
            return true;
-        }
+        } else if (preference == mToggleCarrierLogo) {
+            Settings.System.putInt(getContentResolver(),
+                   Settings.System.TOGGLE_CARRIER_LOGO,
+                   mToggleCarrierLogo.isChecked() ? 1 : 0);
+            return true;
+	}
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
