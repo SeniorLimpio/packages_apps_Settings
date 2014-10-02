@@ -82,6 +82,11 @@
             android:summary="@string/status_bar_six_bar_signal_summary"
             android:defaultValue="false" />
 
+         <PreferenceScreen
+            android:key="statusbar_color_pref"
+            android:fragment="com.android.settings.ldroid.StatusBarColor"
+            android:title="@string/custom_status_bar_header_title" />
+
         <ListPreference
             android:key="network_traffic_state"
             android:title="@string/show_network_traffic_state"
