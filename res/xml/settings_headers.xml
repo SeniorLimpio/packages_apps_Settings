@@ -104,6 +104,14 @@
         android:fragment="com.android.settings.ThemeSettings"
         android:icon="@drawable/prd_ic_themepacks" />
 
+    <!-- Dyanmic Color Changer -->
+    <Preference
+        settings:includeXmlForSearch="@xml/tintedstatusbar"
+        android:id="@+id/tinted_statusbar"
+        android:title="@string/title_tinted_statusbar"
+        android:fragment="com.android.settings.ldroid.TintedStatusBar"
+        android:icon="@drawable/ic_dt_tintedstatusbar" />
+
     <!-- L-Droid Vault -->
     <header
         settings:includeXmlForSearch="@xml/ldroid_vault"
