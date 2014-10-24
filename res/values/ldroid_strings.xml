@@ -2778,8 +2778,8 @@ selecting the profile in the future.</string>
     <string name="overscroll_weight_summary">Select the weight of the scrollable objects</string>
 
     <!-- Statusbar carrier logo-->
-    <string name="disable_carrier_logo">Hide carrier logo</string>
-    <string name="carrier_logo_summary">Hides carrier logo in status bar</string>
+    <string name="disable_carrier_logo">Enable carrier logo</string>
+    <string name="carrier_logo_summary">Shows carrier logo in status bar</string>
 
     <!-- Backlight brightness settings screen -->
     <string name="adaptive_backlight_title">Adaptive backlight</string>
