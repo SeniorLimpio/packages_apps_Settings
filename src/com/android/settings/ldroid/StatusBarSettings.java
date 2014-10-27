@@ -85,6 +85,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
     private static final String STATUS_BAR_CUSTOM_HEADER = "custom_status_bar_header";
     private static final String KEY_EXPANDED_DESKTOP = "expanded_desktop";
     private static final String STATUSBAR_6BAR_SIGNAL = "statusbar_6bar_signal";
+    private static final String PREF_TICKER = "ticker_disabled";
 
 
     private PreferenceScreen mClockStyle;
@@ -103,7 +104,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
     private CheckBoxPreference mStatusBarCustomHeader;
     private ListPreference mExpandedDesktopPref;
     private CheckBoxPreference mStatusBarSixBarSignal;
-
+    private CheckBoxPreference mTicker;
 
     private static final int MENU_RESET = Menu.FIRST;
     private static final int DEFAULT_TRAFFIC_COLOR = 0xffffffff;
@@ -221,6 +222,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
         mStatusBarSignal.setValue(String.valueOf(signalStyle));
         mStatusBarSignal.setSummary(mStatusBarSignal.getEntry());
         mStatusBarSignal.setOnPreferenceChangeListener(this);
+
+        mTicker = (CheckBoxPreference) prefSet.findPreference(PREF_TICKER);
+        mTicker.setChecked(Settings.System.getInt(resolver,
+                Settings.System.TICKER_DISABLED, 0) == 1);
+        mTicker.setOnPreferenceChangeListener(this);
 
         mSMSBreath = (CheckBoxPreference) prefSet.findPreference(KEY_SMS_BREATH);
         mSMSBreath.setChecked((Settings.System.getInt(getContentResolver(), 
@@ -367,6 +373,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements OnP
             Settings.System.putInt(getContentResolver(),
                 Settings.System.STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
            Helpers.restartSystemUI();
+            return true;
+        } else if (preference == mTicker) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.TICKER_DISABLED, value ? 1 : 0);
             return true;
         }
         return false;

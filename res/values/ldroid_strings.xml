@@ -2824,4 +2824,8 @@ selecting the profile in the future.</string>
     <string name="contrast_str">Contrast: <xliff:g id="contrast_value">%1$s</xliff:g></string>
     <string name="intensity_str">Intensity: <xliff:g id="intensity_str_value">%1$s</xliff:g></string>
 
+    <!-- ticker preference -->
+    <string name="ticker_disabled_title">Disable notification ticker</string>
+    <string name="ticker_disabled_summary">Don\'t scroll text from incoming notifications in the status bar</string>
+
 </resources>
