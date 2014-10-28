@@ -275,7 +275,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.liquid.Pie" />
+                android:value="com.android.settings.ldroid.Pie" />
         </activity>
 
         <!-- Top-level settings -->
@@ -1896,7 +1896,7 @@
                 android:value="com.android.settings.ldroid.HoverSettings" />
         </activity>
 
-        <activity android:name=".liquid.StatusBarColor" />
+        <activity android:name=".ldroid.StatusBarColor" />
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to rotation settings -->
         <activity android:name="Settings$DisplayRotationSettingsActivity"
