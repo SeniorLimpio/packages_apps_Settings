@@ -18,6 +18,10 @@
         android:title="@string/display_settings"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+        <PreferenceCategory
+            android:key="category_screen_options"
+            android:title="@string/display_category_screen_options_title" >
+
         <com.android.settings.BrightnessPreference
                 android:title="@string/brightness"
                 android:persistent="false"/>
@@ -113,6 +117,8 @@
                 android:targetPackage="com.ldroid.device"
                 android:targetClass="com.ldroid.device.settings.ScreenOffGestureSettings" />
         </Preference>
+
+        </PreferenceCategory>
 
         <PreferenceCategory
             android:key="category_light_options"

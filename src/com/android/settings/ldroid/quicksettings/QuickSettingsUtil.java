@@ -14,7 +14,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< HEAD:src/com/android/settings/ldroid/quicksettings/QuickSettingsUtil.java
 package com.android.settings.ldroid.quicksettings;
 
 import static com.android.internal.util.ldroid.QSConstants.TILES_DEFAULT;

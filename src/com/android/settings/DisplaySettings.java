@@ -218,8 +218,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mCategory.removePreference(mDisplayGamma);
         }
 
-        mAdaptiveBacklight = (CheckBoxPreference) findPreference(KEY_ADAPTIVE_BACKLIGHT);
+        if (!isPostProcessingSupported()) {
+            mScreenColorSettings = (PreferenceScreen) findPreference(KEY_SCREEN_COLOR_SETTINGS);
+            mCategory.removePreference(mScreenColorSettings);
+        }
+
         if (!isAdaptiveBacklightSupported()) {
+            mAdaptiveBacklight = (CheckBoxPreference) findPreference(KEY_ADAPTIVE_BACKLIGHT);
             mCategory.removePreference(mAdaptiveBacklight);
             mAdaptiveBacklight = null;
         }
@@ -228,8 +233,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mAdaptiveBacklight.setChecked(AdaptiveBacklight.isEnabled());
         }
 
-       mSunlightEnhancement = (CheckBoxPreference) findPreference(KEY_SUNLIGHT_ENHANCEMENT);
         if (!isSunlightEnhancementSupported()) {
+            mSunlightEnhancement = (CheckBoxPreference) findPreference(KEY_SUNLIGHT_ENHANCEMENT);
             mCategory.removePreference(mSunlightEnhancement);
             mSunlightEnhancement = null;
         }
@@ -251,13 +256,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         if (mColorEnhancement != null) {
             mColorEnhancement.setChecked(ColorEnhancement.isEnabled());
-        }
-
-
-        if (!isPostProcessingSupported()) {
-            mScreenColorSettings = (PreferenceScreen) findPreference(KEY_SCREEN_COLOR_SETTINGS);
-            PreferenceCategory mCategory = (PreferenceCategory) findPreference("category_screen_options");
-            mCategory.removePreference(mScreenColorSettings);
         }
 
         mWakeUpWhenPluggedOrUnplugged =
