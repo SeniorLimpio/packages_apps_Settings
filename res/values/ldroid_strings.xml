@@ -27,6 +27,8 @@
     <string name="style_title">Style</string>
     <string name="attention">Attention</string>
     <string name="default_string">Default</string>
+    <string name="reset_colors">Reset all colors to default?</string>
+    <string name="reset_default_message">Reset default</string>
     <string name="reset_message">Reset entries to default?</string>
     <string name="applist_title">Apps</string>
     <string name="note">NOTE</string>
@@ -2695,6 +2697,8 @@ selecting the profile in the future.</string>
     <string name="heads_up_switch_label">Enable heads up notification</string>
     <string name="heads_up_floating_window_title">Launch floating window</string>
     <string name="heads_up_floating_window_summary">Open heads up in floating window</string>
+    <string name="heads_up_bg_color_title">Background color</string>
+    <string name="heads_up_text_color_title">Text color</string>
 
     <!-- Device specific settings -->
     <string name="screen_off_gesture_settings_title">Screen off gestures</string>
