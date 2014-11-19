@@ -105,7 +105,7 @@
         android:icon="@drawable/prd_ic_themepacks" />
 
     <!-- Dyanmic Color Changer -->
-    <Preference
+    <header
         settings:includeXmlForSearch="@xml/tintedstatusbar"
         android:id="@+id/tinted_statusbar"
         android:title="@string/title_tinted_statusbar"
