@@ -75,7 +75,6 @@
     <string name="ldroid_animations_settings_title">Animations</string>
     <string name="advanced_options_title">Advanced</string>
     <string name="ime_settings_title">Keyboard</string>
-    <string name="halo_options_title">Halo</string>
     <string name="kernel_tweaker_title">Kernel tweaker</string>
     <string name="ldroid_sound_settings">Sounds</string>
 
@@ -2095,49 +2094,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="disable_fc_notifications_title">Disable FC Notifications</string>
     <string name="disable_fc_notifications_summary">This will hide all force close notifications</string>
 
-    <!-- Halo options -->
-    <!-- Halo enable/disable -->
-    <string name="halo_active_title">Halo switch</string>
-    <string name="halo_active_summary">Check to enable or un-check to disable halo</string>
-
-    <string name="halo_enabled_title">Enable Halo</string>
-    <string name="halo_enabled_summary">When checked the bubble is activated</string>
-    <string name="halo_hide_title">Hide after activity</string>
-    <string name="halo_hide_summary">Appears then scrolls out of the way</string>
-    <string name="halo_reversed_title">Reverse gestures</string>
-    <string name="halo_reversed_summary">Drag using double tap swipe gestures</string>
-    <string name="halo_state_title">Current policy</string>
-    <string name="halo_state_summary">Black or white listing notifications</string>
-    <string name="halo_state_black">Blacklist</string>
-    <string name="halo_state_white">Whitelist</string>
-    <string name="halo_ninja_title">Ninja mode</string>
-    <string name="halo_ninja_summary">Will vanish completely when empty</string>
-    <string name="halo_notification_msgbox_title">Enable message pop-up</string>
-    <string name="halo_notification_msgbox_summary">Show message box for incoming</string>
-    <string name="halo_unlock_ping_title">Ping on unlock</string>
-    <string name="halo_unlock_ping_summary">Ping bubble when device is unlocked</string>
-    <string name="halo_size_title">Halo size</string>
-    <string name="halo_size_summary">How big the bubble is going to be</string>
-    <string name="halo_size_miniscule">Miniscule</string>
-    <string name="halo_size_small">Small</string>
-    <string name="halo_size_default">Normal (default)</string>
-    <string name="halo_size_large">Large</string>
-    <string name="halo_size_gigantic">Gigantic</string>
-    <string name="halo_size_monster">Monster</string>
-    <string name="halo_notification_count_title">Notification count</string>
-    <string name="halo_notification_count_summary">Display current notification counts</string>
-    <string name="halo_notification_count_none">None</string>
-    <string name="halo_notification_count_total">Total</string>
-    <string name="halo_notification_count_individual">Per app</string>
-    <string name="halo_notification_count_both">Both</string>
-    <string name="halo_msgbox_animation_title">Message box animation</string>
-    <string name="halo_msgbox_animation_summary">Message box animations for incoming</string>
-    <string name="halo_msgbox_animation_none">None</string>
-    <string name="halo_msgbox_animation_flip">Flip</string>
-    <string name="app_halo_label_black">Blacklist from Halo</string>
-    <string name="app_halo_label_white">Whitelist from Halo</string>
-    <string name="halo_color_title">Circle color</string>
-    <string name="halo_color_summary">Define the background shading color</string>
+    <!-- Floating mode -->
     <string name="floating_mode_title">Allow floating windows</string>
     <string name="floating_mode_summary">View notifications in floating window</string>
 
@@ -2242,7 +2199,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!--Blacklist-->
     <string name="blacklist_button_title">Blacklist</string>
     <string name="floating_blacklist_label">Blacklist from Floating Mode</string>
-    <string name="halo_blacklist_label">Blacklist from Halo</string>
     <string name="hover_blacklist_label">Blacklist from Hover</string>
     <string name="peek_blacklist_label">Blacklist from Peek</string>
 

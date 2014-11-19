@@ -16,7 +16,7 @@
 
 package com.android.settings.ldroid;
   
-mport android.app.AlertDialog;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
